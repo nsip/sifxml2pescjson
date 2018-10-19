@@ -32,6 +32,14 @@ while line = gets do
   end
 end
 
+complexattr = ["NEVERMATCH"] if complexattr.empty?
+simpleattr = ["NEVERMATCH"] if simpleattr.empty?
+list = ["NEVERMATCH"] if list.empty?
+boolean = ["NEVERMATCH"] if boolean.empty?
+numeric = ["NEVERMATCH"] if numeric.empty?
+numericattr = ["NEVERMATCH"] if numericattr.empty?
+booleanattr = ["NEVERMATCH"] if booleanattr.empty?
+
 print <<~"END"
 <?xml version="1.0" encoding="UTF-8" ?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
@@ -61,7 +69,7 @@ print <<~"END"
   </xsl:template>
 
   <!-- numeric or boolean -->
-  <xsl:template match="#{numeric.join(' | ') || 'NEVERMATCH'}" mode="value">
+  <xsl:template match="#{numeric.join(' | ')}" mode="value">
     <xsl:apply-templates select="."/>
   </xsl:template>
 
@@ -70,7 +78,7 @@ print <<~"END"
   </xsl:template>
 
   <!-- numeric or boolean attribute -->
-  <xsl:template match="#{numericattr.join(' | ') || 'NEVERMATCH'}" mode="attrvalue">
+  <xsl:template match="#{numericattr.join(' | ')}" mode="attrvalue">
     <xsl:apply-templates select="."/>
   </xsl:template>
 
