@@ -19,4 +19,5 @@ cat specgen_input/80_BackMatter/Generic-CommonTypes.xml >> data.xml
 cat specgen_input/80_BackMatter/Custom/DataModel-CommonTypes-Custom.xml >> data.xml
 echo '</root>' >> data.xml
 xsltproc sifobject.xslt data.xml >> typegraph.txt
-
+ruby treeparse.rb > out.txt
+ruby makexslt.rb < out.txt > sif2json.xslt

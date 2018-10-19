@@ -7,7 +7,7 @@ def get_objgraph(file)
   while line = file.gets do 
     line.chomp!
     if /^\s*##1/.match line
-      latest = graph[root][-1][:elems]
+        latest = graph[root][-1][:elems]
     elsif /^\s*##2/.match line
       latest = graph[root][-1][:elems][-1][:elems]
     elsif /^\s*##3/.match line
@@ -24,7 +24,7 @@ def get_objgraph(file)
     end
 
     line.sub!(/^\s*##\d+/, "")
-    next unless /\S/.match line
+      next unless /\S/.match line
 
     if /PARENT\s+\S+\s+\S+/.match(line)
       %r{PARENT (?<root>\S+)\s+(?<type>\S+)} =~ line
@@ -55,7 +55,7 @@ def listfind(arr, path)
     if a[:list] 
       puts "LIST: #{path}/#{a[:elem]}"
     elsif a[:elems] && !a[:elems].empty?
-        listfind(a[:elems], "#{path}/#{a[:elem]}")
+      listfind(a[:elems], "#{path}/#{a[:elem]}")
     elsif a[:type] && @typegraph[a[:type]]
       listfind(@typegraph[a[:type]], "#{path}/#{a[:elem]}")
     end
@@ -73,7 +73,7 @@ def booleanfind(arr, path)
     elsif a[:inherits] == "boolean"
       puts "BOOLEAN: #{path}/#{a[:elem]}"
     elsif a[:elems] && !a[:elems].empty?
-        booleanfind(a[:elems], "#{path}/#{a[:elem]}")
+      booleanfind(a[:elems], "#{path}/#{a[:elem]}")
     elsif a[:type] && @typegraph[a[:type]]
       booleanfind(@typegraph[a[:type]], "#{path}/#{a[:elem]}")
     end
@@ -86,17 +86,18 @@ end
 def numericfind(arr, path)
   arr.each do |a|
     #pp a
+    elem = a[:elem] ? ( "/" + a[:elem] ) : ""
     if a[:type] == "number"
-      puts "NUMERIC: #{path}/#{a[:elem]}"
+      puts "NUMERIC: #{path}#{elem}"
     elsif a[:inherits] == "number"
-      puts "NUMERIC: #{path}/#{a[:elem]}"
+      puts "NUMERIC: #{path}#{elem}"
     elsif a[:elems] && !a[:elems].empty?
-        numericfind(a[:elems], "#{path}/#{a[:elem]}")
+      numericfind(a[:elems], "#{path}#{elem}")
     elsif a[:type] && @typegraph[a[:type]]
-      numericfind(@typegraph[a[:type]], "#{path}/#{a[:elem]}")
+      numericfind(@typegraph[a[:type]], "#{path}#{elem}")
     end
     if a[:inherits] && @typegraph[a[:inherits]]
-      numericfind(@typegraph[a[:inherits]], "#{path}/#{a[:elem]}")
+      numericfind(@typegraph[a[:inherits]], "#{path}#{elem}")
     end
   end
 end
@@ -122,16 +123,17 @@ def simpleattrfind(arr, path)
   arr.each do |a|
     #pp a
     #byebug
+    elem = a[:elem] ? ( "/" + a[:elem] ) : ""
     if a[:attr] && !a[:attr].empty? && isSimpleType(a)
-      puts "SIMPLE ATTRIBUTE: #{path}/#{a[:elem]}\t#{a[:type] || a[:inherits]}"
+      puts "SIMPLE ATTRIBUTE: #{path}#{elem}\t#{a[:type] || a[:inherits]}"
     end
     if a[:elems] && !a[:elems].empty?
-        simpleattrfind(a[:elems], "#{path}/#{a[:elem]}")
+      simpleattrfind(a[:elems], "#{path}#{elem}")
     elsif a[:type] && @typegraph[a[:type]]
-      simpleattrfind(@typegraph[a[:type]], "#{path}/#{a[:elem]}")
+      simpleattrfind(@typegraph[a[:type]], "#{path}#{elem}")
     end
     if a[:inherits]  && @typegraph[a[:inherits]]
-      simpleattrfind(@typegraph[a[:inherits]], "#{path}/#{a[:elem]}")
+      simpleattrfind(@typegraph[a[:inherits]], "#{path}#{elem}")
     end
   end
 end
@@ -139,6 +141,7 @@ end
 def complexattrfind(arr, path)
   arr.each do |a|
     #pp a
+    elem = a[:elem] ? ( "/" + a[:elem] ) : ""
     if a[:attr] && !a[:attr].empty? && !isSimpleType(a)
       a[:attr].each do |aa|
         #byebug if /AggregateStatisticInfo/.match path
@@ -149,16 +152,17 @@ def complexattrfind(arr, path)
         outtype ||= "PhoneNumber" if %r{/PhoneNumber$}.match path
         outtype ||= "MapReference" if %r{/MapReference$}.match path
         outtype ||= arr.to_s
-        puts "COMPLEX ATTRIBUTE: #{path}/#{a[:elem]}/@#{aa[:attr]}\t#{outtype}"
+        elem = a[:elem] ? ( "/" + a[:elem] ) : ""
+        puts "COMPLEX ATTRIBUTE: #{path}#{elem}/@#{aa[:attr]}\t#{outtype}"
       end
     end
     if a[:elems] && !a[:elems].empty?
-        complexattrfind(a[:elems], "#{path}/#{a[:elem]}")
+      complexattrfind(a[:elems], "#{path}#{elem}")
     elsif a[:type] && @typegraph[a[:type]]
-      complexattrfind(@typegraph[a[:type]], "#{path}/#{a[:elem]}")
+      complexattrfind(@typegraph[a[:type]], "#{path}#{elem}")
     end
     if a[:inherits]  && @typegraph[a[:inherits]]
-      complexattrfind(@typegraph[a[:inherits]], "#{path}/#{a[:elem]}")
+      complexattrfind(@typegraph[a[:inherits]], "#{path}#{elem}")
     end
   end
 end

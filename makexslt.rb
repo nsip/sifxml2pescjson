@@ -1,3 +1,38 @@
+complexattr = []
+simpleattr = []
+list = []
+numeric = []
+boolean = []
+numericattr = []
+booleanattr = []
+
+
+while line = gets do
+  if /COMPLEX ATTRIBUTE/.match line
+    /COMPLEX ATTRIBUTE: (?<path>\S+)/ =~ line
+    complexattr << path
+  elsif /SIMPLE ATTRIBUTE/.match line
+    /SIMPLE ATTRIBUTE: (?<path>\S+)/ =~ line
+    simpleattr << path
+  elsif /LIST/.match line
+    /LIST: (?<path>\S+)/ =~ line
+    list << path
+  elsif /NUMERIC.*\@/.match line
+    /NUMERIC: (?<path>\S+)/ =~ line
+    numericattr << path
+  elsif /NUMERIC/.match line
+    /NUMERIC: (?<path>\S+)/ =~ line
+    numeric << path
+  elsif /BOOLEAN.*\@/.match line
+    /BOOLEAN: (?<path>\S+)/ =~ line
+    booleanattr << path
+  elsif /BOOLEAN/.match line
+    /BOOLEAN: (?<path>\S+)/ =~ line
+    booleanattr << path
+  end
+end
+
+print <<~"END"
 <?xml version="1.0" encoding="UTF-8" ?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <!-- from https://gist.github.com/inancgumus/3ce56ddde6d5c93f3550b3b4cdc6bcb8 -->
@@ -26,7 +61,7 @@
   </xsl:template>
 
   <!-- numeric or boolean -->
-  <xsl:template match="a/b | d/c" mode="value">
+  <xsl:template match="#{numeric.join(' | ') || 'NEVERMATCH'}" mode="value">
     <xsl:apply-templates select="."/>
   </xsl:template>
 
@@ -35,18 +70,18 @@
   </xsl:template>
 
   <!-- numeric or boolean attribute -->
-  <xsl:template match="a/c/@attr" mode="attrvalue">
+  <xsl:template match="#{numericattr.join(' | ') || 'NEVERMATCH'}" mode="attrvalue">
     <xsl:apply-templates select="."/>
   </xsl:template>
 
   <!-- simple content with attribute -->
-  <xsl:template match="a/b" mode="detect">
+  <xsl:template match="#{simpleattr.join(' | ')}" mode="detect">
     <xsl:text>"</xsl:text><xsl:value-of select="name()"/>" : <xsl:apply-templates select="." mode="obj-content" />
     <xsl:if test="count(following-sibling::*) &gt; 0">, </xsl:if>
   </xsl:template>
 
   <!-- list -->
-  <xsl:template match="a/c | b/c" mode="detect">
+  <xsl:template match="#{list.join(' | ')}" mode="detect">
     <xsl:text>"</xsl:text><xsl:value-of select="name()"/><xsl:text>" : [</xsl:text>
     <xsl:choose>
       <xsl:when test="count(./child::*) > 0 or count(@*) > 0">
@@ -77,7 +112,7 @@
   </xsl:template>
 
   <!-- simple content with attribute -->
-  <xsl:template match="a/b" mode="obj-content">
+  <xsl:template match="#{simpleattr.join(' | ')}" mode="obj-content">
     <xsl:text>{</xsl:text>
     <xsl:apply-templates select="@*" mode="attr" />
     <xsl:if test="count(@*) &gt; 0 and (count(child::*) &gt; 0 or text())">, </xsl:if>
@@ -108,3 +143,5 @@
   </xsl:template>
 
 </xsl:stylesheet>
+END
+
