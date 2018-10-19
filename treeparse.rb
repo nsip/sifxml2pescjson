@@ -27,7 +27,7 @@ def get_objgraph(file)
     next unless /\S/.match line
 
     if /PARENT\s+\S+\s+\S+/.match(line)
-      %r{PARENT (?<root>\S+)\s+(?<type>\S)} =~ line
+      %r{PARENT (?<root>\S+)\s+(?<type>\S+)} =~ line
       graph[root] = [{inherits: type}]
     elsif /PARENT.*\/\//.match(line)
       %r{PARENT (?<root>\S+)//} =~ line
@@ -60,7 +60,7 @@ def listfind(arr, path)
       listfind(@typegraph[a[:type]], "#{path}/#{a[:elem]}")
     end
     if a[:inherits] && @typegraph[a[:inherits]]
-      listfind(@typegraph[a[:inherits]], "####{path}/#{a[:elem]}")
+      listfind(@typegraph[a[:inherits]], "#{path}/#{a[:elem]}")
     end
   end
 end
@@ -78,7 +78,7 @@ def booleanfind(arr, path)
       booleanfind(@typegraph[a[:type]], "#{path}/#{a[:elem]}")
     end
     if a[:inherits] && @typegraph[a[:inherits]]
-      booleanfind(@typegraph[a[:inherits]], "####{path}/#{a[:elem]}")
+      booleanfind(@typegraph[a[:inherits]], "#{path}/#{a[:elem]}")
     end
   end
 end
@@ -96,7 +96,7 @@ def numericfind(arr, path)
       numericfind(@typegraph[a[:type]], "#{path}/#{a[:elem]}")
     end
     if a[:inherits] && @typegraph[a[:inherits]]
-      numericfind(@typegraph[a[:inherits]], "####{path}/#{a[:elem]}")
+      numericfind(@typegraph[a[:inherits]], "#{path}/#{a[:elem]}")
     end
   end
 end
@@ -104,14 +104,16 @@ end
 def isSimpleType(a)
   #pp a
   #byebug
-  #return isSimpleType(type: @typegraph[a[:inherits]]) if a[:inherits] && @typegraph[a[:inherits]]
+  return isSimpleType(type: @typegraph[a[:type]]) if @typegraph[a[:type]]
   return isSimpleType(type: a[:inherits]) if a[:inherits]
+  return isSimpleType(type: a[:type][0][:inherits]) if a[:type].is_a?(Array) && a[:type][0] && a[:type][0][:inherits]
   return true if a[:type] == "number"
   return true if a[:type] == "string"
   return false if a[:type] == "EMPTY"
   return false if a[:type] == "ExtendedContentType"
   return false if a[:type].nil?
   return false if a[:elems] && !a[:elems].empty?
+  return false if a[:type].is_a?(Array) && a[:type][1] && a[:type][1][:elem]
   return false if @typegraph[a[:type]] && @typegraph[a[:type]].is_a?(Array)
   byebug
 end
@@ -129,7 +131,7 @@ def simpleattrfind(arr, path)
       simpleattrfind(@typegraph[a[:type]], "#{path}/#{a[:elem]}")
     end
     if a[:inherits]  && @typegraph[a[:inherits]]
-      simpleattrfind(@typegraph[a[:inherits]], "####{path}/#{a[:elem]}")
+      simpleattrfind(@typegraph[a[:inherits]], "#{path}/#{a[:elem]}")
     end
   end
 end
@@ -139,7 +141,15 @@ def complexattrfind(arr, path)
     #pp a
     if a[:attr] && !a[:attr].empty? && !isSimpleType(a)
       a[:attr].each do |aa|
-        puts "COMPLEX ATTRIBUTE: #{path}/#{a[:elem]}/@#{aa[:attr]}\t#{a[:type] || a[:inherits]}"
+        #byebug if /AggregateStatisticInfo/.match path
+        outtype = a[:type] || a[:inherits]
+        #byebug
+        outtype ||= "RefId" if aa[:attr] == "RefId"
+        outtype ||= "Address" if %r{/Address$}.match path
+        outtype ||= "PhoneNumber" if %r{/PhoneNumber$}.match path
+        outtype ||= "MapReference" if %r{/MapReference$}.match path
+        outtype ||= arr.to_s
+        puts "COMPLEX ATTRIBUTE: #{path}/#{a[:elem]}/@#{aa[:attr]}\t#{outtype}"
       end
     end
     if a[:elems] && !a[:elems].empty?
@@ -148,7 +158,7 @@ def complexattrfind(arr, path)
       complexattrfind(@typegraph[a[:type]], "#{path}/#{a[:elem]}")
     end
     if a[:inherits]  && @typegraph[a[:inherits]]
-      complexattrfind(@typegraph[a[:inherits]], "####{path}/#{a[:elem]}")
+      complexattrfind(@typegraph[a[:inherits]], "#{path}/#{a[:elem]}")
     end
   end
 end
