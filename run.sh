@@ -19,5 +19,24 @@ cat specgen_input/80_BackMatter/Generic-CommonTypes.xml >> data.xml
 cat specgen_input/80_BackMatter/Custom/DataModel-CommonTypes-Custom.xml >> data.xml
 echo '</root>' >> data.xml
 xsltproc sifobject.xslt data.xml >> typegraph.txt
+
+echo "<sif>" > siftest.xml 
+for filename in ./specgen_input/06_DataModel/Custom/Common/*.xml; do
+  if [[ "$filename" == "./specgen_input/06_DataModel/Custom/Common/StudentScoreSet.xml" ]]; then
+    continue
+  fi
+  perl sifexamples.pl "$filename" >> siftest.xml
+done
+for filename in ./specgen_input/06_DataModel/Custom/AU/*.xml; do
+  if [[ "$filename" == "./specgen_input/06_DataModel/Custom/Common/StudentScoreSet.xml" ]]; then
+    continue
+  fi
+  perl sifexamples.pl "$filename" >> siftest.xml
+done
+echo "</sif>" >> siftest.xml 
+
+
+
 ruby treeparse.rb > out.txt
 ruby makexslt.rb < out.txt > sif2json.xslt
+xsltproc sif2json.xslt siftest.xml > siftest.json

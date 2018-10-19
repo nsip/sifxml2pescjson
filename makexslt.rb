@@ -110,10 +110,10 @@ print <<~"END"
     <xsl:if test="count(@*) &gt; 0 and (count(child::*) &gt; 0 or text())">, </xsl:if>
     <xsl:apply-templates select="./*" mode="detect" />
     <xsl:if test="count(child::*) = 0 and text() and not(@*)">
-      <xsl:text>"</xsl:text><xsl:value-of select="name()"/>" : <xsl:apply-templates select="text()" mode="value"/>
+      <xsl:text>"</xsl:text><xsl:value-of select="name()"/>" : <xsl:apply-templates select="." mode="value"/>
     </xsl:if>
     <xsl:if test="count(child::*) = 0 and text() and @*">
-      <xsl:text>"value" : </xsl:text><xsl:apply-templates select="text()" mode="value"/>
+      <xsl:text>"value" : </xsl:text><xsl:apply-templates select="." mode="value"/>
     </xsl:if>
     <xsl:text>}</xsl:text>
     <xsl:if test="position() &lt; last()">, </xsl:if>
@@ -126,7 +126,7 @@ print <<~"END"
     <xsl:if test="count(@*) &gt; 0 and (count(child::*) &gt; 0 or text())">, </xsl:if>
     <xsl:apply-templates select="./*" mode="detect" />
     <xsl:if test="count(child::*) = 0 and text()">
-      <xsl:text>"value" : </xsl:text><xsl:apply-templates select="text()" mode="value"/>
+      <xsl:text>"value" : </xsl:text><xsl:apply-templates select="." mode="value"/>
     </xsl:if>
     <xsl:text>}</xsl:text>
     <xsl:if test="position() &lt; last()">, </xsl:if>
