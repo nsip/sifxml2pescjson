@@ -1,6 +1,6 @@
 #!/bin/bash
-rm -fr specgen_input
-git clone https://github.com/nsip/specgen_input.git
+#rm -fr specgen_input
+#git clone https://github.com/nsip/specgen_input.git
 
 echo "" > objectgraph.txt
 echo "" > typegraph.txt
