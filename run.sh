@@ -40,4 +40,9 @@ echo "</sif>" >> siftest.xml
 ruby treeparse.rb > out.txt
 ruby makexslt.rb < out.txt > sif2json.xslt
 xsltproc sif2json.xslt siftest.xml > siftest.json
+jq . siftest.json > siftest.pretty.json
 ruby makejs2xml.rb < out.txt > json2sif.js
+echo "<sif>" > siftest2.xml
+node json2sif.js < siftest.pretty.json >> siftest2.xml
+echo "</sif>" >> siftest2.xml
+xmllint --format siftest2.xml > siftest2.pretty.xml

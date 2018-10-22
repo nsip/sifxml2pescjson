@@ -43,7 +43,27 @@ function attributes(newobj) {
   var paths = [#{jsonattr.join(',')}];
   for (var  i=0; i< paths.length; i++) {
     var path = paths[i];
-    dot.move(path, path.replace(/\.([^.]+)$/, "._$1"), newobj);
+    dot.move(path, path.replace(/\\.([^.]+)$/, "._$1"), newobj);
+  }
+  /* extract paths of object */
+  var tgt = dot.dot(newobj);
+  paths = [];
+  for (var key in tgt) {
+    if(key.endsWith(".value")) {
+      paths.push(key.replace(/\\.value/, ""));
+    }
+  }
+  /* rearrange attributes if there is a value key */
+  for(var i=0; i<paths.length; i++) {
+    for(var key in tgt) {
+      if (key.startsWith(paths[i])) {
+        if (key == paths[i] + ".value") {
+          dot.move(key, paths[i] + ".__text", newobj);
+        } else if (!key.replace(paths[i] + ".", "").includes(".")) {
+          dot.move(key, key.replace(/\\.([^.]+)$/, "._$1"), newobj);
+        }
+      }
+    }
   }
   return newobj;
 }

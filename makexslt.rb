@@ -90,7 +90,9 @@ print <<~"END"
 
   <!-- list -->
   <xsl:template match="#{list.join(' | ')}" mode="detect">
-    <xsl:text>"</xsl:text><xsl:value-of select="name()"/><xsl:text>" : [</xsl:text>
+  <xsl:if test="count(preceding-sibling::*) = 0">
+      <xsl:text>"</xsl:text><xsl:value-of select="name()"/><xsl:text>" : [</xsl:text>
+    </xsl:if>
     <xsl:choose>
       <xsl:when test="count(./child::*) > 0 or count(@*) > 0">
         <xsl:apply-templates select="." mode="obj-content" />
@@ -100,8 +102,8 @@ print <<~"END"
         <xsl:apply-templates select="." mode="value"/>
       </xsl:when>
     </xsl:choose>
-    <xsl:text>]</xsl:text>
     <xsl:if test="count(following-sibling::*) &gt; 0">, </xsl:if>
+    <xsl:if test="count(following-sibling::*) = 0"><xsl:text>]</xsl:text></xsl:if>
   </xsl:template>
 
   <xsl:template match="*" mode="obj-content">
