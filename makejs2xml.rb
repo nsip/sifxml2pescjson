@@ -34,20 +34,29 @@ end
 jsonattr = complexattr.collect { |a| '"' + a.gsub(%r{/@?}, ".") + '"' }
 
 print <<~"END"
-let X2JS = require('./x2js');
+let X2JS = require('x2js');
 const fs = require("fs");
 const js = fs.readFileSync("/dev/stdin", "utf-8");
 var dot = require('dot-object');
 
+var attrpaths = [#{jsonattr.join(',')}];
+/* obvious future optimisation: separate array for each object */
+
+/* this is monstrously inefficent */
 function attributes(newobj) {
-  var paths = [#{jsonattr.join(',')}];
-  for (var  i=0; i< paths.length; i++) {
-    var path = paths[i];
-    dot.move(path, path.replace(/\\.([^.]+)$/, "._$1"), newobj);
+  var tgt = dot.dot(newobj); /* get all paths of object */
+  for (var key in tgt) {
+    var key_stripped;
+    key_stripped = key.replace(/\.[0-9]+/g, "");
+    /* we don't have wildcard array access (cf. doc-wild) + move property in the same library */
+    for(var i=0; i< attrpaths.length; i++) {
+      if(key_stripped == attrpaths[i]) {
+        dot.move(key, key.replace(/\.([^.]+)$/, "._$1"), newobj);
+      }
+    }
   }
-  /* extract paths of object */
-  var tgt = dot.dot(newobj);
-  paths = [];
+
+  var paths = [];
   for (var key in tgt) {
     if(key.endsWith(".value")) {
       paths.push(key.replace(/\\.value/, ""));
