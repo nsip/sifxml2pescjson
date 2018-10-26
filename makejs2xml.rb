@@ -55,7 +55,8 @@ end
 
 
 print <<~"END"
-/* this is monstrously inefficent */
+
+/* this is inefficent */
 function attributes(newobj) {
   var tgt = dot.dot(newobj); /* get all paths of object */
   var object = Object.keys(tgt)[0].replace(/\\..*$/, "");
@@ -91,7 +92,7 @@ function attributes(newobj) {
         return newobj;
 }
 
-var x = new X2JS();
+var x = new X2JS({stripWhitespaces : false});
 var json = JSON.parse(js);
 for(var i=0; i<json.length; i++) {
     newobj = json[i];

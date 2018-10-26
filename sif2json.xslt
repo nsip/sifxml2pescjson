@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:json="http://json.org/">
   <!-- from https://gist.github.com/inancgumus/3ce56ddde6d5c93f3550b3b4cdc6bcb8 -->
-  <xsl:output method="text" encoding="utf-8"/>
+  <!-- https://github.com/bramstein/xsltjson/blob/master/conf/xml-to-jsonml.xsl -->
+  <xsl:output method="text" omit-xml-declaration="yes" encoding="utf-8"/>
 
   <xsl:template match="/*[node()]">
     <!-- <xsl:text>[</xsl:text> -->
@@ -122,7 +124,81 @@
     <xsl:if test="position() &lt; last()">, </xsl:if>
   </xsl:template>
 
-  <xsl:template match="node/@TEXT | text()" name="removeBreaks">
+  <!-- https://github.com/bramstein/xsltjson/blob/master/conf/xml-to-jsonml.xsl -->
+  <json:search name="string">
+		<json:replace src="\" dst="\\"/>
+		<json:replace src="&quot;" dst="\&quot;"/>
+		<json:replace src="&#xA;" dst="\n"/>
+		<json:replace src="&#xD;" dst="\r"/>
+		<json:replace src="&#x9;" dst="\t"/>
+		<json:replace src="\n" dst="\n"/>
+		<json:replace src="\r" dst="\r"/>
+		<json:replace src="\t" dst="\t"/>
+  </json:search>
+
+  <xsl:template name="replace-string">
+		<xsl:param name="input"/>
+		<xsl:param name="src"/>
+		<xsl:param name="dst"/>
+		<xsl:choose>
+			<xsl:when test="contains($input, $src)">
+				<xsl:value-of select="concat(substring-before($input, $src), $dst)"/>
+				<xsl:call-template name="replace-string">
+					<xsl:with-param name="input" select="substring-after($input, $src)"/>
+					<xsl:with-param name="src" select="$src"/>
+					<xsl:with-param name="dst" select="$dst"/>
+				</xsl:call-template>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="$input"/>
+			</xsl:otherwise>
+		</xsl:choose>
+  </xsl:template>
+
+  <xsl:template name="encode">
+		<xsl:param name="input"/>
+		<xsl:param name="index">1</xsl:param>
+
+		<xsl:variable name="text">
+			<xsl:call-template name="replace-string">
+				<xsl:with-param name="input" select="$input"/>
+				<xsl:with-param name="src" select="document('')//json:search/json:replace[$index]/@src"/>
+				<xsl:with-param name="dst" select="document('')//json:search/json:replace[$index]/@dst"/>
+			</xsl:call-template>
+		</xsl:variable>
+
+		<xsl:choose>
+			<xsl:when test="$index &lt; count(document('')//json:search/json:replace)">
+				<xsl:call-template name="encode">
+					<xsl:with-param name="input" select="$text"/>
+					<xsl:with-param name="index" select="$index + 1"/>
+				</xsl:call-template>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="$text"/>
+			</xsl:otherwise>
+		</xsl:choose>
+  </xsl:template>
+
+  <xsl:template name="encode-value">
+                <xsl:param name="value"/>
+                <xsl:choose>
+                        <xsl:when test="normalize-space($value) != $value">
+                                <xsl:call-template name="encode">
+                                        <xsl:with-param name="input" select="$value"/>
+                                </xsl:call-template>
+                        </xsl:when>
+                        <xsl:otherwise>
+                                <xsl:value-of select="$value"/>
+                        </xsl:otherwise>
+                </xsl:choose>
+  </xsl:template>
+
+  <xsl:template match="node/@TEXT | text()" name="removeBreaks" priority="10">
+    <xsl:call-template name="encode-value">
+      <xsl:with-param name="value" select="." />
+    </xsl:call-template>
+<!--
     <xsl:param name="pText" select="normalize-space(.)"/>
     <xsl:choose>
       <xsl:when test="not(contains($pText, '&#xA;'))"><xsl:copy-of select="$pText"/></xsl:when>
@@ -133,6 +209,7 @@
         </xsl:call-template>
       </xsl:otherwise>
     </xsl:choose>
+-->
   </xsl:template>
 
 </xsl:stylesheet>

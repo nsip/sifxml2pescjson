@@ -73,7 +73,8 @@ attrpaths["NAPTestlet"] = ["NAPTestlet.RefId"];
 attrpaths["PaymentReceipt"] = ["PaymentReceipt.RefId"];
 attrpaths["PurchaseOrder"] = ["PurchaseOrder.RefId"];
 attrpaths["VendorInfo"] = ["VendorInfo.RefId","VendorInfo.ContactInfo.Name.Type","VendorInfo.ContactInfo.Address.Type","VendorInfo.ContactInfo.Address.Role","VendorInfo.ContactInfo.Address.MapReference.Type","VendorInfo.ContactInfo.PhoneNumberList.PhoneNumber.Type"];
-/* this is monstrously inefficent */
+
+/* this is inefficent */
 function attributes(newobj) {
   var tgt = dot.dot(newobj); /* get all paths of object */
   var object = Object.keys(tgt)[0].replace(/\..*$/, "");
@@ -109,7 +110,7 @@ function attributes(newobj) {
         return newobj;
 }
 
-var x = new X2JS();
+var x = new X2JS({stripWhitespaces : false});
 var json = JSON.parse(js);
 for(var i=0; i<json.length; i++) {
     newobj = json[i];
