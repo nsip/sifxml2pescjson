@@ -1,0 +1,1431 @@
+OBJECT: Activity
+OBJECT: AggregateCharacteristicInfo
+OBJECT: AggregateStatisticFact
+OBJECT: AggregateStatisticInfo
+OBJECT: CalendarDate
+OBJECT: CalendarSummary
+OBJECT: EquipmentInfo
+OBJECT: GradingAssignment
+OBJECT: GradingAssignmentScore
+OBJECT: Identity
+OBJECT: LEAInfo
+OBJECT: LearningResource
+OBJECT: LearningResourcePackage
+OBJECT: LearningStandardDocument
+OBJECT: LearningStandardItem
+OBJECT: MarkValueInfo
+OBJECT: PersonPicture
+OBJECT: PersonalisedPlan
+OBJECT: ReportAuthorityInfo
+OBJECT: ResourceBooking
+OBJECT: ResourceUsage
+OBJECT: RoomInfo
+OBJECT: ScheduledActivity
+OBJECT: SchoolCourseInfo
+OBJECT: SchoolInfo
+OBJECT: SchoolPrograms
+OBJECT: SectionInfo
+OBJECT: SessionInfo
+OBJECT: StaffAssignment
+OBJECT: StaffPersonal
+OBJECT: StudentActivityInfo
+OBJECT: StudentActivityParticipation
+OBJECT: StudentAttendanceSummary
+OBJECT: StudentAttendanceTimeList
+OBJECT: StudentContactPersonal
+OBJECT: StudentContactRelationship
+OBJECT: StudentDailyAttendance
+OBJECT: StudentGrade
+OBJECT: StudentParticipation
+OBJECT: StudentPeriodAttendance
+OBJECT: StudentPersonal
+OBJECT: StudentSchoolEnrollment
+OBJECT: StudentSectionEnrollment
+OBJECT: SystemRole
+OBJECT: TeachingGroup
+OBJECT: TermInfo
+OBJECT: TimeTable
+OBJECT: TimeTableCell
+OBJECT: TimeTableSubject
+OBJECT: WellbeingAlert
+OBJECT: WellbeingAppeal
+OBJECT: WellbeingCharacteristic
+OBJECT: WellbeingEvent
+OBJECT: WellbeingResponse
+OBJECT: ChargedLocationInfo
+OBJECT: Debtor
+OBJECT: FinancialAccount
+OBJECT: Invoice
+OBJECT: Journal
+OBJECT: NAPCodeFrame
+OBJECT: NAPEventStudentLink
+OBJECT: NAPStudentResponseSet
+OBJECT: NAPTest
+OBJECT: NAPTestItem
+OBJECT: NAPTestScoreSummary
+OBJECT: NAPTestlet
+OBJECT: PaymentReceipt
+OBJECT: PurchaseOrder
+OBJECT: VendorInfo
+COMPLEX ATTRIBUTE: Activity/@RefId	RefId
+COMPLEX ATTRIBUTE: Activity/Evaluation/@EvaluationType	EMPTY
+COMPLEX ATTRIBUTE: AggregateCharacteristicInfo/@RefId	RefId
+COMPLEX ATTRIBUTE: AggregateStatisticFact/@RefId	RefId
+COMPLEX ATTRIBUTE: AggregateStatisticInfo/@RefId	RefId
+COMPLEX ATTRIBUTE: AggregateStatisticInfo/Location/@Type	[{:attr=>[{:attr=>"Type", :type=>"string"}]}, {:elem=>"LocationName", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"LocationRefId", :type=>"string", :attr=>[{:attr=>"SIF_RefObject", :type=>"string"}], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: CalendarDate/@CalendarDateRefId	[{:attr=>[{:attr=>"CalendarDateRefId", :type=>"string"}]}, {:elem=>"Date", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"CalendarSummaryRefId", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"SchoolInfoRefId", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"SchoolYear", :type=>"SchoolYearType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"CalendarDateType", :type=>"CalendarDateInfoType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"CalendarDateNumber", :type=>"number", :attr=>[], :elems=>[], :list=>false}, {:elem=>"StudentAttendance", :type=>"AttendanceInfoType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"TeacherAttendance", :type=>"AttendanceInfoType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"AdministratorAttendance", :type=>"AttendanceInfoType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"SIF_Metadata", :type=>"SIF_MetadataType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"SIF_ExtendedElements", :type=>"SIF_ExtendedElementsType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: CalendarSummary/@RefId	RefId
+COMPLEX ATTRIBUTE: EquipmentInfo/@RefId	RefId
+COMPLEX ATTRIBUTE: GradingAssignment/@RefId	RefId
+COMPLEX ATTRIBUTE: GradingAssignmentScore/@RefId	RefId
+COMPLEX ATTRIBUTE: Identity/@RefId	RefId
+COMPLEX ATTRIBUTE: LEAInfo/@RefId	RefId
+COMPLEX ATTRIBUTE: LEAInfo/LEAContactList/LEAContact/ContactInfo/Name/@Type	BaseNameType
+COMPLEX ATTRIBUTE: LEAInfo/LEAContactList/LEAContact/ContactInfo/Address/@Type	Address
+COMPLEX ATTRIBUTE: LEAInfo/LEAContactList/LEAContact/ContactInfo/Address/@Role	Address
+COMPLEX ATTRIBUTE: LEAInfo/LEAContactList/LEAContact/ContactInfo/Address/MapReference/@Type	MapReference
+COMPLEX ATTRIBUTE: LEAInfo/LEAContactList/LEAContact/ContactInfo/PhoneNumberList/PhoneNumber/@Type	PhoneNumber
+COMPLEX ATTRIBUTE: LEAInfo/PhoneNumberList/PhoneNumber/@Type	PhoneNumber
+COMPLEX ATTRIBUTE: LEAInfo/AddressList/Address/@Type	Address
+COMPLEX ATTRIBUTE: LEAInfo/AddressList/Address/@Role	Address
+COMPLEX ATTRIBUTE: LEAInfo/AddressList/Address/MapReference/@Type	MapReference
+COMPLEX ATTRIBUTE: LearningResource/@RefId	RefId
+COMPLEX ATTRIBUTE: LearningResource/Contacts/Contact/Name/@Type	BaseNameType
+COMPLEX ATTRIBUTE: LearningResource/Contacts/Contact/Address/@Type	Address
+COMPLEX ATTRIBUTE: LearningResource/Contacts/Contact/Address/@Role	Address
+COMPLEX ATTRIBUTE: LearningResource/Contacts/Contact/Address/MapReference/@Type	MapReference
+COMPLEX ATTRIBUTE: LearningResource/Contacts/Contact/PhoneNumber/@Type	PhoneNumber
+COMPLEX ATTRIBUTE: LearningResource/Evaluations/Evaluation/@RefId	RefId
+COMPLEX ATTRIBUTE: LearningResource/Evaluations/Evaluation/Name/@Type	BaseNameType
+COMPLEX ATTRIBUTE: LearningResourcePackage/@RefId	RefId
+COMPLEX ATTRIBUTE: LearningResourcePackage/Reference/@MIMEType	EMPTY
+COMPLEX ATTRIBUTE: LearningResourcePackage/Reference/@Description	EMPTY
+COMPLEX ATTRIBUTE: LearningStandardDocument/@RefId	RefId
+COMPLEX ATTRIBUTE: LearningStandardDocument/RichDescription/Reference/@MIMEType	EMPTY
+COMPLEX ATTRIBUTE: LearningStandardDocument/RichDescription/Reference/@Description	EMPTY
+COMPLEX ATTRIBUTE: LearningStandardItem/@RefId	RefId
+COMPLEX ATTRIBUTE: MarkValueInfo/@RefId	RefId
+COMPLEX ATTRIBUTE: PersonPicture/@RefId	RefId
+COMPLEX ATTRIBUTE: PersonalisedPlan/@RefId	RefId
+COMPLEX ATTRIBUTE: ReportAuthorityInfo/@RefId	RefId
+COMPLEX ATTRIBUTE: ReportAuthorityInfo/ContactInfo/Name/@Type	BaseNameType
+COMPLEX ATTRIBUTE: ReportAuthorityInfo/ContactInfo/Address/@Type	Address
+COMPLEX ATTRIBUTE: ReportAuthorityInfo/ContactInfo/Address/@Role	Address
+COMPLEX ATTRIBUTE: ReportAuthorityInfo/ContactInfo/Address/MapReference/@Type	MapReference
+COMPLEX ATTRIBUTE: ReportAuthorityInfo/ContactInfo/PhoneNumberList/PhoneNumber/@Type	PhoneNumber
+COMPLEX ATTRIBUTE: ReportAuthorityInfo/Address/@Type	Address
+COMPLEX ATTRIBUTE: ReportAuthorityInfo/Address/@Role	Address
+COMPLEX ATTRIBUTE: ReportAuthorityInfo/Address/MapReference/@Type	MapReference
+COMPLEX ATTRIBUTE: ReportAuthorityInfo/PhoneNumber/@Type	PhoneNumber
+COMPLEX ATTRIBUTE: ResourceBooking/@RefId	RefId
+COMPLEX ATTRIBUTE: ResourceUsage/@RefId	RefId
+COMPLEX ATTRIBUTE: RoomInfo/@RefId	RefId
+COMPLEX ATTRIBUTE: RoomInfo/PhoneNumber/@Type	PhoneNumber
+COMPLEX ATTRIBUTE: ScheduledActivity/@RefId	RefId
+COMPLEX ATTRIBUTE: ScheduledActivity/AddressList/Address/@Type	Address
+COMPLEX ATTRIBUTE: ScheduledActivity/AddressList/Address/@Role	Address
+COMPLEX ATTRIBUTE: ScheduledActivity/AddressList/Address/MapReference/@Type	MapReference
+COMPLEX ATTRIBUTE: SchoolCourseInfo/@RefId	RefId
+COMPLEX ATTRIBUTE: SchoolInfo/@RefId	RefId
+COMPLEX ATTRIBUTE: SchoolInfo/PrincipalInfo/ContactName/@Type	BaseNameType
+COMPLEX ATTRIBUTE: SchoolInfo/PrincipalInfo/PhoneNumberList/PhoneNumber/@Type	PhoneNumber
+COMPLEX ATTRIBUTE: SchoolInfo/SchoolContactList/SchoolContact/ContactInfo/Name/@Type	BaseNameType
+COMPLEX ATTRIBUTE: SchoolInfo/SchoolContactList/SchoolContact/ContactInfo/Address/@Type	Address
+COMPLEX ATTRIBUTE: SchoolInfo/SchoolContactList/SchoolContact/ContactInfo/Address/@Role	Address
+COMPLEX ATTRIBUTE: SchoolInfo/SchoolContactList/SchoolContact/ContactInfo/Address/MapReference/@Type	MapReference
+COMPLEX ATTRIBUTE: SchoolInfo/SchoolContactList/SchoolContact/ContactInfo/PhoneNumberList/PhoneNumber/@Type	PhoneNumber
+COMPLEX ATTRIBUTE: SchoolInfo/AddressList/Address/@Type	Address
+COMPLEX ATTRIBUTE: SchoolInfo/AddressList/Address/@Role	Address
+COMPLEX ATTRIBUTE: SchoolInfo/AddressList/Address/MapReference/@Type	MapReference
+COMPLEX ATTRIBUTE: SchoolInfo/PhoneNumberList/PhoneNumber/@Type	PhoneNumber
+COMPLEX ATTRIBUTE: SchoolPrograms/@RefId	RefId
+COMPLEX ATTRIBUTE: SectionInfo/@RefId	RefId
+COMPLEX ATTRIBUTE: SectionInfo/SchoolCourseInfoOverride/@Override	[{:attr=>[{:attr=>"Override", :type=>"string"}]}, {:elem=>"CourseCode", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"StateCourseCode", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"DistrictCourseCode", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"SubjectArea", :type=>"SubjectAreaType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"CourseTitle", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"InstructionalLevel", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"CourseCredits", :type=>"string", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: SessionInfo/@RefId	RefId
+COMPLEX ATTRIBUTE: StaffAssignment/@RefId	RefId
+COMPLEX ATTRIBUTE: StaffPersonal/@RefId	RefId
+COMPLEX ATTRIBUTE: StaffPersonal/PersonInfo/Name/@Type	BaseNameType
+COMPLEX ATTRIBUTE: StaffPersonal/PersonInfo/OtherNames/Name/@Type	BaseNameType
+COMPLEX ATTRIBUTE: StaffPersonal/PersonInfo/AddressList/Address/@Type	Address
+COMPLEX ATTRIBUTE: StaffPersonal/PersonInfo/AddressList/Address/@Role	Address
+COMPLEX ATTRIBUTE: StaffPersonal/PersonInfo/AddressList/Address/MapReference/@Type	MapReference
+COMPLEX ATTRIBUTE: StaffPersonal/PersonInfo/PhoneNumberList/PhoneNumber/@Type	PhoneNumber
+COMPLEX ATTRIBUTE: StaffPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/AddressList/Address/@Type	Address
+COMPLEX ATTRIBUTE: StaffPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/AddressList/Address/@Role	Address
+COMPLEX ATTRIBUTE: StaffPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/AddressList/Address/MapReference/@Type	MapReference
+COMPLEX ATTRIBUTE: StaffPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/PhoneNumberList/PhoneNumber/@Type	PhoneNumber
+COMPLEX ATTRIBUTE: StudentActivityInfo/@RefId	RefId
+COMPLEX ATTRIBUTE: StudentActivityInfo/Location/@Type	[{:attr=>[{:attr=>"Type", :type=>"string"}]}, {:elem=>"LocationName", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"LocationRefId", :type=>"string", :attr=>[{:attr=>"SIF_RefObject", :type=>"string"}], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: StudentActivityParticipation/@RefId	RefId
+COMPLEX ATTRIBUTE: StudentAttendanceSummary/@StudentAttendanceSummaryRefId	[{:attr=>[{:attr=>"StudentAttendanceSummaryRefId", :type=>"string"}]}, {:elem=>"StudentPersonalRefId", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"SchoolInfoRefId", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"SchoolYear", :type=>"SchoolYearType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"StartDate", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"EndDate", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"StartDay", :type=>"number", :attr=>[], :elems=>[], :list=>false}, {:elem=>"EndDay", :type=>"number", :attr=>[], :elems=>[], :list=>false}, {:elem=>"FTE", :type=>"number", :attr=>[], :elems=>[], :list=>false}, {:elem=>"DaysAttended", :type=>"number", :attr=>[], :elems=>[], :list=>false}, {:elem=>"ExcusedAbsences", :type=>"number", :attr=>[], :elems=>[], :list=>false}, {:elem=>"UnexcusedAbsences", :type=>"number", :attr=>[], :elems=>[], :list=>false}, {:elem=>"DaysTardy", :type=>"number", :attr=>[], :elems=>[], :list=>false}, {:elem=>"DaysInMembership", :type=>"number", :attr=>[], :elems=>[], :list=>false}, {:elem=>"SIF_Metadata", :type=>"SIF_MetadataType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"SIF_ExtendedElements", :type=>"SIF_ExtendedElementsType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: StudentAttendanceTimeList/@RefId	RefId
+COMPLEX ATTRIBUTE: StudentContactPersonal/@RefId	RefId
+COMPLEX ATTRIBUTE: StudentContactPersonal/PersonInfo/Name/@Type	BaseNameType
+COMPLEX ATTRIBUTE: StudentContactPersonal/PersonInfo/OtherNames/Name/@Type	BaseNameType
+COMPLEX ATTRIBUTE: StudentContactPersonal/PersonInfo/AddressList/Address/@Type	Address
+COMPLEX ATTRIBUTE: StudentContactPersonal/PersonInfo/AddressList/Address/@Role	Address
+COMPLEX ATTRIBUTE: StudentContactPersonal/PersonInfo/AddressList/Address/MapReference/@Type	MapReference
+COMPLEX ATTRIBUTE: StudentContactPersonal/PersonInfo/PhoneNumberList/PhoneNumber/@Type	PhoneNumber
+COMPLEX ATTRIBUTE: StudentContactPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/AddressList/Address/@Type	Address
+COMPLEX ATTRIBUTE: StudentContactPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/AddressList/Address/@Role	Address
+COMPLEX ATTRIBUTE: StudentContactPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/AddressList/Address/MapReference/@Type	MapReference
+COMPLEX ATTRIBUTE: StudentContactPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/PhoneNumberList/PhoneNumber/@Type	PhoneNumber
+COMPLEX ATTRIBUTE: StudentContactRelationship/@StudentContactRelationshipRefId	[{:attr=>[{:attr=>"StudentContactRelationshipRefId", :type=>"string"}]}, {:elem=>"StudentPersonalRefId", :type=>"RefIdType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"StudentContactPersonalRefId", :type=>"RefIdType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"Relationship", :type=>"RelationshipType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"ParentRelationshipStatus", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"HouseholdList", :type=>"HouseholdListType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"ContactFlags", :type=>"ContactFlagsType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"MainlySpeaksEnglishAtHome", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"ContactSequence", :type=>"number", :attr=>[], :elems=>[], :list=>false}, {:elem=>"ContactSequenceSource", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"SchoolInfoRefId", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"SIF_Metadata", :type=>"SIF_MetadataType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"SIF_ExtendedElements", :type=>"SIF_ExtendedElementsType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: StudentDailyAttendance/@RefId	RefId
+COMPLEX ATTRIBUTE: StudentGrade/@RefId	RefId
+COMPLEX ATTRIBUTE: StudentParticipation/@RefId	RefId
+COMPLEX ATTRIBUTE: StudentPeriodAttendance/@RefId	RefId
+COMPLEX ATTRIBUTE: StudentPeriodAttendance/AuditInfo/CreationUser/@Type	[{:attr=>[{:attr=>"Type", :type=>"string"}]}, {:elem=>"UserId", :type=>"string", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: StudentPersonal/@RefId	RefId
+COMPLEX ATTRIBUTE: StudentPersonal/PersonInfo/Name/@Type	BaseNameType
+COMPLEX ATTRIBUTE: StudentPersonal/PersonInfo/OtherNames/Name/@Type	BaseNameType
+COMPLEX ATTRIBUTE: StudentPersonal/PersonInfo/AddressList/Address/@Type	Address
+COMPLEX ATTRIBUTE: StudentPersonal/PersonInfo/AddressList/Address/@Role	Address
+COMPLEX ATTRIBUTE: StudentPersonal/PersonInfo/AddressList/Address/MapReference/@Type	MapReference
+COMPLEX ATTRIBUTE: StudentPersonal/PersonInfo/PhoneNumberList/PhoneNumber/@Type	PhoneNumber
+COMPLEX ATTRIBUTE: StudentPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/AddressList/Address/@Type	Address
+COMPLEX ATTRIBUTE: StudentPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/AddressList/Address/@Role	Address
+COMPLEX ATTRIBUTE: StudentPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/AddressList/Address/MapReference/@Type	MapReference
+COMPLEX ATTRIBUTE: StudentPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/PhoneNumberList/PhoneNumber/@Type	PhoneNumber
+COMPLEX ATTRIBUTE: StudentSchoolEnrollment/@RefId	RefId
+COMPLEX ATTRIBUTE: StudentSectionEnrollment/@RefId	RefId
+COMPLEX ATTRIBUTE: SystemRole/@RefId	RefId
+COMPLEX ATTRIBUTE: SystemRole/SystemContextList/SystemContext/@SystemId	EMPTY
+COMPLEX ATTRIBUTE: SystemRole/SystemContextList/SystemContext/RoleList/Role/@RoleId	EMPTY
+COMPLEX ATTRIBUTE: TeachingGroup/@RefId	RefId
+COMPLEX ATTRIBUTE: TeachingGroup/StudentList/TeachingGroupStudent/Name/@Type	BaseNameType
+COMPLEX ATTRIBUTE: TeachingGroup/TeacherList/TeachingGroupTeacher/Name/@Type	BaseNameType
+COMPLEX ATTRIBUTE: TermInfo/@RefId	RefId
+COMPLEX ATTRIBUTE: TimeTable/@RefId	RefId
+COMPLEX ATTRIBUTE: TimeTableCell/@RefId	RefId
+COMPLEX ATTRIBUTE: TimeTableSubject/@RefId	RefId
+COMPLEX ATTRIBUTE: WellbeingAlert/@RefId	RefId
+COMPLEX ATTRIBUTE: WellbeingAppeal/@RefId	RefId
+COMPLEX ATTRIBUTE: WellbeingCharacteristic/@RefId	RefId
+COMPLEX ATTRIBUTE: WellbeingEvent/@RefId	RefId
+COMPLEX ATTRIBUTE: WellbeingResponse/@RefId	RefId
+COMPLEX ATTRIBUTE: ChargedLocationInfo/@RefId	RefId
+COMPLEX ATTRIBUTE: ChargedLocationInfo/AddressList/Address/@Type	Address
+COMPLEX ATTRIBUTE: ChargedLocationInfo/AddressList/Address/@Role	Address
+COMPLEX ATTRIBUTE: ChargedLocationInfo/AddressList/Address/MapReference/@Type	MapReference
+COMPLEX ATTRIBUTE: ChargedLocationInfo/PhoneNumberList/PhoneNumber/@Type	PhoneNumber
+COMPLEX ATTRIBUTE: Debtor/@RefId	RefId
+COMPLEX ATTRIBUTE: Debtor/AddressList/Address/@Type	Address
+COMPLEX ATTRIBUTE: Debtor/AddressList/Address/@Role	Address
+COMPLEX ATTRIBUTE: Debtor/AddressList/Address/MapReference/@Type	MapReference
+COMPLEX ATTRIBUTE: FinancialAccount/@RefId	RefId
+COMPLEX ATTRIBUTE: Invoice/@RefId	RefId
+COMPLEX ATTRIBUTE: Journal/@RefId	RefId
+COMPLEX ATTRIBUTE: NAPCodeFrame/@RefId	RefId
+COMPLEX ATTRIBUTE: NAPEventStudentLink/@RefId	RefId
+COMPLEX ATTRIBUTE: NAPStudentResponseSet/@RefId	RefId
+COMPLEX ATTRIBUTE: NAPTest/@RefId	RefId
+COMPLEX ATTRIBUTE: NAPTestItem/@RefId	RefId
+COMPLEX ATTRIBUTE: NAPTestScoreSummary/@RefId	RefId
+COMPLEX ATTRIBUTE: NAPTestlet/@RefId	RefId
+COMPLEX ATTRIBUTE: PaymentReceipt/@RefId	RefId
+COMPLEX ATTRIBUTE: PurchaseOrder/@RefId	RefId
+COMPLEX ATTRIBUTE: VendorInfo/@RefId	RefId
+COMPLEX ATTRIBUTE: VendorInfo/ContactInfo/Name/@Type	BaseNameType
+COMPLEX ATTRIBUTE: VendorInfo/ContactInfo/Address/@Type	Address
+COMPLEX ATTRIBUTE: VendorInfo/ContactInfo/Address/@Role	Address
+COMPLEX ATTRIBUTE: VendorInfo/ContactInfo/Address/MapReference/@Type	MapReference
+COMPLEX ATTRIBUTE: VendorInfo/ContactInfo/PhoneNumberList/PhoneNumber/@Type	PhoneNumber
+SIMPLE ATTRIBUTE: Activity/SubjectArea/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: Activity/SourceObjects/SourceObject	string
+SIMPLE ATTRIBUTE: Activity/ActivityTime/Duration	number
+SIMPLE ATTRIBUTE: Activity/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: AggregateCharacteristicInfo/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: AggregateStatisticFact/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: AggregateStatisticInfo/CalculationRule	string
+SIMPLE ATTRIBUTE: AggregateStatisticInfo/ExclusionRules/ExclusionRule	string
+SIMPLE ATTRIBUTE: AggregateStatisticInfo/Location/LocationRefId	string
+SIMPLE ATTRIBUTE: AggregateStatisticInfo/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: CalendarDate/CalendarDateType/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: CalendarDate/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: CalendarSummary/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: EquipmentInfo/SIF_RefId	string
+SIMPLE ATTRIBUTE: EquipmentInfo/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: GradingAssignment/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: GradingAssignmentScore/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: Identity/SIF_RefId	string
+SIMPLE ATTRIBUTE: Identity/IdentityAssertions/IdentityAssertion	string
+SIMPLE ATTRIBUTE: Identity/PasswordList/Password	string
+SIMPLE ATTRIBUTE: Identity/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: LEAInfo/EducationAgencyType/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: LEAInfo/LEAContactList/LEAContact/ContactInfo/Address/StatisticalAreas/StatisticalArea	string
+SIMPLE ATTRIBUTE: LEAInfo/LEAContactList/LEAContact/ContactInfo/EmailList/Email	string
+SIMPLE ATTRIBUTE: LEAInfo/AddressList/Address/StatisticalAreas/StatisticalArea	string
+SIMPLE ATTRIBUTE: LEAInfo/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: LearningResource/Contacts/Contact/Address/StatisticalAreas/StatisticalArea	string
+SIMPLE ATTRIBUTE: LearningResource/Contacts/Contact/Email	string
+SIMPLE ATTRIBUTE: LearningResource/Location	string
+SIMPLE ATTRIBUTE: LearningResource/SubjectAreas/ACStrandSubjectArea/SubjectArea/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: LearningResource/Components/Component/AssociatedObjects/AssociatedObject	string
+SIMPLE ATTRIBUTE: LearningResource/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: LearningResourcePackage/XMLData	string
+SIMPLE ATTRIBUTE: LearningResourcePackage/TextData	string
+SIMPLE ATTRIBUTE: LearningResourcePackage/BinaryData	string
+SIMPLE ATTRIBUTE: LearningStandardDocument/RichDescription/XMLData	string
+SIMPLE ATTRIBUTE: LearningStandardDocument/RichDescription/TextData	string
+SIMPLE ATTRIBUTE: LearningStandardDocument/RichDescription/BinaryData	string
+SIMPLE ATTRIBUTE: LearningStandardDocument/SubjectAreas/ACStrandSubjectArea/SubjectArea/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: LearningStandardDocument/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: LearningStandardItem/Resources/LearningResourceRefId	string
+SIMPLE ATTRIBUTE: LearningStandardItem/ACStrandSubjectArea/SubjectArea/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: LearningStandardItem/StandardIdentifier/ACStrandSubjectArea/SubjectArea/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: LearningStandardItem/RelatedLearningStandardItems/LearningStandardItemRefId	string
+SIMPLE ATTRIBUTE: LearningStandardItem/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: MarkValueInfo/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: PersonPicture/ParentObjectRefId	string
+SIMPLE ATTRIBUTE: PersonPicture/PictureSource	URIOrBinaryType
+SIMPLE ATTRIBUTE: PersonPicture/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: PersonalisedPlan/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: ReportAuthorityInfo/ContactInfo/Address/StatisticalAreas/StatisticalArea	string
+SIMPLE ATTRIBUTE: ReportAuthorityInfo/ContactInfo/EmailList/Email	string
+SIMPLE ATTRIBUTE: ReportAuthorityInfo/Address/StatisticalAreas/StatisticalArea	string
+SIMPLE ATTRIBUTE: ReportAuthorityInfo/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: ResourceBooking/ResourceRefId	string
+SIMPLE ATTRIBUTE: ResourceBooking/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: ResourceUsage/ResourceReportLineList/ResourceReportLine/SIF_RefId	string
+SIMPLE ATTRIBUTE: ResourceUsage/ResourceReportLineList/ResourceReportLine/CurrentCost	number
+SIMPLE ATTRIBUTE: ResourceUsage/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: RoomInfo/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: ScheduledActivity/AddressList/Address/StatisticalAreas/StatisticalArea	string
+SIMPLE ATTRIBUTE: ScheduledActivity/Override	string
+SIMPLE ATTRIBUTE: ScheduledActivity/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: SchoolCourseInfo/SubjectAreaList/SubjectArea/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: SchoolCourseInfo/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: SchoolInfo/OtherIdList/OtherId	string
+SIMPLE ATTRIBUTE: SchoolInfo/OtherLEA	RefIdType
+SIMPLE ATTRIBUTE: SchoolInfo/SchoolEmailList/Email	string
+SIMPLE ATTRIBUTE: SchoolInfo/PrincipalInfo/EmailList/Email	string
+SIMPLE ATTRIBUTE: SchoolInfo/SchoolContactList/SchoolContact/ContactInfo/Address/StatisticalAreas/StatisticalArea	string
+SIMPLE ATTRIBUTE: SchoolInfo/SchoolContactList/SchoolContact/ContactInfo/EmailList/Email	string
+SIMPLE ATTRIBUTE: SchoolInfo/AddressList/Address/StatisticalAreas/StatisticalArea	string
+SIMPLE ATTRIBUTE: SchoolInfo/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: SchoolPrograms/SchoolProgramList/Program/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: SchoolPrograms/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: SectionInfo/MediumOfInstruction/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: SectionInfo/LanguageOfInstruction/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: SectionInfo/LocationOfInstruction/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: SectionInfo/SchoolCourseInfoOverride/SubjectArea/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: SectionInfo/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: SessionInfo/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: StaffAssignment/StaffActivity/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StaffAssignment/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: StaffPersonal/ElectronicIdList/ElectronicId	string
+SIMPLE ATTRIBUTE: StaffPersonal/OtherIdList/OtherId	string
+SIMPLE ATTRIBUTE: StaffPersonal/PersonInfo/Demographics/EnglishProficiency/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StaffPersonal/PersonInfo/Demographics/LanguageList/Language/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StaffPersonal/PersonInfo/Demographics/DwellingArrangement/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StaffPersonal/PersonInfo/Demographics/Religion/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StaffPersonal/PersonInfo/AddressList/Address/StatisticalAreas/StatisticalArea	string
+SIMPLE ATTRIBUTE: StaffPersonal/PersonInfo/EmailList/Email	string
+SIMPLE ATTRIBUTE: StaffPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/AddressList/Address/StatisticalAreas/StatisticalArea	string
+SIMPLE ATTRIBUTE: StaffPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/EmailList/Email	string
+SIMPLE ATTRIBUTE: StaffPersonal/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: StudentActivityInfo/StudentActivityType/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentActivityInfo/Location/LocationRefId	string
+SIMPLE ATTRIBUTE: StudentActivityInfo/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: StudentActivityParticipation/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: StudentAttendanceSummary/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: StudentAttendanceTimeList/AttendanceTimes/AttendanceTime/AttendanceCode/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentAttendanceTimeList/PeriodAttendances/PeriodAttendance/AttendanceCode/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentAttendanceTimeList/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: StudentContactPersonal/OtherIdList/OtherId	string
+SIMPLE ATTRIBUTE: StudentContactPersonal/PersonInfo/Demographics/EnglishProficiency/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentContactPersonal/PersonInfo/Demographics/LanguageList/Language/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentContactPersonal/PersonInfo/Demographics/DwellingArrangement/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentContactPersonal/PersonInfo/Demographics/Religion/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentContactPersonal/PersonInfo/AddressList/Address/StatisticalAreas/StatisticalArea	string
+SIMPLE ATTRIBUTE: StudentContactPersonal/PersonInfo/EmailList/Email	string
+SIMPLE ATTRIBUTE: StudentContactPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/AddressList/Address/StatisticalAreas/StatisticalArea	string
+SIMPLE ATTRIBUTE: StudentContactPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/EmailList/Email	string
+SIMPLE ATTRIBUTE: StudentContactPersonal/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: StudentContactRelationship/Relationship/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentContactRelationship/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: StudentDailyAttendance/AttendanceCode/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentDailyAttendance/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: StudentGrade/LearningArea/SubjectArea/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentGrade/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: StudentParticipation/ProgramFundingSources/ProgramFundingSource/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentParticipation/ManagingSchool	string
+SIMPLE ATTRIBUTE: StudentParticipation/ReferralSource/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentParticipation/ProgramStatus/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentParticipation/ProgramAvailability/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentParticipation/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: StudentPeriodAttendance/AttendanceCode/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentPeriodAttendance/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: StudentPersonal/AlertMessages/AlertMessage	string
+SIMPLE ATTRIBUTE: StudentPersonal/MedicalAlertMessages/MedicalAlertMessage	string
+SIMPLE ATTRIBUTE: StudentPersonal/ElectronicIdList/ElectronicId	string
+SIMPLE ATTRIBUTE: StudentPersonal/OtherIdList/OtherId	string
+SIMPLE ATTRIBUTE: StudentPersonal/PersonInfo/Demographics/EnglishProficiency/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentPersonal/PersonInfo/Demographics/LanguageList/Language/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentPersonal/PersonInfo/Demographics/DwellingArrangement/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentPersonal/PersonInfo/Demographics/Religion/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentPersonal/PersonInfo/AddressList/Address/StatisticalAreas/StatisticalArea	string
+SIMPLE ATTRIBUTE: StudentPersonal/PersonInfo/EmailList/Email	string
+SIMPLE ATTRIBUTE: StudentPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/AddressList/Address/StatisticalAreas/StatisticalArea	string
+SIMPLE ATTRIBUTE: StudentPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/EmailList/Email	string
+SIMPLE ATTRIBUTE: StudentPersonal/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: StudentSchoolEnrollment/EntryType/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentSchoolEnrollment/Homeroom	string
+SIMPLE ATTRIBUTE: StudentSchoolEnrollment/Advisor	string
+SIMPLE ATTRIBUTE: StudentSchoolEnrollment/Counselor	string
+SIMPLE ATTRIBUTE: StudentSchoolEnrollment/Calendar	string
+SIMPLE ATTRIBUTE: StudentSchoolEnrollment/ExitStatus/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentSchoolEnrollment/ExitType/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentSchoolEnrollment/CatchmentStatus/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentSchoolEnrollment/StudentSubjectChoiceList/StudentSubjectChoice/StudyDescription/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: StudentSchoolEnrollment/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: StudentSectionEnrollment/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: SystemRole/SIF_RefId	string
+SIMPLE ATTRIBUTE: SystemRole/SystemContextList/SystemContext/RoleList/Role/RoleScopeList/RoleScope/RoleScopeRefId	string
+SIMPLE ATTRIBUTE: SystemRole/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: TeachingGroup/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: TermInfo/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: TimeTable/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: TimeTableCell/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: TimeTableSubject/OtherCodeList/OtherCode	string
+SIMPLE ATTRIBUTE: TimeTableSubject/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: WellbeingAlert/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: WellbeingAppeal/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: WellbeingCharacteristic/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: WellbeingEvent/PersonInvolvementList/PersonInvolvement/PersonRefId	string
+SIMPLE ATTRIBUTE: WellbeingEvent/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: WellbeingResponse/PersonInvolvementList/PersonInvolvement/PersonRefId	string
+SIMPLE ATTRIBUTE: WellbeingResponse/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: ChargedLocationInfo/AddressList/Address/StatisticalAreas/StatisticalArea	string
+SIMPLE ATTRIBUTE: ChargedLocationInfo/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: Debtor/BilledEntity	string
+SIMPLE ATTRIBUTE: Debtor/AddressList/Address/StatisticalAreas/StatisticalArea	string
+SIMPLE ATTRIBUTE: Debtor/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: FinancialAccount/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: Invoice/InvoicedEntity	string
+SIMPLE ATTRIBUTE: Invoice/BilledAmount	MonetaryAmountType
+SIMPLE ATTRIBUTE: Invoice/BilledAmount	number
+SIMPLE ATTRIBUTE: Invoice/NetAmount	number
+SIMPLE ATTRIBUTE: Invoice/TaxAmount	number
+SIMPLE ATTRIBUTE: Invoice/PurchasingItems/PurchasingItem/UnitCost	number
+SIMPLE ATTRIBUTE: Invoice/PurchasingItems/PurchasingItem/TotalCost	number
+SIMPLE ATTRIBUTE: Invoice/PurchasingItems/PurchasingItem/ExpenseAccounts/ExpenseAccount/Amount	number
+SIMPLE ATTRIBUTE: Invoice/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: Journal/OriginatingTransactionRefId	string
+SIMPLE ATTRIBUTE: Journal/Amount	number
+SIMPLE ATTRIBUTE: Journal/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: NAPCodeFrame/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: NAPEventStudentLink/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: NAPStudentResponseSet/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: NAPTest/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: NAPTestItem/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: NAPTestScoreSummary/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: NAPTestlet/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: PaymentReceipt/TransactionAmount	MonetaryAmountType
+SIMPLE ATTRIBUTE: PaymentReceipt/TransactionAmount	number
+SIMPLE ATTRIBUTE: PaymentReceipt/TaxAmount	number
+SIMPLE ATTRIBUTE: PaymentReceipt/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: PurchaseOrder/PurchasingItems/PurchasingItem/UnitCost	number
+SIMPLE ATTRIBUTE: PurchaseOrder/PurchasingItems/PurchasingItem/TotalCost	number
+SIMPLE ATTRIBUTE: PurchaseOrder/PurchasingItems/PurchasingItem/ExpenseAccounts/ExpenseAccount/Amount	number
+SIMPLE ATTRIBUTE: PurchaseOrder/TaxAmount	number
+SIMPLE ATTRIBUTE: PurchaseOrder/TotalAmount	number
+SIMPLE ATTRIBUTE: PurchaseOrder/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: VendorInfo/ContactInfo/Address/StatisticalAreas/StatisticalArea	string
+SIMPLE ATTRIBUTE: VendorInfo/ContactInfo/EmailList/Email	string
+SIMPLE ATTRIBUTE: VendorInfo/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+LIST: Activity/SoftwareRequirementList/SoftwareRequirement
+LIST: Activity/EssentialMaterials/EssentialMaterial
+LIST: Activity/LearningObjectives/LearningObjective
+LIST: Activity/LearningStandards/LearningStandardItemRefId
+LIST: Activity/SubjectArea/OtherCodeList/OtherCode
+LIST: Activity/Prerequisites/Prerequisite
+LIST: Activity/Students/StudentPersonalRefId
+LIST: Activity/SourceObjects/SourceObject
+LIST: Activity/LearningResources/LearningResourceRefId
+LIST: Activity/SIF_Metadata/TimeElements/TimeElement
+LIST: Activity/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: Activity/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: Activity/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: Activity/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: Activity/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: AggregateCharacteristicInfo/SIF_Metadata/TimeElements/TimeElement
+LIST: AggregateCharacteristicInfo/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: AggregateCharacteristicInfo/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: AggregateCharacteristicInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: AggregateCharacteristicInfo/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: AggregateCharacteristicInfo/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: AggregateStatisticFact/Characteristics/AggregateCharacteristicInfoRefId
+LIST: AggregateStatisticFact/SIF_Metadata/TimeElements/TimeElement
+LIST: AggregateStatisticFact/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: AggregateStatisticFact/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: AggregateStatisticFact/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: AggregateStatisticFact/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: AggregateStatisticFact/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: AggregateStatisticInfo/ExclusionRules/ExclusionRule
+LIST: AggregateStatisticInfo/SIF_Metadata/TimeElements/TimeElement
+LIST: AggregateStatisticInfo/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: AggregateStatisticInfo/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: AggregateStatisticInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: AggregateStatisticInfo/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: AggregateStatisticInfo/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: CalendarDate/CalendarDateType/OtherCodeList/OtherCode
+LIST: CalendarDate/SIF_Metadata/TimeElements/TimeElement
+LIST: CalendarDate/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: CalendarDate/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: CalendarDate/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: CalendarDate/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: CalendarDate/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: CalendarSummary/YearLevels/YearLevel
+LIST: CalendarSummary/SIF_Metadata/TimeElements/TimeElement
+LIST: CalendarSummary/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: CalendarSummary/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: CalendarSummary/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: CalendarSummary/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: CalendarSummary/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: EquipmentInfo/SIF_Metadata/TimeElements/TimeElement
+LIST: EquipmentInfo/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: EquipmentInfo/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: EquipmentInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: EquipmentInfo/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: EquipmentInfo/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: GradingAssignment/StudentPersonalRefIdList/StudentPersonalRefId
+LIST: GradingAssignment/SubAssignmentList/GradingAssignmentRefId
+LIST: GradingAssignment/RubricScoringGuide/ScoreList/Score
+LIST: GradingAssignment/PrerequisiteList/Prerequisite
+LIST: GradingAssignment/LearningStandardList/LearningStandard
+LIST: GradingAssignment/SIF_Metadata/TimeElements/TimeElement
+LIST: GradingAssignment/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: GradingAssignment/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: GradingAssignment/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: GradingAssignment/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: GradingAssignment/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: GradingAssignmentScore/SubscoreList/Subscore
+LIST: GradingAssignmentScore/SIF_Metadata/TimeElements/TimeElement
+LIST: GradingAssignmentScore/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: GradingAssignmentScore/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: GradingAssignmentScore/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: GradingAssignmentScore/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: GradingAssignmentScore/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: Identity/IdentityAssertions/IdentityAssertion
+LIST: Identity/PasswordList/Password
+LIST: Identity/SIF_Metadata/TimeElements/TimeElement
+LIST: Identity/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: Identity/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: Identity/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: Identity/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: Identity/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: LEAInfo/EducationAgencyType/OtherCodeList/OtherCode
+LIST: LEAInfo/LEAContactList/LEAContact
+LIST: LEAInfo/PhoneNumberList/PhoneNumber
+LIST: LEAInfo/AddressList/Address
+LIST: LEAInfo/SIF_Metadata/TimeElements/TimeElement
+LIST: LEAInfo/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: LEAInfo/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: LEAInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: LEAInfo/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: LEAInfo/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: LearningResource/Contacts/Contact
+LIST: LearningResource/YearLevels/YearLevel
+LIST: LearningResource/SubjectAreas/ACStrandSubjectArea
+LIST: LearningResource/MediaTypes/MediaType
+LIST: LearningResource/Approvals/Approval
+LIST: LearningResource/Evaluations/Evaluation
+LIST: LearningResource/Components/Component
+LIST: LearningResource/LearningStandards/LearningStandardItemRefId
+LIST: LearningResource/SIF_Metadata/TimeElements/TimeElement
+LIST: LearningResource/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: LearningResource/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: LearningResource/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: LearningResource/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: LearningResource/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: LearningStandardDocument/Organizations/Organization
+LIST: LearningStandardDocument/Authors/Author
+LIST: LearningStandardDocument/SubjectAreas/ACStrandSubjectArea
+LIST: LearningStandardDocument/YearLevels/YearLevel
+LIST: LearningStandardDocument/RelatedLearningStandards/LearningStandardDocumentRefId
+LIST: LearningStandardDocument/SIF_Metadata/TimeElements/TimeElement
+LIST: LearningStandardDocument/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: LearningStandardDocument/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: LearningStandardDocument/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: LearningStandardDocument/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: LearningStandardDocument/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: LearningStandardItem/Resources/LearningResourceRefId
+LIST: LearningStandardItem/PredecessorItems/LearningStandardItemRefId
+LIST: LearningStandardItem/StatementCodes/StatementCode
+LIST: LearningStandardItem/Statements/Statement
+LIST: LearningStandardItem/YearLevels/YearLevel
+LIST: LearningStandardItem/ACStrandSubjectArea/SubjectArea/OtherCodeList/OtherCode
+LIST: LearningStandardItem/StandardIdentifier/ACStrandSubjectArea/SubjectArea/OtherCodeList/OtherCode
+LIST: LearningStandardItem/StandardIdentifier/YearLevels/YearLevel
+LIST: LearningStandardItem/StandardIdentifier/AlternateIdentificationCodes/AlternateIdentificationCode
+LIST: LearningStandardItem/RelatedLearningStandardItems/LearningStandardItemRefId
+LIST: LearningStandardItem/SIF_Metadata/TimeElements/TimeElement
+LIST: LearningStandardItem/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: LearningStandardItem/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: LearningStandardItem/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: LearningStandardItem/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: LearningStandardItem/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: MarkValueInfo/YearLevels/YearLevel
+LIST: MarkValueInfo/ValidLetterMarkList/ValidLetterMark
+LIST: MarkValueInfo/SIF_Metadata/TimeElements/TimeElement
+LIST: MarkValueInfo/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: MarkValueInfo/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: MarkValueInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: MarkValueInfo/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: MarkValueInfo/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: PersonPicture/SIF_Metadata/TimeElements/TimeElement
+LIST: PersonPicture/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: PersonPicture/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: PersonPicture/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: PersonPicture/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: PersonPicture/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: PersonalisedPlan/DocumentList/Document
+LIST: PersonalisedPlan/SIF_Metadata/TimeElements/TimeElement
+LIST: PersonalisedPlan/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: PersonalisedPlan/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: PersonalisedPlan/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: PersonalisedPlan/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: PersonalisedPlan/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: ReportAuthorityInfo/ContactInfo/Address/StatisticalAreas/StatisticalArea
+LIST: ReportAuthorityInfo/ContactInfo/EmailList/Email
+LIST: ReportAuthorityInfo/ContactInfo/PhoneNumberList/PhoneNumber
+LIST: ReportAuthorityInfo/Address/StatisticalAreas/StatisticalArea
+LIST: ReportAuthorityInfo/SIF_Metadata/TimeElements/TimeElement
+LIST: ReportAuthorityInfo/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: ReportAuthorityInfo/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: ReportAuthorityInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: ReportAuthorityInfo/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: ReportAuthorityInfo/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: ResourceBooking/SIF_Metadata/TimeElements/TimeElement
+LIST: ResourceBooking/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: ResourceBooking/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: ResourceBooking/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: ResourceBooking/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: ResourceBooking/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: ResourceUsage/ResourceReportColumnList/ResourceReportColumn
+LIST: ResourceUsage/ResourceReportLineList/ResourceReportLine
+LIST: ResourceUsage/SIF_Metadata/TimeElements/TimeElement
+LIST: ResourceUsage/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: ResourceUsage/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: ResourceUsage/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: ResourceUsage/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: ResourceUsage/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: RoomInfo/StaffList/StaffPersonalRefId
+LIST: RoomInfo/SIF_Metadata/TimeElements/TimeElement
+LIST: RoomInfo/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: RoomInfo/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: RoomInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: RoomInfo/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: RoomInfo/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: ScheduledActivity/TeacherList/TeacherCover
+LIST: ScheduledActivity/RoomList/RoomInfoRefId
+LIST: ScheduledActivity/AddressList/Address
+LIST: ScheduledActivity/StudentList/StudentPersonalRefId
+LIST: ScheduledActivity/TeachingGroupList/TeachingGroupRefId
+LIST: ScheduledActivity/YearLevels/YearLevel
+LIST: ScheduledActivity/SIF_Metadata/TimeElements/TimeElement
+LIST: ScheduledActivity/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: ScheduledActivity/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: ScheduledActivity/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: ScheduledActivity/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: ScheduledActivity/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: SchoolCourseInfo/SubjectAreaList/SubjectArea
+LIST: SchoolCourseInfo/SIF_Metadata/TimeElements/TimeElement
+LIST: SchoolCourseInfo/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: SchoolCourseInfo/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: SchoolCourseInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: SchoolCourseInfo/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: SchoolCourseInfo/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: SchoolInfo/OtherIdList/OtherId
+LIST: SchoolInfo/SchoolFocusList/SchoolFocus
+LIST: SchoolInfo/SchoolEmailList/Email
+LIST: SchoolInfo/PrincipalInfo/PhoneNumberList/PhoneNumber
+LIST: SchoolInfo/PrincipalInfo/EmailList/Email
+LIST: SchoolInfo/SchoolContactList/SchoolContact
+LIST: SchoolInfo/AddressList/Address
+LIST: SchoolInfo/PhoneNumberList/PhoneNumber
+LIST: SchoolInfo/YearLevels/YearLevel
+LIST: SchoolInfo/YearLevelEnrollmentList/YearLevelEnrollment
+LIST: SchoolInfo/SchoolGroupList/SchoolGroup
+LIST: SchoolInfo/SIF_Metadata/TimeElements/TimeElement
+LIST: SchoolInfo/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: SchoolInfo/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: SchoolInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: SchoolInfo/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: SchoolInfo/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: SchoolPrograms/SchoolProgramList/Program
+LIST: SchoolPrograms/SIF_Metadata/TimeElements/TimeElement
+LIST: SchoolPrograms/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: SchoolPrograms/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: SchoolPrograms/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: SchoolPrograms/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: SchoolPrograms/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: SectionInfo/MediumOfInstruction/OtherCodeList/OtherCode
+LIST: SectionInfo/LanguageOfInstruction/OtherCodeList/OtherCode
+LIST: SectionInfo/LocationOfInstruction/OtherCodeList/OtherCode
+LIST: SectionInfo/SchoolCourseInfoOverride/SubjectArea/OtherCodeList/OtherCode
+LIST: SectionInfo/SIF_Metadata/TimeElements/TimeElement
+LIST: SectionInfo/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: SectionInfo/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: SectionInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: SectionInfo/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: SectionInfo/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: SessionInfo/SIF_Metadata/TimeElements/TimeElement
+LIST: SessionInfo/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: SessionInfo/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: SessionInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: SessionInfo/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: SessionInfo/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: StaffAssignment/StaffSubjectList/StaffSubject
+LIST: StaffAssignment/StaffActivity/OtherCodeList/OtherCode
+LIST: StaffAssignment/YearLevels/YearLevel
+LIST: StaffAssignment/CalendarSummaryList/CalendarSummaryRefId
+LIST: StaffAssignment/SIF_Metadata/TimeElements/TimeElement
+LIST: StaffAssignment/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: StaffAssignment/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: StaffAssignment/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: StaffAssignment/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: StaffAssignment/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: StaffPersonal/ElectronicIdList/ElectronicId
+LIST: StaffPersonal/OtherIdList/OtherId
+LIST: StaffPersonal/PersonInfo/OtherNames/Name
+LIST: StaffPersonal/PersonInfo/Demographics/CountriesOfCitizenship/CountryOfCitizenship
+LIST: StaffPersonal/PersonInfo/Demographics/CountriesOfResidency/CountryOfResidency
+LIST: StaffPersonal/PersonInfo/Demographics/EnglishProficiency/OtherCodeList/OtherCode
+LIST: StaffPersonal/PersonInfo/Demographics/LanguageList/Language
+LIST: StaffPersonal/PersonInfo/Demographics/DwellingArrangement/OtherCodeList/OtherCode
+LIST: StaffPersonal/PersonInfo/Demographics/Religion/OtherCodeList/OtherCode
+LIST: StaffPersonal/PersonInfo/Demographics/ReligiousEventList/ReligiousEvent
+LIST: StaffPersonal/PersonInfo/Demographics/VisaSubClassList/VisaSubClass
+LIST: StaffPersonal/PersonInfo/AddressList/Address
+LIST: StaffPersonal/PersonInfo/PhoneNumberList/PhoneNumber
+LIST: StaffPersonal/PersonInfo/EmailList/Email
+LIST: StaffPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo
+LIST: StaffPersonal/MostRecent/NAPLANClassList/ClassCode
+LIST: StaffPersonal/SIF_Metadata/TimeElements/TimeElement
+LIST: StaffPersonal/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: StaffPersonal/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: StaffPersonal/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: StaffPersonal/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: StaffPersonal/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: StudentActivityInfo/StudentActivityType/OtherCodeList/OtherCode
+LIST: StudentActivityInfo/YearLevels/YearLevel
+LIST: StudentActivityInfo/SIF_Metadata/TimeElements/TimeElement
+LIST: StudentActivityInfo/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: StudentActivityInfo/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: StudentActivityInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: StudentActivityInfo/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: StudentActivityInfo/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: StudentActivityParticipation/RecognitionList/Recognition
+LIST: StudentActivityParticipation/SIF_Metadata/TimeElements/TimeElement
+LIST: StudentActivityParticipation/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: StudentActivityParticipation/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: StudentActivityParticipation/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: StudentActivityParticipation/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: StudentActivityParticipation/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: StudentAttendanceSummary/SIF_Metadata/TimeElements/TimeElement
+LIST: StudentAttendanceSummary/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: StudentAttendanceSummary/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: StudentAttendanceSummary/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: StudentAttendanceSummary/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: StudentAttendanceSummary/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: StudentAttendanceTimeList/AttendanceTimes/AttendanceTime
+LIST: StudentAttendanceTimeList/PeriodAttendances/PeriodAttendance
+LIST: StudentAttendanceTimeList/SIF_Metadata/TimeElements/TimeElement
+LIST: StudentAttendanceTimeList/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: StudentAttendanceTimeList/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: StudentAttendanceTimeList/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: StudentAttendanceTimeList/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: StudentAttendanceTimeList/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: StudentContactPersonal/OtherIdList/OtherId
+LIST: StudentContactPersonal/PersonInfo/OtherNames/Name
+LIST: StudentContactPersonal/PersonInfo/Demographics/CountriesOfCitizenship/CountryOfCitizenship
+LIST: StudentContactPersonal/PersonInfo/Demographics/CountriesOfResidency/CountryOfResidency
+LIST: StudentContactPersonal/PersonInfo/Demographics/EnglishProficiency/OtherCodeList/OtherCode
+LIST: StudentContactPersonal/PersonInfo/Demographics/LanguageList/Language
+LIST: StudentContactPersonal/PersonInfo/Demographics/DwellingArrangement/OtherCodeList/OtherCode
+LIST: StudentContactPersonal/PersonInfo/Demographics/Religion/OtherCodeList/OtherCode
+LIST: StudentContactPersonal/PersonInfo/Demographics/ReligiousEventList/ReligiousEvent
+LIST: StudentContactPersonal/PersonInfo/Demographics/VisaSubClassList/VisaSubClass
+LIST: StudentContactPersonal/PersonInfo/AddressList/Address
+LIST: StudentContactPersonal/PersonInfo/PhoneNumberList/PhoneNumber
+LIST: StudentContactPersonal/PersonInfo/EmailList/Email
+LIST: StudentContactPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo
+LIST: StudentContactPersonal/SIF_Metadata/TimeElements/TimeElement
+LIST: StudentContactPersonal/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: StudentContactPersonal/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: StudentContactPersonal/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: StudentContactPersonal/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: StudentContactPersonal/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: StudentContactRelationship/Relationship/OtherCodeList/OtherCode
+LIST: StudentContactRelationship/HouseholdList/Household
+LIST: StudentContactRelationship/SIF_Metadata/TimeElements/TimeElement
+LIST: StudentContactRelationship/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: StudentContactRelationship/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: StudentContactRelationship/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: StudentContactRelationship/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: StudentContactRelationship/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: StudentDailyAttendance/AttendanceCode/OtherCodeList/OtherCode
+LIST: StudentDailyAttendance/SIF_Metadata/TimeElements/TimeElement
+LIST: StudentDailyAttendance/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: StudentDailyAttendance/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: StudentDailyAttendance/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: StudentDailyAttendance/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: StudentDailyAttendance/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: StudentGrade/Markers/Marker
+LIST: StudentGrade/LearningArea/SubjectArea/OtherCodeList/OtherCode
+LIST: StudentGrade/LearningStandardList/LearningStandard
+LIST: StudentGrade/GradingScoreList/GradingAssignmentScore
+LIST: StudentGrade/SIF_Metadata/TimeElements/TimeElement
+LIST: StudentGrade/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: StudentGrade/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: StudentGrade/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: StudentGrade/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: StudentGrade/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: StudentParticipation/ProgramFundingSources/ProgramFundingSource
+LIST: StudentParticipation/ReferralSource/OtherCodeList/OtherCode
+LIST: StudentParticipation/ProgramStatus/OtherCodeList/OtherCode
+LIST: StudentParticipation/ProgramAvailability/OtherCodeList/OtherCode
+LIST: StudentParticipation/SIF_Metadata/TimeElements/TimeElement
+LIST: StudentParticipation/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: StudentParticipation/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: StudentParticipation/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: StudentParticipation/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: StudentParticipation/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: StudentPeriodAttendance/AttendanceCode/OtherCodeList/OtherCode
+LIST: StudentPeriodAttendance/SIF_Metadata/TimeElements/TimeElement
+LIST: StudentPeriodAttendance/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: StudentPeriodAttendance/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: StudentPeriodAttendance/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: StudentPeriodAttendance/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: StudentPeriodAttendance/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: StudentPersonal/AlertMessages/AlertMessage
+LIST: StudentPersonal/MedicalAlertMessages/MedicalAlertMessage
+LIST: StudentPersonal/ElectronicIdList/ElectronicId
+LIST: StudentPersonal/OtherIdList/OtherId
+LIST: StudentPersonal/PersonInfo/OtherNames/Name
+LIST: StudentPersonal/PersonInfo/Demographics/CountriesOfCitizenship/CountryOfCitizenship
+LIST: StudentPersonal/PersonInfo/Demographics/CountriesOfResidency/CountryOfResidency
+LIST: StudentPersonal/PersonInfo/Demographics/EnglishProficiency/OtherCodeList/OtherCode
+LIST: StudentPersonal/PersonInfo/Demographics/LanguageList/Language
+LIST: StudentPersonal/PersonInfo/Demographics/DwellingArrangement/OtherCodeList/OtherCode
+LIST: StudentPersonal/PersonInfo/Demographics/Religion/OtherCodeList/OtherCode
+LIST: StudentPersonal/PersonInfo/Demographics/ReligiousEventList/ReligiousEvent
+LIST: StudentPersonal/PersonInfo/Demographics/VisaSubClassList/VisaSubClass
+LIST: StudentPersonal/PersonInfo/AddressList/Address
+LIST: StudentPersonal/PersonInfo/PhoneNumberList/PhoneNumber
+LIST: StudentPersonal/PersonInfo/EmailList/Email
+LIST: StudentPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo
+LIST: StudentPersonal/SIF_Metadata/TimeElements/TimeElement
+LIST: StudentPersonal/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: StudentPersonal/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: StudentPersonal/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: StudentPersonal/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: StudentPersonal/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: StudentSchoolEnrollment/EntryType/OtherCodeList/OtherCode
+LIST: StudentSchoolEnrollment/ExitStatus/OtherCodeList/OtherCode
+LIST: StudentSchoolEnrollment/ExitType/OtherCodeList/OtherCode
+LIST: StudentSchoolEnrollment/CatchmentStatus/OtherCodeList/OtherCode
+LIST: StudentSchoolEnrollment/StudentSubjectChoiceList/StudentSubjectChoice
+LIST: StudentSchoolEnrollment/SIF_Metadata/TimeElements/TimeElement
+LIST: StudentSchoolEnrollment/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: StudentSchoolEnrollment/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: StudentSchoolEnrollment/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: StudentSchoolEnrollment/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: StudentSchoolEnrollment/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: StudentSectionEnrollment/SIF_Metadata/TimeElements/TimeElement
+LIST: StudentSectionEnrollment/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: StudentSectionEnrollment/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: StudentSectionEnrollment/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: StudentSectionEnrollment/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: StudentSectionEnrollment/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: SystemRole/SystemContextList/SystemContext
+LIST: SystemRole/SIF_Metadata/TimeElements/TimeElement
+LIST: SystemRole/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: SystemRole/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: SystemRole/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: SystemRole/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: SystemRole/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: TeachingGroup/StudentList/TeachingGroupStudent
+LIST: TeachingGroup/TeacherList/TeachingGroupTeacher
+LIST: TeachingGroup/TeachingGroupPeriodList/TeachingGroupPeriod
+LIST: TeachingGroup/SIF_Metadata/TimeElements/TimeElement
+LIST: TeachingGroup/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: TeachingGroup/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: TeachingGroup/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: TeachingGroup/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: TeachingGroup/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: TermInfo/SIF_Metadata/TimeElements/TimeElement
+LIST: TermInfo/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: TermInfo/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: TermInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: TermInfo/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: TermInfo/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: TimeTable/TimeTableDayList/TimeTableDay
+LIST: TimeTable/SIF_Metadata/TimeElements/TimeElement
+LIST: TimeTable/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: TimeTable/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: TimeTable/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: TimeTable/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: TimeTable/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: TimeTableCell/TeacherList/TeacherCover
+LIST: TimeTableCell/RoomList/RoomInfoRefId
+LIST: TimeTableCell/SIF_Metadata/TimeElements/TimeElement
+LIST: TimeTableCell/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: TimeTableCell/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: TimeTableCell/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: TimeTableCell/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: TimeTableCell/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: TimeTableSubject/OtherCodeList/OtherCode
+LIST: TimeTableSubject/SIF_Metadata/TimeElements/TimeElement
+LIST: TimeTableSubject/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: TimeTableSubject/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: TimeTableSubject/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: TimeTableSubject/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: TimeTableSubject/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: WellbeingAlert/SIF_Metadata/TimeElements/TimeElement
+LIST: WellbeingAlert/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: WellbeingAlert/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: WellbeingAlert/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: WellbeingAlert/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: WellbeingAlert/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: WellbeingAppeal/DocumentList/Document
+LIST: WellbeingAppeal/SIF_Metadata/TimeElements/TimeElement
+LIST: WellbeingAppeal/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: WellbeingAppeal/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: WellbeingAppeal/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: WellbeingAppeal/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: WellbeingAppeal/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: WellbeingCharacteristic/MedicationList/Medication
+LIST: WellbeingCharacteristic/DocumentList/Document
+LIST: WellbeingCharacteristic/SIF_Metadata/TimeElements/TimeElement
+LIST: WellbeingCharacteristic/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: WellbeingCharacteristic/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: WellbeingCharacteristic/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: WellbeingCharacteristic/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: WellbeingCharacteristic/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: WellbeingEvent/WellbeingEventCategoryList/WellbeingEventCategory
+LIST: WellbeingEvent/PersonInvolvementList/PersonInvolvement
+LIST: WellbeingEvent/FollowUpActionList/FollowUpAction
+LIST: WellbeingEvent/DocumentList/Document
+LIST: WellbeingEvent/SIF_Metadata/TimeElements/TimeElement
+LIST: WellbeingEvent/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: WellbeingEvent/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: WellbeingEvent/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: WellbeingEvent/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: WellbeingEvent/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: WellbeingResponse/PersonInvolvementList/PersonInvolvement
+LIST: WellbeingResponse/Suspension/WithdrawalTimeList/Withdrawal
+LIST: WellbeingResponse/PlanRequired/PlanRequiredList/Plan
+LIST: WellbeingResponse/DocumentList/Document
+LIST: WellbeingResponse/SIF_Metadata/TimeElements/TimeElement
+LIST: WellbeingResponse/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: WellbeingResponse/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: WellbeingResponse/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: WellbeingResponse/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: WellbeingResponse/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: ChargedLocationInfo/AddressList/Address
+LIST: ChargedLocationInfo/PhoneNumberList/PhoneNumber
+LIST: ChargedLocationInfo/SIF_Metadata/TimeElements/TimeElement
+LIST: ChargedLocationInfo/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: ChargedLocationInfo/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: ChargedLocationInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: ChargedLocationInfo/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: ChargedLocationInfo/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: Debtor/AddressList/Address
+LIST: Debtor/SIF_Metadata/TimeElements/TimeElement
+LIST: Debtor/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: Debtor/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: Debtor/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: Debtor/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: Debtor/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: FinancialAccount/SIF_Metadata/TimeElements/TimeElement
+LIST: FinancialAccount/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: FinancialAccount/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: FinancialAccount/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: FinancialAccount/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: FinancialAccount/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: Invoice/FinancialAccountRefIdList/FinancialAccountRefId
+LIST: Invoice/PurchasingItems/PurchasingItem
+LIST: Invoice/SIF_Metadata/TimeElements/TimeElement
+LIST: Invoice/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: Invoice/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: Invoice/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: Invoice/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: Invoice/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: Journal/SIF_Metadata/TimeElements/TimeElement
+LIST: Journal/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: Journal/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: Journal/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: Journal/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: Journal/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: NAPCodeFrame/TestletList/Testlet
+LIST: NAPCodeFrame/SIF_Metadata/TimeElements/TimeElement
+LIST: NAPCodeFrame/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: NAPCodeFrame/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: NAPCodeFrame/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: NAPCodeFrame/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: NAPCodeFrame/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: NAPEventStudentLink/TestDisruptionList/TestDisruption
+LIST: NAPEventStudentLink/Adjustment/PNPCodeList/PNPCode
+LIST: NAPEventStudentLink/SIF_Metadata/TimeElements/TimeElement
+LIST: NAPEventStudentLink/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: NAPEventStudentLink/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: NAPEventStudentLink/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: NAPEventStudentLink/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: NAPEventStudentLink/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: NAPStudentResponseSet/DomainScore/PlausibleScaledValueList/PlausibleScaledValue
+LIST: NAPStudentResponseSet/TestletList/Testlet
+LIST: NAPStudentResponseSet/SIF_Metadata/TimeElements/TimeElement
+LIST: NAPStudentResponseSet/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: NAPStudentResponseSet/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: NAPStudentResponseSet/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: NAPStudentResponseSet/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: NAPStudentResponseSet/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: NAPTest/SIF_Metadata/TimeElements/TimeElement
+LIST: NAPTest/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: NAPTest/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: NAPTest/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: NAPTest/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: NAPTest/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: NAPTestItem/TestItemContent/ItemSubstitutedForList/SubstituteItem
+LIST: NAPTestItem/TestItemContent/ContentDescriptionList/ContentDescription
+LIST: NAPTestItem/TestItemContent/StimulusList/Stimulus
+LIST: NAPTestItem/TestItemContent/NAPWritingRubricList/NAPWritingRubric
+LIST: NAPTestItem/SIF_Metadata/TimeElements/TimeElement
+LIST: NAPTestItem/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: NAPTestItem/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: NAPTestItem/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: NAPTestItem/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: NAPTestItem/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: NAPTestScoreSummary/SIF_Metadata/TimeElements/TimeElement
+LIST: NAPTestScoreSummary/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: NAPTestScoreSummary/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: NAPTestScoreSummary/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: NAPTestScoreSummary/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: NAPTestScoreSummary/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: NAPTestlet/TestItemList/TestItem
+LIST: NAPTestlet/SIF_Metadata/TimeElements/TimeElement
+LIST: NAPTestlet/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: NAPTestlet/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: NAPTestlet/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: NAPTestlet/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: NAPTestlet/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: PaymentReceipt/FinancialAccountRefIdList/FinancialAccountRefId
+LIST: PaymentReceipt/SIF_Metadata/TimeElements/TimeElement
+LIST: PaymentReceipt/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: PaymentReceipt/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: PaymentReceipt/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: PaymentReceipt/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: PaymentReceipt/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: PurchaseOrder/PurchasingItems/PurchasingItem
+LIST: PurchaseOrder/SIF_Metadata/TimeElements/TimeElement
+LIST: PurchaseOrder/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: PurchaseOrder/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: PurchaseOrder/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: PurchaseOrder/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: PurchaseOrder/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: VendorInfo/ContactInfo/Address/StatisticalAreas/StatisticalArea
+LIST: VendorInfo/ContactInfo/EmailList/Email
+LIST: VendorInfo/ContactInfo/PhoneNumberList/PhoneNumber
+LIST: VendorInfo/SIF_Metadata/TimeElements/TimeElement
+LIST: VendorInfo/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: VendorInfo/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: VendorInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: VendorInfo/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: VendorInfo/SIF_ExtendedElements/SIF_ExtendedElement
+NUMERIC: Activity/Points
+NUMERIC: Activity/ActivityTime/Duration
+NUMERIC: Activity/MaxAttemptsAllowed
+NUMERIC: Activity/ActivityWeight
+NUMERIC: AggregateStatisticFact/Value
+NUMERIC: CalendarDate/CalendarDateNumber
+NUMERIC: CalendarDate/StudentAttendance/AttendanceValue
+NUMERIC: CalendarDate/TeacherAttendance/AttendanceValue
+NUMERIC: CalendarDate/AdministratorAttendance/AttendanceValue
+NUMERIC: CalendarSummary/DaysInSession
+NUMERIC: CalendarSummary/InstructionalMinutes
+NUMERIC: CalendarSummary/MinutesPerDay
+NUMERIC: GradingAssignment/PointsPossible
+NUMERIC: GradingAssignment/Weight
+NUMERIC: GradingAssignment/MaxAttemptsAllowed
+NUMERIC: GradingAssignment/RubricScoringGuide/ScoreList/Score/MaxScoreValue
+NUMERIC: GradingAssignment/RubricScoringGuide/ScoreList/Score/ScoreDescriptionList/ScoreDescription/ScoreValue
+NUMERIC: GradingAssignmentScore/ScorePoints
+NUMERIC: GradingAssignmentScore/ScorePercent
+NUMERIC: GradingAssignmentScore/SubscoreList/Subscore/SubscoreValue
+NUMERIC: LEAInfo/LEAContactList/LEAContact/ContactInfo/Address/GridLocation/Latitude
+NUMERIC: LEAInfo/LEAContactList/LEAContact/ContactInfo/Address/GridLocation/Longitude
+NUMERIC: LEAInfo/LEAContactList/LEAContact/ContactInfo/PhoneNumberList/PhoneNumber/Preference
+NUMERIC: LEAInfo/PhoneNumberList/PhoneNumber/Preference
+NUMERIC: LEAInfo/AddressList/Address/GridLocation/Latitude
+NUMERIC: LEAInfo/AddressList/Address/GridLocation/Longitude
+NUMERIC: LearningResource/Contacts/Contact/Address/GridLocation/Latitude
+NUMERIC: LearningResource/Contacts/Contact/Address/GridLocation/Longitude
+NUMERIC: LearningResource/Contacts/Contact/PhoneNumber/Preference
+NUMERIC: LearningStandardItem/StandardHierarchyLevel/Number
+NUMERIC: MarkValueInfo/PercentageMinimum
+NUMERIC: MarkValueInfo/PercentageMaximum
+NUMERIC: MarkValueInfo/PercentagePassingGrade
+NUMERIC: MarkValueInfo/NumericPrecision
+NUMERIC: MarkValueInfo/NumericScale
+NUMERIC: MarkValueInfo/NumericLow
+NUMERIC: MarkValueInfo/NumericHigh
+NUMERIC: MarkValueInfo/NumericPassingGrade
+NUMERIC: MarkValueInfo/ValidLetterMarkList/ValidLetterMark/NumericEquivalent
+NUMERIC: MarkValueInfo/NarrativeMaximumSize
+NUMERIC: ReportAuthorityInfo/ContactInfo/Address/GridLocation/Latitude
+NUMERIC: ReportAuthorityInfo/ContactInfo/Address/GridLocation/Longitude
+NUMERIC: ReportAuthorityInfo/ContactInfo/PhoneNumberList/PhoneNumber/Preference
+NUMERIC: ReportAuthorityInfo/Address/GridLocation/Latitude
+NUMERIC: ReportAuthorityInfo/Address/GridLocation/Longitude
+NUMERIC: ReportAuthorityInfo/PhoneNumber/Preference
+NUMERIC: ResourceUsage/ResourceReportLineList/ResourceReportLine/CurrentCost
+NUMERIC: RoomInfo/Size
+NUMERIC: RoomInfo/Capacity
+NUMERIC: RoomInfo/PhoneNumber/Preference
+NUMERIC: ScheduledActivity/TeacherList/TeacherCover/Weighting
+NUMERIC: ScheduledActivity/AddressList/Address/GridLocation/Latitude
+NUMERIC: ScheduledActivity/AddressList/Address/GridLocation/Longitude
+NUMERIC: SchoolInfo/PrincipalInfo/PhoneNumberList/PhoneNumber/Preference
+NUMERIC: SchoolInfo/SchoolContactList/SchoolContact/ContactInfo/Address/GridLocation/Latitude
+NUMERIC: SchoolInfo/SchoolContactList/SchoolContact/ContactInfo/Address/GridLocation/Longitude
+NUMERIC: SchoolInfo/SchoolContactList/SchoolContact/ContactInfo/PhoneNumberList/PhoneNumber/Preference
+NUMERIC: SchoolInfo/AddressList/Address/GridLocation/Latitude
+NUMERIC: SchoolInfo/AddressList/Address/GridLocation/Longitude
+NUMERIC: SchoolInfo/PhoneNumberList/PhoneNumber/Preference
+NUMERIC: SchoolInfo/ARIA
+NUMERIC: StaffAssignment/JobFTE
+NUMERIC: StaffAssignment/StaffSubjectList/StaffSubject/PreferenceNumber
+NUMERIC: StaffPersonal/PersonInfo/AddressList/Address/GridLocation/Latitude
+NUMERIC: StaffPersonal/PersonInfo/AddressList/Address/GridLocation/Longitude
+NUMERIC: StaffPersonal/PersonInfo/PhoneNumberList/PhoneNumber/Preference
+NUMERIC: StaffPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/PreferenceNumber
+NUMERIC: StaffPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/AddressList/Address/GridLocation/Latitude
+NUMERIC: StaffPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/AddressList/Address/GridLocation/Longitude
+NUMERIC: StaffPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/PhoneNumberList/PhoneNumber/Preference
+NUMERIC: StudentAttendanceSummary/StartDay
+NUMERIC: StudentAttendanceSummary/EndDay
+NUMERIC: StudentAttendanceSummary/FTE
+NUMERIC: StudentAttendanceSummary/DaysAttended
+NUMERIC: StudentAttendanceSummary/ExcusedAbsences
+NUMERIC: StudentAttendanceSummary/UnexcusedAbsences
+NUMERIC: StudentAttendanceSummary/DaysTardy
+NUMERIC: StudentAttendanceSummary/DaysInMembership
+NUMERIC: StudentAttendanceTimeList/AttendanceTimes/AttendanceTime/DurationValue
+NUMERIC: StudentAttendanceTimeList/PeriodAttendances/PeriodAttendance/TeacherList/TeacherCover/Weighting
+NUMERIC: StudentContactPersonal/PersonInfo/AddressList/Address/GridLocation/Latitude
+NUMERIC: StudentContactPersonal/PersonInfo/AddressList/Address/GridLocation/Longitude
+NUMERIC: StudentContactPersonal/PersonInfo/PhoneNumberList/PhoneNumber/Preference
+NUMERIC: StudentContactPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/PreferenceNumber
+NUMERIC: StudentContactPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/AddressList/Address/GridLocation/Latitude
+NUMERIC: StudentContactPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/AddressList/Address/GridLocation/Longitude
+NUMERIC: StudentContactPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/PhoneNumberList/PhoneNumber/Preference
+NUMERIC: StudentContactRelationship/ContactSequence
+NUMERIC: StudentDailyAttendance/AbsenceValue
+NUMERIC: StudentGrade/GradingScoreList/GradingAssignmentScore/Weight
+NUMERIC: StudentGrade/Grade/Percentage
+NUMERIC: StudentGrade/Grade/Numeric
+NUMERIC: StudentParticipation/StudentSpecialEducationFTE
+NUMERIC: StudentPersonal/PersonInfo/AddressList/Address/GridLocation/Latitude
+NUMERIC: StudentPersonal/PersonInfo/AddressList/Address/GridLocation/Longitude
+NUMERIC: StudentPersonal/PersonInfo/PhoneNumberList/PhoneNumber/Preference
+NUMERIC: StudentPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/PreferenceNumber
+NUMERIC: StudentPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/AddressList/Address/GridLocation/Latitude
+NUMERIC: StudentPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/AddressList/Address/GridLocation/Longitude
+NUMERIC: StudentPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/PhoneNumberList/PhoneNumber/Preference
+NUMERIC: StudentPersonal/MostRecent/FTE
+NUMERIC: StudentSchoolEnrollment/FTE
+NUMERIC: StudentSchoolEnrollment/StudentSubjectChoiceList/StudentSubjectChoice/PreferenceNumber
+NUMERIC: TeachingGroup/Semester
+NUMERIC: TeachingGroup/MinClassSize
+NUMERIC: TeachingGroup/MaxClassSize
+NUMERIC: TermInfo/RelativeDuration
+NUMERIC: TimeTable/DaysPerCycle
+NUMERIC: TimeTable/PeriodsPerDay
+NUMERIC: TimeTable/TeachingPeriodsPerDay
+NUMERIC: TimeTable/TimeTableDayList/TimeTableDay/TimeTablePeriodList/TimeTablePeriod/InstructionalMinutes
+NUMERIC: TimeTableCell/TeacherList/TeacherCover/Weighting
+NUMERIC: TimeTableSubject/ProposedMaxClassSize
+NUMERIC: TimeTableSubject/ProposedMinClassSize
+NUMERIC: TimeTableSubject/Semester
+NUMERIC: WellbeingResponse/Suspension/Duration
+NUMERIC: ChargedLocationInfo/AddressList/Address/GridLocation/Latitude
+NUMERIC: ChargedLocationInfo/AddressList/Address/GridLocation/Longitude
+NUMERIC: ChargedLocationInfo/PhoneNumberList/PhoneNumber/Preference
+NUMERIC: Debtor/AddressList/Address/GridLocation/Latitude
+NUMERIC: Debtor/AddressList/Address/GridLocation/Longitude
+NUMERIC: Invoice/BilledAmount
+NUMERIC: Invoice/NetAmount
+NUMERIC: Invoice/TaxRate
+NUMERIC: Invoice/TaxAmount
+NUMERIC: Invoice/PurchasingItems/PurchasingItem/UnitCost
+NUMERIC: Invoice/PurchasingItems/PurchasingItem/TotalCost
+NUMERIC: Invoice/PurchasingItems/PurchasingItem/TaxRate
+NUMERIC: Invoice/PurchasingItems/PurchasingItem/ExpenseAccounts/ExpenseAccount/Amount
+NUMERIC: Journal/Amount
+NUMERIC: NAPCodeFrame/TestContent/StagesCount
+NUMERIC: NAPCodeFrame/TestContent/DomainBands/Band1Lower
+NUMERIC: NAPCodeFrame/TestContent/DomainBands/Band1Upper
+NUMERIC: NAPCodeFrame/TestContent/DomainBands/Band2Lower
+NUMERIC: NAPCodeFrame/TestContent/DomainBands/Band2Upper
+NUMERIC: NAPCodeFrame/TestContent/DomainBands/Band3Lower
+NUMERIC: NAPCodeFrame/TestContent/DomainBands/Band3Upper
+NUMERIC: NAPCodeFrame/TestContent/DomainBands/Band4Lower
+NUMERIC: NAPCodeFrame/TestContent/DomainBands/Band4Upper
+NUMERIC: NAPCodeFrame/TestContent/DomainBands/Band5Lower
+NUMERIC: NAPCodeFrame/TestContent/DomainBands/Band5Upper
+NUMERIC: NAPCodeFrame/TestContent/DomainBands/Band6Lower
+NUMERIC: NAPCodeFrame/TestContent/DomainBands/Band6Upper
+NUMERIC: NAPCodeFrame/TestContent/DomainBands/Band7Lower
+NUMERIC: NAPCodeFrame/TestContent/DomainBands/Band7Upper
+NUMERIC: NAPCodeFrame/TestContent/DomainBands/Band8Lower
+NUMERIC: NAPCodeFrame/TestContent/DomainBands/Band8Upper
+NUMERIC: NAPCodeFrame/TestContent/DomainBands/Band9Lower
+NUMERIC: NAPCodeFrame/TestContent/DomainBands/Band9Upper
+NUMERIC: NAPCodeFrame/TestContent/DomainBands/Band10Lower
+NUMERIC: NAPCodeFrame/TestContent/DomainBands/Band10Upper
+NUMERIC: NAPCodeFrame/TestContent/DomainProficiency/Level1Lower
+NUMERIC: NAPCodeFrame/TestContent/DomainProficiency/Level1Upper
+NUMERIC: NAPCodeFrame/TestContent/DomainProficiency/Level2Lower
+NUMERIC: NAPCodeFrame/TestContent/DomainProficiency/Level2Upper
+NUMERIC: NAPCodeFrame/TestContent/DomainProficiency/Level3Lower
+NUMERIC: NAPCodeFrame/TestContent/DomainProficiency/Level3Upper
+NUMERIC: NAPCodeFrame/TestContent/DomainProficiency/Level4Lower
+NUMERIC: NAPCodeFrame/TestContent/DomainProficiency/Level4Upper
+NUMERIC: NAPCodeFrame/TestletList/Testlet/TestletContent/LocationInStage
+NUMERIC: NAPCodeFrame/TestletList/Testlet/TestletContent/TestletMaximumScore
+NUMERIC: NAPCodeFrame/TestletList/Testlet/TestItemList/TestItem/SequenceNumber
+NUMERIC: NAPCodeFrame/TestletList/Testlet/TestItemList/TestItem/TestItemContent/MultipleChoiceOptionCount
+NUMERIC: NAPCodeFrame/TestletList/Testlet/TestItemList/TestItem/TestItemContent/MaximumScore
+NUMERIC: NAPCodeFrame/TestletList/Testlet/TestItemList/TestItem/TestItemContent/ItemDifficulty
+NUMERIC: NAPCodeFrame/TestletList/Testlet/TestItemList/TestItem/TestItemContent/ItemDifficultyLogit5
+NUMERIC: NAPCodeFrame/TestletList/Testlet/TestItemList/TestItem/TestItemContent/ItemDifficultyLogit62
+NUMERIC: NAPCodeFrame/TestletList/Testlet/TestItemList/TestItem/TestItemContent/ItemDifficultyLogit5SE
+NUMERIC: NAPCodeFrame/TestletList/Testlet/TestItemList/TestItem/TestItemContent/ItemDifficultyLogit62SE
+NUMERIC: NAPCodeFrame/TestletList/Testlet/TestItemList/TestItem/TestItemContent/ItemProficiencyBand
+NUMERIC: NAPCodeFrame/TestletList/Testlet/TestItemList/TestItem/TestItemContent/StimulusList/Stimulus/WordCount
+NUMERIC: NAPCodeFrame/TestletList/Testlet/TestItemList/TestItem/TestItemContent/NAPWritingRubricList/NAPWritingRubric/ScoreList/Score/MaxScoreValue
+NUMERIC: NAPCodeFrame/TestletList/Testlet/TestItemList/TestItem/TestItemContent/NAPWritingRubricList/NAPWritingRubric/ScoreList/Score/ScoreDescriptionList/ScoreDescription/ScoreValue
+NUMERIC: NAPStudentResponseSet/DomainScore/RawScore
+NUMERIC: NAPStudentResponseSet/DomainScore/ScaledScoreValue
+NUMERIC: NAPStudentResponseSet/DomainScore/ScaledScoreLogitValue
+NUMERIC: NAPStudentResponseSet/DomainScore/ScaledScoreStandardError
+NUMERIC: NAPStudentResponseSet/DomainScore/ScaledScoreLogitStandardError
+NUMERIC: NAPStudentResponseSet/DomainScore/StudentDomainBand
+NUMERIC: NAPStudentResponseSet/DomainScore/PlausibleScaledValueList/PlausibleScaledValue
+NUMERIC: NAPStudentResponseSet/TestletList/Testlet/TestletSubScore
+NUMERIC: NAPStudentResponseSet/TestletList/Testlet/ItemResponseList/ItemResponse/Score
+NUMERIC: NAPStudentResponseSet/TestletList/Testlet/ItemResponseList/ItemResponse/SequenceNumber
+NUMERIC: NAPStudentResponseSet/TestletList/Testlet/ItemResponseList/ItemResponse/ItemWeight
+NUMERIC: NAPStudentResponseSet/TestletList/Testlet/ItemResponseList/ItemResponse/SubscoreList/Subscore/SubscoreValue
+NUMERIC: NAPTest/TestContent/StagesCount
+NUMERIC: NAPTest/TestContent/DomainBands/Band1Lower
+NUMERIC: NAPTest/TestContent/DomainBands/Band1Upper
+NUMERIC: NAPTest/TestContent/DomainBands/Band2Lower
+NUMERIC: NAPTest/TestContent/DomainBands/Band2Upper
+NUMERIC: NAPTest/TestContent/DomainBands/Band3Lower
+NUMERIC: NAPTest/TestContent/DomainBands/Band3Upper
+NUMERIC: NAPTest/TestContent/DomainBands/Band4Lower
+NUMERIC: NAPTest/TestContent/DomainBands/Band4Upper
+NUMERIC: NAPTest/TestContent/DomainBands/Band5Lower
+NUMERIC: NAPTest/TestContent/DomainBands/Band5Upper
+NUMERIC: NAPTest/TestContent/DomainBands/Band6Lower
+NUMERIC: NAPTest/TestContent/DomainBands/Band6Upper
+NUMERIC: NAPTest/TestContent/DomainBands/Band7Lower
+NUMERIC: NAPTest/TestContent/DomainBands/Band7Upper
+NUMERIC: NAPTest/TestContent/DomainBands/Band8Lower
+NUMERIC: NAPTest/TestContent/DomainBands/Band8Upper
+NUMERIC: NAPTest/TestContent/DomainBands/Band9Lower
+NUMERIC: NAPTest/TestContent/DomainBands/Band9Upper
+NUMERIC: NAPTest/TestContent/DomainBands/Band10Lower
+NUMERIC: NAPTest/TestContent/DomainBands/Band10Upper
+NUMERIC: NAPTest/TestContent/DomainProficiency/Level1Lower
+NUMERIC: NAPTest/TestContent/DomainProficiency/Level1Upper
+NUMERIC: NAPTest/TestContent/DomainProficiency/Level2Lower
+NUMERIC: NAPTest/TestContent/DomainProficiency/Level2Upper
+NUMERIC: NAPTest/TestContent/DomainProficiency/Level3Lower
+NUMERIC: NAPTest/TestContent/DomainProficiency/Level3Upper
+NUMERIC: NAPTest/TestContent/DomainProficiency/Level4Lower
+NUMERIC: NAPTest/TestContent/DomainProficiency/Level4Upper
+NUMERIC: NAPTestItem/TestItemContent/MultipleChoiceOptionCount
+NUMERIC: NAPTestItem/TestItemContent/MaximumScore
+NUMERIC: NAPTestItem/TestItemContent/ItemDifficulty
+NUMERIC: NAPTestItem/TestItemContent/ItemDifficultyLogit5
+NUMERIC: NAPTestItem/TestItemContent/ItemDifficultyLogit62
+NUMERIC: NAPTestItem/TestItemContent/ItemDifficultyLogit5SE
+NUMERIC: NAPTestItem/TestItemContent/ItemDifficultyLogit62SE
+NUMERIC: NAPTestItem/TestItemContent/ItemProficiencyBand
+NUMERIC: NAPTestItem/TestItemContent/StimulusList/Stimulus/WordCount
+NUMERIC: NAPTestItem/TestItemContent/NAPWritingRubricList/NAPWritingRubric/ScoreList/Score/MaxScoreValue
+NUMERIC: NAPTestItem/TestItemContent/NAPWritingRubricList/NAPWritingRubric/ScoreList/Score/ScoreDescriptionList/ScoreDescription/ScoreValue
+NUMERIC: NAPTestScoreSummary/DomainNationalAverage
+NUMERIC: NAPTestScoreSummary/DomainSchoolAverage
+NUMERIC: NAPTestScoreSummary/DomainJurisdictionAverage
+NUMERIC: NAPTestScoreSummary/DomainTopNational60Percent
+NUMERIC: NAPTestScoreSummary/DomainBottomNational60Percent
+NUMERIC: NAPTestlet/TestletContent/LocationInStage
+NUMERIC: NAPTestlet/TestletContent/TestletMaximumScore
+NUMERIC: NAPTestlet/TestItemList/TestItem/SequenceNumber
+NUMERIC: PaymentReceipt/TransactionAmount
+NUMERIC: PaymentReceipt/TaxRate
+NUMERIC: PaymentReceipt/TaxAmount
+NUMERIC: PurchaseOrder/PurchasingItems/PurchasingItem/UnitCost
+NUMERIC: PurchaseOrder/PurchasingItems/PurchasingItem/TotalCost
+NUMERIC: PurchaseOrder/PurchasingItems/PurchasingItem/TaxRate
+NUMERIC: PurchaseOrder/PurchasingItems/PurchasingItem/ExpenseAccounts/ExpenseAccount/Amount
+NUMERIC: PurchaseOrder/TaxRate
+NUMERIC: PurchaseOrder/TaxAmount
+NUMERIC: PurchaseOrder/TotalAmount
+NUMERIC: VendorInfo/ContactInfo/Address/GridLocation/Latitude
+NUMERIC: VendorInfo/ContactInfo/Address/GridLocation/Longitude
+NUMERIC: VendorInfo/ContactInfo/PhoneNumberList/PhoneNumber/Preference
+BOOLEAN: Activity/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: Activity/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: AggregateCharacteristicInfo/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: AggregateCharacteristicInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: AggregateStatisticFact/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: AggregateStatisticFact/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: AggregateStatisticInfo/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: AggregateStatisticInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: CalendarDate/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: CalendarDate/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: CalendarSummary/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: CalendarSummary/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: EquipmentInfo/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: EquipmentInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: GradingAssignment/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: GradingAssignment/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: GradingAssignmentScore/ExpectedScore
+BOOLEAN: GradingAssignmentScore/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: GradingAssignmentScore/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: Identity/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: Identity/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: LEAInfo/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: LEAInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: LearningResource/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: LearningResource/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: LearningStandardDocument/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: LearningStandardDocument/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: LearningStandardItem/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: LearningStandardItem/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: MarkValueInfo/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: MarkValueInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: PersonPicture/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: PersonPicture/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: PersonalisedPlan/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: PersonalisedPlan/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: ReportAuthorityInfo/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: ReportAuthorityInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: ResourceBooking/KeepOld
+BOOLEAN: ResourceBooking/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: ResourceBooking/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: ResourceUsage/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: ResourceUsage/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: RoomInfo/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: RoomInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: ScheduledActivity/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: ScheduledActivity/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: SchoolCourseInfo/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: SchoolCourseInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: SchoolInfo/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: SchoolInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: SchoolPrograms/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: SchoolPrograms/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: SectionInfo/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: SectionInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: SessionInfo/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: SessionInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StaffAssignment/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StaffAssignment/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StaffPersonal/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StaffPersonal/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentActivityInfo/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentActivityInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentActivityParticipation/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentActivityParticipation/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentAttendanceSummary/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentAttendanceSummary/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentAttendanceTimeList/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentAttendanceTimeList/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentContactPersonal/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentContactPersonal/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentContactRelationship/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentContactRelationship/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentDailyAttendance/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentDailyAttendance/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentGrade/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentGrade/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentParticipation/ExtendedSchoolYear
+BOOLEAN: StudentParticipation/ExtendedDay
+BOOLEAN: StudentParticipation/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentParticipation/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentPeriodAttendance/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentPeriodAttendance/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentPersonal/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentPersonal/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentSchoolEnrollment/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentSchoolEnrollment/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentSectionEnrollment/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentSectionEnrollment/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: SystemRole/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: SystemRole/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: TeachingGroup/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: TeachingGroup/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: TermInfo/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: TermInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: TimeTable/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: TimeTable/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: TimeTableCell/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: TimeTableCell/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: TimeTableSubject/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: TimeTableSubject/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: WellbeingAlert/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: WellbeingAlert/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: WellbeingAppeal/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: WellbeingAppeal/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: WellbeingCharacteristic/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: WellbeingCharacteristic/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: WellbeingEvent/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: WellbeingEvent/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: WellbeingResponse/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: WellbeingResponse/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: ChargedLocationInfo/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: ChargedLocationInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: Debtor/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: Debtor/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: FinancialAccount/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: FinancialAccount/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: Invoice/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: Invoice/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: Journal/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: Journal/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: NAPCodeFrame/TestletList/Testlet/TestItemList/TestItem/TestItemContent/ReleasedStatus
+BOOLEAN: NAPCodeFrame/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: NAPCodeFrame/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: NAPEventStudentLink/PersonalDetailsChanged
+BOOLEAN: NAPEventStudentLink/PSIOtherIdMatch
+BOOLEAN: NAPEventStudentLink/PossibleDuplicate
+BOOLEAN: NAPEventStudentLink/DOBRange
+BOOLEAN: NAPEventStudentLink/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: NAPEventStudentLink/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: NAPStudentResponseSet/ReportExclusionFlag
+BOOLEAN: NAPStudentResponseSet/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: NAPStudentResponseSet/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: NAPTest/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: NAPTest/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: NAPTestItem/TestItemContent/ReleasedStatus
+BOOLEAN: NAPTestItem/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: NAPTestItem/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: NAPTestScoreSummary/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: NAPTestScoreSummary/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: NAPTestlet/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: NAPTestlet/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: PaymentReceipt/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: PaymentReceipt/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: PurchaseOrder/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: PurchaseOrder/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: VendorInfo/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: VendorInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
