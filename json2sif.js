@@ -107,7 +107,6 @@ function attributes(newobj) {
               }
           }
       }
-  console.log(JSON.stringify(newobj));
         return newobj;
 }
 
