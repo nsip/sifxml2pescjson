@@ -58,7 +58,8 @@ def listfind(arr, path)
     #pp a
     if a[:list] 
       puts "LIST: #{path}/#{a[:elem]}"
-    elsif a[:elems] && !a[:elems].empty?
+    end
+    if a[:elems] && !a[:elems].empty?
       listfind(a[:elems], "#{path}/#{a[:elem]}")
     elsif a[:type] && @typegraph[a[:type]]
       listfind(@typegraph[a[:type]], "#{path}/#{a[:elem]}")
