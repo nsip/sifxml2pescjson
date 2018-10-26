@@ -45,4 +45,9 @@ ruby makejs2xml.rb < out.txt > json2sif.js
 echo "<sif>" > siftest2.xml
 node json2sif.js < siftest.pretty.json >> siftest2.xml
 echo "</sif>" >> siftest2.xml
+xmllint --format siftest.xml > siftest.pretty.xml
 xmllint --format siftest2.xml > siftest2.pretty.xml
+diff siftest.pretty.xml siftest2.pretty.xml > diff.txt
+cat diff.txt
+echo "Diff lines: "
+egrep "^< " diff.txt|wc -l

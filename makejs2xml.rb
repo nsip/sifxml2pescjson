@@ -79,9 +79,8 @@ function attributes(newobj) {
 
 var x = new X2JS();
 var json = JSON.parse(js);
-for(obj in json["sif"]) {
-  newobj = {};
-  newobj[obj] = json["sif"][obj];
+for(var i=0; i<json.length; i++) {
+  newobj = json[i];
   newobj = attributes(newobj);
   var xml = x.js2xml(newobj);
   console.log(xml);

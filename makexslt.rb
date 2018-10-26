@@ -5,7 +5,7 @@ numeric = []
 boolean = []
 numericattr = []
 booleanattr = []
-
+object = []
 
 while line = gets do
   if /COMPLEX ATTRIBUTE/.match line
@@ -17,6 +17,9 @@ while line = gets do
   elsif /LIST/.match line
     /LIST: (?<path>\S+)/ =~ line
     list << path
+  elsif /OBJECT/.match line
+    /OBJECT: (?<path>\S+)/ =~ line
+    object << path
   elsif /NUMERIC.*\@/.match line
     /NUMERIC: (?<path>\S+)/ =~ line
     numericattr << path
@@ -31,6 +34,7 @@ while line = gets do
     booleanattr << path
   end
 end
+
 
 complexattr = ["NEVERMATCH"] if complexattr.empty?
 simpleattr = ["NEVERMATCH"] if simpleattr.empty?
@@ -47,9 +51,9 @@ print <<~"END"
   <xsl:output method="text" encoding="utf-8"/>
 
   <xsl:template match="/*[node()]">
-    <xsl:text>{</xsl:text>
-    <xsl:apply-templates select="." mode="detect" />
-    <xsl:text>}</xsl:text>
+    <!-- <xsl:text>[</xsl:text> -->
+    <xsl:apply-templates select="." mode="obj-list" />
+    <!-- <xsl:text>]</xsl:text> -->
   </xsl:template>
 
   <xsl:template match="*" mode="detect">
@@ -66,6 +70,33 @@ print <<~"END"
 
   <xsl:template match="*" mode="value">
     <xsl:text>"</xsl:text><xsl:apply-templates select="."/><xsl:text>"</xsl:text>
+  </xsl:template>
+
+  <xsl:template match="*" mode="obj-detect">
+    {
+    <xsl:choose>
+      <xsl:when test="count(./child::*) > 0 or count(@*) > 0">
+        <xsl:text>"</xsl:text><xsl:value-of select="name()"/>" : <xsl:apply-templates select="." mode="obj-content" />
+      </xsl:when>
+      <xsl:when test="count(./child::*) = 0">
+        <xsl:text>"</xsl:text><xsl:value-of select="name()"/>" : <xsl:apply-templates select="." mode="value"/>
+      </xsl:when>
+    </xsl:choose>
+    }
+  </xsl:template>
+
+  <!-- objects -->
+  <xsl:template match="#{object.join(' | ')}" mode="obj-list">
+    <xsl:if test="count(preceding-sibling::*) = 0">
+      <xsl:text>[</xsl:text>
+    </xsl:if>
+    <xsl:choose>
+      <xsl:when test="count(./child::*) > 0 or count(@*) > 0">
+        <xsl:apply-templates select="." mode="obj-detect" />
+      </xsl:when>
+    </xsl:choose>
+    <xsl:if test="count(following-sibling::*) &gt; 0">, </xsl:if>
+    <xsl:if test="count(following-sibling::*) = 0"><xsl:text>]</xsl:text></xsl:if>
   </xsl:template>
 
   <!-- numeric or boolean -->
@@ -98,7 +129,6 @@ print <<~"END"
         <xsl:apply-templates select="." mode="obj-content" />
       </xsl:when>
       <xsl:when test="count(./child::*) = 0">
-        <!-- <xsl:text>"</xsl:text><xsl:apply-templates select="."/><xsl:text>"</xsl:text> -->
         <xsl:apply-templates select="." mode="value"/>
       </xsl:when>
     </xsl:choose>

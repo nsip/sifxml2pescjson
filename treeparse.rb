@@ -5,6 +5,7 @@ def get_objgraph(file)
   graph = {}
   root = ""
   while line = file.gets do 
+    #byebug if /SystemRole/.match? line
     line.chomp!
     if /^\s*##1/.match line
         latest = graph[root][-1][:elems]
@@ -19,6 +20,7 @@ def get_objgraph(file)
     elsif /^\s*##6/.match line
       latest = graph[root][-1][:elems][-1][:elems][-1][:elems][-1][:elems][-1][:elems][-1][:elems]
     elsif /ATTRIBUTE/.match line
+    elsif !(/\S/.match line)
     else
       latest = graph[root]
     end
@@ -29,10 +31,12 @@ def get_objgraph(file)
     if /PARENT\s+\S+\s+\S+/.match(line)
       %r{PARENT (?<root>\S+)\s+(?<type>\S+)} =~ line
       graph[root] = [{inherits: type}]
+      latest = graph[root]
     elsif /PARENT.*\/\//.match(line)
       %r{PARENT (?<root>\S+)//} =~ line
       graph[root] = []
       graph[root] << { attr: [] }
+      latest = graph[root]
     elsif /%Inherits:\s+(?<inherits>[^;]+);/ =~ line
       latest[-1][:inherits] = inherits.sub(/\s*$/, "")
     elsif /ATTRIBUTE/.match(line)
@@ -170,6 +174,9 @@ end
 
 objgraph = get_objgraph(File.open("objectgraph.txt"))
 @typegraph = get_objgraph(File.open("typegraph.txt"))
+
+# what are the base objects?
+objgraph.keys.each { |k| puts "OBJECT: #{k}" }
 
 # where are the attributes on complex elements?
 objgraph.keys.each { |k| complexattrfind(objgraph[k], k) }
