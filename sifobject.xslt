@@ -1,3 +1,56 @@
+<!--
+
+This transform takes in files in the SIF specgen input format, and
+generates struct-like representations of the objects and common types in the
+specification. 
+
+The output takes the following format:
+
+1. Objects:
+
+    PARENT Activity//
+      ATTRIBUTE RefId: RefIdType;
+      Title: string;
+      TechnicalRequirements: TechnicalRequirementsType;
+      ActivityWeight: number;
+      Evaluation: EMPTY;
+      ATTRIBUTE EvaluationType: string;
+      ATTRIBUTE EvaluationRole: string;
+      ##1Description: string;
+      ##1ResourceReportColumn:  LIST EMPTY;
+      ##2ColumnName: string;
+
+* A line prefixed with PARENT starts a new type, and gives its name
+* The following lines name elements of the object, and give their type
+* All instances of booleans are replaced with "boolean" for their type. All instances of numeric values are replaced with "number", and all instances of strings (including enums) are replaced with "string".
+* A type given as EMPTY is a container, whose elements are given in-line (Russian-Doll style), or which has only attributes and no elements.
+* A type given as LIST is a list, whose contents are given in-line (Russian-Doll style)
+* Any other type names need to be looked up elsewhere in the specification.
+* An element prefixed with ATTRIBUTE is an XML attribute on the last named element (which may be the object itself)
+* The prefix ##1, ##2 etc indicate Russian-Doll embedded definitions, with the number giving the level of embedding.
+
+2. Types:
+
+    PARENT ReportPackageType AbstractContentPackageType
+
+* A line prefixed with PARENT starts a new type. If immediately followed by another type name, the first type is an alias for the second type.
+
+    PARENT MonetaryAmountType//
+    %Inherits: number ;
+    ATTRIBUTE Currency: string;
+
+* A line prefixed with %Inherits indicates that the current type inherits its definition from the named type, and may add attributes or elements to that type.
+
+    PARENT DataDomainObligationListType//
+    DataDomainObligation:  LIST DataDomainObligationType;
+
+* Any following lines name attributes and elements under that type, as for objects
+* Under types, LIST indicates that the element is a list (repeating), and names the type of the repeating element
+
+-->
+
+
+
 <xsl:stylesheet version="1.0"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   xmlns:sif="http://sifassociation.org/SpecGen"

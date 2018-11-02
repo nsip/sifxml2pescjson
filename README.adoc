@@ -1,0 +1,124 @@
+= sifxml2pescjson
+Code to convert between SIF XML and PESC JSON
+
+== Purpose
+https://www.a4l.org[Access for Learning (A4L)] is collaborating with the http://www.pesc.org[Postsecondary Electronic Standards Council (PESC)],
+to make SIF and PESC data available in JSON as a first-class data format. SIF to date supports JSON for its data exchanges via the 
+https://www.xml.com/pub/a/2006/05/31/converting-between-xml-and-json.html[Goessner notation], which guarantees that conversion between XML and JSON is lossless
+and can be round-tripped. (The latter is a critical requirement for the SIF ecosystem, as SIF servers and brokers will need to service clients in
+both XML and JSON for the foreseeable future.) However, in seeking to preserve the structure of the source XML, the Goessner notation introduces a number of undesirable characteristics into the JSON it generates:
+
+* Keys may be prefixed with `@` or `#`, to preserve information about XML attributes
+* Lists consisting of a single entry are treated as single elements
+* The distinction between numerals, booleans, and strings is not preserved
+
+The https://www.xml.com/pub/a/2006/05/31/converting-between-xml-and-json.html[PESC JSON conversion] addresses all these issues.
+It does so by making the transformation between XML and JSON schema-aware, where Goessner uses a single schema-agnostic transform
+in each direction. In particular:
+
+* Transformation from XML to JSON needs to know the names of all objects, and locations of all lists, attributes on simple content, booleans and numbers in the schema.
+* Transformation from JSON to XML needs to know the names of all objects, and locations of attributes on complex content in the schema.
+
+Each SIF schema instance therefore has its own associated transform scripts. The code in this repository generates those transform scripts for a SIF schema instance.
+
+== Outputs
+
+The transform scripts are contained in `scripts/`, and include XSLT 1.0 transforms to process XML, and Javascript scripts to process JSON.
+These tools were preferred over programming-language–specific tools, in order to make the scripts as widely usable as possible. This
+repository includes scripts specific to the current SIF-AU specification:
+
+* `scripts/sif2json.xslt`: XSLT 1.0 transform to convert SIF XML to PESC JSON, as an array of objects.
+** Note: while lists within a SIF object are represented as `{ "list_name" : { "listitem_name" : [ "item1", "item2", ... ] } }`,
+the list of SIF objects is represented as `[ { "objectname" : { ... } }, { "objectname" : { ... } }, ... ]`. This is to permit
+different SIF objects to appear in the same document, without needing to gather up all instances of the same object into the same
+list (`{ "objectname" : [ { ... }, { ... }, ... ], "objectname2" : [ { ... }, { ... }, ... ], ... }`).
+* `scripts/json2sif.js`: Javascript to transform an array of PESC JSON objects into SIF XML, as a list of objects (with no wrapper).
+** The script depends on the Node libraries https://github.com/rhalff/dot-object[dot-object] and https://github.com/x2js/x2js[x2js]. 
+Currently a local instance of `scripts/x2js.js` is used: 
+https://github.com/x2js/x2js/pull/76[a bug has been identified] with the current release of `x2js`, which has not yet been incorporated into a new release.
+* `scripts/sifreorder.xslt`: XSLT 1.0 to reorder the XML output of `scripts/json2sif.js`, if the source JSON has not preserved the 
+ordering of keys in the XML schema. Run this if the JSON has been generated from scratch, or if the JSON is being round-tripped from
+XML, and has been processed so as to lose key-ordering.
+* `scripts/out.txt`: A flat file representation of all the structural information in the schema, used to generate the transform scripts.
+Other developers can use this representation to generate their own transforms.
+
+The code in this repository, as described below, generates these transform scripts. The code would be run by specification maintainers,
+but it can be customised by developers to generate their own language-specific tools, which may be more efficient. Developers will need access
+to either the `specgen` input source, or the intermediate `scripts/out.txt` flat file representation of the schema (see below).
+
+== Conversion issues
+
+=== Numeric precision
+
+Since JSON is Javascript, JSON does not differentiate between integers and floating point values, unlike XML. If an XML value is a floating point
+value with trailing zeroes after the decimal point, those zeroes are stripped in the conversion to JSON: `54.10` is converted to `54.1`, and `54.000` to `54`.
+Numeric normalisation also means that leading zeroes are dropped before integers parts of numbers, and inserted before fractional parts of numbers:
+`010` is converted to `10`, and `.8` to `0.8`.
+
+The failure to distinguish between `54.000` and `54` is a feature of JSON. If this is unacceptable in workflows involving JSON workflows, the only
+way to prevent it is to force such values to be transmitted in JSON as strings instead of numbers. That would involve removing the `NUMBER` lines
+from `out.txt`, or the associated numeric templated (not inserting quotations around its value) in `scripts/sif2json.xslt`.
+
+== Approach
+
+The source of truth for the SIF data model is the set of XML files used by the `specgen` processor to generate all files associated with the specification,
+including both the online HTML documentation and the XSD schemas for that data model instance. The specgen input files for 
+the https://github.com/nsip/specgen_input_au[SIF-AU] and https://github.com/nsip/specgen_input_nz[SIF-NZ] data models are both available
+online, and this set of transformations has been developed against the SIF-AU instance. To use a different data mode, change step #1 in `run.sh`,
+which downloads the specgen input repository, and step #2, which processes the files containing the objects and common types specific to that data model.
+
+The information in the specgen input XML files is processed via an XSLT transform, `sifobject.xslt`, and converted to a struct-like
+representation of all objects and types in the specification. Two separate files are generated: `objectgraph.txt`, for the objects in the 
+specification (including any Russian-Doll definitions embedded within objects), and `typegraph.txt`, for the common types in the specification
+(used in Venetian-Blind style.) The file contents for these is documented in `sifobject.xslt`.
+
+`sifobject.xslt` is the only code in this repository that depends on specgen input: all other code works off its output files. The `sifobject.xslt` transform
+could be rewritten to process XSD schemas instead; this has not proven necessary for SIF.
+
+The script `treeparse.rb` iterates through `objectgraph.txt` and `typegraph.txt`, and generates `out.txt`, as a flattened file containing all needed 
+structural information to generate the transform scripts:
+
+* OBJECT: a list of all objects in the specification
+* COMPLEX ATTRIBUTE: the XPath (from object root) of all instances of XML attributes on complex content. The XPath is followed by a description of the complex content, as a diagnostic; that description is not used downstream.
+* SIMPLE ATTRIBUTE: the XPath (from object root) of all instances of XML attributes on simple content. The XPath is followed by the type of the complex content, as a diagnostic; that description is not used downstream.
+* LIST: the XPath (from object root) of all instances of repeating elements.
+* NUMERIC: the XPath (from object root) of all instances of elements and attributes with numeric value.
+* BOOLEAN: the XPath (from object root) of all instances of elements and attributes with boolean value.
+* XPATHTYPE: a flattened representation of all elements in the specification, in order. (Attributes are ignored.) Entries are grouped by their object or type container. Each entry contains the following tab-delimited values:
+** The element name. If no element name is applicable (the type is an alias of another type), the string `node()` is used instead.
+** The type of the element, as specified in `objectgraph.txt` and `typegraph.txt`.
+** Whether the type of the element is to be looked up in a different type container (i.e. is a common type defined in the specification, as opposed to a primitive type).
+** Whether the element is contained in an object or a common type.
+** The name of the object or common type container.
+** For example: `Name    OtherNameType   LOOKUP  TYPE    OtherNamesType`: `Name` is an element inside the container `OtherNamesType`, of type `OtherNameType`. The type `OtherNameType` is defined in a different container (`LOOKUP`). `OtherNamesType` is a common type, not an object (`TYPE`).
+
+The transform scripts are contained in `scripts/`, and are all generated from `out.txt`: 
+
+* `scripts/sif2json.xslt` by `makexslt.rb`, using OBJECT, SIMPLE ATTRIBUTE, LIST, NUMERIC, BOOLEAN
+* `scripts/json2sif.js` by `makejs2xml.rb`, using OBJECT, COMPLEX ATTRIBUTE
+* `scripts/sifreorder.xslt` by `makereorder.rb`, using XPATHTYPE
+
+== Testing
+
+The script `run.sh` includes testing of the generated scripts, against the XML object examples included in the source specgen input. (Those examples are
+extracted in step #4, and are wrapped in an arbitrary `<sif>` wrapper.) There are two tests.
+
+. Test roundtrip XML > JSON (preserving order of keys) > XML
+** Pretty print the list of XML object examples (`test/siftest.pretty.xml`)
+** Convert the list of XML object examples into an array of JSON objects. Pretty-print the array, preserving the ordering of all JSON object keys (`test/siftest.pretty.json`)
+** Convert the pretty-printed JSON objects back to SIF XML, and pretty-print it (`test/siftest2.pretty.xml`)
+** Compare the source and target pretty-printed XML files. As of this writing, the two files for SIF-AU differ in 73 locations, all of which involve the JSON normalisation of trailing and leading zeroes in numeric values (see above).
+
+. Test roundtrip XML > JSON (not preserving order of keys) > XML
+** Convert the list of XML object examples into an array of JSON objects. Pretty-print it, sorting all JSON object keys alphabetically (`test/siftest.sorted.json`)
+** Convert the pretty-printed JSON objects back to SIF XML, and pretty-print it (`test/siftest.sorted.pretty.xml`)
+** Compare the target pretty-printed XML files from the previous test and the current test. As of this writing, the two files for SIF-AU differ in two locations: the XML processing instruction at the start, requring UTF-8, and the relative order of two XML attributes on the same element.
+
+== Dependencies
+
+The transform scripts are in XSLT 1.0 and Javascript. They are tested in `run.sh` using `xsltproc` and `node`. XML files are cleaned up
+for regression testing using `xmllint`, and JSON files are cleaned up for regression testing using `jq`. The test files for regression testing
+are extracted using the Perl script `sifexamples.pl`.
+
+The code used to generate these transfrom scripts is in XSLT 1.0 and Ruby.
+
