@@ -3,23 +3,29 @@ Code to convert between SIF XML and PESC JSON
 
 == Purpose
 https://www.a4l.org[Access for Learning (A4L)] is collaborating with the http://www.pesc.org[Postsecondary Electronic Standards Council (PESC)],
-to make SIF and PESC data available in JSON as a first-class data format. SIF to date supports JSON for its data exchanges via the 
-https://www.xml.com/pub/a/2006/05/31/converting-between-xml-and-json.html[Goessner notation], which guarantees that conversion between XML and JSON is lossless
+to make https://www.a4l.org/general/custom.asp?page=SIFSpecifications[SIF] and PESC data available in JSON as a first-class data format.
+
+SIF to date has specified its data model in XML, and has supported JSON for its data exchanges via the 
+https://www.xml.com/pub/a/2006/05/31/converting-between-xml-and-json.html[Goessner notation]—which guarantees that conversion between XML and JSON is lossless
 and can be round-tripped. (The latter is a critical requirement for the SIF ecosystem, as SIF servers and brokers will need to service clients in
-both XML and JSON for the foreseeable future.) However, in seeking to preserve the structure of the source XML, the Goessner notation introduces a number of undesirable characteristics into the JSON it generates:
+both XML and JSON for the foreseeable future.) However, in seeking to preserve the structure of the source XML, the Goessner notation introduces 
+a number of undesirable characteristics into the JSON it generates:
 
 * Keys may be prefixed with `@` or `#`, to preserve information about XML attributes
 * Lists consisting of a single entry are treated as single elements
 * The distinction between numerals, booleans, and strings is not preserved
 
-The https://www.xml.com/pub/a/2006/05/31/converting-between-xml-and-json.html[PESC JSON conversion] addresses all these issues.
+The https://www.xml.com/pub/a/2006/05/31/converting-between-xml-and-json.html[PESC Compliant JSON specification] addresses all these issues.
 It does so by making the transformation between XML and JSON schema-aware, where Goessner uses a single schema-agnostic transform
 in each direction. In particular:
 
 * Transformation from XML to JSON needs to know the names of all objects, and locations of all lists, attributes on simple content, booleans and numbers in the schema.
 * Transformation from JSON to XML needs to know the names of all objects, and locations of attributes on complex content in the schema.
 
-Each SIF schema instance therefore has its own associated transform scripts. The code in this repository generates those transform scripts for a SIF schema instance.
+Each SIF schema instance therefore needs to have its own associated transform scripts. The code in this repository generates those transform scripts for a SIF schema instance.
+
+Unlike Goessner JSON, PESC JSON looks like conventional JSON, and is readily processed by downstream tools without any barriers from idiosyncratic key prefixes.
+See separately for https://github.com/nsip/sifxml2pescjson/wiki/Format-samples[samples of Goessner and PESC JSON].
 
 == Outputs
 
@@ -78,13 +84,13 @@ could be rewritten to process XSD schemas instead; this has not proven necessary
 The script `treeparse.rb` iterates through `objectgraph.txt` and `typegraph.txt`, and generates `out.txt`, as a flattened file containing all needed 
 structural information to generate the transform scripts:
 
-* OBJECT: a list of all objects in the specification
-* COMPLEX ATTRIBUTE: the XPath (from object root) of all instances of XML attributes on complex content. The XPath is followed by a description of the complex content, as a diagnostic; that description is not used downstream.
-* SIMPLE ATTRIBUTE: the XPath (from object root) of all instances of XML attributes on simple content. The XPath is followed by the type of the complex content, as a diagnostic; that description is not used downstream.
-* LIST: the XPath (from object root) of all instances of repeating elements.
-* NUMERIC: the XPath (from object root) of all instances of elements and attributes with numeric value.
-* BOOLEAN: the XPath (from object root) of all instances of elements and attributes with boolean value.
-* XPATHTYPE: a flattened representation of all elements in the specification, in order. (Attributes are ignored.) Entries are grouped by their object or type container. Each entry contains the following tab-delimited values:
+* `OBJECT`: a list of all objects in the specification
+* `COMPLEX ATTRIBUTE`: the XPath (from object root) of all instances of XML attributes on complex content. The XPath is followed by a description of the complex content, as a diagnostic; that description is not used downstream.
+* `SIMPLE ATTRIBUTE`: the XPath (from object root) of all instances of XML attributes on simple content. The XPath is followed by the type of the complex content, as a diagnostic; that description is not used downstream.
+* `LIST`: the XPath (from object root) of all instances of repeating elements.
+* `NUMERIC`: the XPath (from object root) of all instances of elements and attributes with numeric value.
+* `BOOLEAN`: the XPath (from object root) of all instances of elements and attributes with boolean value.
+* `XPATHTYPE`: a flattened representation of all elements in the specification, in order. (Attributes are ignored.) Entries are grouped by their object or type container. Each entry contains the following tab-delimited values:
 ** The element name. If no element name is applicable (the type is an alias of another type), the string `node()` is used instead.
 ** The type of the element, as specified in `objectgraph.txt` and `typegraph.txt`.
 ** Whether the type of the element is to be looked up in a different type container (i.e. is a common type defined in the specification, as opposed to a primitive type).
