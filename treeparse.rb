@@ -53,6 +53,21 @@ end
 @objgraph = {}
 @typegraph = {}
 
+def xpathtype(arr, path, object)
+  arr.each do |a|
+    if a[:elems] && !a[:elems].empty?
+      puts "XPATHTYPE\t#{a[:elem]}\t#{path}/#{a[:elem]}\tLOOKUP\t#{object}\t#{path}"
+      xpathtype(a[:elems], "#{path}/#{a[:elem]}", "TYPE")
+    elsif a[:type] && @typegraph[a[:type]]
+      puts "XPATHTYPE\t#{a[:elem] || 'node()'}\t#{a[:type]}\tLOOKUP\t#{object}\t#{path}"
+    elsif a[:inherits] && @typegraph[a[:inherits]]
+      puts "XPATHTYPE\t#{a[:elem] || 'node()'}\t#{a[:inherits]}\tLOOKUP\t#{object}\t#{path}"
+    elsif a[:type] || a[:inherits]
+      puts "XPATHTYPE\t#{a[:elem] || 'node()'}\t#{a[:type] || a[:inherits]}\t\t#{object}\t#{path}"
+    end
+  end
+end
+
 def listfind(arr, path)
   arr.each do |a|
     #pp a
@@ -193,3 +208,7 @@ objgraph.keys.each { |k| numericfind(objgraph[k], k) }
 
 # where are the booleans?
 objgraph.keys.each { |k| booleanfind(objgraph[k], k) }
+
+# what are the paths to all types?
+objgraph.keys.each { |k| xpathtype(objgraph[k], k, "OBJECT") }
+@typegraph.keys.each { |k| xpathtype(@typegraph[k], k, "TYPE") }

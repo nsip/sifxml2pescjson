@@ -8,28 +8,28 @@ booleanattr = []
 object = []
 
 while line = gets do
-  if /COMPLEX ATTRIBUTE/.match line
+  if /^COMPLEX ATTRIBUTE/.match line
     /COMPLEX ATTRIBUTE: (?<path>\S+)/ =~ line
     complexattr << path
-  elsif /SIMPLE ATTRIBUTE/.match line
+  elsif /^SIMPLE ATTRIBUTE/.match line
     /SIMPLE ATTRIBUTE: (?<path>\S+)/ =~ line
     simpleattr << path
-  elsif /LIST/.match line
+  elsif /^LIST/.match line
     /LIST: (?<path>\S+)/ =~ line
     list << path
-  elsif /OBJECT/.match line
+  elsif /^OBJECT/.match line
     /OBJECT: (?<path>\S+)/ =~ line
     object << path
-  elsif /NUMERIC.*\@/.match line
+  elsif /^NUMERIC.*\@/.match line
     /NUMERIC: (?<path>\S+)/ =~ line
     numericattr << path
-  elsif /NUMERIC/.match line
+  elsif /^NUMERIC/.match line
     /NUMERIC: (?<path>\S+)/ =~ line
     numeric << path
-  elsif /BOOLEAN.*\@/.match line
+  elsif /^BOOLEAN.*\@/.match line
     /BOOLEAN: (?<path>\S+)/ =~ line
     booleanattr << path
-  elsif /BOOLEAN/.match line
+  elsif /^BOOLEAN/.match line
     /BOOLEAN: (?<path>\S+)/ =~ line
     booleanattr << path
   end

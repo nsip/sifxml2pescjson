@@ -39,8 +39,10 @@ echo "</sif>" >> siftest.xml
 
 ruby treeparse.rb > out.txt
 ruby makexslt.rb < out.txt > sif2json.xslt
+ruby makereorder.rb < out.txt > sifreorder.xslt
 xsltproc sif2json.xslt siftest.xml > siftest.json
 jq . siftest.json > siftest.pretty.json
+jq  -S . siftest.json > siftest.sorted.json
 ruby makejs2xml.rb < out.txt > json2sif.js
 echo "<sif>" > siftest2.xml
 node json2sif.js < siftest.pretty.json >> siftest2.xml
@@ -49,5 +51,15 @@ xmllint --format siftest.xml > siftest.pretty.xml
 xmllint --format siftest2.xml > siftest2.pretty.xml
 diff siftest.pretty.xml siftest2.pretty.xml > diff.txt
 cat diff.txt
-echo "Diff lines: "
+echo "Diff lines, roundtrip: "
 egrep "^< " diff.txt|wc -l
+
+echo "<sif>" > siftest3.xml
+node json2sif.js < siftest.sorted.json >> siftest3.xml
+echo "</sif>" >> siftest3.xml
+xsltproc sifreorder.xslt siftest3.xml > siftest.sorted.xml
+xmllint --format siftest.sorted.xml > siftest.sorted.pretty.xml
+diff siftest2.pretty.xml siftest.sorted.pretty.xml > diff.sorted.txt
+echo "Diff lines, re-sorting XML: "
+egrep "^< " diff.sorted.txt|wc -l
+

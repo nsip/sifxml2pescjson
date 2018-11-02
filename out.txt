@@ -15,6 +15,7 @@ OBJECT: LearningStandardDocument
 OBJECT: LearningStandardItem
 OBJECT: MarkValueInfo
 OBJECT: PersonPicture
+OBJECT: PersonPrivacyObligation
 OBJECT: PersonalisedPlan
 OBJECT: ReportAuthorityInfo
 OBJECT: ResourceBooking
@@ -52,8 +53,10 @@ OBJECT: WellbeingAppeal
 OBJECT: WellbeingCharacteristic
 OBJECT: WellbeingEvent
 OBJECT: WellbeingResponse
+OBJECT: AGStatusReport
 OBJECT: ChargedLocationInfo
 OBJECT: Debtor
+OBJECT: FQReporting
 OBJECT: FinancialAccount
 OBJECT: Invoice
 OBJECT: Journal
@@ -106,6 +109,7 @@ COMPLEX ATTRIBUTE: LearningStandardDocument/RichDescription/Reference/@Descripti
 COMPLEX ATTRIBUTE: LearningStandardItem/@RefId	RefId
 COMPLEX ATTRIBUTE: MarkValueInfo/@RefId	RefId
 COMPLEX ATTRIBUTE: PersonPicture/@RefId	RefId
+COMPLEX ATTRIBUTE: PersonPrivacyObligation/@RefId	RefId
 COMPLEX ATTRIBUTE: PersonalisedPlan/@RefId	RefId
 COMPLEX ATTRIBUTE: ReportAuthorityInfo/@RefId	RefId
 COMPLEX ATTRIBUTE: ReportAuthorityInfo/ContactInfo/Name/@Type	BaseNameType
@@ -204,6 +208,7 @@ COMPLEX ATTRIBUTE: WellbeingAppeal/@RefId	RefId
 COMPLEX ATTRIBUTE: WellbeingCharacteristic/@RefId	RefId
 COMPLEX ATTRIBUTE: WellbeingEvent/@RefId	RefId
 COMPLEX ATTRIBUTE: WellbeingResponse/@RefId	RefId
+COMPLEX ATTRIBUTE: AGStatusReport/@RefId	RefId
 COMPLEX ATTRIBUTE: ChargedLocationInfo/@RefId	RefId
 COMPLEX ATTRIBUTE: ChargedLocationInfo/AddressList/Address/@Type	Address
 COMPLEX ATTRIBUTE: ChargedLocationInfo/AddressList/Address/@Role	Address
@@ -213,6 +218,12 @@ COMPLEX ATTRIBUTE: Debtor/@RefId	RefId
 COMPLEX ATTRIBUTE: Debtor/AddressList/Address/@Type	Address
 COMPLEX ATTRIBUTE: Debtor/AddressList/Address/@Role	Address
 COMPLEX ATTRIBUTE: Debtor/AddressList/Address/MapReference/@Type	MapReference
+COMPLEX ATTRIBUTE: FQReporting/@RefId	RefId
+COMPLEX ATTRIBUTE: FQReporting/EntityContact/Name/@Type	BaseNameType
+COMPLEX ATTRIBUTE: FQReporting/EntityContact/Address/@Type	Address
+COMPLEX ATTRIBUTE: FQReporting/EntityContact/Address/@Role	Address
+COMPLEX ATTRIBUTE: FQReporting/EntityContact/Address/MapReference/@Type	MapReference
+COMPLEX ATTRIBUTE: FQReporting/EntityContact/PhoneNumber/@Type	PhoneNumber
 COMPLEX ATTRIBUTE: FinancialAccount/@RefId	RefId
 COMPLEX ATTRIBUTE: Invoice/@RefId	RefId
 COMPLEX ATTRIBUTE: Journal/@RefId	RefId
@@ -280,6 +291,7 @@ SIMPLE ATTRIBUTE: MarkValueInfo/SIF_ExtendedElements/SIF_ExtendedElement	Extende
 SIMPLE ATTRIBUTE: PersonPicture/ParentObjectRefId	string
 SIMPLE ATTRIBUTE: PersonPicture/PictureSource	URIOrBinaryType
 SIMPLE ATTRIBUTE: PersonPicture/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: PersonPrivacyObligation/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
 SIMPLE ATTRIBUTE: PersonalisedPlan/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
 SIMPLE ATTRIBUTE: ReportAuthorityInfo/ContactInfo/Address/StatisticalAreas/StatisticalArea	string
 SIMPLE ATTRIBUTE: ReportAuthorityInfo/ContactInfo/EmailList/Email	string
@@ -397,11 +409,15 @@ SIMPLE ATTRIBUTE: WellbeingEvent/PersonInvolvementList/PersonInvolvement/PersonR
 SIMPLE ATTRIBUTE: WellbeingEvent/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
 SIMPLE ATTRIBUTE: WellbeingResponse/PersonInvolvementList/PersonInvolvement/PersonRefId	string
 SIMPLE ATTRIBUTE: WellbeingResponse/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: AGStatusReport/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
 SIMPLE ATTRIBUTE: ChargedLocationInfo/AddressList/Address/StatisticalAreas/StatisticalArea	string
 SIMPLE ATTRIBUTE: ChargedLocationInfo/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
 SIMPLE ATTRIBUTE: Debtor/BilledEntity	string
 SIMPLE ATTRIBUTE: Debtor/AddressList/Address/StatisticalAreas/StatisticalArea	string
 SIMPLE ATTRIBUTE: Debtor/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: FQReporting/EntityContact/Address/StatisticalAreas/StatisticalArea	string
+SIMPLE ATTRIBUTE: FQReporting/EntityContact/Email	string
+SIMPLE ATTRIBUTE: FQReporting/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
 SIMPLE ATTRIBUTE: FinancialAccount/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
 SIMPLE ATTRIBUTE: Invoice/InvoicedEntity	string
 SIMPLE ATTRIBUTE: Invoice/BilledAmount	MonetaryAmountType
@@ -624,6 +640,16 @@ LIST: PersonPicture/SIF_Metadata/LifeCycle/TimeElements/TimeElement
 LIST: PersonPicture/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap
 LIST: PersonPicture/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
 LIST: PersonPicture/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: PersonPrivacyObligation/DataDomainObligationList/DataDomainObligation
+LIST: PersonPrivacyObligation/DataDomainObligationList/DataDomainObligation/ShareWithList/ShareWith
+LIST: PersonPrivacyObligation/SIF_Metadata/TimeElements/TimeElement
+LIST: PersonPrivacyObligation/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap
+LIST: PersonPrivacyObligation/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: PersonPrivacyObligation/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: PersonPrivacyObligation/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: PersonPrivacyObligation/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap
+LIST: PersonPrivacyObligation/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: PersonPrivacyObligation/SIF_ExtendedElements/SIF_ExtendedElement
 LIST: PersonalisedPlan/DocumentList/Document
 LIST: PersonalisedPlan/SIF_Metadata/TimeElements/TimeElement
 LIST: PersonalisedPlan/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap
@@ -1079,6 +1105,16 @@ LIST: WellbeingResponse/SIF_Metadata/LifeCycle/TimeElements/TimeElement
 LIST: WellbeingResponse/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap
 LIST: WellbeingResponse/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
 LIST: WellbeingResponse/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: AGStatusReport/AGReportingObjectResponseList/AGReportingObjectResponse
+LIST: AGStatusReport/AGReportingObjectResponseList/AGReportingObjectResponse/AGRuleList/AGRule
+LIST: AGStatusReport/SIF_Metadata/TimeElements/TimeElement
+LIST: AGStatusReport/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap
+LIST: AGStatusReport/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: AGStatusReport/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: AGStatusReport/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: AGStatusReport/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap
+LIST: AGStatusReport/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: AGStatusReport/SIF_ExtendedElements/SIF_ExtendedElement
 LIST: ChargedLocationInfo/AddressList/Address
 LIST: ChargedLocationInfo/AddressList/Address/StatisticalAreas/StatisticalArea
 LIST: ChargedLocationInfo/PhoneNumberList/PhoneNumber
@@ -1100,6 +1136,18 @@ LIST: Debtor/SIF_Metadata/LifeCycle/TimeElements/TimeElement
 LIST: Debtor/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap
 LIST: Debtor/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
 LIST: Debtor/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: FQReporting/EntityContact/Address/StatisticalAreas/StatisticalArea
+LIST: FQReporting/FQContextualQuestionList/FQContextualQuestion
+LIST: FQReporting/FQItemList/FQItem
+LIST: FQReporting/AGRuleList/AGRule
+LIST: FQReporting/SIF_Metadata/TimeElements/TimeElement
+LIST: FQReporting/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap
+LIST: FQReporting/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: FQReporting/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: FQReporting/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: FQReporting/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap
+LIST: FQReporting/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: FQReporting/SIF_ExtendedElements/SIF_ExtendedElement
 LIST: FinancialAccount/SIF_Metadata/TimeElements/TimeElement
 LIST: FinancialAccount/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap
 LIST: FinancialAccount/SIF_Metadata/LifeCycle/Created/Creators/Creator
@@ -1357,6 +1405,13 @@ NUMERIC: ChargedLocationInfo/AddressList/Address/GridLocation/Longitude
 NUMERIC: ChargedLocationInfo/PhoneNumberList/PhoneNumber/Preference
 NUMERIC: Debtor/AddressList/Address/GridLocation/Latitude
 NUMERIC: Debtor/AddressList/Address/GridLocation/Longitude
+NUMERIC: FQReporting/EntityContact/Address/GridLocation/Latitude
+NUMERIC: FQReporting/EntityContact/Address/GridLocation/Longitude
+NUMERIC: FQReporting/EntityContact/PhoneNumber/Preference
+NUMERIC: FQReporting/FQItemList/FQItem/TuitionAmount
+NUMERIC: FQReporting/FQItemList/FQItem/BoardingAmount
+NUMERIC: FQReporting/FQItemList/FQItem/SystemAmount
+NUMERIC: FQReporting/FQItemList/FQItem/DioceseAmount
 NUMERIC: Invoice/BilledAmount
 NUMERIC: Invoice/NetAmount
 NUMERIC: Invoice/TaxRate
@@ -1515,6 +1570,8 @@ BOOLEAN: MarkValueInfo/SIF_Metadata/TimeElements/TimeElement/IsCurrent
 BOOLEAN: MarkValueInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
 BOOLEAN: PersonPicture/SIF_Metadata/TimeElements/TimeElement/IsCurrent
 BOOLEAN: PersonPicture/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: PersonPrivacyObligation/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: PersonPrivacyObligation/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
 BOOLEAN: PersonalisedPlan/SIF_Metadata/TimeElements/TimeElement/IsCurrent
 BOOLEAN: PersonalisedPlan/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
 BOOLEAN: ReportAuthorityInfo/SIF_Metadata/TimeElements/TimeElement/IsCurrent
@@ -1592,10 +1649,14 @@ BOOLEAN: WellbeingEvent/SIF_Metadata/TimeElements/TimeElement/IsCurrent
 BOOLEAN: WellbeingEvent/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
 BOOLEAN: WellbeingResponse/SIF_Metadata/TimeElements/TimeElement/IsCurrent
 BOOLEAN: WellbeingResponse/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: AGStatusReport/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: AGStatusReport/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
 BOOLEAN: ChargedLocationInfo/SIF_Metadata/TimeElements/TimeElement/IsCurrent
 BOOLEAN: ChargedLocationInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
 BOOLEAN: Debtor/SIF_Metadata/TimeElements/TimeElement/IsCurrent
 BOOLEAN: Debtor/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: FQReporting/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: FQReporting/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
 BOOLEAN: FinancialAccount/SIF_Metadata/TimeElements/TimeElement/IsCurrent
 BOOLEAN: FinancialAccount/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
 BOOLEAN: Invoice/SIF_Metadata/TimeElements/TimeElement/IsCurrent
@@ -1629,3 +1690,1797 @@ BOOLEAN: PurchaseOrder/SIF_Metadata/TimeElements/TimeElement/IsCurrent
 BOOLEAN: PurchaseOrder/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
 BOOLEAN: VendorInfo/SIF_Metadata/TimeElements/TimeElement/IsCurrent
 BOOLEAN: VendorInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+XPATHTYPE	Title	string		OBJECT	Activity
+XPATHTYPE	Preamble	string		OBJECT	Activity
+XPATHTYPE	TechnicalRequirements	TechnicalRequirementsType	LOOKUP	OBJECT	Activity
+XPATHTYPE	SoftwareRequirementList	SoftwareRequirementListType	LOOKUP	OBJECT	Activity
+XPATHTYPE	EssentialMaterials	EssentialMaterialsType	LOOKUP	OBJECT	Activity
+XPATHTYPE	LearningObjectives	LearningObjectivesType	LOOKUP	OBJECT	Activity
+XPATHTYPE	LearningStandards	LearningStandardsType	LOOKUP	OBJECT	Activity
+XPATHTYPE	SubjectArea	SubjectAreaType	LOOKUP	OBJECT	Activity
+XPATHTYPE	Prerequisites	PrerequisitesType	LOOKUP	OBJECT	Activity
+XPATHTYPE	Students	StudentsType	LOOKUP	OBJECT	Activity
+XPATHTYPE	SourceObjects	SourceObjectsType	LOOKUP	OBJECT	Activity
+XPATHTYPE	Points	number		OBJECT	Activity
+XPATHTYPE	ActivityTime	ActivityTimeType	LOOKUP	OBJECT	Activity
+XPATHTYPE	AssessmentRefId	string		OBJECT	Activity
+XPATHTYPE	MaxAttemptsAllowed	number		OBJECT	Activity
+XPATHTYPE	ActivityWeight	number		OBJECT	Activity
+XPATHTYPE	Evaluation	Activity/Evaluation	LOOKUP	OBJECT	Activity
+XPATHTYPE	Description	string		TYPE	Activity/Evaluation
+XPATHTYPE	LearningResources	LearningResourcesType	LOOKUP	OBJECT	Activity
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	Activity
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	Activity
+XPATHTYPE	Description	string		OBJECT	AggregateCharacteristicInfo
+XPATHTYPE	Definition	string		OBJECT	AggregateCharacteristicInfo
+XPATHTYPE	ElementName	string		OBJECT	AggregateCharacteristicInfo
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	AggregateCharacteristicInfo
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	AggregateCharacteristicInfo
+XPATHTYPE	AggregateStatisticInfoRefId	string		OBJECT	AggregateStatisticFact
+XPATHTYPE	Characteristics	CharacteristicsType	LOOKUP	OBJECT	AggregateStatisticFact
+XPATHTYPE	Excluded	string		OBJECT	AggregateStatisticFact
+XPATHTYPE	Value	number		OBJECT	AggregateStatisticFact
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	AggregateStatisticFact
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	AggregateStatisticFact
+XPATHTYPE	StatisticName	string		OBJECT	AggregateStatisticInfo
+XPATHTYPE	CalculationRule	string		OBJECT	AggregateStatisticInfo
+XPATHTYPE	ApprovalDate	string		OBJECT	AggregateStatisticInfo
+XPATHTYPE	ExpirationDate	string		OBJECT	AggregateStatisticInfo
+XPATHTYPE	ExclusionRules	ExclusionRulesType	LOOKUP	OBJECT	AggregateStatisticInfo
+XPATHTYPE	Source	string		OBJECT	AggregateStatisticInfo
+XPATHTYPE	EffectiveDate	string		OBJECT	AggregateStatisticInfo
+XPATHTYPE	DiscontinueDate	string		OBJECT	AggregateStatisticInfo
+XPATHTYPE	Location	LocationType	LOOKUP	OBJECT	AggregateStatisticInfo
+XPATHTYPE	Measure	string		OBJECT	AggregateStatisticInfo
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	AggregateStatisticInfo
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	AggregateStatisticInfo
+XPATHTYPE	Date	string		OBJECT	CalendarDate
+XPATHTYPE	CalendarSummaryRefId	string		OBJECT	CalendarDate
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	CalendarDate
+XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	CalendarDate
+XPATHTYPE	CalendarDateType	CalendarDateInfoType	LOOKUP	OBJECT	CalendarDate
+XPATHTYPE	CalendarDateNumber	number		OBJECT	CalendarDate
+XPATHTYPE	StudentAttendance	AttendanceInfoType	LOOKUP	OBJECT	CalendarDate
+XPATHTYPE	TeacherAttendance	AttendanceInfoType	LOOKUP	OBJECT	CalendarDate
+XPATHTYPE	AdministratorAttendance	AttendanceInfoType	LOOKUP	OBJECT	CalendarDate
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	CalendarDate
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	CalendarDate
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	CalendarSummary
+XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	CalendarSummary
+XPATHTYPE	LocalId	LocalIdType	LOOKUP	OBJECT	CalendarSummary
+XPATHTYPE	Description	string		OBJECT	CalendarSummary
+XPATHTYPE	DaysInSession	number		OBJECT	CalendarSummary
+XPATHTYPE	StartDate	string		OBJECT	CalendarSummary
+XPATHTYPE	EndDate	string		OBJECT	CalendarSummary
+XPATHTYPE	FirstInstructionDate	string		OBJECT	CalendarSummary
+XPATHTYPE	LastInstructionDate	string		OBJECT	CalendarSummary
+XPATHTYPE	GraduationDate	GraduationDateType	LOOKUP	OBJECT	CalendarSummary
+XPATHTYPE	InstructionalMinutes	number		OBJECT	CalendarSummary
+XPATHTYPE	MinutesPerDay	number		OBJECT	CalendarSummary
+XPATHTYPE	YearLevels	YearLevelsType	LOOKUP	OBJECT	CalendarSummary
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	CalendarSummary
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	CalendarSummary
+XPATHTYPE	Name	string		OBJECT	EquipmentInfo
+XPATHTYPE	Description	string		OBJECT	EquipmentInfo
+XPATHTYPE	LocalId	LocalIdType	LOOKUP	OBJECT	EquipmentInfo
+XPATHTYPE	AssetNumber	LocalIdType	LOOKUP	OBJECT	EquipmentInfo
+XPATHTYPE	InvoiceRefId	string		OBJECT	EquipmentInfo
+XPATHTYPE	PurchaseOrderRefId	string		OBJECT	EquipmentInfo
+XPATHTYPE	EquipmentType	string		OBJECT	EquipmentInfo
+XPATHTYPE	SIF_RefId	string		OBJECT	EquipmentInfo
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	EquipmentInfo
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	EquipmentInfo
+XPATHTYPE	TeachingGroupRefId	string		OBJECT	GradingAssignment
+XPATHTYPE	StudentPersonalRefIdList	StudentsType	LOOKUP	OBJECT	GradingAssignment
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	GradingAssignment
+XPATHTYPE	GradingCategory	string		OBJECT	GradingAssignment
+XPATHTYPE	Description	string		OBJECT	GradingAssignment
+XPATHTYPE	PointsPossible	number		OBJECT	GradingAssignment
+XPATHTYPE	CreateDate	string		OBJECT	GradingAssignment
+XPATHTYPE	DueDate	string		OBJECT	GradingAssignment
+XPATHTYPE	Weight	number		OBJECT	GradingAssignment
+XPATHTYPE	MaxAttemptsAllowed	number		OBJECT	GradingAssignment
+XPATHTYPE	DetailedDescriptionURL	string		OBJECT	GradingAssignment
+XPATHTYPE	DetailedDescriptionBinary	string		OBJECT	GradingAssignment
+XPATHTYPE	AssessmentType	string		OBJECT	GradingAssignment
+XPATHTYPE	LevelAssessed	string		OBJECT	GradingAssignment
+XPATHTYPE	AssignmentPurpose	string		OBJECT	GradingAssignment
+XPATHTYPE	SubAssignmentList	AssignmentListType	LOOKUP	OBJECT	GradingAssignment
+XPATHTYPE	RubricScoringGuide	GenericRubricType	LOOKUP	OBJECT	GradingAssignment
+XPATHTYPE	PrerequisiteList	PrerequisitesType	LOOKUP	OBJECT	GradingAssignment
+XPATHTYPE	LearningStandardList	LearningStandardListType	LOOKUP	OBJECT	GradingAssignment
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	GradingAssignment
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	GradingAssignment
+XPATHTYPE	StudentPersonalRefId	string		OBJECT	GradingAssignmentScore
+XPATHTYPE	StudentPersonalLocalId	LocalIdType	LOOKUP	OBJECT	GradingAssignmentScore
+XPATHTYPE	TeachingGroupRefId	string		OBJECT	GradingAssignmentScore
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	GradingAssignmentScore
+XPATHTYPE	GradingAssignmentRefId	string		OBJECT	GradingAssignmentScore
+XPATHTYPE	StaffPersonalRefId	string		OBJECT	GradingAssignmentScore
+XPATHTYPE	DateGraded	string		OBJECT	GradingAssignmentScore
+XPATHTYPE	ExpectedScore	boolean		OBJECT	GradingAssignmentScore
+XPATHTYPE	ScorePoints	number		OBJECT	GradingAssignmentScore
+XPATHTYPE	ScorePercent	number		OBJECT	GradingAssignmentScore
+XPATHTYPE	ScoreLetter	string		OBJECT	GradingAssignmentScore
+XPATHTYPE	ScoreDescription	string		OBJECT	GradingAssignmentScore
+XPATHTYPE	SubscoreList	NAPSubscoreListType	LOOKUP	OBJECT	GradingAssignmentScore
+XPATHTYPE	TeacherJudgement	string		OBJECT	GradingAssignmentScore
+XPATHTYPE	MarkInfoRefId	string		OBJECT	GradingAssignmentScore
+XPATHTYPE	AssignmentScoreIteration	string		OBJECT	GradingAssignmentScore
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	GradingAssignmentScore
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	GradingAssignmentScore
+XPATHTYPE	SIF_RefId	string		OBJECT	Identity
+XPATHTYPE	AuthenticationSource	string		OBJECT	Identity
+XPATHTYPE	IdentityAssertions	IdentityAssertionsType	LOOKUP	OBJECT	Identity
+XPATHTYPE	PasswordList	PasswordListType	LOOKUP	OBJECT	Identity
+XPATHTYPE	AuthenticationSourceGlobalUID	string		OBJECT	Identity
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	Identity
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	Identity
+XPATHTYPE	LocalId	LocalIdType	LOOKUP	OBJECT	LEAInfo
+XPATHTYPE	StateProvinceId	StateProvinceIdType	LOOKUP	OBJECT	LEAInfo
+XPATHTYPE	CommonwealthId	string		OBJECT	LEAInfo
+XPATHTYPE	LEAName	string		OBJECT	LEAInfo
+XPATHTYPE	LEAURL	string		OBJECT	LEAInfo
+XPATHTYPE	EducationAgencyType	AgencyType	LOOKUP	OBJECT	LEAInfo
+XPATHTYPE	LEAContactList	LEAContactListType	LOOKUP	OBJECT	LEAInfo
+XPATHTYPE	PhoneNumberList	PhoneNumberListType	LOOKUP	OBJECT	LEAInfo
+XPATHTYPE	AddressList	AddressListType	LOOKUP	OBJECT	LEAInfo
+XPATHTYPE	OperationalStatus	OperationalStatusType	LOOKUP	OBJECT	LEAInfo
+XPATHTYPE	JurisdictionLowerHouse	string		OBJECT	LEAInfo
+XPATHTYPE	SLA	string		OBJECT	LEAInfo
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	LEAInfo
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	LEAInfo
+XPATHTYPE	Name	string		OBJECT	LearningResource
+XPATHTYPE	Author	string		OBJECT	LearningResource
+XPATHTYPE	Contacts	ContactsType	LOOKUP	OBJECT	LearningResource
+XPATHTYPE	Location	string		OBJECT	LearningResource
+XPATHTYPE	Status	string		OBJECT	LearningResource
+XPATHTYPE	Description	string		OBJECT	LearningResource
+XPATHTYPE	YearLevels	YearLevelsType	LOOKUP	OBJECT	LearningResource
+XPATHTYPE	SubjectAreas	ACStrandAreaListType	LOOKUP	OBJECT	LearningResource
+XPATHTYPE	MediaTypes	MediaTypesType	LOOKUP	OBJECT	LearningResource
+XPATHTYPE	UseAgreement	string		OBJECT	LearningResource
+XPATHTYPE	AgreementDate	string		OBJECT	LearningResource
+XPATHTYPE	Approvals	ApprovalsType	LOOKUP	OBJECT	LearningResource
+XPATHTYPE	Evaluations	EvaluationsType	LOOKUP	OBJECT	LearningResource
+XPATHTYPE	Components	ComponentsType	LOOKUP	OBJECT	LearningResource
+XPATHTYPE	LearningStandards	LearningStandardsType	LOOKUP	OBJECT	LearningResource
+XPATHTYPE	LearningResourcePackageRefId	string		OBJECT	LearningResource
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	LearningResource
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	LearningResource
+XPATHTYPE	node()	AbstractContentPackageType	LOOKUP	OBJECT	LearningResourcePackage
+XPATHTYPE	Title	string		OBJECT	LearningStandardDocument
+XPATHTYPE	Description	string		OBJECT	LearningStandardDocument
+XPATHTYPE	RichDescription	AbstractContentElementType	LOOKUP	OBJECT	LearningStandardDocument
+XPATHTYPE	Source	string		OBJECT	LearningStandardDocument
+XPATHTYPE	Organizations	OrganizationsType	LOOKUP	OBJECT	LearningStandardDocument
+XPATHTYPE	Authors	AuthorsType	LOOKUP	OBJECT	LearningStandardDocument
+XPATHTYPE	OrganizationContactPoint	string		OBJECT	LearningStandardDocument
+XPATHTYPE	SubjectAreas	ACStrandAreaListType	LOOKUP	OBJECT	LearningStandardDocument
+XPATHTYPE	DocumentStatus	string		OBJECT	LearningStandardDocument
+XPATHTYPE	DocumentDate	string		OBJECT	LearningStandardDocument
+XPATHTYPE	LocalAdoptionDate	string		OBJECT	LearningStandardDocument
+XPATHTYPE	LocalArchiveDate	string		OBJECT	LearningStandardDocument
+XPATHTYPE	EndOfLifeDate	string		OBJECT	LearningStandardDocument
+XPATHTYPE	Copyright	CopyRightContainerType	LOOKUP	OBJECT	LearningStandardDocument
+XPATHTYPE	YearLevels	YearLevelsType	LOOKUP	OBJECT	LearningStandardDocument
+XPATHTYPE	RepositoryDate	string		OBJECT	LearningStandardDocument
+XPATHTYPE	LearningStandardItemRefId	string		OBJECT	LearningStandardDocument
+XPATHTYPE	RelatedLearningStandards	LearningStandardsDocumentType	LOOKUP	OBJECT	LearningStandardDocument
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	LearningStandardDocument
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	LearningStandardDocument
+XPATHTYPE	Resources	LResourcesType	LOOKUP	OBJECT	LearningStandardItem
+XPATHTYPE	StandardSettingBody	StandardsSettingBodyType	LOOKUP	OBJECT	LearningStandardItem
+XPATHTYPE	StandardHierarchyLevel	StandardHierarchyLevelType	LOOKUP	OBJECT	LearningStandardItem
+XPATHTYPE	PredecessorItems	LearningStandardsType	LOOKUP	OBJECT	LearningStandardItem
+XPATHTYPE	StatementCodes	StatementCodesType	LOOKUP	OBJECT	LearningStandardItem
+XPATHTYPE	Statements	StatementsType	LOOKUP	OBJECT	LearningStandardItem
+XPATHTYPE	YearLevels	YearLevelsType	LOOKUP	OBJECT	LearningStandardItem
+XPATHTYPE	ACStrandSubjectArea	ACStrandSubjectAreaType	LOOKUP	OBJECT	LearningStandardItem
+XPATHTYPE	StandardIdentifier	StandardIdentifierType	LOOKUP	OBJECT	LearningStandardItem
+XPATHTYPE	LearningStandardDocumentRefId	string		OBJECT	LearningStandardItem
+XPATHTYPE	RelatedLearningStandardItems	RelatedLearningStandardItemRefIdListType	LOOKUP	OBJECT	LearningStandardItem
+XPATHTYPE	Level4	string		OBJECT	LearningStandardItem
+XPATHTYPE	Level5	string		OBJECT	LearningStandardItem
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	LearningStandardItem
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	LearningStandardItem
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	MarkValueInfo
+XPATHTYPE	YearLevels	YearLevelsType	LOOKUP	OBJECT	MarkValueInfo
+XPATHTYPE	Name	string		OBJECT	MarkValueInfo
+XPATHTYPE	PercentageMinimum	number		OBJECT	MarkValueInfo
+XPATHTYPE	PercentageMaximum	number		OBJECT	MarkValueInfo
+XPATHTYPE	PercentagePassingGrade	number		OBJECT	MarkValueInfo
+XPATHTYPE	NumericPrecision	number		OBJECT	MarkValueInfo
+XPATHTYPE	NumericScale	number		OBJECT	MarkValueInfo
+XPATHTYPE	NumericLow	number		OBJECT	MarkValueInfo
+XPATHTYPE	NumericHigh	number		OBJECT	MarkValueInfo
+XPATHTYPE	NumericPassingGrade	number		OBJECT	MarkValueInfo
+XPATHTYPE	ValidLetterMarkList	ValidLetterMarkListType	LOOKUP	OBJECT	MarkValueInfo
+XPATHTYPE	Narrative	string		OBJECT	MarkValueInfo
+XPATHTYPE	NarrativeMaximumSize	number		OBJECT	MarkValueInfo
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	MarkValueInfo
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	MarkValueInfo
+XPATHTYPE	ParentObjectRefId	string		OBJECT	PersonPicture
+XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	PersonPicture
+XPATHTYPE	PictureSource	URIOrBinaryType	LOOKUP	OBJECT	PersonPicture
+XPATHTYPE	OKToPublish	string		OBJECT	PersonPicture
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	PersonPicture
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	PersonPicture
+XPATHTYPE	ParentObjectRefId	string		OBJECT	PersonPrivacyObligation
+XPATHTYPE	ParentObjectType	string		OBJECT	PersonPrivacyObligation
+XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	PersonPrivacyObligation
+XPATHTYPE	ContactForRequestsRefId	string		OBJECT	PersonPrivacyObligation
+XPATHTYPE	ContactForRequestsObjectType	string		OBJECT	PersonPrivacyObligation
+XPATHTYPE	DataDomainObligationList	DataDomainObligationListType	LOOKUP	OBJECT	PersonPrivacyObligation
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	PersonPrivacyObligation
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	PersonPrivacyObligation
+XPATHTYPE	StudentPersonalRefId	string		OBJECT	PersonalisedPlan
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	PersonalisedPlan
+XPATHTYPE	PersonalisedPlanCategory	string		OBJECT	PersonalisedPlan
+XPATHTYPE	PersonalisedPlanStartDate	string		OBJECT	PersonalisedPlan
+XPATHTYPE	PersonalisedPlanEndDate	string		OBJECT	PersonalisedPlan
+XPATHTYPE	PersonalisedPlanReviewDate	string		OBJECT	PersonalisedPlan
+XPATHTYPE	PersonalisedPlanNotes	string		OBJECT	PersonalisedPlan
+XPATHTYPE	DocumentList	WellbeingDocumentListType	LOOKUP	OBJECT	PersonalisedPlan
+XPATHTYPE	AssociatedAttachment	string		OBJECT	PersonalisedPlan
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	PersonalisedPlan
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	PersonalisedPlan
+XPATHTYPE	AuthorityName	string		OBJECT	ReportAuthorityInfo
+XPATHTYPE	AuthorityId	string		OBJECT	ReportAuthorityInfo
+XPATHTYPE	AuthorityDepartment	string		OBJECT	ReportAuthorityInfo
+XPATHTYPE	AuthorityLevel	string		OBJECT	ReportAuthorityInfo
+XPATHTYPE	ContactInfo	ContactInfoType	LOOKUP	OBJECT	ReportAuthorityInfo
+XPATHTYPE	Address	AddressType	LOOKUP	OBJECT	ReportAuthorityInfo
+XPATHTYPE	PhoneNumber	PhoneNumberType	LOOKUP	OBJECT	ReportAuthorityInfo
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	ReportAuthorityInfo
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	ReportAuthorityInfo
+XPATHTYPE	ResourceRefId	string		OBJECT	ResourceBooking
+XPATHTYPE	ResourceLocalId	LocalIdType	LOOKUP	OBJECT	ResourceBooking
+XPATHTYPE	StartDateTime	string		OBJECT	ResourceBooking
+XPATHTYPE	FinishDateTime	string		OBJECT	ResourceBooking
+XPATHTYPE	FromPeriod	LocalIdType	LOOKUP	OBJECT	ResourceBooking
+XPATHTYPE	ToPeriod	LocalIdType	LOOKUP	OBJECT	ResourceBooking
+XPATHTYPE	Booker	string		OBJECT	ResourceBooking
+XPATHTYPE	Reason	string		OBJECT	ResourceBooking
+XPATHTYPE	ScheduledActivityRefId	string		OBJECT	ResourceBooking
+XPATHTYPE	KeepOld	boolean		OBJECT	ResourceBooking
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	ResourceBooking
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	ResourceBooking
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	ResourceUsage
+XPATHTYPE	ResourceUsageContentType	ResourceUsage/ResourceUsageContentType	LOOKUP	OBJECT	ResourceUsage
+XPATHTYPE	Code	string		TYPE	ResourceUsage/ResourceUsageContentType
+XPATHTYPE	LocalDescription	string		TYPE	ResourceUsage/ResourceUsageContentType
+XPATHTYPE	ResourceReportColumnList	ResourceUsage/ResourceReportColumnList	LOOKUP	OBJECT	ResourceUsage
+XPATHTYPE	ResourceReportColumn	ResourceUsage/ResourceReportColumnList/ResourceReportColumn	LOOKUP	TYPE	ResourceUsage/ResourceReportColumnList
+XPATHTYPE	ColumnName	string		TYPE	ResourceUsage/ResourceReportColumnList/ResourceReportColumn
+XPATHTYPE	ColumnDescription	string		TYPE	ResourceUsage/ResourceReportColumnList/ResourceReportColumn
+XPATHTYPE	ColumnDelimiter	string		TYPE	ResourceUsage/ResourceReportColumnList/ResourceReportColumn
+XPATHTYPE	ResourceReportLineList	ResourceUsage/ResourceReportLineList	LOOKUP	OBJECT	ResourceUsage
+XPATHTYPE	ResourceReportLine	ResourceUsage/ResourceReportLineList/ResourceReportLine	LOOKUP	TYPE	ResourceUsage/ResourceReportLineList
+XPATHTYPE	SIF_RefId	string		TYPE	ResourceUsage/ResourceReportLineList/ResourceReportLine
+XPATHTYPE	StartDate	string		TYPE	ResourceUsage/ResourceReportLineList/ResourceReportLine
+XPATHTYPE	EndDate	string		TYPE	ResourceUsage/ResourceReportLineList/ResourceReportLine
+XPATHTYPE	CurrentCost	MonetaryAmountType	LOOKUP	TYPE	ResourceUsage/ResourceReportLineList/ResourceReportLine
+XPATHTYPE	ReportRow	string		TYPE	ResourceUsage/ResourceReportLineList/ResourceReportLine
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	ResourceUsage
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	ResourceUsage
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	RoomInfo
+XPATHTYPE	LocalId	LocalIdType	LOOKUP	OBJECT	RoomInfo
+XPATHTYPE	RoomNumber	string		OBJECT	RoomInfo
+XPATHTYPE	StaffList	StaffListType	LOOKUP	OBJECT	RoomInfo
+XPATHTYPE	Description	string		OBJECT	RoomInfo
+XPATHTYPE	Building	string		OBJECT	RoomInfo
+XPATHTYPE	HomeroomNumber	string		OBJECT	RoomInfo
+XPATHTYPE	Size	number		OBJECT	RoomInfo
+XPATHTYPE	Capacity	number		OBJECT	RoomInfo
+XPATHTYPE	PhoneNumber	PhoneNumberType	LOOKUP	OBJECT	RoomInfo
+XPATHTYPE	RoomType	string		OBJECT	RoomInfo
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	RoomInfo
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	RoomInfo
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	ScheduledActivity
+XPATHTYPE	TimeTableCellRefId	string		OBJECT	ScheduledActivity
+XPATHTYPE	DayId	LocalIdType	LOOKUP	OBJECT	ScheduledActivity
+XPATHTYPE	PeriodId	LocalIdType	LOOKUP	OBJECT	ScheduledActivity
+XPATHTYPE	TimeTableRefId	string		OBJECT	ScheduledActivity
+XPATHTYPE	ActivityDate	string		OBJECT	ScheduledActivity
+XPATHTYPE	StartTime	string		OBJECT	ScheduledActivity
+XPATHTYPE	FinishTime	string		OBJECT	ScheduledActivity
+XPATHTYPE	CellType	string		OBJECT	ScheduledActivity
+XPATHTYPE	TimeTableSubjectRefId	string		OBJECT	ScheduledActivity
+XPATHTYPE	TeacherList	ScheduledTeacherListType	LOOKUP	OBJECT	ScheduledActivity
+XPATHTYPE	RoomList	RoomListType	LOOKUP	OBJECT	ScheduledActivity
+XPATHTYPE	AddressList	AddressListType	LOOKUP	OBJECT	ScheduledActivity
+XPATHTYPE	Location	string		OBJECT	ScheduledActivity
+XPATHTYPE	ActivityType	string		OBJECT	ScheduledActivity
+XPATHTYPE	ActivityName	string		OBJECT	ScheduledActivity
+XPATHTYPE	ActivityComment	string		OBJECT	ScheduledActivity
+XPATHTYPE	StudentList	StudentsType	LOOKUP	OBJECT	ScheduledActivity
+XPATHTYPE	TeachingGroupList	TeachingGroupListType	LOOKUP	OBJECT	ScheduledActivity
+XPATHTYPE	YearLevels	YearLevelsType	LOOKUP	OBJECT	ScheduledActivity
+XPATHTYPE	Override	ScheduledActivityOverrideType	LOOKUP	OBJECT	ScheduledActivity
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	ScheduledActivity
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	ScheduledActivity
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	SchoolCourseInfo
+XPATHTYPE	SchoolLocalId	LocalIdType	LOOKUP	OBJECT	SchoolCourseInfo
+XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	SchoolCourseInfo
+XPATHTYPE	TermInfoRefId	string		OBJECT	SchoolCourseInfo
+XPATHTYPE	CourseCode	string		OBJECT	SchoolCourseInfo
+XPATHTYPE	StateCourseCode	string		OBJECT	SchoolCourseInfo
+XPATHTYPE	DistrictCourseCode	string		OBJECT	SchoolCourseInfo
+XPATHTYPE	SubjectAreaList	SubjectAreaListType	LOOKUP	OBJECT	SchoolCourseInfo
+XPATHTYPE	CourseTitle	string		OBJECT	SchoolCourseInfo
+XPATHTYPE	Description	string		OBJECT	SchoolCourseInfo
+XPATHTYPE	InstructionalLevel	string		OBJECT	SchoolCourseInfo
+XPATHTYPE	CourseCredits	string		OBJECT	SchoolCourseInfo
+XPATHTYPE	CoreAcademicCourse	string		OBJECT	SchoolCourseInfo
+XPATHTYPE	GraduationRequirement	string		OBJECT	SchoolCourseInfo
+XPATHTYPE	Department	string		OBJECT	SchoolCourseInfo
+XPATHTYPE	CourseContent	string		OBJECT	SchoolCourseInfo
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	SchoolCourseInfo
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	SchoolCourseInfo
+XPATHTYPE	LocalId	LocalIdType	LOOKUP	OBJECT	SchoolInfo
+XPATHTYPE	StateProvinceId	StateProvinceIdType	LOOKUP	OBJECT	SchoolInfo
+XPATHTYPE	CommonwealthId	string		OBJECT	SchoolInfo
+XPATHTYPE	ACARAId	string		OBJECT	SchoolInfo
+XPATHTYPE	OtherIdList	OtherIdListType	LOOKUP	OBJECT	SchoolInfo
+XPATHTYPE	SchoolName	string		OBJECT	SchoolInfo
+XPATHTYPE	LEAInfoRefId	RefIdType	LOOKUP	OBJECT	SchoolInfo
+XPATHTYPE	OtherLEA	RefIdType	LOOKUP	OBJECT	SchoolInfo
+XPATHTYPE	SchoolDistrict	string		OBJECT	SchoolInfo
+XPATHTYPE	SchoolDistrictLocalId	LocalIdType	LOOKUP	OBJECT	SchoolInfo
+XPATHTYPE	SchoolType	string		OBJECT	SchoolInfo
+XPATHTYPE	SchoolFocusList	SchoolFocusListType	LOOKUP	OBJECT	SchoolInfo
+XPATHTYPE	SchoolURL	SchoolURLType	LOOKUP	OBJECT	SchoolInfo
+XPATHTYPE	SchoolEmailList	EmailListType	LOOKUP	OBJECT	SchoolInfo
+XPATHTYPE	PrincipalInfo	PrincipalInfoType	LOOKUP	OBJECT	SchoolInfo
+XPATHTYPE	SchoolContactList	SchoolContactListType	LOOKUP	OBJECT	SchoolInfo
+XPATHTYPE	AddressList	AddressListType	LOOKUP	OBJECT	SchoolInfo
+XPATHTYPE	PhoneNumberList	PhoneNumberListType	LOOKUP	OBJECT	SchoolInfo
+XPATHTYPE	SessionType	string		OBJECT	SchoolInfo
+XPATHTYPE	YearLevels	YearLevelsType	LOOKUP	OBJECT	SchoolInfo
+XPATHTYPE	ARIA	number		OBJECT	SchoolInfo
+XPATHTYPE	OperationalStatus	OperationalStatusType	LOOKUP	OBJECT	SchoolInfo
+XPATHTYPE	FederalElectorate	string		OBJECT	SchoolInfo
+XPATHTYPE	Campus	CampusContainerType	LOOKUP	OBJECT	SchoolInfo
+XPATHTYPE	SchoolSector	string		OBJECT	SchoolInfo
+XPATHTYPE	IndependentSchool	string		OBJECT	SchoolInfo
+XPATHTYPE	NonGovSystemicStatus	string		OBJECT	SchoolInfo
+XPATHTYPE	System	string		OBJECT	SchoolInfo
+XPATHTYPE	ReligiousAffiliation	string		OBJECT	SchoolInfo
+XPATHTYPE	SchoolGeographicLocation	string		OBJECT	SchoolInfo
+XPATHTYPE	LocalGovernmentArea	string		OBJECT	SchoolInfo
+XPATHTYPE	JurisdictionLowerHouse	string		OBJECT	SchoolInfo
+XPATHTYPE	SLA	string		OBJECT	SchoolInfo
+XPATHTYPE	SchoolCoEdStatus	string		OBJECT	SchoolInfo
+XPATHTYPE	BoardingSchoolStatus	string		OBJECT	SchoolInfo
+XPATHTYPE	YearLevelEnrollmentList	YearLevelEnrollmentListType	LOOKUP	OBJECT	SchoolInfo
+XPATHTYPE	TotalEnrollments	TotalEnrollmentsType	LOOKUP	OBJECT	SchoolInfo
+XPATHTYPE	Entity_Open	string		OBJECT	SchoolInfo
+XPATHTYPE	Entity_Close	string		OBJECT	SchoolInfo
+XPATHTYPE	SchoolGroupList	SchoolGroupListType	LOOKUP	OBJECT	SchoolInfo
+XPATHTYPE	SchoolTimeZone	string		OBJECT	SchoolInfo
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	SchoolInfo
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	SchoolInfo
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	SchoolPrograms
+XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	SchoolPrograms
+XPATHTYPE	SchoolProgramList	SchoolProgramListType	LOOKUP	OBJECT	SchoolPrograms
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	SchoolPrograms
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	SchoolPrograms
+XPATHTYPE	SchoolCourseInfoRefId	string		OBJECT	SectionInfo
+XPATHTYPE	LocalId	LocalIdType	LOOKUP	OBJECT	SectionInfo
+XPATHTYPE	Description	string		OBJECT	SectionInfo
+XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	SectionInfo
+XPATHTYPE	TermInfoRefId	string		OBJECT	SectionInfo
+XPATHTYPE	MediumOfInstruction	MediumOfInstructionType	LOOKUP	OBJECT	SectionInfo
+XPATHTYPE	LanguageOfInstruction	LanguageOfInstructionType	LOOKUP	OBJECT	SectionInfo
+XPATHTYPE	LocationOfInstruction	LocationOfInstructionType	LOOKUP	OBJECT	SectionInfo
+XPATHTYPE	SummerSchool	string		OBJECT	SectionInfo
+XPATHTYPE	SchoolCourseInfoOverride	SchoolCourseInfoOverrideType	LOOKUP	OBJECT	SectionInfo
+XPATHTYPE	CourseSectionCode	string		OBJECT	SectionInfo
+XPATHTYPE	SectionCode	string		OBJECT	SectionInfo
+XPATHTYPE	CountForAttendance	string		OBJECT	SectionInfo
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	SectionInfo
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	SectionInfo
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	SessionInfo
+XPATHTYPE	TimeTableCellRefId	string		OBJECT	SessionInfo
+XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	SessionInfo
+XPATHTYPE	LocalId	LocalIdType	LOOKUP	OBJECT	SessionInfo
+XPATHTYPE	TimeTableSubjectLocalId	LocalIdType	LOOKUP	OBJECT	SessionInfo
+XPATHTYPE	TeachingGroupLocalId	LocalIdType	LOOKUP	OBJECT	SessionInfo
+XPATHTYPE	SchoolLocalId	LocalIdType	LOOKUP	OBJECT	SessionInfo
+XPATHTYPE	StaffPersonalLocalId	LocalIdType	LOOKUP	OBJECT	SessionInfo
+XPATHTYPE	RoomNumber	string		OBJECT	SessionInfo
+XPATHTYPE	DayId	LocalIdType	LOOKUP	OBJECT	SessionInfo
+XPATHTYPE	PeriodId	LocalIdType	LOOKUP	OBJECT	SessionInfo
+XPATHTYPE	SessionDate	string		OBJECT	SessionInfo
+XPATHTYPE	StartTime	string		OBJECT	SessionInfo
+XPATHTYPE	FinishTime	string		OBJECT	SessionInfo
+XPATHTYPE	RollMarked	string		OBJECT	SessionInfo
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	SessionInfo
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	SessionInfo
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	StaffAssignment
+XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	StaffAssignment
+XPATHTYPE	StaffPersonalRefId	string		OBJECT	StaffAssignment
+XPATHTYPE	Description	string		OBJECT	StaffAssignment
+XPATHTYPE	PrimaryAssignment	string		OBJECT	StaffAssignment
+XPATHTYPE	JobStartDate	string		OBJECT	StaffAssignment
+XPATHTYPE	JobEndDate	string		OBJECT	StaffAssignment
+XPATHTYPE	JobFTE	number		OBJECT	StaffAssignment
+XPATHTYPE	JobFunction	string		OBJECT	StaffAssignment
+XPATHTYPE	EmploymentStatus	string		OBJECT	StaffAssignment
+XPATHTYPE	StaffSubjectList	StaffSubjectListType	LOOKUP	OBJECT	StaffAssignment
+XPATHTYPE	StaffActivity	StaffActivityExtensionType	LOOKUP	OBJECT	StaffAssignment
+XPATHTYPE	YearLevels	YearLevelsType	LOOKUP	OBJECT	StaffAssignment
+XPATHTYPE	CasualReliefTeacher	string		OBJECT	StaffAssignment
+XPATHTYPE	Homegroup	string		OBJECT	StaffAssignment
+XPATHTYPE	House	string		OBJECT	StaffAssignment
+XPATHTYPE	CalendarSummaryList	CalendarSummaryListType	LOOKUP	OBJECT	StaffAssignment
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	StaffAssignment
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	StaffAssignment
+XPATHTYPE	LocalId	LocalIdType	LOOKUP	OBJECT	StaffPersonal
+XPATHTYPE	StateProvinceId	StateProvinceIdType	LOOKUP	OBJECT	StaffPersonal
+XPATHTYPE	ElectronicIdList	ElectronicIdListType	LOOKUP	OBJECT	StaffPersonal
+XPATHTYPE	OtherIdList	OtherIdListType	LOOKUP	OBJECT	StaffPersonal
+XPATHTYPE	PersonInfo	PersonInfoType	LOOKUP	OBJECT	StaffPersonal
+XPATHTYPE	Title	string		OBJECT	StaffPersonal
+XPATHTYPE	EmploymentStatus	string		OBJECT	StaffPersonal
+XPATHTYPE	MostRecent	StaffMostRecentContainerType	LOOKUP	OBJECT	StaffPersonal
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	StaffPersonal
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	StaffPersonal
+XPATHTYPE	Title	string		OBJECT	StudentActivityInfo
+XPATHTYPE	Description	string		OBJECT	StudentActivityInfo
+XPATHTYPE	StudentActivityType	StudentActivityType	LOOKUP	OBJECT	StudentActivityInfo
+XPATHTYPE	StudentActivityLevel	string		OBJECT	StudentActivityInfo
+XPATHTYPE	YearLevels	YearLevelsType	LOOKUP	OBJECT	StudentActivityInfo
+XPATHTYPE	CurricularStatus	string		OBJECT	StudentActivityInfo
+XPATHTYPE	Location	LocationType	LOOKUP	OBJECT	StudentActivityInfo
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	StudentActivityInfo
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	StudentActivityInfo
+XPATHTYPE	StudentPersonalRefId	string		OBJECT	StudentActivityParticipation
+XPATHTYPE	StudentActivityInfoRefId	string		OBJECT	StudentActivityParticipation
+XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	StudentActivityParticipation
+XPATHTYPE	ParticipationComment	string		OBJECT	StudentActivityParticipation
+XPATHTYPE	StartDate	string		OBJECT	StudentActivityParticipation
+XPATHTYPE	EndDate	string		OBJECT	StudentActivityParticipation
+XPATHTYPE	Role	string		OBJECT	StudentActivityParticipation
+XPATHTYPE	RecognitionList	RecognitionListType	LOOKUP	OBJECT	StudentActivityParticipation
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	StudentActivityParticipation
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	StudentActivityParticipation
+XPATHTYPE	StudentPersonalRefId	string		OBJECT	StudentAttendanceSummary
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	StudentAttendanceSummary
+XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	StudentAttendanceSummary
+XPATHTYPE	StartDate	string		OBJECT	StudentAttendanceSummary
+XPATHTYPE	EndDate	string		OBJECT	StudentAttendanceSummary
+XPATHTYPE	StartDay	number		OBJECT	StudentAttendanceSummary
+XPATHTYPE	EndDay	number		OBJECT	StudentAttendanceSummary
+XPATHTYPE	FTE	number		OBJECT	StudentAttendanceSummary
+XPATHTYPE	DaysAttended	number		OBJECT	StudentAttendanceSummary
+XPATHTYPE	ExcusedAbsences	number		OBJECT	StudentAttendanceSummary
+XPATHTYPE	UnexcusedAbsences	number		OBJECT	StudentAttendanceSummary
+XPATHTYPE	DaysTardy	number		OBJECT	StudentAttendanceSummary
+XPATHTYPE	DaysInMembership	number		OBJECT	StudentAttendanceSummary
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	StudentAttendanceSummary
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	StudentAttendanceSummary
+XPATHTYPE	StudentPersonalRefId	string		OBJECT	StudentAttendanceTimeList
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	StudentAttendanceTimeList
+XPATHTYPE	Date	string		OBJECT	StudentAttendanceTimeList
+XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	StudentAttendanceTimeList
+XPATHTYPE	AttendanceTimes	AttendanceTimesType	LOOKUP	OBJECT	StudentAttendanceTimeList
+XPATHTYPE	PeriodAttendances	PeriodAttendancesType	LOOKUP	OBJECT	StudentAttendanceTimeList
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	StudentAttendanceTimeList
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	StudentAttendanceTimeList
+XPATHTYPE	LocalId	LocalIdType	LOOKUP	OBJECT	StudentContactPersonal
+XPATHTYPE	OtherIdList	OtherIdListType	LOOKUP	OBJECT	StudentContactPersonal
+XPATHTYPE	PersonInfo	PersonInfoType	LOOKUP	OBJECT	StudentContactPersonal
+XPATHTYPE	EmploymentType	string		OBJECT	StudentContactPersonal
+XPATHTYPE	SchoolEducationalLevel	EducationalLevelType	LOOKUP	OBJECT	StudentContactPersonal
+XPATHTYPE	NonSchoolEducation	string		OBJECT	StudentContactPersonal
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	StudentContactPersonal
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	StudentContactPersonal
+XPATHTYPE	StudentPersonalRefId	RefIdType	LOOKUP	OBJECT	StudentContactRelationship
+XPATHTYPE	StudentContactPersonalRefId	RefIdType	LOOKUP	OBJECT	StudentContactRelationship
+XPATHTYPE	Relationship	RelationshipType	LOOKUP	OBJECT	StudentContactRelationship
+XPATHTYPE	ParentRelationshipStatus	string		OBJECT	StudentContactRelationship
+XPATHTYPE	HouseholdList	HouseholdListType	LOOKUP	OBJECT	StudentContactRelationship
+XPATHTYPE	ContactFlags	ContactFlagsType	LOOKUP	OBJECT	StudentContactRelationship
+XPATHTYPE	MainlySpeaksEnglishAtHome	string		OBJECT	StudentContactRelationship
+XPATHTYPE	ContactSequence	number		OBJECT	StudentContactRelationship
+XPATHTYPE	ContactSequenceSource	string		OBJECT	StudentContactRelationship
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	StudentContactRelationship
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	StudentContactRelationship
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	StudentContactRelationship
+XPATHTYPE	StudentPersonalRefId	string		OBJECT	StudentDailyAttendance
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	StudentDailyAttendance
+XPATHTYPE	Date	string		OBJECT	StudentDailyAttendance
+XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	StudentDailyAttendance
+XPATHTYPE	DayValue	string		OBJECT	StudentDailyAttendance
+XPATHTYPE	AttendanceCode	AttendanceCodeType	LOOKUP	OBJECT	StudentDailyAttendance
+XPATHTYPE	AttendanceStatus	string		OBJECT	StudentDailyAttendance
+XPATHTYPE	TimeIn	string		OBJECT	StudentDailyAttendance
+XPATHTYPE	TimeOut	string		OBJECT	StudentDailyAttendance
+XPATHTYPE	AbsenceValue	number		OBJECT	StudentDailyAttendance
+XPATHTYPE	AttendanceNote	string		OBJECT	StudentDailyAttendance
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	StudentDailyAttendance
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	StudentDailyAttendance
+XPATHTYPE	StudentPersonalRefId	string		OBJECT	StudentGrade
+XPATHTYPE	Homegroup	string		OBJECT	StudentGrade
+XPATHTYPE	YearLevel	YearLevelType	LOOKUP	OBJECT	StudentGrade
+XPATHTYPE	TeachingGroupShortName	string		OBJECT	StudentGrade
+XPATHTYPE	TeachingGroupRefId	string		OBJECT	StudentGrade
+XPATHTYPE	StaffPersonalRefId	string		OBJECT	StudentGrade
+XPATHTYPE	Markers	StudentGradeMarkersListType	LOOKUP	OBJECT	StudentGrade
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	StudentGrade
+XPATHTYPE	TermInfoRefId	string		OBJECT	StudentGrade
+XPATHTYPE	Description	string		OBJECT	StudentGrade
+XPATHTYPE	LearningArea	ACStrandSubjectAreaType	LOOKUP	OBJECT	StudentGrade
+XPATHTYPE	LearningStandardList	LearningStandardListType	LOOKUP	OBJECT	StudentGrade
+XPATHTYPE	GradingScoreList	GradingScoreListType	LOOKUP	OBJECT	StudentGrade
+XPATHTYPE	Grade	GradeType	LOOKUP	OBJECT	StudentGrade
+XPATHTYPE	TeacherJudgement	string		OBJECT	StudentGrade
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	StudentGrade
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	StudentGrade
+XPATHTYPE	StudentPersonalRefId	string		OBJECT	StudentParticipation
+XPATHTYPE	StudentParticipationAsOfDate	string		OBJECT	StudentParticipation
+XPATHTYPE	ProgramType	string		OBJECT	StudentParticipation
+XPATHTYPE	ProgramFundingSources	ProgramFundingSourcesType	LOOKUP	OBJECT	StudentParticipation
+XPATHTYPE	ManagingSchool	string		OBJECT	StudentParticipation
+XPATHTYPE	ReferralDate	string		OBJECT	StudentParticipation
+XPATHTYPE	ReferralSource	ReferralSourceType	LOOKUP	OBJECT	StudentParticipation
+XPATHTYPE	ProgramStatus	ProgramStatusType	LOOKUP	OBJECT	StudentParticipation
+XPATHTYPE	GiftedEligibilityCriteria	string		OBJECT	StudentParticipation
+XPATHTYPE	EvaluationParentalConsentDate	string		OBJECT	StudentParticipation
+XPATHTYPE	EvaluationDate	string		OBJECT	StudentParticipation
+XPATHTYPE	EvaluationExtensionDate	string		OBJECT	StudentParticipation
+XPATHTYPE	ExtensionComments	string		OBJECT	StudentParticipation
+XPATHTYPE	ReevaluationDate	string		OBJECT	StudentParticipation
+XPATHTYPE	ProgramEligibilityDate	string		OBJECT	StudentParticipation
+XPATHTYPE	ProgramPlanDate	string		OBJECT	StudentParticipation
+XPATHTYPE	ProgramPlanEffectiveDate	string		OBJECT	StudentParticipation
+XPATHTYPE	NOREPDate	string		OBJECT	StudentParticipation
+XPATHTYPE	PlacementParentalConsentDate	string		OBJECT	StudentParticipation
+XPATHTYPE	ProgramPlacementDate	string		OBJECT	StudentParticipation
+XPATHTYPE	ExtendedSchoolYear	boolean		OBJECT	StudentParticipation
+XPATHTYPE	ExtendedDay	boolean		OBJECT	StudentParticipation
+XPATHTYPE	ProgramAvailability	ProgramAvailabilityType	LOOKUP	OBJECT	StudentParticipation
+XPATHTYPE	EntryPerson	string		OBJECT	StudentParticipation
+XPATHTYPE	StudentSpecialEducationFTE	number		OBJECT	StudentParticipation
+XPATHTYPE	ParticipationContact	string		OBJECT	StudentParticipation
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	StudentParticipation
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	StudentParticipation
+XPATHTYPE	StudentPersonalRefId	string		OBJECT	StudentPeriodAttendance
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	StudentPeriodAttendance
+XPATHTYPE	Date	string		OBJECT	StudentPeriodAttendance
+XPATHTYPE	SessionInfoRefId	string		OBJECT	StudentPeriodAttendance
+XPATHTYPE	ScheduledActivityRefId	string		OBJECT	StudentPeriodAttendance
+XPATHTYPE	TimetablePeriod	string		OBJECT	StudentPeriodAttendance
+XPATHTYPE	TimeIn	string		OBJECT	StudentPeriodAttendance
+XPATHTYPE	TimeOut	string		OBJECT	StudentPeriodAttendance
+XPATHTYPE	AttendanceCode	AttendanceCodeType	LOOKUP	OBJECT	StudentPeriodAttendance
+XPATHTYPE	AttendanceStatus	string		OBJECT	StudentPeriodAttendance
+XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	StudentPeriodAttendance
+XPATHTYPE	AuditInfo	AuditInfoType	LOOKUP	OBJECT	StudentPeriodAttendance
+XPATHTYPE	AttendanceComment	string		OBJECT	StudentPeriodAttendance
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	StudentPeriodAttendance
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	StudentPeriodAttendance
+XPATHTYPE	AlertMessages	AlertMessagesType	LOOKUP	OBJECT	StudentPersonal
+XPATHTYPE	MedicalAlertMessages	MedicalAlertMessagesType	LOOKUP	OBJECT	StudentPersonal
+XPATHTYPE	LocalId	LocalIdType	LOOKUP	OBJECT	StudentPersonal
+XPATHTYPE	StateProvinceId	StateProvinceIdType	LOOKUP	OBJECT	StudentPersonal
+XPATHTYPE	ElectronicIdList	ElectronicIdListType	LOOKUP	OBJECT	StudentPersonal
+XPATHTYPE	OtherIdList	OtherIdListType	LOOKUP	OBJECT	StudentPersonal
+XPATHTYPE	PersonInfo	PersonInfoType	LOOKUP	OBJECT	StudentPersonal
+XPATHTYPE	ProjectedGraduationYear	ProjectedGraduationYearType	LOOKUP	OBJECT	StudentPersonal
+XPATHTYPE	OnTimeGraduationYear	OnTimeGraduationYearType	LOOKUP	OBJECT	StudentPersonal
+XPATHTYPE	GraduationDate	GraduationDateType	LOOKUP	OBJECT	StudentPersonal
+XPATHTYPE	MostRecent	StudentMostRecentContainerType	LOOKUP	OBJECT	StudentPersonal
+XPATHTYPE	AcceptableUsePolicy	string		OBJECT	StudentPersonal
+XPATHTYPE	GiftedTalented	string		OBJECT	StudentPersonal
+XPATHTYPE	EconomicDisadvantage	string		OBJECT	StudentPersonal
+XPATHTYPE	ESL	string		OBJECT	StudentPersonal
+XPATHTYPE	ESLDateAssessed	string		OBJECT	StudentPersonal
+XPATHTYPE	YoungCarersRole	string		OBJECT	StudentPersonal
+XPATHTYPE	Disability	string		OBJECT	StudentPersonal
+XPATHTYPE	IntegrationAide	string		OBJECT	StudentPersonal
+XPATHTYPE	EducationSupport	string		OBJECT	StudentPersonal
+XPATHTYPE	HomeSchooledStudent	string		OBJECT	StudentPersonal
+XPATHTYPE	Sensitive	string		OBJECT	StudentPersonal
+XPATHTYPE	OfflineDelivery	string		OBJECT	StudentPersonal
+XPATHTYPE	PrePrimaryEducation	string		OBJECT	StudentPersonal
+XPATHTYPE	FirstAUSchoolEnrollment	string		OBJECT	StudentPersonal
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	StudentPersonal
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	StudentPersonal
+XPATHTYPE	StudentPersonalRefId	string		OBJECT	StudentSchoolEnrollment
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	StudentSchoolEnrollment
+XPATHTYPE	MembershipType	string		OBJECT	StudentSchoolEnrollment
+XPATHTYPE	TimeFrame	string		OBJECT	StudentSchoolEnrollment
+XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	StudentSchoolEnrollment
+XPATHTYPE	EntryDate	string		OBJECT	StudentSchoolEnrollment
+XPATHTYPE	EntryType	StudentEntryContainerType	LOOKUP	OBJECT	StudentSchoolEnrollment
+XPATHTYPE	YearLevel	YearLevelType	LOOKUP	OBJECT	StudentSchoolEnrollment
+XPATHTYPE	Homeroom	string		OBJECT	StudentSchoolEnrollment
+XPATHTYPE	Advisor	string		OBJECT	StudentSchoolEnrollment
+XPATHTYPE	Counselor	string		OBJECT	StudentSchoolEnrollment
+XPATHTYPE	Homegroup	string		OBJECT	StudentSchoolEnrollment
+XPATHTYPE	ACARASchoolId	LocalIdType	LOOKUP	OBJECT	StudentSchoolEnrollment
+XPATHTYPE	ClassCode	string		OBJECT	StudentSchoolEnrollment
+XPATHTYPE	TestLevel	YearLevelType	LOOKUP	OBJECT	StudentSchoolEnrollment
+XPATHTYPE	ReportingSchool	string		OBJECT	StudentSchoolEnrollment
+XPATHTYPE	House	string		OBJECT	StudentSchoolEnrollment
+XPATHTYPE	IndividualLearningPlan	string		OBJECT	StudentSchoolEnrollment
+XPATHTYPE	Calendar	string		OBJECT	StudentSchoolEnrollment
+XPATHTYPE	ExitDate	string		OBJECT	StudentSchoolEnrollment
+XPATHTYPE	ExitStatus	StudentExitStatusContainerType	LOOKUP	OBJECT	StudentSchoolEnrollment
+XPATHTYPE	ExitType	StudentExitContainerType	LOOKUP	OBJECT	StudentSchoolEnrollment
+XPATHTYPE	FTE	number		OBJECT	StudentSchoolEnrollment
+XPATHTYPE	FTPTStatus	string		OBJECT	StudentSchoolEnrollment
+XPATHTYPE	FFPOS	string		OBJECT	StudentSchoolEnrollment
+XPATHTYPE	CatchmentStatus	CatchmentStatusContainerType	LOOKUP	OBJECT	StudentSchoolEnrollment
+XPATHTYPE	RecordClosureReason	string		OBJECT	StudentSchoolEnrollment
+XPATHTYPE	PromotionInfo	PromotionInfoType	LOOKUP	OBJECT	StudentSchoolEnrollment
+XPATHTYPE	PreviousSchool	LocalIdType	LOOKUP	OBJECT	StudentSchoolEnrollment
+XPATHTYPE	DestinationSchool	LocalIdType	LOOKUP	OBJECT	StudentSchoolEnrollment
+XPATHTYPE	StudentSubjectChoiceList	StudentSubjectChoiceListType	LOOKUP	OBJECT	StudentSchoolEnrollment
+XPATHTYPE	StartedAtSchoolDate	string		OBJECT	StudentSchoolEnrollment
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	StudentSchoolEnrollment
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	StudentSchoolEnrollment
+XPATHTYPE	StudentPersonalRefId	string		OBJECT	StudentSectionEnrollment
+XPATHTYPE	SectionInfoRefId	string		OBJECT	StudentSectionEnrollment
+XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	StudentSectionEnrollment
+XPATHTYPE	EntryDate	string		OBJECT	StudentSectionEnrollment
+XPATHTYPE	ExitDate	string		OBJECT	StudentSectionEnrollment
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	StudentSectionEnrollment
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	StudentSectionEnrollment
+XPATHTYPE	SIF_RefId	string		OBJECT	SystemRole
+XPATHTYPE	SystemContextList	SystemRole/SystemContextList	LOOKUP	OBJECT	SystemRole
+XPATHTYPE	SystemContext	SystemRole/SystemContextList/SystemContext	LOOKUP	TYPE	SystemRole/SystemContextList
+XPATHTYPE	RoleList	SystemRole/SystemContextList/SystemContext/RoleList	LOOKUP	TYPE	SystemRole/SystemContextList/SystemContext
+XPATHTYPE	Role	SystemRole/SystemContextList/SystemContext/RoleList/Role	LOOKUP	TYPE	SystemRole/SystemContextList/SystemContext/RoleList
+XPATHTYPE	RoleScopeList	SystemRole/SystemContextList/SystemContext/RoleList/Role/RoleScopeList	LOOKUP	TYPE	SystemRole/SystemContextList/SystemContext/RoleList/Role
+XPATHTYPE	RoleScope	SystemRole/SystemContextList/SystemContext/RoleList/Role/RoleScopeList/RoleScope	LOOKUP	TYPE	SystemRole/SystemContextList/SystemContext/RoleList/Role/RoleScopeList
+XPATHTYPE	RoleScopeName	string		TYPE	SystemRole/SystemContextList/SystemContext/RoleList/Role/RoleScopeList/RoleScope
+XPATHTYPE	RoleScopeRefId	string		TYPE	SystemRole/SystemContextList/SystemContext/RoleList/Role/RoleScopeList/RoleScope
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	SystemRole
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	SystemRole
+XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	TeachingGroup
+XPATHTYPE	LocalId	LocalIdType	LOOKUP	OBJECT	TeachingGroup
+XPATHTYPE	ShortName	string		OBJECT	TeachingGroup
+XPATHTYPE	LongName	string		OBJECT	TeachingGroup
+XPATHTYPE	GroupType	string		OBJECT	TeachingGroup
+XPATHTYPE	Set	string		OBJECT	TeachingGroup
+XPATHTYPE	Block	string		OBJECT	TeachingGroup
+XPATHTYPE	CurriculumLevel	string		OBJECT	TeachingGroup
+XPATHTYPE	SchoolInfoRefId	RefIdType	LOOKUP	OBJECT	TeachingGroup
+XPATHTYPE	SchoolLocalId	LocalIdType	LOOKUP	OBJECT	TeachingGroup
+XPATHTYPE	SchoolCourseInfoRefId	RefIdType	LOOKUP	OBJECT	TeachingGroup
+XPATHTYPE	SchoolCourseLocalId	LocalIdType	LOOKUP	OBJECT	TeachingGroup
+XPATHTYPE	TimeTableSubjectRefId	RefIdType	LOOKUP	OBJECT	TeachingGroup
+XPATHTYPE	TimeTableSubjectLocalId	LocalIdType	LOOKUP	OBJECT	TeachingGroup
+XPATHTYPE	Semester	number		OBJECT	TeachingGroup
+XPATHTYPE	StudentList	StudentListType	LOOKUP	OBJECT	TeachingGroup
+XPATHTYPE	TeacherList	TeacherListType	LOOKUP	OBJECT	TeachingGroup
+XPATHTYPE	MinClassSize	number		OBJECT	TeachingGroup
+XPATHTYPE	MaxClassSize	number		OBJECT	TeachingGroup
+XPATHTYPE	TeachingGroupPeriodList	TeachingGroupPeriodListType	LOOKUP	OBJECT	TeachingGroup
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	TeachingGroup
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	TeachingGroup
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	TermInfo
+XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	TermInfo
+XPATHTYPE	StartDate	string		OBJECT	TermInfo
+XPATHTYPE	EndDate	string		OBJECT	TermInfo
+XPATHTYPE	Description	string		OBJECT	TermInfo
+XPATHTYPE	RelativeDuration	number		OBJECT	TermInfo
+XPATHTYPE	TermCode	string		OBJECT	TermInfo
+XPATHTYPE	Track	string		OBJECT	TermInfo
+XPATHTYPE	TermSpan	string		OBJECT	TermInfo
+XPATHTYPE	MarkingTerm	string		OBJECT	TermInfo
+XPATHTYPE	SchedulingTerm	string		OBJECT	TermInfo
+XPATHTYPE	AttendanceTerm	string		OBJECT	TermInfo
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	TermInfo
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	TermInfo
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	TimeTable
+XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	TimeTable
+XPATHTYPE	LocalId	LocalIdType	LOOKUP	OBJECT	TimeTable
+XPATHTYPE	Title	string		OBJECT	TimeTable
+XPATHTYPE	DaysPerCycle	number		OBJECT	TimeTable
+XPATHTYPE	PeriodsPerDay	number		OBJECT	TimeTable
+XPATHTYPE	TeachingPeriodsPerDay	number		OBJECT	TimeTable
+XPATHTYPE	SchoolLocalId	LocalIdType	LOOKUP	OBJECT	TimeTable
+XPATHTYPE	SchoolName	string		OBJECT	TimeTable
+XPATHTYPE	TimeTableCreationDate	string		OBJECT	TimeTable
+XPATHTYPE	StartDate	string		OBJECT	TimeTable
+XPATHTYPE	EndDate	string		OBJECT	TimeTable
+XPATHTYPE	TimeTableDayList	TimeTableDayListType	LOOKUP	OBJECT	TimeTable
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	TimeTable
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	TimeTable
+XPATHTYPE	TimeTableRefId	string		OBJECT	TimeTableCell
+XPATHTYPE	TimeTableSubjectRefId	string		OBJECT	TimeTableCell
+XPATHTYPE	TeachingGroupRefId	string		OBJECT	TimeTableCell
+XPATHTYPE	RoomInfoRefId	string		OBJECT	TimeTableCell
+XPATHTYPE	StaffPersonalRefId	string		OBJECT	TimeTableCell
+XPATHTYPE	TimeTableLocalId	LocalIdType	LOOKUP	OBJECT	TimeTableCell
+XPATHTYPE	SubjectLocalId	LocalIdType	LOOKUP	OBJECT	TimeTableCell
+XPATHTYPE	TeachingGroupLocalId	LocalIdType	LOOKUP	OBJECT	TimeTableCell
+XPATHTYPE	RoomNumber	HomeroomNumberType	LOOKUP	OBJECT	TimeTableCell
+XPATHTYPE	StaffLocalId	LocalIdType	LOOKUP	OBJECT	TimeTableCell
+XPATHTYPE	DayId	LocalIdType	LOOKUP	OBJECT	TimeTableCell
+XPATHTYPE	PeriodId	LocalIdType	LOOKUP	OBJECT	TimeTableCell
+XPATHTYPE	CellType	string		OBJECT	TimeTableCell
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	TimeTableCell
+XPATHTYPE	SchoolLocalId	LocalIdType	LOOKUP	OBJECT	TimeTableCell
+XPATHTYPE	TeacherList	ScheduledTeacherListType	LOOKUP	OBJECT	TimeTableCell
+XPATHTYPE	RoomList	RoomListType	LOOKUP	OBJECT	TimeTableCell
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	TimeTableCell
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	TimeTableCell
+XPATHTYPE	SubjectLocalId	LocalIdType	LOOKUP	OBJECT	TimeTableSubject
+XPATHTYPE	AcademicYear	YearLevelType	LOOKUP	OBJECT	TimeTableSubject
+XPATHTYPE	AcademicYearRange	YearRangeType	LOOKUP	OBJECT	TimeTableSubject
+XPATHTYPE	CourseLocalId	LocalIdType	LOOKUP	OBJECT	TimeTableSubject
+XPATHTYPE	SchoolCourseInfoRefId	RefIdType	LOOKUP	OBJECT	TimeTableSubject
+XPATHTYPE	Faculty	string		OBJECT	TimeTableSubject
+XPATHTYPE	SubjectShortName	string		OBJECT	TimeTableSubject
+XPATHTYPE	SubjectLongName	string		OBJECT	TimeTableSubject
+XPATHTYPE	SubjectType	string		OBJECT	TimeTableSubject
+XPATHTYPE	ProposedMaxClassSize	number		OBJECT	TimeTableSubject
+XPATHTYPE	ProposedMinClassSize	number		OBJECT	TimeTableSubject
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	TimeTableSubject
+XPATHTYPE	SchoolLocalId	LocalIdType	LOOKUP	OBJECT	TimeTableSubject
+XPATHTYPE	Semester	number		OBJECT	TimeTableSubject
+XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	TimeTableSubject
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	OBJECT	TimeTableSubject
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	TimeTableSubject
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	TimeTableSubject
+XPATHTYPE	StudentPersonalRefId	string		OBJECT	WellbeingAlert
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	WellbeingAlert
+XPATHTYPE	Date	string		OBJECT	WellbeingAlert
+XPATHTYPE	WellbeingAlertStartDate	string		OBJECT	WellbeingAlert
+XPATHTYPE	WellbeingAlertEndDate	string		OBJECT	WellbeingAlert
+XPATHTYPE	WellbeingAlertCategory	string		OBJECT	WellbeingAlert
+XPATHTYPE	WellbeingAlertDescription	string		OBJECT	WellbeingAlert
+XPATHTYPE	EnrolmentRestricted	string		OBJECT	WellbeingAlert
+XPATHTYPE	AlertAudience	string		OBJECT	WellbeingAlert
+XPATHTYPE	AlertSeverity	string		OBJECT	WellbeingAlert
+XPATHTYPE	AlertKeyContact	string		OBJECT	WellbeingAlert
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	WellbeingAlert
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	WellbeingAlert
+XPATHTYPE	StudentPersonalRefId	string		OBJECT	WellbeingAppeal
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	WellbeingAppeal
+XPATHTYPE	WellbeingResponseRefId	string		OBJECT	WellbeingAppeal
+XPATHTYPE	LocalAppealId	LocalIdType	LOOKUP	OBJECT	WellbeingAppeal
+XPATHTYPE	AppealStatusCode	string		OBJECT	WellbeingAppeal
+XPATHTYPE	Date	string		OBJECT	WellbeingAppeal
+XPATHTYPE	AppealNotes	string		OBJECT	WellbeingAppeal
+XPATHTYPE	AppealOutcome	string		OBJECT	WellbeingAppeal
+XPATHTYPE	DocumentList	WellbeingDocumentListType	LOOKUP	OBJECT	WellbeingAppeal
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	WellbeingAppeal
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	WellbeingAppeal
+XPATHTYPE	StudentPersonalRefId	string		OBJECT	WellbeingCharacteristic
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	WellbeingCharacteristic
+XPATHTYPE	WellbeingCharacteristicClassification	string		OBJECT	WellbeingCharacteristic
+XPATHTYPE	WellbeingCharacteristicStartDate	string		OBJECT	WellbeingCharacteristic
+XPATHTYPE	WellbeingCharacteristicEndDate	string		OBJECT	WellbeingCharacteristic
+XPATHTYPE	WellbeingCharacteristicReviewDate	string		OBJECT	WellbeingCharacteristic
+XPATHTYPE	WellbeingCharacteristicNotes	string		OBJECT	WellbeingCharacteristic
+XPATHTYPE	WellbeingCharacteristicCategory	string		OBJECT	WellbeingCharacteristic
+XPATHTYPE	WellbeingCharacteristicSubCategory	string		OBJECT	WellbeingCharacteristic
+XPATHTYPE	LocalCharacteristicCode	LocalIdType	LOOKUP	OBJECT	WellbeingCharacteristic
+XPATHTYPE	CharacteristicSeverity	string		OBJECT	WellbeingCharacteristic
+XPATHTYPE	DailyManagement	string		OBJECT	WellbeingCharacteristic
+XPATHTYPE	EmergencyManagement	string		OBJECT	WellbeingCharacteristic
+XPATHTYPE	EmergencyResponsePlan	string		OBJECT	WellbeingCharacteristic
+XPATHTYPE	Trigger	string		OBJECT	WellbeingCharacteristic
+XPATHTYPE	ConfidentialFlag	string		OBJECT	WellbeingCharacteristic
+XPATHTYPE	Alert	string		OBJECT	WellbeingCharacteristic
+XPATHTYPE	MedicationList	MedicationListType	LOOKUP	OBJECT	WellbeingCharacteristic
+XPATHTYPE	DocumentList	WellbeingDocumentListType	LOOKUP	OBJECT	WellbeingCharacteristic
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	WellbeingCharacteristic
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	WellbeingCharacteristic
+XPATHTYPE	StudentPersonalRefId	string		OBJECT	WellbeingEvent
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	WellbeingEvent
+XPATHTYPE	EventId	LocalIdType	LOOKUP	OBJECT	WellbeingEvent
+XPATHTYPE	WellbeingEventNotes	string		OBJECT	WellbeingEvent
+XPATHTYPE	WellbeingEventCategoryClass	string		OBJECT	WellbeingEvent
+XPATHTYPE	WellbeingEventCategoryList	WellbeingEventCategoryListType	LOOKUP	OBJECT	WellbeingEvent
+XPATHTYPE	ReportingStaffRefId	string		OBJECT	WellbeingEvent
+XPATHTYPE	WellbeingEventLocationDetails	WellbeingEventLocationDetailsType	LOOKUP	OBJECT	WellbeingEvent
+XPATHTYPE	WellbeingEventCreationTimeStamp	string		OBJECT	WellbeingEvent
+XPATHTYPE	WellbeingEventDate	string		OBJECT	WellbeingEvent
+XPATHTYPE	WellbeingEventTime	string		OBJECT	WellbeingEvent
+XPATHTYPE	WellbeingEventDescription	string		OBJECT	WellbeingEvent
+XPATHTYPE	WellbeingEventTimePeriod	string		OBJECT	WellbeingEvent
+XPATHTYPE	ConfidentialFlag	string		OBJECT	WellbeingEvent
+XPATHTYPE	PersonInvolvementList	PersonInvolvementListType	LOOKUP	OBJECT	WellbeingEvent
+XPATHTYPE	FollowUpActionList	FollowUpActionListType	LOOKUP	OBJECT	WellbeingEvent
+XPATHTYPE	Status	string		OBJECT	WellbeingEvent
+XPATHTYPE	DocumentList	WellbeingDocumentListType	LOOKUP	OBJECT	WellbeingEvent
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	WellbeingEvent
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	WellbeingEvent
+XPATHTYPE	StudentPersonalRefId	string		OBJECT	WellbeingResponse
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	WellbeingResponse
+XPATHTYPE	Date	string		OBJECT	WellbeingResponse
+XPATHTYPE	WellbeingResponseStartDate	string		OBJECT	WellbeingResponse
+XPATHTYPE	WellbeingResponseEndDate	string		OBJECT	WellbeingResponse
+XPATHTYPE	WellbeingResponseCategory	string		OBJECT	WellbeingResponse
+XPATHTYPE	WellbeingResponseNotes	string		OBJECT	WellbeingResponse
+XPATHTYPE	PersonInvolvementList	PersonInvolvementListType	LOOKUP	OBJECT	WellbeingResponse
+XPATHTYPE	Suspension	SuspensionContainerType	LOOKUP	OBJECT	WellbeingResponse
+XPATHTYPE	Detention	DetentionContainerType	LOOKUP	OBJECT	WellbeingResponse
+XPATHTYPE	PlanRequired	PlanRequiredContainerType	LOOKUP	OBJECT	WellbeingResponse
+XPATHTYPE	Award	AwardContainerType	LOOKUP	OBJECT	WellbeingResponse
+XPATHTYPE	OtherResponse	OtherWellbeingResponseContainerType	LOOKUP	OBJECT	WellbeingResponse
+XPATHTYPE	DocumentList	WellbeingDocumentListType	LOOKUP	OBJECT	WellbeingResponse
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	WellbeingResponse
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	WellbeingResponse
+XPATHTYPE	ReportingAuthority	string		OBJECT	AGStatusReport
+XPATHTYPE	ReportingAuthoritySystem	string		OBJECT	AGStatusReport
+XPATHTYPE	ReportingAuthorityCommonwealthId	string		OBJECT	AGStatusReport
+XPATHTYPE	SubmittedBy	string		OBJECT	AGStatusReport
+XPATHTYPE	SubmissionTimestamp	string		OBJECT	AGStatusReport
+XPATHTYPE	SubmissionStatusCode	string		OBJECT	AGStatusReport
+XPATHTYPE	AGCollection	string		OBJECT	AGStatusReport
+XPATHTYPE	CollectionYear	SchoolYearType	LOOKUP	OBJECT	AGStatusReport
+XPATHTYPE	AGReportingObjectResponseList	AGReportingObjectResponseListType	LOOKUP	OBJECT	AGStatusReport
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	AGStatusReport
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	AGStatusReport
+XPATHTYPE	LocationType	string		OBJECT	ChargedLocationInfo
+XPATHTYPE	SiteCategory	string		OBJECT	ChargedLocationInfo
+XPATHTYPE	Name	string		OBJECT	ChargedLocationInfo
+XPATHTYPE	Description	string		OBJECT	ChargedLocationInfo
+XPATHTYPE	LocalId	LocalIdType	LOOKUP	OBJECT	ChargedLocationInfo
+XPATHTYPE	StateProvinceId	StateProvinceIdType	LOOKUP	OBJECT	ChargedLocationInfo
+XPATHTYPE	ParentChargedLocationInfoRefId	string		OBJECT	ChargedLocationInfo
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	ChargedLocationInfo
+XPATHTYPE	AddressList	AddressListType	LOOKUP	OBJECT	ChargedLocationInfo
+XPATHTYPE	PhoneNumberList	PhoneNumberListType	LOOKUP	OBJECT	ChargedLocationInfo
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	ChargedLocationInfo
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	ChargedLocationInfo
+XPATHTYPE	BilledEntity	string		OBJECT	Debtor
+XPATHTYPE	AddressList	AddressListType	LOOKUP	OBJECT	Debtor
+XPATHTYPE	BillingName	string		OBJECT	Debtor
+XPATHTYPE	BillingNote	string		OBJECT	Debtor
+XPATHTYPE	Discount	string		OBJECT	Debtor
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	Debtor
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	Debtor
+XPATHTYPE	FQYear	SchoolYearType	LOOKUP	OBJECT	FQReporting
+XPATHTYPE	ReportingAuthority	string		OBJECT	FQReporting
+XPATHTYPE	ReportingAuthoritySystem	string		OBJECT	FQReporting
+XPATHTYPE	ReportingAuthorityCommonwealthId	string		OBJECT	FQReporting
+XPATHTYPE	SystemSubmission	AUCodeSetsYesOrNoCategoryType		OBJECT	FQReporting
+XPATHTYPE	SoftwareVendorInfo	SoftwareVendorInfoContainerType	LOOKUP	OBJECT	FQReporting
+XPATHTYPE	EntityLevel	string		OBJECT	FQReporting
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	FQReporting
+XPATHTYPE	LocalId	LocalIdType	LOOKUP	OBJECT	FQReporting
+XPATHTYPE	StateProvinceId	StateProvinceIdType	LOOKUP	OBJECT	FQReporting
+XPATHTYPE	CommonwealthId	string		OBJECT	FQReporting
+XPATHTYPE	ACARAId	string		OBJECT	FQReporting
+XPATHTYPE	EntityName	string		OBJECT	FQReporting
+XPATHTYPE	EntityContact	EntityContactInfoType	LOOKUP	OBJECT	FQReporting
+XPATHTYPE	FQContextualQuestionList	FQContextualQuestionListType	LOOKUP	OBJECT	FQReporting
+XPATHTYPE	FQItemList	FQItemListType	LOOKUP	OBJECT	FQReporting
+XPATHTYPE	AGRuleList	AGRuleListType	LOOKUP	OBJECT	FQReporting
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	FQReporting
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	FQReporting
+XPATHTYPE	ParentAccountRefId	string		OBJECT	FinancialAccount
+XPATHTYPE	ChargedLocationInfoRefId	string		OBJECT	FinancialAccount
+XPATHTYPE	AccountNumber	string		OBJECT	FinancialAccount
+XPATHTYPE	Name	string		OBJECT	FinancialAccount
+XPATHTYPE	Description	string		OBJECT	FinancialAccount
+XPATHTYPE	ClassType	string		OBJECT	FinancialAccount
+XPATHTYPE	CreationDate	string		OBJECT	FinancialAccount
+XPATHTYPE	CreationTime	string		OBJECT	FinancialAccount
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	FinancialAccount
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	FinancialAccount
+XPATHTYPE	InvoicedEntity	string		OBJECT	Invoice
+XPATHTYPE	FormNumber	LocalIdType	LOOKUP	OBJECT	Invoice
+XPATHTYPE	BillingDate	string		OBJECT	Invoice
+XPATHTYPE	TransactionDescription	string		OBJECT	Invoice
+XPATHTYPE	BilledAmount	DebitOrCreditAmountType	LOOKUP	OBJECT	Invoice
+XPATHTYPE	Ledger	string		OBJECT	Invoice
+XPATHTYPE	ChargedLocationInfoRefId	string		OBJECT	Invoice
+XPATHTYPE	NetAmount	MonetaryAmountType	LOOKUP	OBJECT	Invoice
+XPATHTYPE	TaxRate	number		OBJECT	Invoice
+XPATHTYPE	TaxType	string		OBJECT	Invoice
+XPATHTYPE	TaxAmount	MonetaryAmountType	LOOKUP	OBJECT	Invoice
+XPATHTYPE	CreatedBy	string		OBJECT	Invoice
+XPATHTYPE	ApprovedBy	string		OBJECT	Invoice
+XPATHTYPE	ItemDetail	string		OBJECT	Invoice
+XPATHTYPE	DueDate	string		OBJECT	Invoice
+XPATHTYPE	FinancialAccountRefIdList	FinancialAccountRefIdListType	LOOKUP	OBJECT	Invoice
+XPATHTYPE	AccountingPeriod	LocalIdType	LOOKUP	OBJECT	Invoice
+XPATHTYPE	RelatedPurchaseOrderRefId	string		OBJECT	Invoice
+XPATHTYPE	PurchasingItems	PurchasingItemsType	LOOKUP	OBJECT	Invoice
+XPATHTYPE	Voluntary	string		OBJECT	Invoice
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	Invoice
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	Invoice
+XPATHTYPE	DebitFinancialAccountRefId	string		OBJECT	Journal
+XPATHTYPE	CreditFinancialAccountRefId	string		OBJECT	Journal
+XPATHTYPE	OriginatingTransactionRefId	string		OBJECT	Journal
+XPATHTYPE	Amount	MonetaryAmountType	LOOKUP	OBJECT	Journal
+XPATHTYPE	GSTCodeOriginal	string		OBJECT	Journal
+XPATHTYPE	GSTCodeReplacement	string		OBJECT	Journal
+XPATHTYPE	Note	string		OBJECT	Journal
+XPATHTYPE	CreatedDate	string		OBJECT	Journal
+XPATHTYPE	ApprovedDate	string		OBJECT	Journal
+XPATHTYPE	CreatedBy	string		OBJECT	Journal
+XPATHTYPE	ApprovedBy	string		OBJECT	Journal
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	Journal
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	Journal
+XPATHTYPE	NAPTestRefId	string		OBJECT	NAPCodeFrame
+XPATHTYPE	TestContent	NAPTestContentType	LOOKUP	OBJECT	NAPCodeFrame
+XPATHTYPE	TestletList	NAPCodeFrameTestletListType	LOOKUP	OBJECT	NAPCodeFrame
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	NAPCodeFrame
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	NAPCodeFrame
+XPATHTYPE	StudentPersonalRefId	string		OBJECT	NAPEventStudentLink
+XPATHTYPE	PlatformStudentIdentifier	LocalIdType	LOOKUP	OBJECT	NAPEventStudentLink
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	NAPEventStudentLink
+XPATHTYPE	SchoolACARAId	LocalIdType	LOOKUP	OBJECT	NAPEventStudentLink
+XPATHTYPE	NAPTestRefId	string		OBJECT	NAPEventStudentLink
+XPATHTYPE	NAPTestLocalId	LocalIdType	LOOKUP	OBJECT	NAPEventStudentLink
+XPATHTYPE	SchoolSector	string		OBJECT	NAPEventStudentLink
+XPATHTYPE	System	string		OBJECT	NAPEventStudentLink
+XPATHTYPE	SchoolGeolocation	string		OBJECT	NAPEventStudentLink
+XPATHTYPE	ReportingSchoolName	string		OBJECT	NAPEventStudentLink
+XPATHTYPE	NAPJurisdiction	string		OBJECT	NAPEventStudentLink
+XPATHTYPE	ParticipationCode	string		OBJECT	NAPEventStudentLink
+XPATHTYPE	ParticipationText	string		OBJECT	NAPEventStudentLink
+XPATHTYPE	Device	string		OBJECT	NAPEventStudentLink
+XPATHTYPE	Date	string		OBJECT	NAPEventStudentLink
+XPATHTYPE	StartTime	string		OBJECT	NAPEventStudentLink
+XPATHTYPE	LapsedTimeTest	string		OBJECT	NAPEventStudentLink
+XPATHTYPE	ExemptionReason	string		OBJECT	NAPEventStudentLink
+XPATHTYPE	PersonalDetailsChanged	boolean		OBJECT	NAPEventStudentLink
+XPATHTYPE	PSIOtherIdMatch	boolean		OBJECT	NAPEventStudentLink
+XPATHTYPE	PossibleDuplicate	boolean		OBJECT	NAPEventStudentLink
+XPATHTYPE	DOBRange	boolean		OBJECT	NAPEventStudentLink
+XPATHTYPE	TestDisruptionList	TestDisruptionListType	LOOKUP	OBJECT	NAPEventStudentLink
+XPATHTYPE	Adjustment	AdjustmentContainerType	LOOKUP	OBJECT	NAPEventStudentLink
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	NAPEventStudentLink
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	NAPEventStudentLink
+XPATHTYPE	ReportExclusionFlag	boolean		OBJECT	NAPStudentResponseSet
+XPATHTYPE	CalibrationSampleFlag	string		OBJECT	NAPStudentResponseSet
+XPATHTYPE	EquatingSampleFlag	string		OBJECT	NAPStudentResponseSet
+XPATHTYPE	PathTakenForDomain	string		OBJECT	NAPStudentResponseSet
+XPATHTYPE	ParallelTest	string		OBJECT	NAPStudentResponseSet
+XPATHTYPE	StudentPersonalRefId	string		OBJECT	NAPStudentResponseSet
+XPATHTYPE	PlatformStudentIdentifier	LocalIdType	LOOKUP	OBJECT	NAPStudentResponseSet
+XPATHTYPE	NAPTestRefId	string		OBJECT	NAPStudentResponseSet
+XPATHTYPE	NAPTestLocalId	LocalIdType	LOOKUP	OBJECT	NAPStudentResponseSet
+XPATHTYPE	DomainScore	DomainScoreType	LOOKUP	OBJECT	NAPStudentResponseSet
+XPATHTYPE	TestletList	NAPStudentResponseTestletListType	LOOKUP	OBJECT	NAPStudentResponseSet
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	NAPStudentResponseSet
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	NAPStudentResponseSet
+XPATHTYPE	TestContent	NAPTestContentType	LOOKUP	OBJECT	NAPTest
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	NAPTest
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	NAPTest
+XPATHTYPE	TestItemContent	NAPTestItemContentType	LOOKUP	OBJECT	NAPTestItem
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	NAPTestItem
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	NAPTestItem
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	NAPTestScoreSummary
+XPATHTYPE	SchoolACARAId	LocalIdType	LOOKUP	OBJECT	NAPTestScoreSummary
+XPATHTYPE	NAPTestRefId	string		OBJECT	NAPTestScoreSummary
+XPATHTYPE	NAPTestLocalId	LocalIdType	LOOKUP	OBJECT	NAPTestScoreSummary
+XPATHTYPE	DomainNationalAverage	number		OBJECT	NAPTestScoreSummary
+XPATHTYPE	DomainSchoolAverage	number		OBJECT	NAPTestScoreSummary
+XPATHTYPE	DomainJurisdictionAverage	number		OBJECT	NAPTestScoreSummary
+XPATHTYPE	DomainTopNational60Percent	number		OBJECT	NAPTestScoreSummary
+XPATHTYPE	DomainBottomNational60Percent	number		OBJECT	NAPTestScoreSummary
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	NAPTestScoreSummary
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	NAPTestScoreSummary
+XPATHTYPE	NAPTestRefId	string		OBJECT	NAPTestlet
+XPATHTYPE	NAPTestLocalId	LocalIdType	LOOKUP	OBJECT	NAPTestlet
+XPATHTYPE	TestletContent	NAPTestletContentType	LOOKUP	OBJECT	NAPTestlet
+XPATHTYPE	TestItemList	NAPTestItemListType	LOOKUP	OBJECT	NAPTestlet
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	NAPTestlet
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	NAPTestlet
+XPATHTYPE	TransactionType	string		OBJECT	PaymentReceipt
+XPATHTYPE	InvoiceRefId	string		OBJECT	PaymentReceipt
+XPATHTYPE	VendorInfoRefId	string		OBJECT	PaymentReceipt
+XPATHTYPE	DebtorRefId	string		OBJECT	PaymentReceipt
+XPATHTYPE	ChargedLocationInfoRefId	string		OBJECT	PaymentReceipt
+XPATHTYPE	TransactionDate	string		OBJECT	PaymentReceipt
+XPATHTYPE	TransactionAmount	DebitOrCreditAmountType	LOOKUP	OBJECT	PaymentReceipt
+XPATHTYPE	ReceivedTransactionId	string		OBJECT	PaymentReceipt
+XPATHTYPE	FinancialAccountRefIdList	FinancialAccountRefIdListType	LOOKUP	OBJECT	PaymentReceipt
+XPATHTYPE	TransactionDescription	string		OBJECT	PaymentReceipt
+XPATHTYPE	TaxRate	number		OBJECT	PaymentReceipt
+XPATHTYPE	TaxAmount	MonetaryAmountType	LOOKUP	OBJECT	PaymentReceipt
+XPATHTYPE	TransactionMethod	string		OBJECT	PaymentReceipt
+XPATHTYPE	ChequeNumber	string		OBJECT	PaymentReceipt
+XPATHTYPE	TransactionNote	string		OBJECT	PaymentReceipt
+XPATHTYPE	AccountingPeriod	LocalIdType	LOOKUP	OBJECT	PaymentReceipt
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	PaymentReceipt
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	PaymentReceipt
+XPATHTYPE	FormNumber	string		OBJECT	PurchaseOrder
+XPATHTYPE	VendorInfoRefId	string		OBJECT	PurchaseOrder
+XPATHTYPE	ChargedLocationInfoRefId	string		OBJECT	PurchaseOrder
+XPATHTYPE	EmployeePersonalRefId	string		OBJECT	PurchaseOrder
+XPATHTYPE	PurchasingItems	PurchasingItemsType	LOOKUP	OBJECT	PurchaseOrder
+XPATHTYPE	CreationDate	string		OBJECT	PurchaseOrder
+XPATHTYPE	TaxRate	number		OBJECT	PurchaseOrder
+XPATHTYPE	TaxAmount	MonetaryAmountType	LOOKUP	OBJECT	PurchaseOrder
+XPATHTYPE	TotalAmount	MonetaryAmountType	LOOKUP	OBJECT	PurchaseOrder
+XPATHTYPE	UpdateDate	string		OBJECT	PurchaseOrder
+XPATHTYPE	FullyDelivered	string		OBJECT	PurchaseOrder
+XPATHTYPE	OriginalPurchaseOrderRefId	string		OBJECT	PurchaseOrder
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	PurchaseOrder
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	PurchaseOrder
+XPATHTYPE	Name	string		OBJECT	VendorInfo
+XPATHTYPE	ContactInfo	ContactInfoType	LOOKUP	OBJECT	VendorInfo
+XPATHTYPE	CustomerId	string		OBJECT	VendorInfo
+XPATHTYPE	ABN	string		OBJECT	VendorInfo
+XPATHTYPE	RegisteredForGST	string		OBJECT	VendorInfo
+XPATHTYPE	PaymentTerms	string		OBJECT	VendorInfo
+XPATHTYPE	BPay	string		OBJECT	VendorInfo
+XPATHTYPE	BSB	string		OBJECT	VendorInfo
+XPATHTYPE	AccountNumber	string		OBJECT	VendorInfo
+XPATHTYPE	AccountName	string		OBJECT	VendorInfo
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	VendorInfo
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	VendorInfo
+XPATHTYPE	node()	AbstractContentPackageType	LOOKUP	TYPE	ReportPackageType
+XPATHTYPE	XMLData	string		TYPE	AbstractContentPackageType
+XPATHTYPE	TextData	string		TYPE	AbstractContentPackageType
+XPATHTYPE	BinaryData	string		TYPE	AbstractContentPackageType
+XPATHTYPE	Reference	AbstractContentPackageType/Reference	LOOKUP	TYPE	AbstractContentPackageType
+XPATHTYPE	URL	string		TYPE	AbstractContentPackageType/Reference
+XPATHTYPE	XMLData	string		TYPE	AbstractContentElementType
+XPATHTYPE	TextData	string		TYPE	AbstractContentElementType
+XPATHTYPE	BinaryData	string		TYPE	AbstractContentElementType
+XPATHTYPE	Reference	AbstractContentElementType/Reference	LOOKUP	TYPE	AbstractContentElementType
+XPATHTYPE	URL	string		TYPE	AbstractContentElementType/Reference
+XPATHTYPE	node()	number		TYPE	MonetaryAmountType
+XPATHTYPE	node()	string		TYPE	ObjectNameType
+XPATHTYPE	node()	string		TYPE	ServiceNameType
+XPATHTYPE	node()	string		TYPE	ObjectType
+XPATHTYPE	node()	string		TYPE	ReportDataObjectType
+XPATHTYPE	node()	string		TYPE	URIOrBinaryType
+XPATHTYPE	node()	string		TYPE	GUIDType
+XPATHTYPE	node()	GUIDType	LOOKUP	TYPE	MsgIdType
+XPATHTYPE	node()	GUIDType	LOOKUP	TYPE	RefIdType
+XPATHTYPE	node()	RefIdType	LOOKUP	TYPE	IdRefType
+XPATHTYPE	node()	string		TYPE	VersionType
+XPATHTYPE	node()	string		TYPE	VersionWithWildcardsType
+XPATHTYPE	node()	string		TYPE	DefinedProtocolsType
+XPATHTYPE	node()	string		TYPE	ExtendedContentType
+XPATHTYPE	node()	string		TYPE	SelectedContentType
+XPATHTYPE	DataDomainObligation	DataDomainObligationType	LOOKUP	TYPE	DataDomainObligationListType
+XPATHTYPE	DataDomain	string		TYPE	DataDomainObligationType
+XPATHTYPE	DomainComments	string		TYPE	DataDomainObligationType
+XPATHTYPE	ShareWithList	ShareWithListType	LOOKUP	TYPE	DataDomainObligationType
+XPATHTYPE	ShareWith	ShareWithType	LOOKUP	TYPE	ShareWithListType
+XPATHTYPE	ShareWithParty	string		TYPE	ShareWithType
+XPATHTYPE	Purpose	string		TYPE	ShareWithType
+XPATHTYPE	ShareWithComments	string		TYPE	ShareWithType
+XPATHTYPE	PermissionToOnShare	AUCodeSetsYesOrNoCategoryType		TYPE	ShareWithType
+XPATHTYPE	ShareWithURL	string		TYPE	ShareWithType
+XPATHTYPE	AGReportingObjectResponse	AGReportingObjectResponseType	LOOKUP	TYPE	AGReportingObjectResponseListType
+XPATHTYPE	SubmittedRefId	string		TYPE	AGReportingObjectResponseType
+XPATHTYPE	SIFRefId	string		TYPE	AGReportingObjectResponseType
+XPATHTYPE	HTTPStatusCode	string		TYPE	AGReportingObjectResponseType
+XPATHTYPE	ErrorText	string		TYPE	AGReportingObjectResponseType
+XPATHTYPE	CommonwealthId	string		TYPE	AGReportingObjectResponseType
+XPATHTYPE	EntityName	string		TYPE	AGReportingObjectResponseType
+XPATHTYPE	AGSubmissionStatusCode	string		TYPE	AGReportingObjectResponseType
+XPATHTYPE	AGRuleList	AGRuleListType	LOOKUP	TYPE	AGReportingObjectResponseType
+XPATHTYPE	FQContextualQuestion	FQContextualQuestionType	LOOKUP	TYPE	FQContextualQuestionListType
+XPATHTYPE	FQContext	string		TYPE	FQContextualQuestionType
+XPATHTYPE	FQAnswer	string		TYPE	FQContextualQuestionType
+XPATHTYPE	FQItem	FQItemType	LOOKUP	TYPE	FQItemListType
+XPATHTYPE	FQItemCode	string		TYPE	FQItemType
+XPATHTYPE	TuitionAmount	number		TYPE	FQItemType
+XPATHTYPE	BoardingAmount	number		TYPE	FQItemType
+XPATHTYPE	SystemAmount	number		TYPE	FQItemType
+XPATHTYPE	DioceseAmount	number		TYPE	FQItemType
+XPATHTYPE	FQComments	string		TYPE	FQItemType
+XPATHTYPE	AGRule	AGRuleType	LOOKUP	TYPE	AGRuleListType
+XPATHTYPE	AGRuleCode	string		TYPE	AGRuleType
+XPATHTYPE	AGRuleComment	string		TYPE	AGRuleType
+XPATHTYPE	AGRuleResponse	string		TYPE	AGRuleType
+XPATHTYPE	AGRuleStatus	string		TYPE	AGRuleType
+XPATHTYPE	SoftwareProduct	string		TYPE	SoftwareVendorInfoContainerType
+XPATHTYPE	SoftwareVersion	string		TYPE	SoftwareVendorInfoContainerType
+XPATHTYPE	Name	NameType	LOOKUP	TYPE	EntityContactInfoType
+XPATHTYPE	PositionTitle	string		TYPE	EntityContactInfoType
+XPATHTYPE	Role	string		TYPE	EntityContactInfoType
+XPATHTYPE	RegistrationDetails	string		TYPE	EntityContactInfoType
+XPATHTYPE	Qualifications	string		TYPE	EntityContactInfoType
+XPATHTYPE	Address	AddressType	LOOKUP	TYPE	EntityContactInfoType
+XPATHTYPE	Email	EmailType	LOOKUP	TYPE	EntityContactInfoType
+XPATHTYPE	PhoneNumber	PhoneNumberType	LOOKUP	TYPE	EntityContactInfoType
+XPATHTYPE	Date	string		TYPE	CopyRightContainerType
+XPATHTYPE	Holder	string		TYPE	CopyRightContainerType
+XPATHTYPE	Country	CountryType	LOOKUP	TYPE	StandardsSettingBodyType
+XPATHTYPE	StateProvince	StateProvinceType	LOOKUP	TYPE	StandardsSettingBodyType
+XPATHTYPE	SettingBodyName	string		TYPE	StandardsSettingBodyType
+XPATHTYPE	Number	number		TYPE	StandardHierarchyLevelType
+XPATHTYPE	Description	string		TYPE	StandardHierarchyLevelType
+XPATHTYPE	YearCreated	string		TYPE	StandardIdentifierType
+XPATHTYPE	ACStrandSubjectArea	ACStrandSubjectAreaType	LOOKUP	TYPE	StandardIdentifierType
+XPATHTYPE	StandardNumber	string		TYPE	StandardIdentifierType
+XPATHTYPE	YearLevels	YearLevelsType	LOOKUP	TYPE	StandardIdentifierType
+XPATHTYPE	Benchmark	string		TYPE	StandardIdentifierType
+XPATHTYPE	YearLevel	YearLevelType	LOOKUP	TYPE	StandardIdentifierType
+XPATHTYPE	IndicatorNumber	string		TYPE	StandardIdentifierType
+XPATHTYPE	AlternateIdentificationCodes	AlternateIdentificationCodeListType	LOOKUP	TYPE	StandardIdentifierType
+XPATHTYPE	Organization	string		TYPE	StandardIdentifierType
+XPATHTYPE	AlternateIdentificationCode	string		TYPE	AlternateIdentificationCodeListType
+XPATHTYPE	LearningStandardItemRefId	RelatedLearningStandardItemRefIdType	LOOKUP	TYPE	RelatedLearningStandardItemRefIdListType
+XPATHTYPE	node()	string		TYPE	RelatedLearningStandardItemRefIdType
+XPATHTYPE	ValidLetterMark	ValidLetterMarkType	LOOKUP	TYPE	ValidLetterMarkListType
+XPATHTYPE	Code	string		TYPE	ValidLetterMarkType
+XPATHTYPE	NumericEquivalent	number		TYPE	ValidLetterMarkType
+XPATHTYPE	Description	string		TYPE	ValidLetterMarkType
+XPATHTYPE	Marker	MarkerType	LOOKUP	TYPE	StudentGradeMarkersListType
+XPATHTYPE	StaffPersonalRefId	string		TYPE	MarkerType
+XPATHTYPE	Role	string		TYPE	MarkerType
+XPATHTYPE	GradingAssignmentScore	AssignmentScoreType	LOOKUP	TYPE	GradingScoreListType
+XPATHTYPE	GradingAssignmentScoreRefId	string		TYPE	AssignmentScoreType
+XPATHTYPE	Weight	number		TYPE	AssignmentScoreType
+XPATHTYPE	Percentage	number		TYPE	GradeType
+XPATHTYPE	Numeric	number		TYPE	GradeType
+XPATHTYPE	Letter	string		TYPE	GradeType
+XPATHTYPE	Narrative	string		TYPE	GradeType
+XPATHTYPE	MarkInfoRefId	string		TYPE	GradeType
+XPATHTYPE	LearningStandard	LearningStandardType	LOOKUP	TYPE	LearningStandardListType
+XPATHTYPE	LearningStandardItemRefId	string		TYPE	LearningStandardType
+XPATHTYPE	LearningStandardURL	string		TYPE	LearningStandardType
+XPATHTYPE	LearningStandardLocalId	LocalIdType	LOOKUP	TYPE	LearningStandardType
+XPATHTYPE	GradingAssignmentRefId	string		TYPE	AssignmentListType
+XPATHTYPE	RubricType	string		TYPE	GenericRubricType
+XPATHTYPE	ScoreList	ScoreListType	LOOKUP	TYPE	GenericRubricType
+XPATHTYPE	Descriptor	string		TYPE	GenericRubricType
+XPATHTYPE	Medication	MedicationType	LOOKUP	TYPE	MedicationListType
+XPATHTYPE	MedicationName	string		TYPE	MedicationType
+XPATHTYPE	Dosage	string		TYPE	MedicationType
+XPATHTYPE	Frequency	string		TYPE	MedicationType
+XPATHTYPE	AdministrationInformation	string		TYPE	MedicationType
+XPATHTYPE	Method	string		TYPE	MedicationType
+XPATHTYPE	WellbeingEventCategory	WellbeingEventCategoryType	LOOKUP	TYPE	WellbeingEventCategoryListType
+XPATHTYPE	EventCategory	string		TYPE	WellbeingEventCategoryType
+XPATHTYPE	WellbeingEventSubCategoryList	WellbeingEventSubCategoryListType	LOOKUP	TYPE	WellbeingEventCategoryType
+XPATHTYPE	WellbeingEventSubCategory	string		TYPE	WellbeingEventSubCategoryListType
+XPATHTYPE	EventLocation	string		TYPE	WellbeingEventLocationDetailsType
+XPATHTYPE	Class	string		TYPE	WellbeingEventLocationDetailsType
+XPATHTYPE	FurtherLocationNotes	string		TYPE	WellbeingEventLocationDetailsType
+XPATHTYPE	FollowUpAction	FollowUpActionType	LOOKUP	TYPE	FollowUpActionListType
+XPATHTYPE	WellbeingResponseRefId	string		TYPE	FollowUpActionType
+XPATHTYPE	FollowUpDetails	string		TYPE	FollowUpActionType
+XPATHTYPE	FollowUpActionCategory	string		TYPE	FollowUpActionType
+XPATHTYPE	PersonInvolvement	PersonInvolvementType	LOOKUP	TYPE	PersonInvolvementListType
+XPATHTYPE	PersonRefId	string		TYPE	PersonInvolvementType
+XPATHTYPE	ShortName	string		TYPE	PersonInvolvementType
+XPATHTYPE	HowInvolved	string		TYPE	PersonInvolvementType
+XPATHTYPE	Withdrawal	WithdrawalType	LOOKUP	TYPE	WithdrawalTimeListType
+XPATHTYPE	WithdrawalDate	string		TYPE	WithdrawalType
+XPATHTYPE	WithdrawalStartTime	string		TYPE	WithdrawalType
+XPATHTYPE	WithdrawalEndTime	string		TYPE	WithdrawalType
+XPATHTYPE	TimeTableSubjectRefId	string		TYPE	WithdrawalType
+XPATHTYPE	ScheduledActivityRefId	string		TYPE	WithdrawalType
+XPATHTYPE	TimeTableCellRefId	string		TYPE	WithdrawalType
+XPATHTYPE	SuspensionCategory	string		TYPE	SuspensionContainerType
+XPATHTYPE	WithdrawalTimeList	WithdrawalTimeListType	LOOKUP	TYPE	SuspensionContainerType
+XPATHTYPE	Duration	number		TYPE	SuspensionContainerType
+XPATHTYPE	AdvisementDate	string		TYPE	SuspensionContainerType
+XPATHTYPE	ResolutionMeetingTime	string		TYPE	SuspensionContainerType
+XPATHTYPE	ResolutionNotes	string		TYPE	SuspensionContainerType
+XPATHTYPE	EarlyReturnDate	string		TYPE	SuspensionContainerType
+XPATHTYPE	Status	string		TYPE	SuspensionContainerType
+XPATHTYPE	DetentionCategory	string		TYPE	DetentionContainerType
+XPATHTYPE	DetentionDate	string		TYPE	DetentionContainerType
+XPATHTYPE	DetentionLocation	string		TYPE	DetentionContainerType
+XPATHTYPE	DetentionNotes	string		TYPE	DetentionContainerType
+XPATHTYPE	Status	string		TYPE	DetentionContainerType
+XPATHTYPE	PlanRequiredList	PlanRequiredListType	LOOKUP	TYPE	PlanRequiredContainerType
+XPATHTYPE	Status	string		TYPE	PlanRequiredContainerType
+XPATHTYPE	Plan	WellbeingPlanType	LOOKUP	TYPE	PlanRequiredListType
+XPATHTYPE	PersonalisedPlanRefId	string		TYPE	WellbeingPlanType
+XPATHTYPE	PlanNotes	string		TYPE	WellbeingPlanType
+XPATHTYPE	AwardDate	string		TYPE	AwardContainerType
+XPATHTYPE	AwardType	string		TYPE	AwardContainerType
+XPATHTYPE	AwardDescription	string		TYPE	AwardContainerType
+XPATHTYPE	AwardNotes	string		TYPE	AwardContainerType
+XPATHTYPE	Status	string		TYPE	AwardContainerType
+XPATHTYPE	OtherResponseDate	string		TYPE	OtherWellbeingResponseContainerType
+XPATHTYPE	OtherResponseType	string		TYPE	OtherWellbeingResponseContainerType
+XPATHTYPE	OtherResponseDescription	string		TYPE	OtherWellbeingResponseContainerType
+XPATHTYPE	OtherResponseNotes	string		TYPE	OtherWellbeingResponseContainerType
+XPATHTYPE	Status	string		TYPE	OtherWellbeingResponseContainerType
+XPATHTYPE	Document	WellbeingDocumentType	LOOKUP	TYPE	WellbeingDocumentListType
+XPATHTYPE	Location	string		TYPE	WellbeingDocumentType
+XPATHTYPE	Sensitivity	string		TYPE	WellbeingDocumentType
+XPATHTYPE	URL	string		TYPE	WellbeingDocumentType
+XPATHTYPE	DocumentType	string		TYPE	WellbeingDocumentType
+XPATHTYPE	DocumentReviewDate	string		TYPE	WellbeingDocumentType
+XPATHTYPE	DocumentDescription	string		TYPE	WellbeingDocumentType
+XPATHTYPE	NAPTestItemLocalId	LocalIdType	LOOKUP	TYPE	NAPTestItemContentType
+XPATHTYPE	ItemName	string		TYPE	NAPTestItemContentType
+XPATHTYPE	ItemType	string		TYPE	NAPTestItemContentType
+XPATHTYPE	Subdomain	string		TYPE	NAPTestItemContentType
+XPATHTYPE	WritingGenre	string		TYPE	NAPTestItemContentType
+XPATHTYPE	ItemDescriptor	string		TYPE	NAPTestItemContentType
+XPATHTYPE	ReleasedStatus	boolean		TYPE	NAPTestItemContentType
+XPATHTYPE	MarkingType	string		TYPE	NAPTestItemContentType
+XPATHTYPE	MultipleChoiceOptionCount	number		TYPE	NAPTestItemContentType
+XPATHTYPE	CorrectAnswer	string		TYPE	NAPTestItemContentType
+XPATHTYPE	MaximumScore	number		TYPE	NAPTestItemContentType
+XPATHTYPE	ItemDifficulty	number		TYPE	NAPTestItemContentType
+XPATHTYPE	ItemDifficultyLogit5	number		TYPE	NAPTestItemContentType
+XPATHTYPE	ItemDifficultyLogit62	number		TYPE	NAPTestItemContentType
+XPATHTYPE	ItemDifficultyLogit5SE	number		TYPE	NAPTestItemContentType
+XPATHTYPE	ItemDifficultyLogit62SE	number		TYPE	NAPTestItemContentType
+XPATHTYPE	ItemProficiencyBand	number		TYPE	NAPTestItemContentType
+XPATHTYPE	ItemProficiencyLevel	string		TYPE	NAPTestItemContentType
+XPATHTYPE	ExemplarURL	string		TYPE	NAPTestItemContentType
+XPATHTYPE	ItemSubstitutedForList	SubstituteItemListType	LOOKUP	TYPE	NAPTestItemContentType
+XPATHTYPE	ContentDescriptionList	ContentDescriptionListType	LOOKUP	TYPE	NAPTestItemContentType
+XPATHTYPE	StimulusList	StimulusListType	LOOKUP	TYPE	NAPTestItemContentType
+XPATHTYPE	NAPWritingRubricList	NAPWritingRubricListType	LOOKUP	TYPE	NAPTestItemContentType
+XPATHTYPE	NAPTestletLocalId	LocalIdType	LOOKUP	TYPE	NAPTestletContentType
+XPATHTYPE	TestletName	string		TYPE	NAPTestletContentType
+XPATHTYPE	Node	string		TYPE	NAPTestletContentType
+XPATHTYPE	LocationInStage	number		TYPE	NAPTestletContentType
+XPATHTYPE	TestletMaximumScore	number		TYPE	NAPTestletContentType
+XPATHTYPE	NAPTestLocalId	LocalIdType	LOOKUP	TYPE	NAPTestContentType
+XPATHTYPE	TestName	string		TYPE	NAPTestContentType
+XPATHTYPE	TestLevel	YearLevelType	LOOKUP	TYPE	NAPTestContentType
+XPATHTYPE	TestType	string		TYPE	NAPTestContentType
+XPATHTYPE	Domain	string		TYPE	NAPTestContentType
+XPATHTYPE	TestYear	SchoolYearType	LOOKUP	TYPE	NAPTestContentType
+XPATHTYPE	StagesCount	number		TYPE	NAPTestContentType
+XPATHTYPE	DomainBands	DomainBandsContainerType	LOOKUP	TYPE	NAPTestContentType
+XPATHTYPE	DomainProficiency	DomainProficiencyContainerType	LOOKUP	TYPE	NAPTestContentType
+XPATHTYPE	PlausibleScaledValue	number		TYPE	PlausibleScaledValueListType
+XPATHTYPE	SubstituteItem	SubstituteItemType	LOOKUP	TYPE	SubstituteItemListType
+XPATHTYPE	SubstituteItemRefId	string		TYPE	SubstituteItemType
+XPATHTYPE	SubstituteItemLocalId	LocalIdType	LOOKUP	TYPE	SubstituteItemType
+XPATHTYPE	PNPCodeList	PNPCodeListType	LOOKUP	TYPE	SubstituteItemType
+XPATHTYPE	TestItem	CodeFrameTestItemType	LOOKUP	TYPE	CodeFrameTestItemListType
+XPATHTYPE	TestItemRefId	string		TYPE	CodeFrameTestItemType
+XPATHTYPE	SequenceNumber	number		TYPE	CodeFrameTestItemType
+XPATHTYPE	TestItemContent	NAPTestItemContentType	LOOKUP	TYPE	CodeFrameTestItemType
+XPATHTYPE	StimulusLocalId	LocalIdType	LOOKUP	TYPE	StimulusLocalIdListType
+XPATHTYPE	Band1Lower	number		TYPE	DomainBandsContainerType
+XPATHTYPE	Band1Upper	number		TYPE	DomainBandsContainerType
+XPATHTYPE	Band2Lower	number		TYPE	DomainBandsContainerType
+XPATHTYPE	Band2Upper	number		TYPE	DomainBandsContainerType
+XPATHTYPE	Band3Lower	number		TYPE	DomainBandsContainerType
+XPATHTYPE	Band3Upper	number		TYPE	DomainBandsContainerType
+XPATHTYPE	Band4Lower	number		TYPE	DomainBandsContainerType
+XPATHTYPE	Band4Upper	number		TYPE	DomainBandsContainerType
+XPATHTYPE	Band5Lower	number		TYPE	DomainBandsContainerType
+XPATHTYPE	Band5Upper	number		TYPE	DomainBandsContainerType
+XPATHTYPE	Band6Lower	number		TYPE	DomainBandsContainerType
+XPATHTYPE	Band6Upper	number		TYPE	DomainBandsContainerType
+XPATHTYPE	Band7Lower	number		TYPE	DomainBandsContainerType
+XPATHTYPE	Band7Upper	number		TYPE	DomainBandsContainerType
+XPATHTYPE	Band8Lower	number		TYPE	DomainBandsContainerType
+XPATHTYPE	Band8Upper	number		TYPE	DomainBandsContainerType
+XPATHTYPE	Band9Lower	number		TYPE	DomainBandsContainerType
+XPATHTYPE	Band9Upper	number		TYPE	DomainBandsContainerType
+XPATHTYPE	Band10Lower	number		TYPE	DomainBandsContainerType
+XPATHTYPE	Band10Upper	number		TYPE	DomainBandsContainerType
+XPATHTYPE	Level1Lower	number		TYPE	DomainProficiencyContainerType
+XPATHTYPE	Level1Upper	number		TYPE	DomainProficiencyContainerType
+XPATHTYPE	Level2Lower	number		TYPE	DomainProficiencyContainerType
+XPATHTYPE	Level2Upper	number		TYPE	DomainProficiencyContainerType
+XPATHTYPE	Level3Lower	number		TYPE	DomainProficiencyContainerType
+XPATHTYPE	Level3Upper	number		TYPE	DomainProficiencyContainerType
+XPATHTYPE	Level4Lower	number		TYPE	DomainProficiencyContainerType
+XPATHTYPE	Level4Upper	number		TYPE	DomainProficiencyContainerType
+XPATHTYPE	TestItem	NAPTestItem2Type	LOOKUP	TYPE	NAPTestItemListType
+XPATHTYPE	TestItemRefId	string		TYPE	NAPTestItem2Type
+XPATHTYPE	TestItemLocalId	LocalIdType	LOOKUP	TYPE	NAPTestItem2Type
+XPATHTYPE	SequenceNumber	number		TYPE	NAPTestItem2Type
+XPATHTYPE	Testlet	NAPTestletCodeFrameType	LOOKUP	TYPE	NAPCodeFrameTestletListType
+XPATHTYPE	NAPTestletRefId	string		TYPE	NAPTestletCodeFrameType
+XPATHTYPE	TestletContent	NAPTestletContentType	LOOKUP	TYPE	NAPTestletCodeFrameType
+XPATHTYPE	TestItemList	CodeFrameTestItemListType	LOOKUP	TYPE	NAPTestletCodeFrameType
+XPATHTYPE	Testlet	NAPTestletResponseType	LOOKUP	TYPE	NAPStudentResponseTestletListType
+XPATHTYPE	NAPTestletRefId	string		TYPE	NAPTestletResponseType
+XPATHTYPE	NAPTestletLocalId	LocalIdType	LOOKUP	TYPE	NAPTestletResponseType
+XPATHTYPE	TestletSubScore	number		TYPE	NAPTestletResponseType
+XPATHTYPE	ItemResponseList	NAPTestletItemResponseListType	LOOKUP	TYPE	NAPTestletResponseType
+XPATHTYPE	ItemResponse	NAPTestletResponseItemType	LOOKUP	TYPE	NAPTestletItemResponseListType
+XPATHTYPE	NAPTestItemRefId	string		TYPE	NAPTestletResponseItemType
+XPATHTYPE	NAPTestItemLocalId	LocalIdType	LOOKUP	TYPE	NAPTestletResponseItemType
+XPATHTYPE	Response	string		TYPE	NAPTestletResponseItemType
+XPATHTYPE	ResponseCorrectness	string		TYPE	NAPTestletResponseItemType
+XPATHTYPE	Score	number		TYPE	NAPTestletResponseItemType
+XPATHTYPE	LapsedTimeItem	string		TYPE	NAPTestletResponseItemType
+XPATHTYPE	SequenceNumber	number		TYPE	NAPTestletResponseItemType
+XPATHTYPE	ItemWeight	number		TYPE	NAPTestletResponseItemType
+XPATHTYPE	SubscoreList	NAPSubscoreListType	LOOKUP	TYPE	NAPTestletResponseItemType
+XPATHTYPE	Subscore	NAPSubscoreType	LOOKUP	TYPE	NAPSubscoreListType
+XPATHTYPE	SubscoreType	string		TYPE	NAPSubscoreType
+XPATHTYPE	SubscoreValue	number		TYPE	NAPSubscoreType
+XPATHTYPE	RawScore	number		TYPE	DomainScoreType
+XPATHTYPE	ScaledScoreValue	number		TYPE	DomainScoreType
+XPATHTYPE	ScaledScoreLogitValue	number		TYPE	DomainScoreType
+XPATHTYPE	ScaledScoreStandardError	number		TYPE	DomainScoreType
+XPATHTYPE	ScaledScoreLogitStandardError	number		TYPE	DomainScoreType
+XPATHTYPE	StudentDomainBand	number		TYPE	DomainScoreType
+XPATHTYPE	StudentProficiency	string		TYPE	DomainScoreType
+XPATHTYPE	PlausibleScaledValueList	PlausibleScaledValueListType	LOOKUP	TYPE	DomainScoreType
+XPATHTYPE	NAPWritingRubric	NAPWritingRubricType	LOOKUP	TYPE	NAPWritingRubricListType
+XPATHTYPE	RubricType	string		TYPE	NAPWritingRubricType
+XPATHTYPE	ScoreList	ScoreListType	LOOKUP	TYPE	NAPWritingRubricType
+XPATHTYPE	Descriptor	string		TYPE	NAPWritingRubricType
+XPATHTYPE	Score	ScoreType	LOOKUP	TYPE	ScoreListType
+XPATHTYPE	MaxScoreValue	number		TYPE	ScoreType
+XPATHTYPE	ScoreDescriptionList	ScoreDescriptionListType	LOOKUP	TYPE	ScoreType
+XPATHTYPE	ScoreDescription	ScoreDescriptionType	LOOKUP	TYPE	ScoreDescriptionListType
+XPATHTYPE	ScoreValue	number		TYPE	ScoreDescriptionType
+XPATHTYPE	Descriptor	string		TYPE	ScoreDescriptionType
+XPATHTYPE	Stimulus	StimulusType	LOOKUP	TYPE	StimulusListType
+XPATHTYPE	StimulusLocalId	LocalIdType	LOOKUP	TYPE	StimulusType
+XPATHTYPE	TextGenre	string		TYPE	StimulusType
+XPATHTYPE	TextType	string		TYPE	StimulusType
+XPATHTYPE	WordCount	number		TYPE	StimulusType
+XPATHTYPE	TextDescriptor	string		TYPE	StimulusType
+XPATHTYPE	Content	string		TYPE	StimulusType
+XPATHTYPE	ContentDescription	string		TYPE	ContentDescriptionListType
+XPATHTYPE	PNPCode	string		TYPE	PNPCodeListType
+XPATHTYPE	PNPCodeList	PNPCodeListType	LOOKUP	TYPE	AdjustmentContainerType
+XPATHTYPE	BookletType	string		TYPE	AdjustmentContainerType
+XPATHTYPE	TestDisruption	TestDisruptionType	LOOKUP	TYPE	TestDisruptionListType
+XPATHTYPE	Event	string		TYPE	TestDisruptionType
+XPATHTYPE	CalendarSummaryRefId	string		TYPE	CalendarSummaryListType
+XPATHTYPE	Code	VisaSubClassCodeType	LOOKUP	TYPE	VisaSubClassType
+XPATHTYPE	VisaExpiryDate	string		TYPE	VisaSubClassType
+XPATHTYPE	ATEExpiryDate	string		TYPE	VisaSubClassType
+XPATHTYPE	ATEStartDate	string		TYPE	VisaSubClassType
+XPATHTYPE	VisaStatisticalCode	string		TYPE	VisaSubClassType
+XPATHTYPE	VisaSubClass	VisaSubClassType	LOOKUP	TYPE	VisaSubClassListType
+XPATHTYPE	node()	string		TYPE	VisaSubClassCodeType
+XPATHTYPE	Code	string		TYPE	LanguageBaseType
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	TYPE	LanguageBaseType
+XPATHTYPE	LanguageType	string		TYPE	LanguageBaseType
+XPATHTYPE	Dialect	string		TYPE	LanguageBaseType
+XPATHTYPE	ReligiousEvent	ReligiousEventType	LOOKUP	TYPE	ReligiousEventListType
+XPATHTYPE	Type	string		TYPE	ReligiousEventType
+XPATHTYPE	Date	string		TYPE	ReligiousEventType
+XPATHTYPE	Code	string		TYPE	ReligionType
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	TYPE	ReligionType
+XPATHTYPE	Code	string		TYPE	DwellingArrangementType
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	TYPE	DwellingArrangementType
+XPATHTYPE	CountryOfCitizenship	CountryType	LOOKUP	TYPE	CountryListType
+XPATHTYPE	CountryOfResidency	CountryType	LOOKUP	TYPE	CountryList2Type
+XPATHTYPE	node()	MonetaryAmountType	LOOKUP	TYPE	DebitOrCreditAmountType
+XPATHTYPE	node()	string		TYPE	ScheduledActivityOverrideType
+XPATHTYPE	CreationDate	string		TYPE	ActivityTimeType
+XPATHTYPE	Duration	number		TYPE	ActivityTimeType
+XPATHTYPE	StartDate	string		TYPE	ActivityTimeType
+XPATHTYPE	FinishDate	string		TYPE	ActivityTimeType
+XPATHTYPE	DueDate	string		TYPE	ActivityTimeType
+XPATHTYPE	CourseCode	string		TYPE	SchoolCourseInfoOverrideType
+XPATHTYPE	StateCourseCode	string		TYPE	SchoolCourseInfoOverrideType
+XPATHTYPE	DistrictCourseCode	string		TYPE	SchoolCourseInfoOverrideType
+XPATHTYPE	SubjectArea	SubjectAreaType	LOOKUP	TYPE	SchoolCourseInfoOverrideType
+XPATHTYPE	CourseTitle	string		TYPE	SchoolCourseInfoOverrideType
+XPATHTYPE	InstructionalLevel	string		TYPE	SchoolCourseInfoOverrideType
+XPATHTYPE	CourseCredits	string		TYPE	SchoolCourseInfoOverrideType
+XPATHTYPE	Code	string		TYPE	LocationOfInstructionType
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	TYPE	LocationOfInstructionType
+XPATHTYPE	Code	string		TYPE	LanguageOfInstructionType
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	TYPE	LanguageOfInstructionType
+XPATHTYPE	Code	string		TYPE	MediumOfInstructionType
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	TYPE	MediumOfInstructionType
+XPATHTYPE	Code	string		TYPE	StudentActivityType
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	TYPE	StudentActivityType
+XPATHTYPE	ParentLegalGuardian	string		TYPE	ContactFlagsType
+XPATHTYPE	PickupRights	string		TYPE	ContactFlagsType
+XPATHTYPE	LivesWith	string		TYPE	ContactFlagsType
+XPATHTYPE	AccessToRecords	string		TYPE	ContactFlagsType
+XPATHTYPE	ReceivesAssessmentReport	string		TYPE	ContactFlagsType
+XPATHTYPE	EmergencyContact	string		TYPE	ContactFlagsType
+XPATHTYPE	HasCustody	string		TYPE	ContactFlagsType
+XPATHTYPE	DisciplinaryContact	string		TYPE	ContactFlagsType
+XPATHTYPE	AttendanceContact	string		TYPE	ContactFlagsType
+XPATHTYPE	PrimaryCareProvider	string		TYPE	ContactFlagsType
+XPATHTYPE	FeesBilling	string		TYPE	ContactFlagsType
+XPATHTYPE	FeesAccess	string		TYPE	ContactFlagsType
+XPATHTYPE	FamilyMail	string		TYPE	ContactFlagsType
+XPATHTYPE	InterventionOrder	string		TYPE	ContactFlagsType
+XPATHTYPE	Code	string		TYPE	AgencyType
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	TYPE	AgencyType
+XPATHTYPE	Start	YearLevelType	LOOKUP	TYPE	YearRangeType
+XPATHTYPE	End	YearLevelType	LOOKUP	TYPE	YearRangeType
+XPATHTYPE	UserId	string		TYPE	CreationUserType
+XPATHTYPE	CreationUser	CreationUserType	LOOKUP	TYPE	AuditInfoType
+XPATHTYPE	CreationDateTime	string		TYPE	AuditInfoType
+XPATHTYPE	CountsTowardAttendance	string		TYPE	AttendanceInfoType
+XPATHTYPE	AttendanceValue	number		TYPE	AttendanceInfoType
+XPATHTYPE	Code	string		TYPE	CalendarDateInfoType
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	TYPE	CalendarDateInfoType
+XPATHTYPE	Code	string		TYPE	ProgramAvailabilityType
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	TYPE	ProgramAvailabilityType
+XPATHTYPE	Code	string		TYPE	ReferralSourceType
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	TYPE	ReferralSourceType
+XPATHTYPE	PromotionStatus	string		TYPE	PromotionInfoType
+XPATHTYPE	Code	string		TYPE	CatchmentStatusContainerType
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	TYPE	CatchmentStatusContainerType
+XPATHTYPE	Code	string		TYPE	StudentExitStatusContainerType
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	TYPE	StudentExitStatusContainerType
+XPATHTYPE	Code	string		TYPE	StudentExitContainerType
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	TYPE	StudentExitContainerType
+XPATHTYPE	Code	string		TYPE	StudentEntryContainerType
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	TYPE	StudentEntryContainerType
+XPATHTYPE	SchoolLocalId	LocalIdType	LOOKUP	TYPE	StudentMostRecentContainerType
+XPATHTYPE	HomeroomLocalId	LocalIdType	LOOKUP	TYPE	StudentMostRecentContainerType
+XPATHTYPE	YearLevel	YearLevelType	LOOKUP	TYPE	StudentMostRecentContainerType
+XPATHTYPE	FTE	number		TYPE	StudentMostRecentContainerType
+XPATHTYPE	Parent1Language	string		TYPE	StudentMostRecentContainerType
+XPATHTYPE	Parent2Language	string		TYPE	StudentMostRecentContainerType
+XPATHTYPE	Parent1EmploymentType	string		TYPE	StudentMostRecentContainerType
+XPATHTYPE	Parent2EmploymentType	string		TYPE	StudentMostRecentContainerType
+XPATHTYPE	Parent1SchoolEducationLevel	string		TYPE	StudentMostRecentContainerType
+XPATHTYPE	Parent2SchoolEducationLevel	string		TYPE	StudentMostRecentContainerType
+XPATHTYPE	Parent1NonSchoolEducation	string		TYPE	StudentMostRecentContainerType
+XPATHTYPE	Parent2NonSchoolEducation	string		TYPE	StudentMostRecentContainerType
+XPATHTYPE	LocalCampusId	LocalIdType	LOOKUP	TYPE	StudentMostRecentContainerType
+XPATHTYPE	SchoolACARAId	LocalIdType	LOOKUP	TYPE	StudentMostRecentContainerType
+XPATHTYPE	TestLevel	YearLevelType	LOOKUP	TYPE	StudentMostRecentContainerType
+XPATHTYPE	Homegroup	string		TYPE	StudentMostRecentContainerType
+XPATHTYPE	ClassCode	string		TYPE	StudentMostRecentContainerType
+XPATHTYPE	MembershipType	string		TYPE	StudentMostRecentContainerType
+XPATHTYPE	FFPOS	string		TYPE	StudentMostRecentContainerType
+XPATHTYPE	ReportingSchoolId	LocalIdType	LOOKUP	TYPE	StudentMostRecentContainerType
+XPATHTYPE	OtherEnrollmentSchoolACARAId	LocalIdType	LOOKUP	TYPE	StudentMostRecentContainerType
+XPATHTYPE	SchoolLocalId	LocalIdType	LOOKUP	TYPE	StaffMostRecentContainerType
+XPATHTYPE	SchoolACARAId	LocalIdType	LOOKUP	TYPE	StaffMostRecentContainerType
+XPATHTYPE	LocalCampusId	LocalIdType	LOOKUP	TYPE	StaffMostRecentContainerType
+XPATHTYPE	NAPLANClassList	NAPLANClassListType	LOOKUP	TYPE	StaffMostRecentContainerType
+XPATHTYPE	HomeGroup	string		TYPE	StaffMostRecentContainerType
+XPATHTYPE	Code	string		TYPE	StaffActivityExtensionType
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	TYPE	StaffActivityExtensionType
+XPATHTYPE	Girls	string		TYPE	TotalEnrollmentsType
+XPATHTYPE	Boys	string		TYPE	TotalEnrollmentsType
+XPATHTYPE	TotalStudents	string		TYPE	TotalEnrollmentsType
+XPATHTYPE	ParentSchoolId	string		TYPE	CampusContainerType
+XPATHTYPE	SchoolCampusId	string		TYPE	CampusContainerType
+XPATHTYPE	CampusType	string		TYPE	CampusContainerType
+XPATHTYPE	AdminStatus	string		TYPE	CampusContainerType
+XPATHTYPE	HouseholdContactInfo	HouseholdContactInfoType	LOOKUP	TYPE	HouseholdContactInfoListType
+XPATHTYPE	PreferenceNumber	number		TYPE	HouseholdContactInfoType
+XPATHTYPE	HouseholdContactId	LocalIdType	LOOKUP	TYPE	HouseholdContactInfoType
+XPATHTYPE	HouseholdSalutation	string		TYPE	HouseholdContactInfoType
+XPATHTYPE	AddressList	AddressListType	LOOKUP	TYPE	HouseholdContactInfoType
+XPATHTYPE	EmailList	EmailListType	LOOKUP	TYPE	HouseholdContactInfoType
+XPATHTYPE	PhoneNumberList	PhoneNumberListType	LOOKUP	TYPE	HouseholdContactInfoType
+XPATHTYPE	StatementCode	string		TYPE	StatementCodesType
+XPATHTYPE	Statement	string		TYPE	StatementsType
+XPATHTYPE	ProgramFundingSource	ProgramFundingSourceType	LOOKUP	TYPE	ProgramFundingSourcesType
+XPATHTYPE	Code	string		TYPE	ProgramFundingSourceType
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	TYPE	ProgramFundingSourceType
+XPATHTYPE	AttendanceTime	AttendanceTimeType	LOOKUP	TYPE	AttendanceTimesType
+XPATHTYPE	AttendanceType	string		TYPE	AttendanceTimeType
+XPATHTYPE	AttendanceCode	AttendanceCodeType	LOOKUP	TYPE	AttendanceTimeType
+XPATHTYPE	AttendanceStatus	string		TYPE	AttendanceTimeType
+XPATHTYPE	StartTime	string		TYPE	AttendanceTimeType
+XPATHTYPE	EndTime	string		TYPE	AttendanceTimeType
+XPATHTYPE	DurationValue	number		TYPE	AttendanceTimeType
+XPATHTYPE	TimeTableSubjectRefId	RefIdType	LOOKUP	TYPE	AttendanceTimeType
+XPATHTYPE	AttendanceNote	string		TYPE	AttendanceTimeType
+XPATHTYPE	PeriodAttendance	PeriodAttendanceType	LOOKUP	TYPE	PeriodAttendancesType
+XPATHTYPE	AttendanceType	string		TYPE	PeriodAttendanceType
+XPATHTYPE	AttendanceCode	AttendanceCodeType	LOOKUP	TYPE	PeriodAttendanceType
+XPATHTYPE	AttendanceStatus	string		TYPE	PeriodAttendanceType
+XPATHTYPE	Date	string		TYPE	PeriodAttendanceType
+XPATHTYPE	SessionInfoRefId	string		TYPE	PeriodAttendanceType
+XPATHTYPE	ScheduledActivityRefId	string		TYPE	PeriodAttendanceType
+XPATHTYPE	TimetablePeriod	string		TYPE	PeriodAttendanceType
+XPATHTYPE	DayId	LocalIdType	LOOKUP	TYPE	PeriodAttendanceType
+XPATHTYPE	StartTime	string		TYPE	PeriodAttendanceType
+XPATHTYPE	EndTime	string		TYPE	PeriodAttendanceType
+XPATHTYPE	TimeIn	string		TYPE	PeriodAttendanceType
+XPATHTYPE	TimeOut	string		TYPE	PeriodAttendanceType
+XPATHTYPE	TimeTableCellRefId	string		TYPE	PeriodAttendanceType
+XPATHTYPE	TimeTableSubjectRefId	RefIdType	LOOKUP	TYPE	PeriodAttendanceType
+XPATHTYPE	TeacherList	ScheduledTeacherListType	LOOKUP	TYPE	PeriodAttendanceType
+XPATHTYPE	RoomList	RoomListType	LOOKUP	TYPE	PeriodAttendanceType
+XPATHTYPE	AttendanceNote	string		TYPE	PeriodAttendanceType
+XPATHTYPE	StaffSubject	StaffSubjectType	LOOKUP	TYPE	StaffSubjectListType
+XPATHTYPE	PreferenceNumber	number		TYPE	StaffSubjectType
+XPATHTYPE	SubjectLocalId	LocalIdType	LOOKUP	TYPE	StaffSubjectType
+XPATHTYPE	TimeTableSubjectRefId	RefIdType	LOOKUP	TYPE	StaffSubjectType
+XPATHTYPE	TeachingGroupRefId	string		TYPE	TeachingGroupListType
+XPATHTYPE	TeacherCover	TeacherCoverType	LOOKUP	TYPE	ScheduledTeacherListType
+XPATHTYPE	StaffPersonalRefId	string		TYPE	TeacherCoverType
+XPATHTYPE	StaffLocalId	LocalIdType	LOOKUP	TYPE	TeacherCoverType
+XPATHTYPE	StartTime	string		TYPE	TeacherCoverType
+XPATHTYPE	FinishTime	string		TYPE	TeacherCoverType
+XPATHTYPE	Credit	string		TYPE	TeacherCoverType
+XPATHTYPE	Supervision	string		TYPE	TeacherCoverType
+XPATHTYPE	Weighting	number		TYPE	TeacherCoverType
+XPATHTYPE	RoomInfoRefId	string		TYPE	RoomListType
+XPATHTYPE	StaffPersonalRefId	string		TYPE	StaffListType
+XPATHTYPE	Author	string		TYPE	AuthorsType
+XPATHTYPE	Organization	string		TYPE	OrganizationsType
+XPATHTYPE	PurchasingItem	PurchasingItemType	LOOKUP	TYPE	PurchasingItemsType
+XPATHTYPE	ItemNumber	string		TYPE	PurchasingItemType
+XPATHTYPE	ItemDescription	string		TYPE	PurchasingItemType
+XPATHTYPE	Quantity	string		TYPE	PurchasingItemType
+XPATHTYPE	UnitCost	MonetaryAmountType	LOOKUP	TYPE	PurchasingItemType
+XPATHTYPE	TotalCost	MonetaryAmountType	LOOKUP	TYPE	PurchasingItemType
+XPATHTYPE	QuantityDelivered	string		TYPE	PurchasingItemType
+XPATHTYPE	CancelledOrder	string		TYPE	PurchasingItemType
+XPATHTYPE	TaxRate	number		TYPE	PurchasingItemType
+XPATHTYPE	ExpenseAccounts	ExpenseAccountsType	LOOKUP	TYPE	PurchasingItemType
+XPATHTYPE	ExpenseAccount	ExpenseAccountType	LOOKUP	TYPE	ExpenseAccountsType
+XPATHTYPE	AccountCode	string		TYPE	ExpenseAccountType
+XPATHTYPE	Amount	MonetaryAmountType	LOOKUP	TYPE	ExpenseAccountType
+XPATHTYPE	FinancialAccountRefId	string		TYPE	ExpenseAccountType
+XPATHTYPE	AccountingPeriod	LocalIdType	LOOKUP	TYPE	ExpenseAccountType
+XPATHTYPE	Program	SchoolProgramType	LOOKUP	TYPE	SchoolProgramListType
+XPATHTYPE	Category	string		TYPE	SchoolProgramType
+XPATHTYPE	Type	string		TYPE	SchoolProgramType
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	TYPE	SchoolProgramType
+XPATHTYPE	LearningObjective	string		TYPE	LearningObjectivesType
+XPATHTYPE	Recognition	string		TYPE	RecognitionListType
+XPATHTYPE	LearningResourceRefId	ResourcesType	LOOKUP	TYPE	LResourcesType
+XPATHTYPE	node()	string		TYPE	ResourcesType
+XPATHTYPE	SourceObject	string		TYPE	SourceObjectsType
+XPATHTYPE	StudentPersonalRefId	string		TYPE	StudentsType
+XPATHTYPE	Prerequisite	string		TYPE	PrerequisitesType
+XPATHTYPE	EssentialMaterial	string		TYPE	EssentialMaterialsType
+XPATHTYPE	TechnicalRequirement	string		TYPE	TechnicalRequirementsType
+XPATHTYPE	SoftwareRequirement	SoftwareRequirementType	LOOKUP	TYPE	SoftwareRequirementListType
+XPATHTYPE	SoftwareTitle	string		TYPE	SoftwareRequirementType
+XPATHTYPE	Version	string		TYPE	SoftwareRequirementType
+XPATHTYPE	Vendor	string		TYPE	SoftwareRequirementType
+XPATHTYPE	OS	string		TYPE	SoftwareRequirementType
+XPATHTYPE	Household	LocalIdType	LOOKUP	TYPE	HouseholdListType
+XPATHTYPE	StudentSubjectChoice	StudentSubjectChoiceType	LOOKUP	TYPE	StudentSubjectChoiceListType
+XPATHTYPE	PreferenceNumber	number		TYPE	StudentSubjectChoiceType
+XPATHTYPE	SubjectLocalId	LocalIdType	LOOKUP	TYPE	StudentSubjectChoiceType
+XPATHTYPE	StudyDescription	SubjectAreaType	LOOKUP	TYPE	StudentSubjectChoiceType
+XPATHTYPE	OtherSchoolLocalId	LocalIdType	LOOKUP	TYPE	StudentSubjectChoiceType
+XPATHTYPE	IdentityAssertion	string		TYPE	IdentityAssertionsType
+XPATHTYPE	LearningStandardItemRefId	string		TYPE	LearningStandardsType
+XPATHTYPE	LearningResourceRefId	string		TYPE	LearningResourcesType
+XPATHTYPE	LearningStandardDocumentRefId	string		TYPE	LearningStandardsDocumentType
+XPATHTYPE	Component	ComponentType	LOOKUP	TYPE	ComponentsType
+XPATHTYPE	Name	string		TYPE	ComponentType
+XPATHTYPE	Reference	string		TYPE	ComponentType
+XPATHTYPE	Description	string		TYPE	ComponentType
+XPATHTYPE	Strategies	StrategiesType	LOOKUP	TYPE	ComponentType
+XPATHTYPE	AssociatedObjects	AssociatedObjectsType	LOOKUP	TYPE	ComponentType
+XPATHTYPE	Strategy	string		TYPE	StrategiesType
+XPATHTYPE	AssociatedObject	string		TYPE	AssociatedObjectsType
+XPATHTYPE	Evaluation	EvaluationType	LOOKUP	TYPE	EvaluationsType
+XPATHTYPE	Description	string		TYPE	EvaluationType
+XPATHTYPE	Date	string		TYPE	EvaluationType
+XPATHTYPE	Name	NameType	LOOKUP	TYPE	EvaluationType
+XPATHTYPE	Approval	ApprovalType	LOOKUP	TYPE	ApprovalsType
+XPATHTYPE	Organization	string		TYPE	ApprovalType
+XPATHTYPE	Date	string		TYPE	ApprovalType
+XPATHTYPE	MediaType	string		TYPE	MediaTypesType
+XPATHTYPE	LEAContact	LEAContactType	LOOKUP	TYPE	LEAContactListType
+XPATHTYPE	PublishInDirectory	PublishInDirectoryType	LOOKUP	TYPE	LEAContactType
+XPATHTYPE	ContactInfo	ContactInfoType	LOOKUP	TYPE	LEAContactType
+XPATHTYPE	FinancialAccountRefId	string		TYPE	FinancialAccountRefIdListType
+XPATHTYPE	Password	string		TYPE	PasswordListType
+XPATHTYPE	ExclusionRule	ExclusionRuleType	LOOKUP	TYPE	ExclusionRulesType
+XPATHTYPE	node()	string		TYPE	ExclusionRuleType
+XPATHTYPE	AggregateCharacteristicInfoRefId	string		TYPE	CharacteristicsType
+XPATHTYPE	Contact	ContactType	LOOKUP	TYPE	ContactsType
+XPATHTYPE	Name	NameType	LOOKUP	TYPE	ContactType
+XPATHTYPE	Address	AddressType	LOOKUP	TYPE	ContactType
+XPATHTYPE	PhoneNumber	PhoneNumberType	LOOKUP	TYPE	ContactType
+XPATHTYPE	Email	EmailType	LOOKUP	TYPE	ContactType
+XPATHTYPE	TeachingGroupPeriod	TeachingGroupPeriodType	LOOKUP	TYPE	TeachingGroupPeriodListType
+XPATHTYPE	TimeTableCellRefId	string		TYPE	TeachingGroupPeriodType
+XPATHTYPE	RoomNumber	HomeroomNumberType	LOOKUP	TYPE	TeachingGroupPeriodType
+XPATHTYPE	StaffLocalId	LocalIdType	LOOKUP	TYPE	TeachingGroupPeriodType
+XPATHTYPE	DayId	LocalIdType	LOOKUP	TYPE	TeachingGroupPeriodType
+XPATHTYPE	PeriodId	LocalIdType	LOOKUP	TYPE	TeachingGroupPeriodType
+XPATHTYPE	StartTime	string		TYPE	TeachingGroupPeriodType
+XPATHTYPE	CellType	string		TYPE	TeachingGroupPeriodType
+XPATHTYPE	TeachingGroupTeacher	TeachingGroupTeacherType	LOOKUP	TYPE	TeacherListType
+XPATHTYPE	StaffPersonalRefId	string		TYPE	TeachingGroupTeacherType
+XPATHTYPE	StaffLocalId	LocalIdType	LOOKUP	TYPE	TeachingGroupTeacherType
+XPATHTYPE	Name	NameOfRecordType	LOOKUP	TYPE	TeachingGroupTeacherType
+XPATHTYPE	Association	string		TYPE	TeachingGroupTeacherType
+XPATHTYPE	TeachingGroupStudent	TeachingGroupStudentType	LOOKUP	TYPE	StudentListType
+XPATHTYPE	StudentPersonalRefId	string		TYPE	TeachingGroupStudentType
+XPATHTYPE	StudentLocalId	LocalIdType	LOOKUP	TYPE	TeachingGroupStudentType
+XPATHTYPE	Name	NameOfRecordType	LOOKUP	TYPE	TeachingGroupStudentType
+XPATHTYPE	TimeTableDay	TimeTableDayType	LOOKUP	TYPE	TimeTableDayListType
+XPATHTYPE	DayId	LocalIdType	LOOKUP	TYPE	TimeTableDayType
+XPATHTYPE	DayTitle	string		TYPE	TimeTableDayType
+XPATHTYPE	TimeTablePeriodList	TimeTablePeriodListType	LOOKUP	TYPE	TimeTableDayType
+XPATHTYPE	TimeTablePeriod	TimeTablePeriodType	LOOKUP	TYPE	TimeTablePeriodListType
+XPATHTYPE	PeriodId	LocalIdType	LOOKUP	TYPE	TimeTablePeriodType
+XPATHTYPE	PeriodTitle	string		TYPE	TimeTablePeriodType
+XPATHTYPE	BellPeriod	string		TYPE	TimeTablePeriodType
+XPATHTYPE	StartTime	string		TYPE	TimeTablePeriodType
+XPATHTYPE	EndTime	string		TYPE	TimeTablePeriodType
+XPATHTYPE	RegularSchoolPeriod	string		TYPE	TimeTablePeriodType
+XPATHTYPE	InstructionalMinutes	number		TYPE	TimeTablePeriodType
+XPATHTYPE	UseInAttendanceCalculations	string		TYPE	TimeTablePeriodType
+XPATHTYPE	ClassCode	string		TYPE	NAPLANClassListType
+XPATHTYPE	SchoolGroup	LocalIdType	LOOKUP	TYPE	SchoolGroupListType
+XPATHTYPE	YearLevelEnrollment	YearLevelEnrollmentType	LOOKUP	TYPE	YearLevelEnrollmentListType
+XPATHTYPE	Year	string		TYPE	YearLevelEnrollmentType
+XPATHTYPE	Enrollment	string		TYPE	YearLevelEnrollmentType
+XPATHTYPE	SchoolFocus	string		TYPE	SchoolFocusListType
+XPATHTYPE	AlertMessage	AlertMessageType	LOOKUP	TYPE	AlertMessagesType
+XPATHTYPE	node()	string		TYPE	AlertMessageType
+XPATHTYPE	MedicalAlertMessage	MedicalAlertMessageType	LOOKUP	TYPE	MedicalAlertMessagesType
+XPATHTYPE	node()	string		TYPE	MedicalAlertMessageType
+XPATHTYPE	OtherId	OtherIdType	LOOKUP	TYPE	OtherIdListType
+XPATHTYPE	node()	string		TYPE	OtherIdType
+XPATHTYPE	Title	string		TYPE	BaseNameType
+XPATHTYPE	FamilyName	string		TYPE	BaseNameType
+XPATHTYPE	GivenName	string		TYPE	BaseNameType
+XPATHTYPE	MiddleName	string		TYPE	BaseNameType
+XPATHTYPE	FamilyNameFirst	string		TYPE	BaseNameType
+XPATHTYPE	PreferredFamilyName	string		TYPE	BaseNameType
+XPATHTYPE	PreferredFamilyNameFirst	string		TYPE	BaseNameType
+XPATHTYPE	PreferredGivenName	string		TYPE	BaseNameType
+XPATHTYPE	Suffix	string		TYPE	BaseNameType
+XPATHTYPE	FullName	string		TYPE	BaseNameType
+XPATHTYPE	node()	BaseNameType	LOOKUP	TYPE	NameOfRecordType
+XPATHTYPE	node()	BaseNameType	LOOKUP	TYPE	OtherNameType
+XPATHTYPE	node()	string		TYPE	PartialDateType
+XPATHTYPE	node()	string		TYPE	LocalIdType
+XPATHTYPE	LocationName	string		TYPE	LocationType
+XPATHTYPE	LocationRefId	string		TYPE	LocationType
+XPATHTYPE	node()	string		TYPE	StateProvinceIdType
+XPATHTYPE	Code	string		TYPE	AttendanceCodeType
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	TYPE	AttendanceCodeType
+XPATHTYPE	Code	string		TYPE	YearLevelType
+XPATHTYPE	Name	NameOfRecordType	LOOKUP	TYPE	PersonInfoType
+XPATHTYPE	OtherNames	OtherNamesType	LOOKUP	TYPE	PersonInfoType
+XPATHTYPE	Demographics	DemographicsType	LOOKUP	TYPE	PersonInfoType
+XPATHTYPE	AddressList	AddressListType	LOOKUP	TYPE	PersonInfoType
+XPATHTYPE	PhoneNumberList	PhoneNumberListType	LOOKUP	TYPE	PersonInfoType
+XPATHTYPE	EmailList	EmailListType	LOOKUP	TYPE	PersonInfoType
+XPATHTYPE	HouseholdContactInfoList	HouseholdContactInfoListType	LOOKUP	TYPE	PersonInfoType
+XPATHTYPE	YearLevel	YearLevelType	LOOKUP	TYPE	YearLevelsType
+XPATHTYPE	node()	string		TYPE	SchoolURLType
+XPATHTYPE	ContactName	NameOfRecordType	LOOKUP	TYPE	PrincipalInfoType
+XPATHTYPE	ContactTitle	string		TYPE	PrincipalInfoType
+XPATHTYPE	PhoneNumberList	PhoneNumberListType	LOOKUP	TYPE	PrincipalInfoType
+XPATHTYPE	EmailList	EmailListType	LOOKUP	TYPE	PrincipalInfoType
+XPATHTYPE	PublishInDirectory	PublishInDirectoryType	LOOKUP	TYPE	SchoolContactType
+XPATHTYPE	ContactInfo	ContactInfoType	LOOKUP	TYPE	SchoolContactType
+XPATHTYPE	SchoolContact	SchoolContactType	LOOKUP	TYPE	SchoolContactListType
+XPATHTYPE	node()	string		TYPE	PublishInDirectoryType
+XPATHTYPE	Name	NameType	LOOKUP	TYPE	ContactInfoType
+XPATHTYPE	PositionTitle	string		TYPE	ContactInfoType
+XPATHTYPE	Role	string		TYPE	ContactInfoType
+XPATHTYPE	RegistrationDetails	string		TYPE	ContactInfoType
+XPATHTYPE	Qualifications	string		TYPE	ContactInfoType
+XPATHTYPE	Address	AddressType	LOOKUP	TYPE	ContactInfoType
+XPATHTYPE	EmailList	EmailListType	LOOKUP	TYPE	ContactInfoType
+XPATHTYPE	PhoneNumberList	PhoneNumberListType	LOOKUP	TYPE	ContactInfoType
+XPATHTYPE	Line1	string		TYPE	AddressStreetType
+XPATHTYPE	Line2	string		TYPE	AddressStreetType
+XPATHTYPE	Line3	string		TYPE	AddressStreetType
+XPATHTYPE	Complex	string		TYPE	AddressStreetType
+XPATHTYPE	StreetNumber	string		TYPE	AddressStreetType
+XPATHTYPE	StreetPrefix	string		TYPE	AddressStreetType
+XPATHTYPE	StreetName	string		TYPE	AddressStreetType
+XPATHTYPE	StreetType	string		TYPE	AddressStreetType
+XPATHTYPE	StreetSuffix	string		TYPE	AddressStreetType
+XPATHTYPE	ApartmentType	string		TYPE	AddressStreetType
+XPATHTYPE	ApartmentNumberPrefix	string		TYPE	AddressStreetType
+XPATHTYPE	ApartmentNumber	string		TYPE	AddressStreetType
+XPATHTYPE	ApartmentNumberSuffix	string		TYPE	AddressStreetType
+XPATHTYPE	EffectiveFromDate	string		TYPE	AddressType
+XPATHTYPE	EffectiveToDate	string		TYPE	AddressType
+XPATHTYPE	Street	AddressStreetType	LOOKUP	TYPE	AddressType
+XPATHTYPE	City	string		TYPE	AddressType
+XPATHTYPE	StateProvince	StateProvinceType	LOOKUP	TYPE	AddressType
+XPATHTYPE	Country	CountryType	LOOKUP	TYPE	AddressType
+XPATHTYPE	PostalCode	string		TYPE	AddressType
+XPATHTYPE	GridLocation	GridLocationType	LOOKUP	TYPE	AddressType
+XPATHTYPE	MapReference	MapReferenceType	LOOKUP	TYPE	AddressType
+XPATHTYPE	RadioContact	string		TYPE	AddressType
+XPATHTYPE	Community	string		TYPE	AddressType
+XPATHTYPE	LocalId	LocalIdType	LOOKUP	TYPE	AddressType
+XPATHTYPE	AddressGlobalUID	GUIDType	LOOKUP	TYPE	AddressType
+XPATHTYPE	StatisticalAreas	StatisticalAreasType	LOOKUP	TYPE	AddressType
+XPATHTYPE	XCoordinate	string		TYPE	MapReferenceType
+XPATHTYPE	YCoordinate	string		TYPE	MapReferenceType
+XPATHTYPE	StatisticalArea	StatisticalAreaType	LOOKUP	TYPE	StatisticalAreasType
+XPATHTYPE	node()	string		TYPE	StatisticalAreaType
+XPATHTYPE	Address	AddressType	LOOKUP	TYPE	AddressListType
+XPATHTYPE	Email	EmailType	LOOKUP	TYPE	EmailListType
+XPATHTYPE	node()	string		TYPE	EmailType
+XPATHTYPE	PhoneNumber	PhoneNumberType	LOOKUP	TYPE	PhoneNumberListType
+XPATHTYPE	Number	string		TYPE	PhoneNumberType
+XPATHTYPE	Extension	string		TYPE	PhoneNumberType
+XPATHTYPE	ListedStatus	string		TYPE	PhoneNumberType
+XPATHTYPE	Preference	number		TYPE	PhoneNumberType
+XPATHTYPE	node()	string		TYPE	CountryType
+XPATHTYPE	Latitude	number		TYPE	GridLocationType
+XPATHTYPE	Longitude	number		TYPE	GridLocationType
+XPATHTYPE	node()	string		TYPE	OperationalStatusType
+XPATHTYPE	node()	string		TYPE	StateProvinceType
+XPATHTYPE	node()	string		TYPE	SchoolYearType
+XPATHTYPE	ElectronicId	ElectronicIdType	LOOKUP	TYPE	ElectronicIdListType
+XPATHTYPE	node()	string		TYPE	ElectronicIdType
+XPATHTYPE	Name	OtherNameType	LOOKUP	TYPE	OtherNamesType
+XPATHTYPE	IndigenousStatus	string		TYPE	DemographicsType
+XPATHTYPE	Sex	string		TYPE	DemographicsType
+XPATHTYPE	BirthDate	BirthDateType	LOOKUP	TYPE	DemographicsType
+XPATHTYPE	DateOfDeath	string		TYPE	DemographicsType
+XPATHTYPE	BirthDateVerification	string		TYPE	DemographicsType
+XPATHTYPE	PlaceOfBirth	string		TYPE	DemographicsType
+XPATHTYPE	StateOfBirth	StateProvinceType	LOOKUP	TYPE	DemographicsType
+XPATHTYPE	CountryOfBirth	CountryType	LOOKUP	TYPE	DemographicsType
+XPATHTYPE	CountriesOfCitizenship	CountryListType	LOOKUP	TYPE	DemographicsType
+XPATHTYPE	CountriesOfResidency	CountryList2Type	LOOKUP	TYPE	DemographicsType
+XPATHTYPE	CountryArrivalDate	string		TYPE	DemographicsType
+XPATHTYPE	AustralianCitizenshipStatus	string		TYPE	DemographicsType
+XPATHTYPE	EnglishProficiency	EnglishProficiencyType	LOOKUP	TYPE	DemographicsType
+XPATHTYPE	LanguageList	LanguageListType	LOOKUP	TYPE	DemographicsType
+XPATHTYPE	DwellingArrangement	DwellingArrangementType	LOOKUP	TYPE	DemographicsType
+XPATHTYPE	Religion	ReligionType	LOOKUP	TYPE	DemographicsType
+XPATHTYPE	ReligiousEventList	ReligiousEventListType	LOOKUP	TYPE	DemographicsType
+XPATHTYPE	ReligiousRegion	string		TYPE	DemographicsType
+XPATHTYPE	PermanentResident	string		TYPE	DemographicsType
+XPATHTYPE	VisaSubClass	VisaSubClassCodeType	LOOKUP	TYPE	DemographicsType
+XPATHTYPE	VisaStatisticalCode	string		TYPE	DemographicsType
+XPATHTYPE	VisaExpiryDate	string		TYPE	DemographicsType
+XPATHTYPE	VisaSubClassList	VisaSubClassListType	LOOKUP	TYPE	DemographicsType
+XPATHTYPE	LBOTE	string		TYPE	DemographicsType
+XPATHTYPE	ImmunisationCertificateStatus	string		TYPE	DemographicsType
+XPATHTYPE	CulturalBackground	string		TYPE	DemographicsType
+XPATHTYPE	MaritalStatus	string		TYPE	DemographicsType
+XPATHTYPE	MedicareNumber	string		TYPE	DemographicsType
+XPATHTYPE	Code	string		TYPE	EnglishProficiencyType
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	TYPE	EnglishProficiencyType
+XPATHTYPE	Language	LanguageBaseType	LOOKUP	TYPE	LanguageListType
+XPATHTYPE	node()	string		TYPE	BirthDateType
+XPATHTYPE	node()	string		TYPE	ProjectedGraduationYearType
+XPATHTYPE	node()	string		TYPE	OnTimeGraduationYearType
+XPATHTYPE	Code	string		TYPE	RelationshipType
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	TYPE	RelationshipType
+XPATHTYPE	node()	string		TYPE	EducationalLevelType
+XPATHTYPE	node()	PartialDateType	LOOKUP	TYPE	GraduationDateType
+XPATHTYPE	node()	BaseNameType	LOOKUP	TYPE	NameType
+XPATHTYPE	node()	string		TYPE	HomeroomNumberType
+XPATHTYPE	Type	string		TYPE	TimeElementType
+XPATHTYPE	Code	string		TYPE	TimeElementType
+XPATHTYPE	Name	string		TYPE	TimeElementType
+XPATHTYPE	Value	string		TYPE	TimeElementType
+XPATHTYPE	StartDateTime	string		TYPE	TimeElementType
+XPATHTYPE	EndDateTime	string		TYPE	TimeElementType
+XPATHTYPE	SpanGaps	TimeElementType/SpanGaps	LOOKUP	TYPE	TimeElementType
+XPATHTYPE	SpanGap	TimeElementType/SpanGaps/SpanGap	LOOKUP	TYPE	TimeElementType/SpanGaps
+XPATHTYPE	Type	string		TYPE	TimeElementType/SpanGaps/SpanGap
+XPATHTYPE	Code	string		TYPE	TimeElementType/SpanGaps/SpanGap
+XPATHTYPE	Name	string		TYPE	TimeElementType/SpanGaps/SpanGap
+XPATHTYPE	Value	string		TYPE	TimeElementType/SpanGaps/SpanGap
+XPATHTYPE	StartDateTime	string		TYPE	TimeElementType/SpanGaps/SpanGap
+XPATHTYPE	EndDateTime	string		TYPE	TimeElementType/SpanGaps/SpanGap
+XPATHTYPE	IsCurrent	boolean		TYPE	TimeElementType
+XPATHTYPE	Created	LifeCycleType/Created	LOOKUP	TYPE	LifeCycleType
+XPATHTYPE	DateTime	string		TYPE	LifeCycleType/Created
+XPATHTYPE	Creators	LifeCycleType/Created/Creators	LOOKUP	TYPE	LifeCycleType/Created
+XPATHTYPE	Creator	LifeCycleType/Created/Creators/Creator	LOOKUP	TYPE	LifeCycleType/Created/Creators
+XPATHTYPE	Name	string		TYPE	LifeCycleType/Created/Creators/Creator
+XPATHTYPE	ID	string		TYPE	LifeCycleType/Created/Creators/Creator
+XPATHTYPE	ModificationHistory	LifeCycleType/ModificationHistory	LOOKUP	TYPE	LifeCycleType
+XPATHTYPE	Modified	LifeCycleType/ModificationHistory/Modified	LOOKUP	TYPE	LifeCycleType/ModificationHistory
+XPATHTYPE	By	string		TYPE	LifeCycleType/ModificationHistory/Modified
+XPATHTYPE	DateTime	string		TYPE	LifeCycleType/ModificationHistory/Modified
+XPATHTYPE	Description	string		TYPE	LifeCycleType/ModificationHistory/Modified
+XPATHTYPE	TimeElements	LifeCycleType/TimeElements	LOOKUP	TYPE	LifeCycleType
+XPATHTYPE	TimeElement	TimeElementType	LOOKUP	TYPE	LifeCycleType/TimeElements
+XPATHTYPE	OtherCode	string		TYPE	OtherCodeListType
+XPATHTYPE	Code	string		TYPE	ProgramStatusType
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	TYPE	ProgramStatusType
+XPATHTYPE	SubjectArea	SubjectAreaType	LOOKUP	TYPE	SubjectAreaListType
+XPATHTYPE	ACStrandSubjectArea	ACStrandSubjectAreaType	LOOKUP	TYPE	ACStrandAreaListType
+XPATHTYPE	Code	string		TYPE	SubjectAreaType
+XPATHTYPE	OtherCodeList	OtherCodeListType	LOOKUP	TYPE	SubjectAreaType
+XPATHTYPE	ACStrand	string		TYPE	ACStrandSubjectAreaType
+XPATHTYPE	SubjectArea	SubjectAreaType	LOOKUP	TYPE	ACStrandSubjectAreaType
+XPATHTYPE	LearningStandardItems	LearningStandardsType	LOOKUP	TYPE	EducationFilterType
+XPATHTYPE	SIF_ExtendedElement	ExtendedContentType	LOOKUP	TYPE	SIF_ExtendedElementsType
+XPATHTYPE	TimeElements	SIF_MetadataType/TimeElements	LOOKUP	TYPE	SIF_MetadataType
+XPATHTYPE	TimeElement	TimeElementType	LOOKUP	TYPE	SIF_MetadataType/TimeElements
+XPATHTYPE	LifeCycle	LifeCycleType	LOOKUP	TYPE	SIF_MetadataType
+XPATHTYPE	EducationFilter	EducationFilterType	LOOKUP	TYPE	SIF_MetadataType
