@@ -1,11 +1,13 @@
 require "byebug"
 require "pp"
 
+# Read in files objectgraph.txt and typegraph.txt, which contain structural information about the SIF spec as a graph,
+# and generate a single flat file containing all structural information about the spec
+
 def get_objgraph(file)
   graph = {}
   root = ""
   while line = file.gets do 
-    #byebug if /SystemRole/.match? line
     line.chomp!
     if /^\s*##1/.match line
         latest = graph[root][-1][:elems]

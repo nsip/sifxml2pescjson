@@ -1,10 +1,12 @@
 #!/bin/bash
+# 1. Download specgen
 #rm -fr specgen_input
 #git clone https://github.com/nsip/specgen_input.git
 
+# 2. Extract all necessary information from specgen into flat files
+
 echo "" > objectgraph.txt
 echo "" > typegraph.txt
-
 for filename in ./specgen_input/06_DataModel/Custom/Common/*.xml; do
   if [[ "$filename" == "./specgen_input/06_DataModel/Custom/Common/StudentScoreSet.xml" ]]; then
     continue
@@ -20,46 +22,56 @@ cat specgen_input/80_BackMatter/Custom/DataModel-CommonTypes-Custom.xml >> data.
 echo '</root>' >> data.xml
 xsltproc sifobject.xslt data.xml >> typegraph.txt
 
-echo "<sif>" > siftest.xml 
+# 3. Generate transformation scripts and stylesheets
+
+ruby treeparse.rb > scripts/out.txt
+ruby makexslt.rb < scripts/out.txt > scripts/sif2json.xslt
+ruby makereorder.rb < scripts/out.txt > scripts/sifreorder.xslt
+ruby makejs2xml.rb < scripts/out.txt > scripts/json2sif.js
+
+
+# 4. Extract example XML from specgen
+mkdir -p test
+echo "<sif>" > test/siftest.xml 
 for filename in ./specgen_input/06_DataModel/Custom/Common/*.xml; do
   if [[ "$filename" == "./specgen_input/06_DataModel/Custom/Common/StudentScoreSet.xml" ]]; then
     continue
   fi
-  perl sifexamples.pl "$filename" >> siftest.xml
+  perl sifexamples.pl "$filename" >> test/siftest.xml
 done
 for filename in ./specgen_input/06_DataModel/Custom/AU/*.xml; do
   if [[ "$filename" == "./specgen_input/06_DataModel/Custom/Common/StudentScoreSet.xml" ]]; then
     continue
   fi
-  perl sifexamples.pl "$filename" >> siftest.xml
+  perl sifexamples.pl "$filename" >> test/siftest.xml
 done
-echo "</sif>" >> siftest.xml 
+echo "</sif>" >> test/siftest.xml 
 
+# 5. Test roundtrip XML > JSON (preserving order of keys) > XML
 
-
-ruby treeparse.rb > out.txt
-ruby makexslt.rb < out.txt > sif2json.xslt
-ruby makereorder.rb < out.txt > sifreorder.xslt
-xsltproc sif2json.xslt siftest.xml > siftest.json
-jq . siftest.json > siftest.pretty.json
-jq  -S . siftest.json > siftest.sorted.json
-ruby makejs2xml.rb < out.txt > json2sif.js
-echo "<sif>" > siftest2.xml
-node json2sif.js < siftest.pretty.json >> siftest2.xml
-echo "</sif>" >> siftest2.xml
-xmllint --format siftest.xml > siftest.pretty.xml
-xmllint --format siftest2.xml > siftest2.pretty.xml
-diff siftest.pretty.xml siftest2.pretty.xml > diff.txt
-cat diff.txt
+xsltproc scripts/sif2json.xslt test/siftest.xml > test/siftest.json
+jq . test/siftest.json > test/siftest.pretty.json
+echo "<sif>" > test/siftest2.xml
+node scripts/json2sif.js < test/siftest.pretty.json >> test/siftest2.xml
+echo "</sif>" >> test/siftest2.xml
+xmllint --format test/siftest.xml > test/siftest.pretty.xml
+xmllint --format test/siftest2.xml > test/siftest2.pretty.xml
+diff test/siftest.pretty.xml test/siftest2.pretty.xml > test/diff.txt
+cat test/diff.txt
 echo "Diff lines, roundtrip: "
-egrep "^< " diff.txt|wc -l
+egrep "^< " test/diff.txt|wc -l
 
-echo "<sif>" > siftest3.xml
-node json2sif.js < siftest.sorted.json >> siftest3.xml
-echo "</sif>" >> siftest3.xml
-xsltproc sifreorder.xslt siftest3.xml > siftest.sorted.xml
-xmllint --format siftest.sorted.xml > siftest.sorted.pretty.xml
-diff siftest2.pretty.xml siftest.sorted.pretty.xml > diff.sorted.txt
+# 6. Test reordering XML > JSON XML (not preserving order of keys) > XML
+
+xsltproc scripts/sif2json.xslt test/siftest.xml > test/siftest.json
+jq  -S . test/siftest.json > test/siftest.sorted.json
+echo "<sif>" > test/siftest3.xml
+node scripts/json2sif.js < test/siftest.sorted.json >> test/siftest3.xml
+echo "</sif>" >> test/siftest3.xml
+xsltproc scripts/sifreorder.xslt test/siftest3.xml > test/siftest.sorted.xml
+xmllint --format test/siftest.sorted.xml > test/siftest.sorted.pretty.xml
+diff test/siftest2.pretty.xml test/siftest.sorted.pretty.xml > test/diff.sorted.txt
+cat test/diff.sorted.txt
 echo "Diff lines, re-sorting XML: "
-egrep "^< " diff.sorted.txt|wc -l
+egrep "^< " test/diff.sorted.txt|wc -l
 
