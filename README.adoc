@@ -122,3 +122,7 @@ are extracted using the Perl script `sifexamples.pl`.
 
 The code used to generate these transfrom scripts is in XSLT 1.0 and Ruby.
 
+== Acknowledgements
+
+* XML to JSON: https://gist.github.com/inancgumus/3ce56ddde6d5c93f3550b3b4cdc6bcb8[transform XSLT] by İnanç Gümüş (or, as he Asciifies himself, Inanc Gumus), and Bram Stein's https://github.com/bramstein/xsltjson[XSLTJSON Lite JSONML transformer]
+* JSON to XML:  https://github.com/x2js/x2js[x2js] and https://github.com/rhalff/dot-object[dot-object]

@@ -48,6 +48,7 @@ for filename in ./specgen_input/06_DataModel/Custom/AU/*.xml; do
   perl sifexamples.pl "$filename" >> test/siftest.xml
 done
 echo "</sif>" >> test/siftest.xml 
+xmllint --format test/siftest.xml > test/siftest.pretty.xml
 
 # 5. Test roundtrip XML > JSON (preserving order of keys) > XML
 
@@ -56,7 +57,6 @@ jq . test/siftest.json > test/siftest.pretty.json
 echo "<sif>" > test/siftest2.xml
 node scripts/json2sif.js < test/siftest.pretty.json >> test/siftest2.xml
 echo "</sif>" >> test/siftest2.xml
-xmllint --format test/siftest.xml > test/siftest.pretty.xml
 xmllint --format test/siftest2.xml > test/siftest2.pretty.xml
 diff test/siftest.pretty.xml test/siftest2.pretty.xml > test/diff.txt
 cat test/diff.txt
