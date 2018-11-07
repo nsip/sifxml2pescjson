@@ -1,4 +1,4 @@
-let X2JS = require('./x2js');
+let X2JS = require('x2js');
 const fs = require("fs");
 const js = fs.readFileSync("/dev/stdin", "utf-8");
 var dot = require('dot-object');
