@@ -6,9 +6,7 @@
   <xsl:output method="text" omit-xml-declaration="yes" encoding="utf-8"/>
 
   <xsl:template match="/*[node()]">
-    <!-- <xsl:text>[</xsl:text> -->
     <xsl:apply-templates select="." mode="obj-list" />
-    <!-- <xsl:text>]</xsl:text> -->
   </xsl:template>
 
   <xsl:template match="*" mode="detect">
@@ -198,18 +196,6 @@
     <xsl:call-template name="encode-value">
       <xsl:with-param name="value" select="." />
     </xsl:call-template>
-<!--
-    <xsl:param name="pText" select="normalize-space(.)"/>
-    <xsl:choose>
-      <xsl:when test="not(contains($pText, '&#xA;'))"><xsl:copy-of select="$pText"/></xsl:when>
-      <xsl:otherwise>
-        <xsl:value-of select="concat(substring-before($pText, '&#xD;&#xA;'), ' ')"/>
-        <xsl:call-template name="removeBreaks">
-          <xsl:with-param name="pText" select="substring-after($pText, '&#xD;&#xA;')"/>
-        </xsl:call-template>
-      </xsl:otherwise>
-    </xsl:choose>
--->
   </xsl:template>
 
 </xsl:stylesheet>

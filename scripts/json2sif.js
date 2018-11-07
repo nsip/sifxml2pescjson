@@ -79,42 +79,51 @@ attrpaths["VendorInfo"] = ["VendorInfo.RefId","VendorInfo.ContactInfo.Name.Type"
 
 /* this is inefficent */
 function attributes(newobj) {
-  var tgt = dot.dot(newobj); /* get all paths of object */
-  var object = Object.keys(tgt)[0].replace(/\..*$/, "");
+  var tgt = dot.dot(newobj); /* get all paths within the JSON object */
+  var object = Object.keys(tgt)[0].replace(/\..*$/, ""); /* get name of object */
   for(var i=0; i< attrpaths[object].length; i++) {
       for (var key in tgt) {
+      /* brute force lookup: compare all paths in the object to all 
+        complex content attribute paths known for the object */
           var key_stripped;
           key_stripped = key.replace(/\.[0-9]+/g, "");
-          /* we don't have wildcard array access (cf. doc-wild) + move property in the same library */
+          /* we don't have wildcard array access (cf. doc-wild) + path rename command in the same JS library.
+             So forced to generate paths stripped of array indexes,
+             to match registered complex content attribute paths  */
           if(key_stripped == attrpaths[object][i]) {
+              /* indicate to x2js that this is an XML attribute */
               dot.move(key, key.replace(/\.([^.]+)$/, "._$1"), newobj);
           }
       }
   }
 
+    /* value key is used when there are attributes on simple content.
+       Rearrange attributes if there is a value key */
     var paths = [];
     for (var key in tgt) {
         if(key.endsWith(".value")) {
             paths.push(key.replace(/\.value/, ""));
         }
     }
-      /* rearrange attributes if there is a value key */
       for(var i=0; i<paths.length; i++) {
           for(var key in tgt) {
               if (key.startsWith(paths[i])) {
                   if (key == paths[i] + ".value") {
+                     /* x2js counterpart to PESC JSON "value" key */
                       dot.move(key, paths[i] + ".__text", newobj);
                   } else if (!key.replace(paths[i] + ".", "").includes(".")) {
+                     /* indicate in x2js that all sibling keys to "value" are XML attributes */
                     dot.move(key, key.replace(/\.([^.]+)$/, "._$1"), newobj);
                   }
               }
           }
       }
-        return newobj;
+      return newobj;
 }
 
 var x = new X2JS({stripWhitespaces : false});
 var json = JSON.parse(js);
+/* presupposes we are processing array of JSON objects */
 for(var i=0; i<json.length; i++) {
     newobj = json[i];
     newobj = attributes(newobj);

@@ -2,17 +2,17 @@
 
   <xsl:output encoding="UTF-8" indent="yes" method="xml" />
 
-  <xsl:template match="node()|@*" mode="copy">
-  <xsl:copy>
-   <xsl:apply-templates select="node()|@*" mode="copy"/>
-  </xsl:copy>
- </xsl:template>
-
   <xsl:template match="node()|@*">
   <xsl:copy>
    <xsl:apply-templates select="node()|@*" mode="object"/>
   </xsl:copy>
  </xsl:template>
+
+   <xsl:template match="node()|@*" mode="copy">
+  <xsl:copy>
+   <xsl:apply-templates select="node()|@*" mode="copy"/>
+  </xsl:copy>
+  </xsl:template>
 <xsl:template match="Activity" mode="object">
 <xsl:copy>
     <xsl:apply-templates select="@*" mode="copy" />
