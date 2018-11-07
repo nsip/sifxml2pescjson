@@ -39,7 +39,7 @@ the list of SIF objects is represented as `[ { "objectname" : { ... } }, { "obje
 different SIF objects to appear in the same document, without needing to gather up all instances of the same object into the same
 list (`{ "objectname" : [ { ... }, { ... }, ... ], "objectname2" : [ { ... }, { ... }, ... ], ... }`).
 * `scripts/json2sif.js`: Javascript to transform an array of PESC JSON objects into SIF XML, as a list of objects (with no wrapper).
-** The script depends on the Node libraries https://github.com/rhalff/dot-object[dot-object] and https://github.com/x2js/x2js[x2js]. 
+** The script depends on the Node libraries https://github.com/rhalff/dot-object[dot-object] and https://github.com/x2js/x2js[x2js]. You will need to update x2js to version 3.2.3, which fixes a bug whereby a zero XML value with attributes was being rendered as an empty tag: https://github.com/x2js/x2js/pull/76
 * `scripts/sifreorder.xslt`: XSLT 1.0 to reorder the XML output of `scripts/json2sif.js`, if the source JSON has not preserved the 
 ordering of keys in the XML schema. Run this if the JSON has been generated from scratch, or if the JSON is being round-tripped from
 XML, and has been processed so as to lose key-ordering.
