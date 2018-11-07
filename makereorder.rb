@@ -31,6 +31,7 @@ print <<~"END"
   <xsl:copy>
    <xsl:apply-templates select="node()|@*" mode="copy"/>
   </xsl:copy>
+  </xsl:template>
 END
 
 graph.each do |container, elements|
