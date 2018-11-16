@@ -100,9 +100,6 @@ COMPLEX ATTRIBUTE: LearningResource/Contacts/Contact/Address/MapReference/@Type	
 COMPLEX ATTRIBUTE: LearningResource/Contacts/Contact/PhoneNumber/@Type	PhoneNumber
 COMPLEX ATTRIBUTE: LearningResource/Evaluations/Evaluation/@RefId	RefId
 COMPLEX ATTRIBUTE: LearningResource/Evaluations/Evaluation/Name/@Type	BaseNameType
-COMPLEX ATTRIBUTE: LearningResourcePackage/@RefId	RefId
-COMPLEX ATTRIBUTE: LearningResourcePackage/Reference/@MIMEType	EMPTY
-COMPLEX ATTRIBUTE: LearningResourcePackage/Reference/@Description	EMPTY
 COMPLEX ATTRIBUTE: LearningStandardDocument/@RefId	RefId
 COMPLEX ATTRIBUTE: LearningStandardDocument/RichDescription/Reference/@MIMEType	EMPTY
 COMPLEX ATTRIBUTE: LearningStandardDocument/RichDescription/Reference/@Description	EMPTY
@@ -274,9 +271,6 @@ SIMPLE ATTRIBUTE: LearningResource/Location	string
 SIMPLE ATTRIBUTE: LearningResource/SubjectAreas/ACStrandSubjectArea/SubjectArea/OtherCodeList/OtherCode	string
 SIMPLE ATTRIBUTE: LearningResource/Components/Component/AssociatedObjects/AssociatedObject	string
 SIMPLE ATTRIBUTE: LearningResource/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
-SIMPLE ATTRIBUTE: LearningResourcePackage/XMLData	string
-SIMPLE ATTRIBUTE: LearningResourcePackage/TextData	string
-SIMPLE ATTRIBUTE: LearningResourcePackage/BinaryData	string
 SIMPLE ATTRIBUTE: LearningStandardDocument/RichDescription/XMLData	string
 SIMPLE ATTRIBUTE: LearningStandardDocument/RichDescription/TextData	string
 SIMPLE ATTRIBUTE: LearningStandardDocument/RichDescription/BinaryData	string
@@ -421,7 +415,6 @@ SIMPLE ATTRIBUTE: FQReporting/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedC
 SIMPLE ATTRIBUTE: FinancialAccount/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
 SIMPLE ATTRIBUTE: Invoice/InvoicedEntity	string
 SIMPLE ATTRIBUTE: Invoice/BilledAmount	MonetaryAmountType
-SIMPLE ATTRIBUTE: Invoice/BilledAmount	number
 SIMPLE ATTRIBUTE: Invoice/NetAmount	number
 SIMPLE ATTRIBUTE: Invoice/TaxAmount	number
 SIMPLE ATTRIBUTE: Invoice/PurchasingItems/PurchasingItem/UnitCost	number
@@ -439,7 +432,6 @@ SIMPLE ATTRIBUTE: NAPTestItem/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedC
 SIMPLE ATTRIBUTE: NAPTestScoreSummary/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
 SIMPLE ATTRIBUTE: NAPTestlet/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
 SIMPLE ATTRIBUTE: PaymentReceipt/TransactionAmount	MonetaryAmountType
-SIMPLE ATTRIBUTE: PaymentReceipt/TransactionAmount	number
 SIMPLE ATTRIBUTE: PaymentReceipt/TaxAmount	number
 SIMPLE ATTRIBUTE: PaymentReceipt/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
 SIMPLE ATTRIBUTE: PurchaseOrder/PurchasingItems/PurchasingItem/UnitCost	number
@@ -1412,7 +1404,6 @@ NUMERIC: FQReporting/FQItemList/FQItem/TuitionAmount
 NUMERIC: FQReporting/FQItemList/FQItem/BoardingAmount
 NUMERIC: FQReporting/FQItemList/FQItem/SystemAmount
 NUMERIC: FQReporting/FQItemList/FQItem/DioceseAmount
-NUMERIC: Invoice/BilledAmount
 NUMERIC: Invoice/NetAmount
 NUMERIC: Invoice/TaxRate
 NUMERIC: Invoice/TaxAmount
@@ -1524,7 +1515,6 @@ NUMERIC: NAPTestScoreSummary/DomainBottomNational60Percent
 NUMERIC: NAPTestlet/TestletContent/LocationInStage
 NUMERIC: NAPTestlet/TestletContent/TestletMaximumScore
 NUMERIC: NAPTestlet/TestItemList/TestItem/SequenceNumber
-NUMERIC: PaymentReceipt/TransactionAmount
 NUMERIC: PaymentReceipt/TaxRate
 NUMERIC: PaymentReceipt/TaxAmount
 NUMERIC: PurchaseOrder/PurchasingItems/PurchasingItem/UnitCost

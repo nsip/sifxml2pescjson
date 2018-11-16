@@ -46,6 +46,7 @@ def get_objgraph(file)
       latest[-1][:attr] << { attr: attr, type: type.sub(/\s*$/, "") }
     else
       /(?<elem>\S+?):\s+(?<list>LIST )?(?<type>[^;]+);/ =~ line
+      warn line unless type
       latest << { elem: elem, type: type.sub(/\s*$/, ""), attr: [], elems: [], list: !list.nil? }
     end
   end
@@ -55,7 +56,11 @@ end
 @objgraph = {}
 @typegraph = {}
 
+@seenpath = {}
+
 def xpathtype(arr, path, object)
+  return if @seenpath[path]
+  @seenpath[path] = true
   arr.each do |a|
     if a[:elems] && !a[:elems].empty?
       puts "XPATHTYPE\t#{a[:elem]}\t#{path}/#{a[:elem]}\tLOOKUP\t#{object}\t#{path}"
@@ -71,8 +76,9 @@ def xpathtype(arr, path, object)
 end
 
 def listfind(arr, path)
+  return if @seenpath[path]
+  @seenpath[path] = true
   arr.each do |a|
-    #pp a
     if a[:list] 
       puts "LIST: #{path}/#{a[:elem]}"
     end
@@ -88,6 +94,8 @@ def listfind(arr, path)
 end
 
 def booleanfind(arr, path)
+  return if @seenpath[path]
+  @seenpath[path] = true
   arr.each do |a|
     #pp a
     if a[:type] == "boolean"
@@ -106,6 +114,8 @@ def booleanfind(arr, path)
 end
 
 def numericfind(arr, path)
+  return if @seenpath[path]
+  @seenpath[path] = true
   arr.each do |a|
     #pp a
     elem = a[:elem] ? ( "/" + a[:elem] ) : ""
@@ -142,6 +152,8 @@ def isSimpleType(a)
 end
 
 def simpleattrfind(arr, path)
+  return if @seenpath[path]
+  @seenpath[path] = true
   arr.each do |a|
     #pp a
     #byebug
@@ -161,6 +173,8 @@ def simpleattrfind(arr, path)
 end
 
 def complexattrfind(arr, path)
+  return if @seenpath[path]
+  @seenpath[path] = true
   arr.each do |a|
     #pp a
     elem = a[:elem] ? ( "/" + a[:elem] ) : ""
@@ -196,21 +210,27 @@ objgraph = get_objgraph(File.open("objectgraph.txt"))
 # what are the base objects?
 objgraph.keys.each { |k| puts "OBJECT: #{k}" }
 
+@seenpath = {}
 # where are the attributes on complex elements?
 objgraph.keys.each { |k| complexattrfind(objgraph[k], k) }
 
+@seenpath = {}
 # where are the attributes on simple elements?
 objgraph.keys.each { |k| simpleattrfind(objgraph[k], k) }
 
+@seenpath = {}
 # where are the lists?
 objgraph.keys.each { |k| listfind(objgraph[k], k) }
 
+@seenpath = {}
 # where are the numbers?
 objgraph.keys.each { |k| numericfind(objgraph[k], k) }
 
+@seenpath = {}
 # where are the booleans?
 objgraph.keys.each { |k| booleanfind(objgraph[k], k) }
 
+@seenpath = {}
 # what are the paths to all types?
 objgraph.keys.each { |k| xpathtype(objgraph[k], k, "OBJECT") }
 @typegraph.keys.each { |k| xpathtype(@typegraph[k], k, "TYPE") }
