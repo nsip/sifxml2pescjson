@@ -15,7 +15,7 @@ a number of undesirable characteristics into the JSON it generates:
 * Lists consisting of a single entry are treated as single elements
 * The distinction between numerals, booleans, and strings is not preserved
 
-The https://www.xml.com/pub/a/2006/05/31/converting-between-xml-and-json.html[PESC Compliant JSON specification] addresses all these issues.
+The http://nebula.wsimg.com/bc453aee47f158d0877bad0f1fda0169?AccessKeyId=4CF7FAE11697F99C9E6B&disposition=0&alloworigin=1[PESC Compliant JSON specification] addresses all these issues.
 It does so by making the transformation between XML and JSON schema-aware, where Goessner uses a single schema-agnostic transform
 in each direction. In particular:
 
