@@ -56,7 +56,10 @@ end
 @objgraph = {}
 @typegraph = {}
 
+# avoid recursion of paths
 @seenpath = {}
+# cut off mutual recursion: track all types invoked in current depth iteration
+@types_used = []
 
 def xpathtype(arr, path, object)
   return if @seenpath[path]
@@ -85,7 +88,11 @@ def listfind(arr, path)
     if a[:elems] && !a[:elems].empty?
       listfind(a[:elems], "#{path}/#{a[:elem]}")
     elsif a[:type] && @typegraph[a[:type]]
-      listfind(@typegraph[a[:type]], "#{path}/#{a[:elem]}")
+      unless @types_used.include? a[:type]
+        @types_used << a[:type]
+        listfind(@typegraph[a[:type]], "#{path}/#{a[:elem]}")
+        @types_used.pop()
+      end
     end
     if a[:inherits] && @typegraph[a[:inherits]]
       listfind(@typegraph[a[:inherits]], "#{path}/#{a[:elem]}")
@@ -105,7 +112,11 @@ def booleanfind(arr, path)
     elsif a[:elems] && !a[:elems].empty?
       booleanfind(a[:elems], "#{path}/#{a[:elem]}")
     elsif a[:type] && @typegraph[a[:type]]
-      booleanfind(@typegraph[a[:type]], "#{path}/#{a[:elem]}")
+      unless @types_used.include? a[:type]
+        @types_used << a[:type]
+        booleanfind(@typegraph[a[:type]], "#{path}/#{a[:elem]}")
+        @types_used.pop()
+      end
     end
     if a[:inherits] && @typegraph[a[:inherits]]
       booleanfind(@typegraph[a[:inherits]], "#{path}/#{a[:elem]}")
@@ -126,7 +137,11 @@ def numericfind(arr, path)
     elsif a[:elems] && !a[:elems].empty?
       numericfind(a[:elems], "#{path}#{elem}")
     elsif a[:type] && @typegraph[a[:type]]
-      numericfind(@typegraph[a[:type]], "#{path}#{elem}")
+      unless @types_used.include? a[:type]
+        @types_used << a[:type]
+        numericfind(@typegraph[a[:type]], "#{path}#{elem}")
+        @types_used.pop()
+      end
     end
     if a[:inherits] && @typegraph[a[:inherits]]
       numericfind(@typegraph[a[:inherits]], "#{path}#{elem}")
@@ -148,7 +163,6 @@ def isSimpleType(a)
   return false if a[:elems] && !a[:elems].empty?
   return false if a[:type].is_a?(Array) && a[:type][1] && a[:type][1][:elem]
   return false if @typegraph[a[:type]] && @typegraph[a[:type]].is_a?(Array)
-  byebug
 end
 
 def simpleattrfind(arr, path)
@@ -164,7 +178,11 @@ def simpleattrfind(arr, path)
     if a[:elems] && !a[:elems].empty?
       simpleattrfind(a[:elems], "#{path}#{elem}")
     elsif a[:type] && @typegraph[a[:type]]
-      simpleattrfind(@typegraph[a[:type]], "#{path}#{elem}")
+      unless @types_used.include? a[:type]
+        @types_used << a[:type]
+        simpleattrfind(@typegraph[a[:type]], "#{path}#{elem}")
+        @types_used.pop()
+      end
     end
     if a[:inherits]  && @typegraph[a[:inherits]]
       simpleattrfind(@typegraph[a[:inherits]], "#{path}#{elem}")
@@ -180,7 +198,7 @@ def complexattrfind(arr, path)
     elem = a[:elem] ? ( "/" + a[:elem] ) : ""
     if a[:attr] && !a[:attr].empty? && !isSimpleType(a)
       a[:attr].each do |aa|
-        #byebug if /AggregateStatisticInfo/.match path
+        #byebug if /Address/.match a[:type]
         outtype = a[:type] || a[:inherits]
         #byebug
         outtype ||= "RefId" if aa[:attr] == "RefId"
@@ -195,7 +213,11 @@ def complexattrfind(arr, path)
     if a[:elems] && !a[:elems].empty?
       complexattrfind(a[:elems], "#{path}#{elem}")
     elsif a[:type] && @typegraph[a[:type]]
-      complexattrfind(@typegraph[a[:type]], "#{path}#{elem}")
+      unless @types_used.include? a[:type]
+        @types_used << a[:type]
+        complexattrfind(@typegraph[a[:type]], "#{path}#{elem}")
+        @types_used.pop()
+      end
     end
     if a[:inherits]  && @typegraph[a[:inherits]]
       complexattrfind(@typegraph[a[:inherits]], "#{path}#{elem}")

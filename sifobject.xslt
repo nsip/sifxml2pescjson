@@ -71,13 +71,13 @@ The output takes the following format:
     <xsl:value-of select="normalize-space()"/>
   </xsl:template>
 
-  <xsl:template match="//sif:Key | //sif:EventsReported | //sif:Description | //sif:Intro | //sif:Characteristics | //xhtml:Example"/>
+  <xsl:template match="//sif:Key | //sif:EventsReported | //sif:Description | //sif:Intro | //sif:Characteristics | //xhtml:Example | //sif:BuildComment | //sif:Section | //sif:TitlePage | //sif:CodeSet | //sif:Appendix[@name='References']" />
 
-  <xsl:template match="/sif:DataObject | //sif:CommonElement">
+  <xsl:template match="//sif:DataObject | //sif:CommonElement">
     PARENT <xsl:apply-templates/>
   </xsl:template>
 
-  <xsl:template match="/sif:DataObject/sif:Item[1] | //sif:CommonElement/sif:Item[1]">
+  <xsl:template match="//sif:DataObject/sif:Item[1] | //sif:CommonElement/sif:Item[1]">
     <xsl:choose>
       <xsl:when test="../sif:Item[2] | ../sif:Choice">
         <xsl:value-of select="sif:Element"/>//
@@ -108,7 +108,7 @@ The output takes the following format:
     </xsl:choose>
   </xsl:template>
 
-  <xsl:template match="/sif:DataObject/sif:Item[position()>1] | //sif:CommonElement/sif:Item[position()>1] | /sif:DataObject//sif:Choice/sif:Item | //sif:CommonElement/sif:Choice/sif:Item ">
+  <xsl:template match="//sif:DataObject/sif:Item[position()>1] | //sif:CommonElement/sif:Item[position()>1] | /sif:DataObject//sif:Choice/sif:Item | //sif:CommonElement/sif:Choice/sif:Item ">
     <xsl:variable name="indent" select=' string-length(sif:Element) - string-length(translate(sif:Element, "/", ""))'/>
     <xsl:if test="$indent>0"> ##<xsl:value-of select="$indent"/> </xsl:if>
     <xsl:choose>

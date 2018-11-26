@@ -65,11 +65,12 @@ from `out.txt`, or the associated numeric templated (not inserting quotations ar
 
 == Approach
 
+=== Specgen to Structs
+
 The source of truth for the SIF data model is the set of XML files used by the `specgen` processor to generate all files associated with the specification,
 including both the online HTML documentation and the XSD schemas for that data model instance. The specgen input files for 
 the https://github.com/nsip/specgen_input_au[SIF-AU] and https://github.com/nsip/specgen_input_nz[SIF-NZ] data models are both available
-online, and this set of transformations has been developed against the SIF-AU instance. To use a different data mode, change step #1 in `run.sh`,
-which downloads the specgen input repository, and step #2, which processes the files containing the objects and common types specific to that data model.
+online, and this set of transformations has been developed against the SIF-AU instance. 
 
 The information in the specgen input XML files is processed via an XSLT transform, `sifobject.xslt`, and converted to a struct-like
 representation of all objects and types in the specification. Two separate files are generated: `objectgraph.txt`, for the objects in the 
@@ -78,6 +79,13 @@ specification (including any Russian-Doll definitions embedded within objects), 
 
 `sifobject.xslt` is the only code in this repository that depends on specgen input: all other code works off its output files. The `sifobject.xslt` transform
 could be rewritten to process XSD schemas instead; this has not proven necessary for SIF.
+
+NOTE: The `run.sh` script as distributed downloads the Australian specgen instance from GitHub, and iterates through it, using the `au_extract.sh`.
+You can change this script to customise it for your locale, or you can preprocess the specgen input into the single input.xml file as normal,
+and use the `input_extract.sh` script in `run.sh` instead. (This is necessary for the New Zealand, as the conditional preprocessing XML directives
+will not be understood by `sifobject.xslt`.
+
+=== Structs to Flat File
 
 The script `treeparse.rb` iterates through `objectgraph.txt` and `typegraph.txt`, and generates `out.txt`, as a flattened file containing all needed 
 structural information to generate the transform scripts:
@@ -96,11 +104,16 @@ structural information to generate the transform scripts:
 ** The name of the object or common type container.
 ** For example: `Name    OtherNameType   LOOKUP  TYPE    OtherNamesType`: `Name` is an element inside the container `OtherNamesType`, of type `OtherNameType`. The type `OtherNameType` is defined in a different container (`LOOKUP`). `OtherNamesType` is a common type, not an object (`TYPE`).
 
+== Flat File to Transforms
+
 The transform scripts are contained in `scripts/`, and are all generated from `out.txt`: 
 
 * `scripts/sif2json.xslt` by `makexslt.rb`, using OBJECT, SIMPLE ATTRIBUTE, LIST, NUMERIC, BOOLEAN
 * `scripts/json2sif.js` by `makejs2xml.rb`, using OBJECT, COMPLEX ATTRIBUTE
 * `scripts/sifreorder.xslt` by `makereorder.rb`, using XPATHTYPE
+
+As noted, developers can also use `out.txt` to generate their own transforms.
+
 
 == Testing
 
