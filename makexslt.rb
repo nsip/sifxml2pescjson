@@ -1,3 +1,20 @@
+require "optparse"
+
+options = {}
+optparse = OptionParser.new do |opts|
+  opts.on("-p", "--path_truncate",
+          "truncate path information to just immediate parent (used for specgen generation)") do |o|
+    options[:path_truncate] = true
+  end
+end
+optparse.parse!
+
+def truncate_paths(arr)
+  arr.inject([]) do |memo, elem|
+    memo << elem.sub(%r{^.+?(/[^/]+/[^/]+)$}, "\\1")
+  end.uniq
+end
+
 complexattr = []
 simpleattr = []
 list = []
@@ -31,8 +48,18 @@ while line = gets do
     booleanattr << path
   elsif /^BOOLEAN/.match line
     /BOOLEAN: (?<path>\S+)/ =~ line
-    booleanattr << path
+    boolean << path
   end
+end
+
+if options[:path_truncate]
+  complexattr = truncate_paths(complexattr)
+  simpleattr = truncate_paths(simpleattr)
+  list = truncate_paths(list)
+  numeric = truncate_paths(numeric)
+  numericattr = truncate_paths(numericattr)
+  booleanattr = truncate_paths(booleanattr)
+  boolean = truncate_paths(boolean)
 end
 
 
@@ -100,7 +127,7 @@ print <<~"END"
   </xsl:template>
 
   <!-- numeric or boolean -->
-  <xsl:template match="#{numeric.join(' | ')}" mode="value">
+  <xsl:template match="#{numeric.concat(boolean).join(' | ')}" mode="value">
     <xsl:apply-templates select="."/>
   </xsl:template>
 
@@ -109,7 +136,7 @@ print <<~"END"
   </xsl:template>
 
   <!-- numeric or boolean attribute -->
-  <xsl:template match="#{numericattr.join(' | ')}" mode="attrvalue">
+  <xsl:template match="#{numericattr.concat(booleanattr).join(' | ')}" mode="attrvalue">
     <xsl:apply-templates select="."/>
   </xsl:template>
 

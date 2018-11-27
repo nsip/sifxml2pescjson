@@ -7,6 +7,7 @@ sh au_extract.sh
 
 ruby treeparse.rb > scripts/out.txt
 ruby makexslt.rb < scripts/out.txt > scripts/sif2json.xslt
+ruby makexslt.rb -p < scripts/out.txt > scripts/sif2jsonspecgen.xslt
 ruby makereorder.rb < scripts/out.txt > scripts/sifreorder.xslt
 ruby makejs2xml.rb < scripts/out.txt > scripts/json2sif.js
 

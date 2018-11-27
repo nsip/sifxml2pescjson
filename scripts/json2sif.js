@@ -16,6 +16,7 @@ attrpaths["GradingAssignmentScore"] = ["GradingAssignmentScore.RefId"];
 attrpaths["Identity"] = ["Identity.RefId"];
 attrpaths["LEAInfo"] = ["LEAInfo.RefId","LEAInfo.LEAContactList.LEAContact.ContactInfo.Name.Type","LEAInfo.LEAContactList.LEAContact.ContactInfo.Address.Type","LEAInfo.LEAContactList.LEAContact.ContactInfo.Address.Role","LEAInfo.LEAContactList.LEAContact.ContactInfo.Address.MapReference.Type","LEAInfo.LEAContactList.LEAContact.ContactInfo.PhoneNumberList.PhoneNumber.Type","LEAInfo.PhoneNumberList.PhoneNumber.Type","LEAInfo.AddressList.Address.Type","LEAInfo.AddressList.Address.Role","LEAInfo.AddressList.Address.MapReference.Type"];
 attrpaths["LearningResource"] = ["LearningResource.RefId","LearningResource.Contacts.Contact.Name.Type","LearningResource.Contacts.Contact.Address.Type","LearningResource.Contacts.Contact.Address.Role","LearningResource.Contacts.Contact.Address.MapReference.Type","LearningResource.Contacts.Contact.PhoneNumber.Type","LearningResource.Evaluations.Evaluation.RefId","LearningResource.Evaluations.Evaluation.Name.Type"];
+attrpaths["LearningResourcePackage"] = ["LearningResourcePackage.RefId","LearningResourcePackage.Reference.MIMEType","LearningResourcePackage.Reference.Description"];
 attrpaths["LearningStandardDocument"] = ["LearningStandardDocument.RefId","LearningStandardDocument.RichDescription.Reference.MIMEType","LearningStandardDocument.RichDescription.Reference.Description"];
 attrpaths["LearningStandardItem"] = ["LearningStandardItem.RefId"];
 attrpaths["MarkValueInfo"] = ["MarkValueInfo.RefId"];
