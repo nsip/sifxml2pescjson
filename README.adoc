@@ -106,6 +106,7 @@ structural information to generate the transform scripts:
 ** Whether the element is contained in an object or a common type.
 ** The name of the object or common type container.
 ** For example: `Name    OtherNameType   LOOKUP  TYPE    OtherNamesType`: `Name` is an element inside the container `OtherNamesType`, of type `OtherNameType`. The type `OtherNameType` is defined in a different container (`LOOKUP`). `OtherNamesType` is a common type, not an object (`TYPE`).
+* `TRAVERSE`: a list of all XPaths in the specification
 
 == Flat File to Transforms
 

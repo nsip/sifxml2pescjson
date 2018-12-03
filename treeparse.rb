@@ -74,6 +74,24 @@ def xpathtype(arr, path, object)
   end
 end
 
+def traverse(arr, path)
+  arr.each do |a|
+      puts "TRAVERSE: #{path}/#{a[:elem]}"
+    if a[:elems] && !a[:elems].empty?
+      traverse(a[:elems], "#{path}/#{a[:elem]}")
+    elsif a[:type] && @typegraph[a[:type]]
+      unless @types_used.include? a[:type]
+        @types_used << a[:type]
+        traverse(@typegraph[a[:type]], "#{path}/#{a[:elem]}")
+        @types_used.pop()
+      end
+    end
+    if a[:inherits] && @typegraph[a[:inherits]]
+      traverse(@typegraph[a[:inherits]], "#{path}/#{a[:elem]}")
+    end
+  end
+end
+
 def listfind(arr, path)
   arr.each do |a|
     if a[:list] 
@@ -237,3 +255,5 @@ objgraph.keys.each { |k| booleanfind(objgraph[k], k) }
 # what are the paths to all types?
 objgraph.keys.each { |k| xpathtype(objgraph[k], k, "OBJECT") }
 @typegraph.keys.each { |k| xpathtype(@typegraph[k], k, "TYPE") }
+
+objgraph.keys.each { |k| traverse(objgraph[k], k) }
