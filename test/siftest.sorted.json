@@ -1,0 +1,4356 @@
+[
+  {
+    "Activity": {
+      "ActivityTime": {
+        "CreationDate": "2002-06-15",
+        "DueDate": "2002-09-12",
+        "Duration": {
+          "Units": "minute",
+          "value": 30
+        },
+        "FinishDate": "2002-09-12",
+        "StartDate": "2002-09-10"
+      },
+      "ActivityWeight": 5,
+      "AssessmentRefId": "03EDB29E-8116-B450-0435-FA87E42A0AD2",
+      "Evaluation": {
+        "Description": "Students should be able to correctly identify all major characters.",
+        "EvaluationType": "Inline"
+      },
+      "LearningResources": {
+        "LearningResourceRefId": [
+          "B7337698-BF6D-B193-7F79-A07B87211B93"
+        ]
+      },
+      "LearningStandards": {
+        "LearningStandardItemRefId": [
+          "9DB15CEA-B2C5-4F66-94C3-7D0A0CAEDDA4"
+        ]
+      },
+      "MaxAttemptsAllowed": 3,
+      "Points": 50,
+      "Preamble": "This is a very funny comedy - students should have passing familiarity with Shakespeare",
+      "RefId": "C27E1FCF-C163-485F-BEF0-F36F18A0493A",
+      "SourceObjects": {
+        "SourceObject": [
+          {
+            "SIF_RefObject": "Lesson",
+            "value": "A71ADBD3-D93D-A64B-7166-E420D50EDABC"
+          }
+        ]
+      },
+      "Title": "Shakespeare Essay - Much Ado About Nothing"
+    }
+  },
+  {
+    "Activity": {
+      "ActivityTime": {
+        "CreationDate": "2002-06-15",
+        "DueDate": "2002-09-12",
+        "Duration": {
+          "Units": "minute",
+          "value": 30
+        },
+        "FinishDate": "2002-09-12",
+        "StartDate": "2002-09-10"
+      },
+      "ActivityWeight": 5,
+      "AssessmentRefId": "03EDB29E-8116-B450-0435-FA87E42A0AD2",
+      "Evaluation": {
+        "Description": "Students should be able to correctly identify all major characters.",
+        "EvaluationType": "Inline"
+      },
+      "LearningResources": {
+        "LearningResourceRefId": [
+          "B7337698-BF6D-B193-7F79-A07B87211B93"
+        ]
+      },
+      "LearningStandards": {
+        "LearningStandardItemRefId": [
+          "9DB15CEA-B2C5-4F66-94C3-7D0A0CAEDDA4"
+        ]
+      },
+      "MaxAttemptsAllowed": 3,
+      "Points": 50,
+      "Preamble": "This is a very funny comedy - students should have passing familiarity with Shakespeare",
+      "RefId": "C27E1FCF-C163-485F-BEF0-F36F18A0493A",
+      "SoftwareRequirementList": {
+        "SoftwareRequirement": [
+          {
+            "SoftwareTitle": "Flash Player",
+            "Vendor": "Adobe",
+            "Version": "9.0"
+          },
+          {
+            "OS": "Linux",
+            "SoftwareTitle": "Python",
+            "Version": "3.0"
+          }
+        ]
+      },
+      "SourceObjects": {
+        "SourceObject": [
+          {
+            "SIF_RefObject": "Lesson",
+            "value": "A71ADBD3-D93D-A64B-7166-E420D50EDABC"
+          }
+        ]
+      },
+      "Title": "Shakespeare Essay - Much Ado About Nothing"
+    }
+  },
+  {
+    "AggregateCharacteristicInfo": {
+      "Description": "Sex",
+      "ElementName": "StudentPersonal/PersonInfo/Demographics/Sex",
+      "RefId": "06AF1D69-FB06-4AB3-8898-3505714F18FB"
+    }
+  },
+  {
+    "AggregateStatisticFact": {
+      "AggregateStatisticInfoRefId": "91A4209F-7F4F-4F4B-9DC8-D21CEFD1DC2F",
+      "Characteristics": {
+        "AggregateCharacteristicInfoRefId": [
+          "0B972D86-44EE-4D79-94F5-FF1C3131772D"
+        ]
+      },
+      "Excluded": "No",
+      "RefId": "3A4E2822-C696-433B-812B-49DEAE557E41",
+      "Value": 27
+    }
+  },
+  {
+    "AggregateStatisticInfo": {
+      "ApprovalDate": "2002-09-01",
+      "CalculationRule": {
+        "Type": "Description",
+        "value": "Number of students scoring at Reading Proficiency Level 1"
+      },
+      "ExclusionRules": {
+        "ExclusionRule": [
+          {
+            "Type": "SampleSize",
+            "value": "N less than 10"
+          }
+        ]
+      },
+      "ExpirationDate": "2006-06-30",
+      "Location": {
+        "LocationName": "Green River High School",
+        "LocationRefId": {
+          "SIF_RefObject": "SchoolInfo",
+          "value": "279BCEE5-515E-4C1A-AC3A-765D1F069BC3"
+        },
+        "Type": "School"
+      },
+      "Measure": "Count",
+      "RefId": "A5DECBD3-161B-4F5D-9F46-EBA64C87B002",
+      "Source": "SIS",
+      "StatisticName": "Read Proficiency L1"
+    }
+  },
+  {
+    "CalendarDate": {
+      "CalendarDateRefId": "B5739375-800A-C4CC-6385-0BB2754114AA",
+      "CalendarDateType": {
+        "Code": "INST"
+      },
+      "CalendarSummaryRefId": "A8A34E56-1C97-345C-0A4E-11BB113C2753",
+      "Date": "2007-08-31",
+      "SchoolInfoRefId": "B7A34E56-1C97-345C-0A4E-11BB112B2753",
+      "SchoolYear": "2007",
+      "StudentAttendance": {
+        "AttendanceValue": 1,
+        "CountsTowardAttendance": "Yes"
+      },
+      "TeacherAttendance": {
+        "AttendanceValue": 1,
+        "CountsTowardAttendance": "Yes"
+      }
+    }
+  },
+  {
+    "CalendarSummary": {
+      "DaysInSession": 180,
+      "Description": "Elementary School Calendar",
+      "EndDate": "2009-12-31",
+      "FirstInstructionDate": "2009-01-02",
+      "GraduationDate": "2009-12-10",
+      "InstructionalMinutes": 64800,
+      "LastInstructionDate": "2009-12-20",
+      "LocalId": "123321A",
+      "MinutesPerDay": 360,
+      "RefId": "B5739375-800A-C4CC-6385-0BB2754114AA",
+      "SchoolInfoRefId": "B7A34E56-1C97-345C-0A4E-11BB112B2753",
+      "SchoolYear": "2005",
+      "StartDate": "2009-01-01",
+      "YearLevels": {
+        "YearLevel": [
+          {
+            "Code": "10"
+          },
+          {
+            "Code": "11"
+          },
+          {
+            "Code": "12"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "EquipmentInfo": {
+      "EquipmentType": "OverheadProjector",
+      "LocalId": "OHP3",
+      "Name": "Overhead Projector 3",
+      "RefId": "B5739375-800A-C4CC-6385-0BB2754114AA",
+      "SIF_RefId": {
+        "SIF_RefObject": "SchoolInfo",
+        "value": "B7A34E56-1C97-345C-0A4E-11BB112B2753"
+      }
+    }
+  },
+  {
+    "GradingAssignment": {
+      "CreateDate": "2000-11-21",
+      "Description": "Pop Quiz",
+      "DetailedDescriptionURL": "http://www.assignmentinfo.com/assignment1.pdf",
+      "DueDate": "2000-11-25",
+      "GradingCategory": "Classroom Test",
+      "PointsPossible": 100,
+      "RefId": "359D7510-1AD0-A9D7-A8C3-DAD0A85103A2",
+      "SchoolInfoRefId": "11737EA4-301C-ADCA-75C8-7214A7C46BDB",
+      "TeachingGroupRefId": "D0A0A27A-D0A8-510A-D9D7-5101A8C3DA39",
+      "Weight": 1
+    }
+  },
+  {
+    "GradingAssignmentScore": {
+      "GradingAssignmentRefId": "359D7510-1AD0-A9D7-A8C3-DAD0A85105D2",
+      "RefId": "359D7510-1AD0-A9D7-A8C3-DAD0A85103A2",
+      "SchoolInfoRefId": "11737EA4-301C-ADCA-75C8-7214A7C46BDB",
+      "ScorePoints": 45,
+      "StudentPersonalLocalId": "fred12",
+      "StudentPersonalRefId": "A75A0010-1A8C-301D-02E3-A05B359D0A00",
+      "TeachingGroupRefId": "D0A0A27A-D0A8-510A-D9D7-5101A8C3DA39"
+    }
+  },
+  {
+    "Identity": {
+      "AuthenticationSource": "AUAccessShibboleth",
+      "AuthenticationSourceGlobalUID": "A9A6CB2B-C493-4427-8C1F-D6587D448B35",
+      "IdentityAssertions": {
+        "IdentityAssertion": [
+          {
+            "SchemaName": "eduPersonPrincipalName",
+            "value": "john.doe@asdf.edu.au"
+          }
+        ]
+      },
+      "RefId": "4286194F-43ED-43C1-8EE2-F0A27C4BEF86",
+      "SIF_RefId": {
+        "SIF_RefObject": "StudentPersonal",
+        "value": "23B08571-E4D6-45C3-B82A-3E52E5349925"
+      }
+    }
+  },
+  {
+    "Identity": {
+      "AuthenticationSource": "MSActiveDirectory",
+      "AuthenticationSourceGlobalUID": "23A08571-E4D6-45C3-B82A-3E52E5349925",
+      "IdentityAssertions": {
+        "IdentityAssertion": [
+          {
+            "SchemaName": "sAmAccountName",
+            "value": "user01"
+          },
+          {
+            "SchemaName": "userPrincipalName",
+            "value": "user01@asdf.edu.au"
+          },
+          {
+            "SchemaName": "distinguishedName",
+            "value": "cn=User01,cn=Users,dc=org"
+          }
+        ]
+      },
+      "RefId": "4286194F-43ED-43C1-8EE2-F0A27C4BEF86",
+      "SIF_RefId": {
+        "SIF_RefObject": "StudentPersonal",
+        "value": "23B08571-E4D6-45C3-B82A-3E52E5349925"
+      }
+    }
+  },
+  {
+    "Identity": {
+      "AuthenticationSource": "OpenID",
+      "AuthenticationSourceGlobalUID": "A9A6CB2B-C493-4427-8C1F-D6587D448B35",
+      "IdentityAssertions": {
+        "IdentityAssertion": [
+          {
+            "SchemaName": "openid.identity",
+            "value": "http://verisign.org/p/alice "
+          },
+          {
+            "SchemaName": "openid.server",
+            "value": "http://verisign.org "
+          }
+        ]
+      },
+      "RefId": "4286194F-43ED-43C1-8EE2-F0A27C4BEF86",
+      "SIF_RefId": {
+        "SIF_RefObject": "StudentPersonal",
+        "value": "23B08571-E4D6-45C3-B82A-3E52E5349925"
+      }
+    }
+  },
+  {
+    "LEAInfo": {
+      "CommonwealthId": "4215750",
+      "EducationAgencyType": {
+        "Code": "01"
+      },
+      "JurisdictionLowerHouse": "Unknown",
+      "LEAContactList": {
+        "LEAContact": [
+          {
+            "ContactInfo": {
+              "EmailList": {
+                "Email": [
+                  {
+                    "Type": "01",
+                    "value": "drseuss@edumail.vic.edu.au"
+                  }
+                ]
+              },
+              "Name": {
+                "FamilyName": "Smith",
+                "FullName": "Theo Smith",
+                "GivenName": "Theo",
+                "Type": "LGL"
+              },
+              "PhoneNumberList": {
+                "PhoneNumber": [
+                  {
+                    "Number": "(03) 9745 7455",
+                    "Type": "0096"
+                  }
+                ]
+              },
+              "PositionTitle": "Superintendent"
+            },
+            "PublishInDirectory": "Y"
+          }
+        ]
+      },
+      "LEAName": "Eastern Metro School District",
+      "LEAURL": "http://www.EMR.vic.edu.au",
+      "LocalId": "EMR",
+      "OperationalStatus": "O",
+      "PhoneNumberList": {
+        "PhoneNumber": [
+          {
+            "Number": "(03) 9745 7455",
+            "Type": "0096"
+          }
+        ]
+      },
+      "RefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+      "SLA": "205801452",
+      "StateProvinceId": "EMR"
+    }
+  },
+  {
+    "LearningResource": {
+      "AgreementDate": "2002-06-05",
+      "Approvals": {
+        "Approval": [
+          {
+            "Date": "2002-03-15",
+            "Organization": "QLD DET"
+          }
+        ]
+      },
+      "Author": "The Queensland Performing Arts Edge",
+      "Components": {
+        "Component": [
+          {
+            "AssociatedObjects": {
+              "AssociatedObject": [
+                {
+                  "SIF_RefObject": "LearningResource",
+                  "value": "667A87E2-1B4B-9470-CE61-568576DF921E"
+                }
+              ]
+            },
+            "Description": "Students learn about social contexts such as nationality, culture, etc.",
+            "Name": "Vocabulary",
+            "Reference": "http://www.artsedge.QPAC.org/teaching_materials/curricula/curric/86_u_dreams/489_vocab.html",
+            "Strategies": {
+              "Strategy": [
+                "Inquiry"
+              ]
+            }
+          }
+        ]
+      },
+      "Contacts": {
+        "Contact": [
+          {
+            "Address": {
+              "City": "Brisbane",
+              "Country": "1101",
+              "PostalCode": "4002",
+              "Role": "012A",
+              "StateProvince": "QLD",
+              "Street": {
+                "Line1": "QPAC",
+                "Line2": "Southbank"
+              },
+              "Type": "0123"
+            },
+            "Email": {
+              "Type": "01",
+              "value": "info@QPAC.edu.au"
+            },
+            "PhoneNumber": {
+              "ListedStatus": "Y",
+              "Number": "(555) 555-1234",
+              "Type": "0096"
+            }
+          }
+        ]
+      },
+      "Description": "Teacher Reference Sheet",
+      "Evaluations": {
+        "Evaluation": [
+          {
+            "Date": "2001-06-15",
+            "Description": "This resource references QLD curriculum standards",
+            "Name": {
+              "FamilyName": "Doe",
+              "GivenName": "Joan",
+              "Type": "LGL"
+            },
+            "RefId": "F1BC63DF-D02C-CED6-54EF-558E84904E01"
+          }
+        ]
+      },
+      "LearningResourcePackageRefId": "6D254047-C5E5-42CB-B792-1D03ED3BD894",
+      "LearningStandards": {
+        "LearningStandardItemRefId": [
+          "D56D76D4-0F0B-9691-6DA4-CA2E230494E8",
+          "DBCE6406-0B47-E555-A64A-F7FCE6C1A4A9"
+        ]
+      },
+      "Location": {
+        "ReferenceType": "URI",
+        "value": "http://www.artsedge/QPAC/curric/86_u_dreams/489_words.pdf"
+      },
+      "MediaTypes": {
+        "MediaType": [
+          "x-application/pdf"
+        ]
+      },
+      "Name": "A World of Music (Teacher Reference Sheet)",
+      "RefId": "6938D88F-82A3-7EFD-8889-2429EC6AB1B5",
+      "Status": "Available",
+      "SubjectAreas": {
+        "ACStrandSubjectArea": [
+          {
+            "ACStrand": "H",
+            "SubjectArea": {
+              "Code": "Hist",
+              "OtherCodeList": {
+                "OtherCode": [
+                  {
+                    "Codeset": "Text",
+                    "value": "Revolutions"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "UseAgreement": "see http://www.artsedge.QPAC/teaching_materials/using/artsedge.html for the user aggreement",
+      "YearLevels": {
+        "YearLevel": [
+          {
+            "Code": "3"
+          },
+          {
+            "Code": "4"
+          },
+          {
+            "Code": "5"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "LearningResourcePackage": {
+      "BinaryData": {
+        "MIMEType": "text/html;charset=utf-16",
+        "value": "0000 0000 0010 0100"
+      },
+      "RefId": "C7DE8668-5968-459F-BF9F-ED22A0E1EA6E"
+    }
+  },
+  {
+    "LearningStandardDocument": {
+      "Authors": {
+        "Author": [
+          "Joe Bloggs"
+        ]
+      },
+      "Copyright": {
+        "Date": "2010-06-05",
+        "Holder": "ACARA"
+      },
+      "Description": "\n            AIMS: The aim of the History curriculum is to instill in students, an appreciation in the diversity of the past and how they inform current developments etc etc.\nRATIONALE: History is essential for an informed citizenry and has always been a cornerstone of education.\n    ",
+      "DocumentDate": "2010-04-15",
+      "DocumentStatus": "Adopted",
+      "EndOfLifeDate": "2011-04-15",
+      "LearningStandardItemRefId": "667A87E2-1B4B-9470-CE61-568576DF921E",
+      "LocalAdoptionDate": "2011-01-06",
+      "OrganizationContactPoint": "http://www.acara.edu.au",
+      "Organizations": {
+        "Organization": [
+          "ACARA"
+        ]
+      },
+      "RefId": "A5A575C7-8917-5101-B8E7-F08ED123A823",
+      "RelatedLearningStandards": {
+        "LearningStandardDocumentRefId": [
+          "B87A87E2-1B4B-9470-CE61-568576DF921E"
+        ]
+      },
+      "RepositoryDate": "2011-04-15",
+      "Source": "National",
+      "SubjectAreas": {
+        "ACStrandSubjectArea": [
+          {
+            "ACStrand": "H",
+            "SubjectArea": {
+              "Code": "Hist",
+              "OtherCodeList": {
+                "OtherCode": [
+                  {
+                    "Codeset": "Text",
+                    "value": "History"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "Title": "Australian National Curriculum: History",
+      "YearLevels": {
+        "YearLevel": [
+          {
+            "Code": "11"
+          },
+          {
+            "Code": "12"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "LearningStandardItem": {
+      "ACStrandSubjectArea": {
+        "ACStrand": "M",
+        "SubjectArea": {
+          "Code": "Maths",
+          "OtherCodeList": {
+            "OtherCode": [
+              {
+                "Codeset": "Text",
+                "value": "Mathematics"
+              }
+            ]
+          }
+        }
+      },
+      "LearningStandardDocumentRefId": "8454189F-6BBC-26C6-B97D-DB4B6D0E3AC8",
+      "PredecessorItems": {
+        "LearningStandardItemRefId": [
+          "DE072A87-EFAD-4B77-8AF9-FAF83C94839E"
+        ]
+      },
+      "RefId": "A5D75F78-9175-101B-8C7E-08EA123A8234",
+      "RelatedLearningStandardItems": {
+        "LearningStandardItemRefId": [
+          {
+            "RelationshipType": "Content",
+            "value": "869670E8-540A-4350-9515-AFB767FADD9A"
+          },
+          {
+            "RelationshipType": "State",
+            "value": "B14FDAB4-37CA-4565-A976-5A5B824545C4"
+          },
+          {
+            "RelationshipType": "ContentElaboration",
+            "value": "D5440A11-F5A4-4AC1-9202-61ECBE5A29F6"
+          }
+        ]
+      },
+      "StandardHierarchyLevel": {
+        "Description": "AchievementStandard",
+        "Number": 3
+      },
+      "StandardIdentifier": {
+        "ACStrandSubjectArea": {
+          "ACStrand": "M",
+          "SubjectArea": {
+            "Code": "Maths",
+            "OtherCodeList": {
+              "OtherCode": [
+                {
+                  "Codeset": "Text",
+                  "value": "Mathematics"
+                }
+              ]
+            }
+          }
+        },
+        "Organization": "DEECD VIC",
+        "StandardNumber": "04",
+        "YearCreated": "2003",
+        "YearLevels": {
+          "YearLevel": [
+            {
+              "Code": "5"
+            },
+            {
+              "Code": "6"
+            },
+            {
+              "Code": "7"
+            }
+          ]
+        }
+      },
+      "StandardSettingBody": {
+        "Country": "1101",
+        "SettingBodyName": "DEECD",
+        "StateProvince": "VIC"
+      },
+      "StatementCodes": {
+        "StatementCode": [
+          "Mathematics.2.03.a"
+        ]
+      },
+      "Statements": {
+        "Statement": [
+          "Counting from 0 to 100 using whole numbers"
+        ]
+      },
+      "YearLevels": {
+        "YearLevel": [
+          {
+            "Code": "4"
+          },
+          {
+            "Code": "5"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "MarkValueInfo": {
+      "Name": "Letter Grades",
+      "RefId": "11737E21-4A7C-46BD-BA43-01CADCA75C87",
+      "SchoolInfoRefId": "A137D78A-E00B-C744-EF90-F2871CEB90A2",
+      "ValidLetterMarkList": {
+        "ValidLetterMark": [
+          {
+            "Code": "A",
+            "NumericEquivalent": 100
+          },
+          {
+            "Code": "B",
+            "NumericEquivalent": 90
+          },
+          {
+            "Code": "C",
+            "NumericEquivalent": 80
+          },
+          {
+            "Code": "D",
+            "NumericEquivalent": 70
+          },
+          {
+            "Code": "F",
+            "NumericEquivalent": 60
+          }
+        ]
+      }
+    }
+  },
+  {
+    "PersonPicture": {
+      "OKToPublish": "Y",
+      "ParentObjectRefId": {
+        "SIF_RefObject": "StudentPersonal",
+        "value": "AA648462-8886-24AA-5294-BC638017320B"
+      },
+      "PictureSource": {
+        "Type": "01",
+        "value": "http://www.schoolsite.com/pictures/2007/1234.jpg "
+      },
+      "PublishingPermissionList": {
+        "PublishingPermission": [
+          {
+            "PermissionCategory": "OKPrintedMaterial",
+            "PermissionValue": "Y"
+          },
+          {
+            "PermissionCategory": "OKOnlineMaterial",
+            "PermissionValue": "Y"
+          },
+          {
+            "PermissionCategory": "OKMediaRelease",
+            "PermissionValue": "U"
+          }
+        ]
+      },
+      "RefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+      "SchoolYear": "2007"
+    }
+  },
+  {
+    "PersonPrivacyObligation": {
+      "ParentObjectRefId": {
+        "SIF_RefObject": "StudentPersonal",
+        "value": "AA648462-8886-24AA-5294-BC638017320B"
+      },
+      "RefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+      "SchoolYear": "2007"
+    }
+  },
+  {
+    "PersonalisedPlan": {
+      "PersonalisedPlanCategory": "M",
+      "PersonalisedPlanEndDate": "2019-11-10",
+      "PersonalisedPlanNotes": "This Student is allergic to cashews.",
+      "PersonalisedPlanReviewDate": "2018-11-10",
+      "PersonalisedPlanStartDate": "2017-11-01",
+      "RefId": "2FFB63B4-CFEF-4820-8501-E7D1E54555CB",
+      "SchoolInfoRefId": "CA285746-359D-7510-1A8C-36432A901A16",
+      "StudentPersonalRefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652"
+    }
+  },
+  {
+    "ReportAuthorityInfo": {
+      "Address": {
+        "City": "Chicago",
+        "Country": "1101",
+        "PostalCode": "60660",
+        "Role": "2382",
+        "StateProvince": "IL",
+        "Street": {
+          "Line1": "6799 33rd Ave.",
+          "StreetName": "33rd",
+          "StreetNumber": "6799",
+          "StreetType": "Ave."
+        },
+        "Type": "0123"
+      },
+      "AuthorityDepartment": "Bureau of Special Education",
+      "AuthorityId": "StateDOEDataWarehouse",
+      "AuthorityLevel": "State",
+      "AuthorityName": "XX State Department of Education",
+      "ContactInfo": {
+        "Address": {
+          "City": "Carnegie",
+          "Country": "1101",
+          "GridLocation": {
+            "Latitude": 23.9876,
+            "Longitude": -98.8765
+          },
+          "PostalCode": "3004",
+          "Role": "012B",
+          "StateProvince": "VIC",
+          "Street": {
+            "Line1": "23 Nicholson Street"
+          },
+          "Type": "0123"
+        },
+        "EmailList": {
+          "Email": [
+            {
+              "Type": "01",
+              "value": "jmiller@lsc.vic.edu.au"
+            },
+            {
+              "Type": "02",
+              "value": "jmiller@yahoo.com.au"
+            }
+          ]
+        },
+        "Name": {
+          "FamilyName": "Miller",
+          "FullName": "Mr James Frank Miller Jr.",
+          "GivenName": "James",
+          "MiddleName": "Frank",
+          "Suffix": "Jr.",
+          "Title": "Mr",
+          "Type": "LGL"
+        },
+        "PhoneNumberList": {
+          "PhoneNumber": [
+            {
+              "Extension": "72345",
+              "ListedStatus": "Y",
+              "Number": "03 9637-2000",
+              "Type": "0096"
+            }
+          ]
+        },
+        "PositionTitle": "Business Manager",
+        "Role": "School Information Contact Point"
+      },
+      "PhoneNumber": {
+        "Number": "(555) 555-0000",
+        "Type": "0096"
+      },
+      "RefId": "9746375937BB2A10AAB2758C46A12001"
+    }
+  },
+  {
+    "ResourceBooking": {
+      "Booker": "98157AA0-13BA-8C3D-00AA-012B359D7512",
+      "FinishDateTime": "2011-01-01T17:30:00",
+      "FromPeriod": "3",
+      "KeepOld": false,
+      "RefId": "B5739375-800A-C4CC-6385-0BB2754114AA",
+      "ResourceLocalId": "ZXY789",
+      "ResourceRefId": {
+        "SIF_RefObject": "LearningResource",
+        "value": "B7A34E56-1C97-345C-0A4E-11BB112B2753"
+      },
+      "ScheduledActivityRefId": "A75A0010-1A8C-301D-02E3-A05B359D0A00",
+      "StartDateTime": "2011-01-01T16:30:00",
+      "ToPeriod": "3"
+    }
+  },
+  {
+    "ResourceUsage": {
+      "RefId": "4286194F-43ED-43C1-8EE2-F0A27C4BEF87",
+      "ResourceReportColumnList": {
+        "ResourceReportColumn": [
+          {
+            "ColumnDelimiter": ",",
+            "ColumnName": "userName"
+          },
+          {
+            "ColumnName": "comment"
+          },
+          {
+            "ColumnName": "planName"
+          },
+          {
+            "ColumnDescription": "total Bytes downloaded (MB)",
+            "ColumnName": "totalBytesIn"
+          },
+          {
+            "ColumnDescription": "total Bytes uploaded (MB)",
+            "ColumnName": "totalBytesOut"
+          }
+        ]
+      },
+      "ResourceReportLineList": {
+        "ResourceReportLine": [
+          {
+            "CurrentCost": {
+              "Currency": "AUD",
+              "value": 5.43
+            },
+            "EndDate": "2011-04-17",
+            "ReportRow": "name.surename.1,null,Year 10 Test,47,2",
+            "SIF_RefId": {
+              "SIF_RefObject": "StudentPersonal",
+              "value": "23B08571-E4D6-45C3-B82A-3E52E5349925"
+            },
+            "StartDate": "2011-03-18"
+          },
+          {
+            "CurrentCost": {
+              "Currency": "AUD",
+              "value": 0
+            },
+            "EndDate": "2011-04-17",
+            "ReportRow": "name.surename.2,cost waived,Year 10 Test,93,4",
+            "SIF_RefId": {
+              "SIF_RefObject": "StaffPersonal",
+              "value": "23B08571-E4D3-45C3-B82A-3E52E5349925"
+            },
+            "StartDate": "2011-03-18"
+          }
+        ]
+      },
+      "ResourceUsageContentType": {
+        "Code": "01",
+        "LocalDescription": "Other Description"
+      },
+      "SchoolInfoRefId": "23B08571-E4D6-45C3-B82A-3E52E5349925"
+    }
+  },
+  {
+    "RoomInfo": {
+      "Building": "Main A",
+      "Capacity": 35,
+      "Description": "Room 101",
+      "HomeroomNumber": "10-HR-A",
+      "PhoneNumber": {
+        "Number": "(02) 9555-1234",
+        "Type": "0096"
+      },
+      "RefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+      "RoomNumber": "101",
+      "SchoolInfoRefId": "A2E35B35-9D75-101A-8C3D-00AA001A0000",
+      "Size": 400,
+      "StaffList": {
+        "StaffPersonalRefId": [
+          "A8C3A2E3-5B35-9D75-101D-00AA001A0000"
+        ]
+      }
+    }
+  },
+  {
+    "ScheduledActivity": {
+      "ActivityDate": "2014-10-10",
+      "ActivityType": "Incursion",
+      "DayId": "1",
+      "FinishTime": "13:30:00",
+      "RefId": "BD3E34B3-59D7-5101-A8C3-D00AA001A165",
+      "RoomList": {
+        "RoomInfoRefId": [
+          "11737EA4-301C-ADCA-75C8-7214A7C46BDB"
+        ]
+      },
+      "SchoolInfoRefId": "B7A34E56-1C97-345C-0A4E-11BB112B2753",
+      "StartTime": "12:05:00",
+      "StudentList": {
+        "StudentPersonalRefId": [
+          "FAE9D90A-38F8-4B72-9C92-F868CB63C9F3"
+        ]
+      },
+      "TeacherList": {
+        "TeacherCover": [
+          {
+            "Credit": "In-Lieu",
+            "FinishTime": "13:00:00",
+            "StaffLocalId": "US8923",
+            "StaffPersonalRefId": "98157AA0-13BA-8C3D-00AA-012B359D7512",
+            "StartTime": "12:05:00",
+            "Supervision": "MinimalSupervision",
+            "Weighting": 0.5
+          },
+          {
+            "Credit": "Extra",
+            "FinishTime": "13:30:00",
+            "StaffLocalId": "ZY3213",
+            "StaffPersonalRefId": "A75A0010-1A8C-301D-02E3-A05B359D0A00",
+            "StartTime": "13:00:00",
+            "Supervision": "MinimalSupervision",
+            "Weighting": 0.5
+          }
+        ]
+      },
+      "TeachingGroupList": {
+        "TeachingGroupRefId": [
+          "EB79C3D1-FF19-11D7-8513-8B604A511DAD",
+          "B2345163-8474-6B38-7459-000F84723A00"
+        ]
+      },
+      "TimeTableCellRefId": "FDF05286-9094-4405-96B3-D6CC0ED5F00B",
+      "TimeTableRefId": "2A7F0D96-3E99-4B83-A958-690C360A36C2"
+    }
+  },
+  {
+    "SchoolCourseInfo": {
+      "CoreAcademicCourse": "N",
+      "CourseCode": "CS101",
+      "CourseCredits": "2",
+      "CourseTitle": "Gif, JPeg, or Png: What's the Difference?",
+      "Description": "Explore the various types of files related to graphic arts.",
+      "DistrictCourseCode": "CS101",
+      "GraduationRequirement": "N",
+      "InstructionalLevel": "0571",
+      "RefId": "9D75101A-8C3D-00AA-001A-0000A2E35B35",
+      "SchoolInfoRefId": "101A8C3D-00AA-001A-0000-A2E35B359D75",
+      "SchoolYear": "2006",
+      "StateCourseCode": "08-001",
+      "SubjectAreaList": {
+        "SubjectArea": [
+          {
+            "Code": "Graphic Arts"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "SchoolInfo": {
+      "ARIA": 1,
+      "Campus": {
+        "AdminStatus": "Y",
+        "CampusType": "Camp",
+        "SchoolCampusId": "01"
+      },
+      "CommonwealthId": "012345",
+      "FederalElectorate": "216",
+      "IndependentSchool": "Y",
+      "JurisdictionLowerHouse": "Unknown",
+      "LEAInfoRefId": "73648462-8886-24AA-5294-BC6380173276",
+      "LocalGovernmentArea": "Cardinia",
+      "LocalId": "01011234",
+      "NonGovSystemicStatus": "S",
+      "OperationalStatus": "O",
+      "OtherLEA": {
+        "SIF_RefObject": "LEAInfo",
+        "value": "AA648462-8886-24AA-5294-BC638017320B"
+      },
+      "PhoneNumberList": {
+        "PhoneNumber": [
+          {
+            "Number": "03 9637-2000",
+            "Type": "0096"
+          }
+        ]
+      },
+      "PrincipalInfo": {
+        "ContactName": {
+          "FamilyName": "Mason",
+          "FullName": "Mr Frank Mason Jr.",
+          "GivenName": "Francis",
+          "MiddleName": "Frank",
+          "Suffix": "Jr.",
+          "Title": "Mr",
+          "Type": "LGL"
+        },
+        "ContactTitle": "Senior School Principal"
+      },
+      "RefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+      "ReligiousAffiliation": "2171",
+      "SLA": "205801452",
+      "SchoolCoEdStatus": "C",
+      "SchoolContactList": {
+        "SchoolContact": [
+          {
+            "ContactInfo": {
+              "Address": {
+                "City": "Carnegie",
+                "Country": "1101",
+                "GridLocation": {
+                  "Latitude": 23.9876,
+                  "Longitude": -98.8765
+                },
+                "PostalCode": "3004",
+                "Role": "012B",
+                "StateProvince": "VIC",
+                "Street": {
+                  "Line1": "23 Nicholson Street"
+                },
+                "Type": "0123"
+              },
+              "EmailList": {
+                "Email": [
+                  {
+                    "Type": "01",
+                    "value": "jmiller@lsc.vic.edu.au"
+                  },
+                  {
+                    "Type": "02",
+                    "value": "jmiller@yahoo.com.au"
+                  }
+                ]
+              },
+              "Name": {
+                "FamilyName": "Miller",
+                "FullName": "Mr James Mark Miller Jr.",
+                "GivenName": "James",
+                "MiddleName": "Mark",
+                "Suffix": "Jr.",
+                "Title": "Mr",
+                "Type": "LGL"
+              },
+              "PhoneNumberList": {
+                "PhoneNumber": [
+                  {
+                    "Extension": "72345",
+                    "ListedStatus": "Y",
+                    "Number": "03 9637-2000",
+                    "Type": "0096"
+                  }
+                ]
+              },
+              "PositionTitle": "Business Manager",
+              "Role": "School Information Contact Point"
+            },
+            "PublishInDirectory": "Y"
+          }
+        ]
+      },
+      "SchoolDistrict": " Southern Metropolitan Region",
+      "SchoolFocusList": {
+        "SchoolFocus": [
+          "01",
+          "03"
+        ]
+      },
+      "SchoolGeographicLocation": "10",
+      "SchoolGroupList": {
+        "SchoolGroup": [
+          "YVC",
+          "EastSec01"
+        ]
+      },
+      "SchoolName": "Lincoln Secondary College",
+      "SchoolSector": "NG",
+      "SchoolType": "Pri/Sec",
+      "SchoolURL": "http://www.lincolnsc.edu.vic.au",
+      "SessionType": "0827",
+      "StateProvinceId": "01011234",
+      "System": "0003",
+      "YearLevels": {
+        "YearLevel": [
+          {
+            "Code": "6"
+          },
+          {
+            "Code": "7"
+          },
+          {
+            "Code": "8"
+          },
+          {
+            "Code": "9"
+          },
+          {
+            "Code": "10"
+          },
+          {
+            "Code": "11"
+          },
+          {
+            "Code": "12"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "SchoolPrograms": {
+      "RefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+      "SchoolInfoRefId": "73648462-8886-24AA-5294-BC6380173276",
+      "SchoolProgramList": {
+        "Program": [
+          {
+            "Category": "01",
+            "Type": "Steiner program"
+          },
+          {
+            "Category": "01",
+            "Type": "Tournament of minds"
+          }
+        ]
+      },
+      "SchoolYear": "2009"
+    }
+  },
+  {
+    "SectionInfo": {
+      "LanguageOfInstruction": {
+        "Code": "1201"
+      },
+      "LocalId": "287-1",
+      "LocationOfInstruction": {
+        "Code": "0340",
+        "OtherCodeList": {
+          "OtherCode": [
+            {
+              "Codeset": "Text",
+              "value": "NSW DEC"
+            }
+          ]
+        }
+      },
+      "MediumOfInstruction": {
+        "Code": "0605"
+      },
+      "RefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+      "SchoolCourseInfoOverride": {
+        "CourseCode": "CS101A",
+        "CourseTitle": "Graphics Basics",
+        "DistrictCourseCode": "CS101A",
+        "InstructionalLevel": "Graduate Certificate II",
+        "Override": "Yes",
+        "StateCourseCode": "08-001A",
+        "SubjectArea": {
+          "Code": "05",
+          "OtherCodeList": {
+            "OtherCode": [
+              {
+                "Codeset": "Text",
+                "value": "Graphic Arts for Beginners"
+              }
+            ]
+          }
+        }
+      },
+      "SchoolCourseInfoRefId": "101A8C3D-00AA-001A-0000-A2E35B359D75",
+      "SchoolYear": "2013"
+    }
+  },
+  {
+    "SessionInfo": {
+      "DayId": "1",
+      "FinishTime": "13:30:00",
+      "LocalId": "2",
+      "PeriodId": "5",
+      "RefId": "98157AA0-13BA-8C3D-00AA-012B359D7512",
+      "RollMarked": "Y",
+      "RoomNumber": "R08",
+      "SchoolInfoRefId": "11737EA4-301C-ADCA-75C8-7214A7C46BDB",
+      "SchoolLocalId": "01991",
+      "SchoolYear": "2008",
+      "SessionDate": "2016-10-10",
+      "StaffPersonalLocalId": "SMI009",
+      "StartTime": "12:05:00",
+      "TimeTableCellRefId": "A75A0010-1A8C-301D-02E3-A05B359D0A00",
+      "TimeTableSubjectLocalId": "10MA1"
+    }
+  },
+  {
+    "StaffAssignment": {
+      "CasualReliefTeacher": "N",
+      "Description": "VCE English Teacher",
+      "JobEndDate": "2001-06-25",
+      "JobFTE": 1,
+      "JobFunction": "Teacher",
+      "JobStartDate": "2000-09-05",
+      "PrimaryAssignment": "Y",
+      "RefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+      "SchoolInfoRefId": "A8C3D3E3-4B35-9D75-101D-00AA001A1652",
+      "SchoolYear": "2008",
+      "StaffPersonalRefId": "D3E34B35-9D75-101A-8C3D-00AA001A1651",
+      "StaffSubjectList": {
+        "StaffSubject": [
+          {
+            "PreferenceNumber": 1,
+            "SubjectLocalId": "English"
+          },
+          {
+            "PreferenceNumber": 2,
+            "SubjectLocalId": "Mathematics"
+          },
+          {
+            "PreferenceNumber": 3,
+            "SubjectLocalId": "Science"
+          }
+        ]
+      },
+      "YearLevels": {
+        "YearLevel": [
+          {
+            "Code": "11"
+          },
+          {
+            "Code": "12"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "StaffPersonal": {
+      "ElectronicIdList": {
+        "ElectronicId": [
+          {
+            "Type": "01",
+            "value": "206655"
+          }
+        ]
+      },
+      "EmploymentStatus": "A",
+      "LocalId": "946379881",
+      "MostRecent": {
+        "HomeGroup": "9G",
+        "LocalCampusId": "D",
+        "NAPLANClassList": {
+          "ClassCode": [
+            "9",
+            "7"
+          ]
+        },
+        "SchoolLocalId": "S12345"
+      },
+      "OtherIdList": {
+        "OtherId": [
+          {
+            "Type": "0004",
+            "value": "333333333"
+          }
+        ]
+      },
+      "PersonInfo": {
+        "AddressList": {
+          "Address": [
+            {
+              "City": "Yarra Glenn",
+              "Country": "1101",
+              "PostalCode": "9999",
+              "Role": "012A",
+              "StateProvince": "VIC",
+              "Street": {
+                "Line1": "Unit1/10",
+                "Line2": "Barkley Street"
+              },
+              "Type": "0123"
+            },
+            {
+              "City": "Home Town",
+              "Country": "1101",
+              "PostalCode": "9999",
+              "Role": "1073",
+              "StateProvince": "WA",
+              "Street": {
+                "Line1": "34 Term Address Street"
+              },
+              "Type": "0123A"
+            }
+          ]
+        },
+        "Demographics": {
+          "AustralianCitizenshipStatus": "1",
+          "BirthDate": "1990-09-26",
+          "BirthDateVerification": "1004",
+          "CountriesOfCitizenship": {
+            "CountryOfCitizenship": [
+              "8104",
+              "1101"
+            ]
+          },
+          "CountriesOfResidency": {
+            "CountryOfResidency": [
+              "8104",
+              "1101"
+            ]
+          },
+          "CountryArrivalDate": "1990-09-26",
+          "CountryOfBirth": "1101",
+          "DwellingArrangement": {
+            "Code": "1671"
+          },
+          "EnglishProficiency": {
+            "Code": "1"
+          },
+          "IndigenousStatus": "3",
+          "LanguageList": {
+            "Language": [
+              {
+                "Code": "0001",
+                "LanguageType": "1"
+              }
+            ]
+          },
+          "PermanentResident": "P",
+          "PlaceOfBirth": "Clayton",
+          "Religion": {
+            "Code": "2013"
+          },
+          "ReligiousEventList": {
+            "ReligiousEvent": [
+              {
+                "Date": "2000-09-01",
+                "Type": "Baptism"
+              },
+              {
+                "Date": "2009-12-24",
+                "Type": "Christmas"
+              }
+            ]
+          },
+          "ReligiousRegion": "The Religion Region",
+          "Sex": "1",
+          "StateOfBirth": "VIC",
+          "VisaStatisticalCode": "05",
+          "VisaSubClass": "101"
+        },
+        "EmailList": {
+          "Email": [
+            {
+              "Type": "01",
+              "value": "fsmith@yahoo.com"
+            },
+            {
+              "Type": "02",
+              "value": "freddy@gmail.com"
+            }
+          ]
+        },
+        "Name": {
+          "FamilyName": "Smith",
+          "FullName": "Fred Smith",
+          "GivenName": "Fred",
+          "Type": "LGL"
+        },
+        "OtherNames": {
+          "Name": [
+            {
+              "FamilyName": "Anderson",
+              "FullName": "Samuel Anderson",
+              "GivenName": "Samuel",
+              "Type": "AKA"
+            },
+            {
+              "FamilyName": "Rowinski",
+              "FullName": "Sam Rowinski ",
+              "GivenName": "Sam",
+              "Type": "PRF"
+            }
+          ]
+        },
+        "PhoneNumberList": {
+          "PhoneNumber": [
+            {
+              "Extension": "72289",
+              "ListedStatus": "Y",
+              "Number": "03 9637-2289",
+              "Type": "0096"
+            },
+            {
+              "ListedStatus": "N",
+              "Number": "0437-765-234",
+              "Type": "0888"
+            }
+          ]
+        }
+      },
+      "RefId": "D3E34F41-9D75-101A-8C3D-00AA001A1652",
+      "StateProvinceId": "C2345681",
+      "Title": "Principal"
+    }
+  },
+  {
+    "StudentActivityInfo": {
+      "CurricularStatus": "0750",
+      "Description": "Group of middle school students promoting reading",
+      "Location": {
+        "LocationName": "Beaconhills Middle School Library",
+        "LocationRefId": {
+          "SIF_RefObject": "RoomInfo",
+          "value": "94758261-0947-583A-CEB2-BB345291BAAA"
+        },
+        "Type": "Classroom"
+      },
+      "RefId": "6472B261-0947-583A-463D-BB345291B001",
+      "StudentActivityLevel": "Middle School",
+      "StudentActivityType": {
+        "Code": "6011",
+        "OtherCodeList": {
+          "OtherCode": [
+            {
+              "Codeset": "Local",
+              "value": "MBook"
+            }
+          ]
+        }
+      },
+      "Title": "Book Club",
+      "YearLevels": {
+        "YearLevel": [
+          {
+            "Code": "5"
+          },
+          {
+            "Code": "6"
+          },
+          {
+            "Code": "7"
+          },
+          {
+            "Code": "8"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "StudentActivityParticipation": {
+      "ParticipationComment": "First year of participation",
+      "RecognitionList": {
+        "Recognition": [
+          "0750"
+        ]
+      },
+      "RefId": "9ECC9683-0E02-406F-926C-1C4D3542D122",
+      "Role": "Team member",
+      "SchoolYear": "2009",
+      "StartDate": "2008-09-01",
+      "StudentActivityInfoRefId": "6472B261-0947-583A-463D-BB345291B001",
+      "StudentPersonalRefId": "646C5D4A-C829-4886-A02B-971695C7BC06"
+    }
+  },
+  {
+    "StudentAttendanceSummary": {
+      "DaysAttended": 178,
+      "DaysInMembership": 180,
+      "DaysTardy": 3,
+      "EndDate": "2015-06-10",
+      "EndDay": 180,
+      "ExcusedAbsences": 2,
+      "FTE": 1,
+      "SchoolInfoRefId": "CA285746-359D-7510-1A8C-36432A901A16",
+      "SchoolYear": "2015",
+      "StartDate": "2014-08-30",
+      "StartDay": 1,
+      "StudentAttendanceSummaryRefId": "D3476FAE-8647-384B-DA24-31EDA3583211",
+      "StudentPersonalRefId": "7C834EA9-EDA1-2090-347F-83297E1C290C",
+      "UnexcusedAbsences": 0
+    }
+  },
+  {
+    "StudentAttendanceTimeList": {
+      "AttendanceTimes": {
+        "AttendanceTime": [
+          {
+            "AttendanceCode": {
+              "Code": "200",
+              "OtherCodeList": {
+                "OtherCode": [
+                  {
+                    "Codeset": "Local",
+                    "value": "S"
+                  },
+                  {
+                    "Codeset": "Text",
+                    "value": "C"
+                  }
+                ]
+              }
+            },
+            "AttendanceNote": "Left for Orthodontist appt. and returned to school\n\t\t\t\t\t\tafterward",
+            "AttendanceStatus": "01",
+            "DurationValue": 0.167,
+            "EndTime": "12:05:00",
+            "StartTime": "11:00:00"
+          },
+          {
+            "AttendanceCode": {
+              "Code": "100"
+            },
+            "AttendanceNote": "",
+            "AttendanceStatus": "01",
+            "EndTime": "11:00:00",
+            "StartTime": "09:00:00"
+          },
+          {
+            "AttendanceCode": {
+              "Code": "100"
+            },
+            "AttendanceNote": "",
+            "AttendanceStatus": "01",
+            "EndTime": "15:30:00",
+            "StartTime": "12:05:00"
+          }
+        ]
+      },
+      "Date": "2002-11-01",
+      "RefId": "2FFB63B4-CFEF-4820-8501-E7D1E54555CB",
+      "SchoolInfoRefId": "CA285746-359D-7510-1A8C-36432A901A16",
+      "SchoolYear": "2003",
+      "StudentPersonalRefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652"
+    }
+  },
+  {
+    "StudentAttendanceTimeList": {
+      "AttendanceTimes": {
+        "AttendanceTime": [
+          {
+            "AttendanceCode": {
+              "Code": "100"
+            },
+            "AttendanceStatus": "NA",
+            "AttendanceType": "RC",
+            "DurationValue": 1,
+            "EndTime": "15:00:00",
+            "StartTime": "09:00:00"
+          },
+          {
+            "AttendanceCode": {
+              "Code": "102"
+            },
+            "AttendanceNote": "No acceptable excuse given",
+            "AttendanceStatus": "02",
+            "AttendanceType": "LA",
+            "EndTime": "09:30:00",
+            "StartTime": "09:00:00"
+          },
+          {
+            "AttendanceCode": {
+              "Code": "200"
+            },
+            "AttendanceNote": "Student had stomach ache",
+            "AttendanceStatus": "01",
+            "AttendanceType": "OC",
+            "EndTime": "13:00:00",
+            "StartTime": "11:00:00"
+          },
+          {
+            "AttendanceCode": {
+              "Code": "205"
+            },
+            "AttendanceNote": "Seeing the doctor in regards to stomach ache",
+            "AttendanceStatus": "01",
+            "AttendanceType": "ED",
+            "EndTime": "15:00:00",
+            "StartTime": "14:30:00"
+          }
+        ]
+      },
+      "Date": "2002-11-01",
+      "PeriodAttendances": {
+        "PeriodAttendance": [
+          {
+            "AttendanceCode": {
+              "Code": "102"
+            },
+            "AttendanceStatus": "02",
+            "AttendanceType": "CR",
+            "DayId": "1",
+            "EndTime": "10:00:00",
+            "RoomList": {
+              "RoomInfoRefId": [
+                "11737EA4-301C-ADCA-75C8-7214A7C46BDB"
+              ]
+            },
+            "StartTime": "09:00:00",
+            "TeacherList": {
+              "TeacherCover": [
+                {
+                  "StaffPersonalRefId": "A75A0010-1A8C-301D-02E3-A05B359D0A00"
+                },
+                {
+                  "StaffPersonalRefId": "BB5A0010-1A8C-301D-02E3-A05B359D0A00"
+                }
+              ]
+            },
+            "TimeTableSubjectRefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+            "TimetablePeriod": "P1"
+          },
+          {
+            "AttendanceCode": {
+              "Code": "100"
+            },
+            "AttendanceStatus": "NA",
+            "AttendanceType": "CR",
+            "DayId": "1",
+            "EndTime": "11:00:00",
+            "RoomList": {
+              "RoomInfoRefId": [
+                "11237EA4-301C-ADCA-75C8-7214A7C46BDB"
+              ]
+            },
+            "StartTime": "10:00:00",
+            "TeacherList": {
+              "TeacherCover": [
+                {
+                  "StaffPersonalRefId": "AB5A0010-1A8C-301D-02E3-A05B359D0A00"
+                }
+              ]
+            },
+            "TimeTableSubjectRefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+            "TimetablePeriod": "P2"
+          },
+          {
+            "AttendanceCode": {
+              "Code": "101"
+            },
+            "AttendanceStatus": "01",
+            "AttendanceType": "CR",
+            "DayId": "1",
+            "EndTime": "12:00:00",
+            "RoomList": {
+              "RoomInfoRefId": [
+                "11737EA4-301C-ADCA-75C8-7214A7C46BDB"
+              ]
+            },
+            "StartTime": "11:00:00",
+            "TeacherList": {
+              "TeacherCover": [
+                {
+                  "StaffPersonalRefId": "A75A0010-1A8C-301D-02E3-A05B359D0A00"
+                },
+                {
+                  "StaffPersonalRefId": "A7BB0010-1A8C-301D-02E3-A05B359D0A00"
+                }
+              ]
+            },
+            "TimeTableSubjectRefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+            "TimetablePeriod": "P3"
+          },
+          {
+            "AttendanceCode": {
+              "Code": "100"
+            },
+            "AttendanceStatus": "NA",
+            "AttendanceType": "CR",
+            "DayId": "1",
+            "EndTime": "14:00:00",
+            "RoomList": {
+              "RoomInfoRefId": [
+                "11737EA4-301C-ADCA-75C8-7214A7C46BDB"
+              ]
+            },
+            "StartTime": "13:00:00",
+            "TeacherList": {
+              "TeacherCover": [
+                {
+                  "StaffPersonalRefId": "A75F0010-1A8C-301D-02E3-A05B359D0A00"
+                }
+              ]
+            },
+            "TimeTableSubjectRefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+            "TimetablePeriod": "P4"
+          },
+          {
+            "AttendanceCode": {
+              "Code": "100"
+            },
+            "AttendanceStatus": "NA",
+            "AttendanceType": "CR",
+            "DayId": "1",
+            "EndTime": "15:00:00",
+            "RoomList": {
+              "RoomInfoRefId": [
+                "11737EA4-301C-ADCA-75C8-7214A7C46BDB"
+              ]
+            },
+            "StartTime": "14:00:00",
+            "TeacherList": {
+              "TeacherCover": [
+                {
+                  "StaffPersonalRefId": "A75A0010-1A8C-301D-02E3-A05B359D0A00"
+                }
+              ]
+            },
+            "TimeTableSubjectRefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+            "TimetablePeriod": "P5"
+          }
+        ]
+      },
+      "RefId": "2FFB63B4-CFEF-4820-8501-E7D1E54555CB",
+      "SchoolInfoRefId": "CA285746-359D-7510-1A8C-36432A901A16",
+      "SchoolYear": "2003",
+      "StudentPersonalRefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652"
+    }
+  },
+  {
+    "StudentContactPersonal": {
+      "EmploymentType": "4",
+      "LocalId": "P1234567",
+      "NonSchoolEducation": "6",
+      "OtherIdList": {
+        "OtherId": [
+          {
+            "Type": "Health Care Card",
+            "value": "098765"
+          },
+          {
+            "Type": "Seniors Card",
+            "value": "123456789"
+          }
+        ]
+      },
+      "PersonInfo": {
+        "AddressList": {
+          "Address": [
+            {
+              "City": "Yarra Glenn",
+              "Country": "1101",
+              "PostalCode": "9999",
+              "Role": "012B",
+              "StateProvince": "VIC",
+              "Street": {
+                "Line1": "Unit1/10",
+                "Line2": "Barkley Street"
+              },
+              "Type": "0123"
+            },
+            {
+              "City": "Home Town",
+              "Country": "1101",
+              "PostalCode": "9999",
+              "Role": "013A",
+              "StateProvince": "WA",
+              "Street": {
+                "Line1": "34 Term Address Street"
+              },
+              "Type": "0123A"
+            }
+          ]
+        },
+        "Demographics": {
+          "AustralianCitizenshipStatus": "1",
+          "BirthDate": "1990-09-26",
+          "BirthDateVerification": "1004",
+          "CountriesOfCitizenship": {
+            "CountryOfCitizenship": [
+              "8104",
+              "1101"
+            ]
+          },
+          "CountriesOfResidency": {
+            "CountryOfResidency": [
+              "8104",
+              "1101"
+            ]
+          },
+          "CountryArrivalDate": "1990-09-26",
+          "CountryOfBirth": "1101",
+          "DwellingArrangement": {
+            "Code": "1671"
+          },
+          "EnglishProficiency": {
+            "Code": "1"
+          },
+          "IndigenousStatus": "3",
+          "LanguageList": {
+            "Language": [
+              {
+                "Code": "0001",
+                "LanguageType": "1"
+              }
+            ]
+          },
+          "PermanentResident": "P",
+          "PlaceOfBirth": "Clayton",
+          "Religion": {
+            "Code": "2013"
+          },
+          "ReligiousEventList": {
+            "ReligiousEvent": [
+              {
+                "Date": "2000-09-01",
+                "Type": "Baptism"
+              },
+              {
+                "Date": "2009-12-24",
+                "Type": "Christmas"
+              }
+            ]
+          },
+          "ReligiousRegion": "The Religion Region",
+          "Sex": "1",
+          "StateOfBirth": "VIC",
+          "VisaStatisticalCode": "05",
+          "VisaSubClass": "101"
+        },
+        "EmailList": {
+          "Email": [
+            {
+              "Type": "01",
+              "value": "fsmith@yahoo.com"
+            },
+            {
+              "Type": "02",
+              "value": "freddy@gmail.com"
+            }
+          ]
+        },
+        "Name": {
+          "FamilyName": "Smith",
+          "FullName": "Fred Smith",
+          "GivenName": "Fred",
+          "Type": "LGL"
+        },
+        "OtherNames": {
+          "Name": [
+            {
+              "FamilyName": "Anderson",
+              "FullName": "Samuel Anderson",
+              "GivenName": "Samuel",
+              "Type": "AKA"
+            },
+            {
+              "FamilyName": "Rowinski",
+              "FullName": "Sam Rowinski ",
+              "GivenName": "Sam",
+              "Type": "PRF"
+            }
+          ]
+        },
+        "PhoneNumberList": {
+          "PhoneNumber": [
+            {
+              "Extension": "72289",
+              "ListedStatus": "Y",
+              "Number": "03 9637-2289",
+              "Type": "0096"
+            },
+            {
+              "ListedStatus": "N",
+              "Number": "0437-765-234",
+              "Type": "0888"
+            }
+          ]
+        }
+      },
+      "RefId": "7C834EA9-EDA1-2090-347F-83297E1C290F",
+      "SchoolEducationalLevel": "3"
+    }
+  },
+  {
+    "StudentContactRelationship": {
+      "ContactFlags": {
+        "AccessToRecords": "U",
+        "AttendanceContact": "N",
+        "DisciplinaryContact": "N",
+        "EmergencyContact": "Y",
+        "FamilyMail": "Y",
+        "FeesBilling": "Y",
+        "HasCustody": "N",
+        "InterventionOrder": "N",
+        "LivesWith": "N",
+        "ParentLegalGuardian": "Y",
+        "PickupRights": "Y",
+        "PrimaryCareProvider": "U",
+        "ReceivesAssessmentReport": "Y"
+      },
+      "ContactSequence": 1,
+      "ContactSequenceSource": "P",
+      "HouseholdList": {
+        "Household": [
+          "FamilyA",
+          "FamilyB"
+        ]
+      },
+      "MainlySpeaksEnglishAtHome": "U",
+      "Relationship": {
+        "Code": "01"
+      },
+      "StudentContactPersonalRefId": "6472B261-0947-583A-463D-BB345291B001",
+      "StudentContactRelationshipRefId": "7572B261-0947-583A-463D-BB345291B332",
+      "StudentPersonalRefId": "DEE34B35-9D75-101A-8C3D-00AA001A1652"
+    }
+  },
+  {
+    "StudentDailyAttendance": {
+      "AttendanceCode": {
+        "Code": "200",
+        "OtherCodeList": {
+          "OtherCode": [
+            {
+              "Codeset": "Local",
+              "value": "S"
+            },
+            {
+              "Codeset": "Text",
+              "value": "C"
+            }
+          ]
+        }
+      },
+      "AttendanceNote": "Left for Orthodontist appt. and returned to school afterward",
+      "AttendanceStatus": "01",
+      "Date": "2002-11-01",
+      "DayValue": "Partial",
+      "RefId": "2FFB63B4-CFEF-4820-8501-E7D1E54555CB",
+      "SchoolInfoRefId": "CA285746-359D-7510-1A8C-36432A901A16",
+      "SchoolYear": "2003",
+      "StudentPersonalRefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+      "TimeIn": "13:30:00",
+      "TimeOut": "12:05:00"
+    }
+  },
+  {
+    "StudentGrade": {
+      "Grade": {
+        "Letter": "C",
+        "Narrative": "Johnny is only achieving average performance.",
+        "Numeric": 3,
+        "Percentage": 79
+      },
+      "RefId": "359D7510-1AD0-A9D7-A8C3-DAD0A85103A2",
+      "SchoolInfoRefId": "B237D78A-E00B-C744-EF90-F2871CEB91A2",
+      "StudentPersonalRefId": "A137D78A-E00B-C744-EF90-F2871CEB90A2"
+    }
+  },
+  {
+    "StudentParticipation": {
+      "ManagingSchool": {
+        "SIF_RefObject": "SchoolInfo",
+        "value": "D93F4D18-3A42-C1A4-B3D1-1CC002B163A2"
+      },
+      "ParticipationContact": "John Mason",
+      "ProgramFundingSources": {
+        "ProgramFundingSource": [
+          {
+            "Code": "1"
+          }
+        ]
+      },
+      "ProgramType": "0240",
+      "RefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+      "StudentParticipationAsOfDate": "2006-07-13",
+      "StudentPersonalRefId": "A2E34F59-A742-C1A4-B3D1-1CC002B163A2"
+    }
+  },
+  {
+    "StudentPeriodAttendance": {
+      "AttendanceCode": {
+        "Code": "802"
+      },
+      "AttendanceStatus": "01",
+      "Date": "2001-03-05",
+      "RefId": "98157AA0-13BA-8C3D-00AA-012B359D7512",
+      "SchoolInfoRefId": "11737EA4-301C-ADCA-75C8-7214A7C46BDB",
+      "StudentPersonalRefId": "A75A0010-1A8C-301D-02E3-A05B359D0A00",
+      "TimetablePeriod": "P4"
+    }
+  },
+  {
+    "StudentPersonal": {
+      "AcceptableUsePolicy": "Y",
+      "AlertMessages": {
+        "AlertMessage": [
+          {
+            "Type": "Legal",
+            "value": "Mother is legal guardian"
+          }
+        ]
+      },
+      "Disability": "N",
+      "ESL": "Y",
+      "ESLDateAssessed": "2016-04-23",
+      "EconomicDisadvantage": "N",
+      "EducationSupport": "N",
+      "ElectronicIdList": {
+        "ElectronicId": [
+          {
+            "Type": "03",
+            "value": "ZZZZZZ21"
+          },
+          {
+            "Type": "03",
+            "value": "ZZZZZZ22"
+          }
+        ]
+      },
+      "HomeSchooledStudent": "N",
+      "IntegrationAide": "N",
+      "LocalId": "S1234567",
+      "MedicalAlertMessages": {
+        "MedicalAlertMessage": [
+          {
+            "Severity": "Severe",
+            "value": "Student has Peanut Allergy"
+          },
+          {
+            "Severity": "Moderate",
+            "value": "Student has Diabetes"
+          }
+        ]
+      },
+      "MostRecent": {
+        "ClassCode": "English 7D",
+        "FFPOS": "2",
+        "FTE": 0.5,
+        "Homegroup": "7A",
+        "HomeroomLocalId": "hr12345",
+        "LocalCampusId": "D",
+        "MembershipType": "02",
+        "OtherEnrollmentSchoolACARAId": "VIC6273",
+        "Parent1Language": "1201",
+        "Parent2Language": "1201",
+        "ReportingSchoolId": "VIC670",
+        "SchoolACARAId": "VIC687",
+        "SchoolLocalId": "S1234567",
+        "YearLevel": {
+          "Code": "P"
+        }
+      },
+      "OnTimeGraduationYear": "2012",
+      "OtherIdList": {
+        "OtherId": [
+          {
+            "Type": "PreviousNAPPlatformStudentId",
+            "value": "888rdgf"
+          },
+          {
+            "Type": "DiocesanStudentId",
+            "value": "1234"
+          }
+        ]
+      },
+      "PersonInfo": {
+        "AddressList": {
+          "Address": [
+            {
+              "City": "Yarra Glenn",
+              "Country": "1101",
+              "PostalCode": "9999",
+              "Role": "2382",
+              "StateProvince": "VIC",
+              "Street": {
+                "Line1": "Unit1/10",
+                "Line2": "Barkley Street"
+              },
+              "Type": "0123"
+            },
+            {
+              "City": "Home Town",
+              "Country": "1101",
+              "PostalCode": "9999",
+              "Role": "013A",
+              "StateProvince": "WA",
+              "Street": {
+                "Line1": "34 Term Address Street"
+              },
+              "Type": "0123A"
+            }
+          ]
+        },
+        "Demographics": {
+          "AustralianCitizenshipStatus": "1",
+          "BirthDate": "1990-09-26",
+          "BirthDateVerification": "1004",
+          "CountriesOfCitizenship": {
+            "CountryOfCitizenship": [
+              "8104",
+              "1101"
+            ]
+          },
+          "CountriesOfResidency": {
+            "CountryOfResidency": [
+              "8104",
+              "1101"
+            ]
+          },
+          "CountryArrivalDate": "1990-09-26",
+          "CountryOfBirth": "1101",
+          "DwellingArrangement": {
+            "Code": "1671"
+          },
+          "EnglishProficiency": {
+            "Code": "1"
+          },
+          "IndigenousStatus": "3",
+          "LanguageList": {
+            "Language": [
+              {
+                "Code": "0001",
+                "LanguageType": "1"
+              }
+            ]
+          },
+          "PermanentResident": "P",
+          "PlaceOfBirth": "Clayton",
+          "Religion": {
+            "Code": "2013"
+          },
+          "ReligiousEventList": {
+            "ReligiousEvent": [
+              {
+                "Date": "2000-09-01",
+                "Type": "Baptism"
+              },
+              {
+                "Date": "2009-12-24",
+                "Type": "Christmas"
+              }
+            ]
+          },
+          "ReligiousRegion": "The Religion Region",
+          "Sex": "1",
+          "StateOfBirth": "VIC",
+          "VisaStatisticalCode": "05",
+          "VisaSubClass": "101",
+          "VisaSubClassList": {
+            "VisaSubClass": [
+              {
+                "ATEExpiryDate": "2016-12-26",
+                "ATEStartDate": "2017-12-26",
+                "Code": "401",
+                "VisaExpiryDate": "2019-07-25",
+                "VisaStatisticalCode": "05"
+              }
+            ]
+          }
+        },
+        "EmailList": {
+          "Email": [
+            {
+              "Type": "01",
+              "value": "fsmith@yahoo.com"
+            },
+            {
+              "Type": "02",
+              "value": "freddy@gmail.com"
+            }
+          ]
+        },
+        "Name": {
+          "FamilyName": "Smith",
+          "FullName": "Fred Smith",
+          "GivenName": "Fred",
+          "Type": "LGL"
+        },
+        "OtherNames": {
+          "Name": [
+            {
+              "FamilyName": "Anderson",
+              "FullName": "Samuel Anderson",
+              "GivenName": "Samuel",
+              "Type": "AKA"
+            },
+            {
+              "FamilyName": "Rowinski",
+              "FullName": "Sam Rowinski ",
+              "GivenName": "Sam",
+              "Type": "PRF"
+            }
+          ]
+        },
+        "PhoneNumberList": {
+          "PhoneNumber": [
+            {
+              "Extension": "72289",
+              "ListedStatus": "Y",
+              "Number": "03 9637-2289",
+              "Type": "0096"
+            },
+            {
+              "ListedStatus": "N",
+              "Number": "0437-765-234",
+              "Type": "0888"
+            }
+          ]
+        }
+      },
+      "ProjectedGraduationYear": "2014",
+      "RefId": "7C834EA9-EDA1-2090-347F-83297E1C290C",
+      "Sensitive": "N",
+      "StateProvinceId": "ABC1234",
+      "YoungCarersRole": "N"
+    }
+  },
+  {
+    "StudentSchoolEnrollment": {
+      "Advisor": {
+        "SIF_RefObject": "StaffPersonal",
+        "value": "B359D3E3-4D75-101A-8C3D-00AA001A1652"
+      },
+      "EntryDate": "2004-01-29",
+      "EntryType": {
+        "Code": "1838"
+      },
+      "FTE": 1,
+      "FTPTStatus": "01",
+      "Homeroom": {
+        "SIF_RefObject": "RoomInfo",
+        "value": "D7510D3E-34B3-591A-8C3D-00AA001A1651"
+      },
+      "MembershipType": "01",
+      "PublishingPermissionList": {
+        "PublishingPermission": [
+          {
+            "PermissionCategory": "OKMediaRelease",
+            "PermissionValue": "N"
+          },
+          {
+            "PermissionCategory": "OKPrintedMaterial",
+            "PermissionValue": "Y"
+          }
+        ]
+      },
+      "RefId": "A8C3D3E3-4B35-9D75-101D-00AA001A1652",
+      "SchoolInfoRefId": "D3E34B35-9D75-101A-8C3D-00AA001A1651",
+      "SchoolYear": "2004",
+      "StudentPersonalRefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+      "TimeFrame": "C",
+      "YearLevel": {
+        "Code": "10"
+      }
+    }
+  },
+  {
+    "StudentScoreJudgementAgainstStandard": {
+      "CurriculumCode": "AUSVELS",
+      "CurriculumNodeCode": "MATNUM",
+      "ManagedPathwayLocalCode": "MPOMP",
+      "RefId": "5810E283-E928-459C-BBA7-6EFE1963F784",
+      "SchoolInfoRefId": "E6EDAE63-A04D-47E4-9D02-24A32956B075",
+      "SchoolYear": "2018",
+      "Score": "10",
+      "SpecialCircumstanceLocalCode": "SCMP",
+      "StaffPersonalRefId": "9D0934CC-2F04-48F8-BBD7-88AA1ADE691B",
+      "StudentPersonalRefId": "8F0934CC-2F04-48F8-BBD7-88AA1ADE691B",
+      "TeachingGroupRefId": "E5EDAE63-A04D-47E4-9D02-24A32956B074",
+      "TermInfoRefId": "1F971F3D-414E-4146-9325-66638290E6C1",
+      "YearLevel": {
+        "Code": "10"
+      }
+    }
+  },
+  {
+    "StudentScoreJudgementAgainstStandard": {
+      "ClassLocalId": "MAT10A",
+      "CurriculumCode": "AUSVELS",
+      "CurriculumNodeCode": "MATNUM",
+      "LocalTermCode": "Mid",
+      "ManagedPathwayLocalCode": "MPOMP",
+      "RefId": "5810E283-E928-459C-BBA7-6EFE1963F784",
+      "SchoolCommonwealthId": "AGEID-1032",
+      "SchoolLocalId": "027789",
+      "SchoolYear": "2018",
+      "Score": "10",
+      "SpecialCircumstanceLocalCode": "SCMP",
+      "StaffLocalId": "C1234567",
+      "StudentStateProvinceId": "987654321",
+      "YearLevel": {
+        "Code": "10"
+      }
+    }
+  },
+  {
+    "StudentSectionEnrollment": {
+      "EntryDate": "2013-02-02",
+      "ExitDate": "2013-11-15",
+      "RefId": "983AC165-9879-3002-C3D0-0AA00456789D",
+      "SchoolYear": "2013",
+      "SectionInfoRefId": "9076AB23-E386-112B-7EA2-256100BB3312",
+      "StudentPersonalRefId": "CAE29316-5987-101A-8C3D-00AA00456789"
+    }
+  },
+  {
+    "SystemRole": {
+      "RefId": "4286194F-43ED-43C1-8EE2-F0A27C4BEF86",
+      "SIF_RefId": {
+        "SIF_RefObject": "Identity",
+        "value": "23B08571-E4D6-45C3-B82A-3E52E5349925"
+      },
+      "SystemContextList": {
+        "SystemContext": [
+          {
+            "RoleList": {
+              "Role": [
+                {
+                  "RoleId": "Admin",
+                  "RoleScopeList": {
+                    "RoleScope": [
+                      {
+                        "RoleScopeName": "SchoolGroupName1",
+                        "RoleScopeRefId": {
+                          "SIF_RefObject": "SchoolInfo",
+                          "value": "23B08571-E4D6-45C3-B82A-3E52E5349912"
+                        }
+                      },
+                      {
+                        "RoleScopeName": "ClassName1",
+                        "RoleScopeRefId": {
+                          "SIF_RefObject": "TeachingGroup",
+                          "value": "23B08571-E4D6-45C3-B82A-3E52E5349945"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "SystemId": "LearningPlatformSystem1"
+          },
+          {
+            "RoleList": {
+              "Role": [
+                {
+                  "RoleId": "User",
+                  "RoleScopeList": {
+                    "RoleScope": [
+                      {
+                        "RoleScopeName": "SchoolName1",
+                        "RoleScopeRefId": {
+                          "SIF_RefObject": "StudentActivityParticipation",
+                          "value": "23B08571-E4D6-45C3-B82A-3E52E5349923"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "SystemId": "ContentManagement"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "TeachingGroup": {
+      "Block": "6",
+      "CurriculumLevel": "VELS Level 5",
+      "LocalId": "20087ASPN",
+      "LongName": "Year 7A Maths - Space and Numbers",
+      "RefId": "64A309DA-063A-2E35-B359-D75101A8C3D1",
+      "SchoolYear": "2008",
+      "Set": "4",
+      "ShortName": "7A SPN",
+      "StudentList": {
+        "TeachingGroupStudent": [
+          {
+            "Name": {
+              "FamilyName": "Smith",
+              "GivenName": "Peter",
+              "Type": "LGL"
+            },
+            "StudentLocalId": "SMI001",
+            "StudentPersonalRefId": "9897466F-200E-4BC1-B9AE-D1507DA15CEF"
+          },
+          {
+            "Name": {
+              "FamilyName": "Smith",
+              "GivenName": "Jennifer",
+              "Type": "LGL"
+            },
+            "StudentLocalId": "SMI002",
+            "StudentPersonalRefId": "7C834EA9-EDA1-2090-347F-83297E1C290D"
+          },
+          {
+            "Name": {
+              "FamilyName": "Smith",
+              "GivenName": "Terence",
+              "Type": "LGL"
+            },
+            "StudentLocalId": "SMI003",
+            "StudentPersonalRefId": "7C834EA9-EDA1-2090-347F-83297E1C290E"
+          }
+        ]
+      },
+      "TeacherList": {
+        "TeachingGroupTeacher": [
+          {
+            "Association": "Class Teacher",
+            "Name": {
+              "FamilyName": "Smith",
+              "GivenName": "Thomas",
+              "Type": "LGL"
+            },
+            "StaffLocalId": "SMI1",
+            "StaffPersonalRefId": "A8C3A2E3-5B35-9D75-101D-00AA001A0000"
+          },
+          {
+            "Association": "Integration Aide",
+            "Name": {
+              "FamilyName": "Long",
+              "GivenName": "Tamara",
+              "Type": "LGL"
+            },
+            "StaffLocalId": "LONG2",
+            "StaffPersonalRefId": "A8CCCCE3-5B35-9D75-101D-00AA001A0000"
+          }
+        ]
+      },
+      "TeachingGroupPeriodList": {
+        "TeachingGroupPeriod": [
+          {
+            "DayId": "M",
+            "PeriodId": "2"
+          },
+          {
+            "DayId": "F",
+            "PeriodId": "6"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "TermInfo": {
+      "Description": "First Term 2012",
+      "EndDate": "2012-04-01",
+      "RefId": "7E59D751-01A8-0A70-0163-75DE097A0726",
+      "RelativeDuration": 0.25,
+      "SchoolInfoRefId": "A2E35B35-9D75-101A-8C3D-00AA001A0000",
+      "SchoolYear": "2012",
+      "StartDate": "2012-01-05",
+      "TermCode": "Sp2004",
+      "TermSpan": "0833",
+      "Track": "PreK"
+    }
+  },
+  {
+    "TimeTable": {
+      "DaysPerCycle": 5,
+      "EndDate": "2008-06-20",
+      "LocalId": "2008S1",
+      "PeriodsPerDay": 6,
+      "RefId": "64A309DA-063A-2E35-B359-D75101A8C3D0",
+      "SchoolInfoRefId": "F2256EE2-B67F-47D6-AB47-94D4DEE0D0AD",
+      "SchoolLocalId": "01011234",
+      "SchoolName": "Newest Secondary College",
+      "SchoolYear": "2008",
+      "StartDate": "2008-01-30",
+      "TeachingPeriodsPerDay": 5,
+      "TimeTableCreationDate": "2008-02-01",
+      "TimeTableDayList": {
+        "TimeTableDay": [
+          {
+            "DayId": "1",
+            "DayTitle": "Monday",
+            "TimeTablePeriodList": {
+              "TimeTablePeriod": [
+                {
+                  "PeriodId": "1",
+                  "PeriodTitle": "P1"
+                },
+                {
+                  "PeriodId": "2",
+                  "PeriodTitle": "P2"
+                },
+                {
+                  "PeriodId": "3",
+                  "PeriodTitle": "P3"
+                },
+                {
+                  "PeriodId": "4",
+                  "PeriodTitle": "P4"
+                },
+                {
+                  "PeriodId": "5",
+                  "PeriodTitle": "P5"
+                },
+                {
+                  "PeriodId": "6",
+                  "PeriodTitle": "P6"
+                }
+              ]
+            }
+          },
+          {
+            "DayId": "2",
+            "DayTitle": "Tuesday",
+            "TimeTablePeriodList": {
+              "TimeTablePeriod": [
+                {
+                  "PeriodId": "1",
+                  "PeriodTitle": "P1"
+                },
+                {
+                  "PeriodId": "2",
+                  "PeriodTitle": "P2"
+                },
+                {
+                  "PeriodId": "3",
+                  "PeriodTitle": "P3"
+                },
+                {
+                  "PeriodId": "4",
+                  "PeriodTitle": "P4"
+                },
+                {
+                  "PeriodId": "5",
+                  "PeriodTitle": "P5"
+                },
+                {
+                  "PeriodId": "6",
+                  "PeriodTitle": "P6"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "Title": "2008 Semester 1"
+    }
+  },
+  {
+    "TimeTableCell": {
+      "CellType": "T",
+      "DayId": "1",
+      "PeriodId": "1",
+      "RefId": "64A309DA-063A-2E35-B359-D75101A8C3D1",
+      "RoomInfoRefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+      "RoomList": {
+        "RoomInfoRefId": [
+          "11737EA4-301C-ADCA-75C8-7214A7C46BDB"
+        ]
+      },
+      "RoomNumber": "101",
+      "SchoolInfoRefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+      "SchoolLocalId": "01011234",
+      "StaffLocalId": "946379881",
+      "StaffPersonalRefId": "D3E34F41-9D75-101A-8C3D-00AA001A1652",
+      "SubjectLocalId": "07AR",
+      "TeacherList": {
+        "TeacherCover": [
+          {
+            "Credit": "In-Lieu",
+            "FinishTime": "13:00:00",
+            "StaffLocalId": "US8923",
+            "StaffPersonalRefId": "98157AA0-13BA-8C3D-00AA-012B359D7512",
+            "StartTime": "12:05:00",
+            "Supervision": "MinimalSupervision",
+            "Weighting": 0.5
+          },
+          {
+            "Credit": "Extra",
+            "FinishTime": "13:30:00",
+            "StaffLocalId": "ZY3213",
+            "StaffPersonalRefId": "A75A0010-1A8C-301D-02E3-A05B359D0A00",
+            "StartTime": "13:00:00",
+            "Supervision": "MinimalSupervision",
+            "Weighting": 0.5
+          }
+        ]
+      },
+      "TeachingGroupLocalId": "20087ASPN 2008S1",
+      "TeachingGroupRefId": "64A309DA-063A-2E35-B359-D75101A8C3D1",
+      "TimeTableLocalId": "2008S1",
+      "TimeTableRefId": "64A309DA-063A-2E35-B359-D75101A8C3D0",
+      "TimeTableSubjectRefId": "22860091-7192-45B4-AB0C-F5B9DC19DE5C"
+    }
+  },
+  {
+    "TimeTableSubject": {
+      "AcademicYear": {
+        "Code": "7"
+      },
+      "RefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+      "SchoolYear": "2009",
+      "SubjectLocalId": "07AR",
+      "SubjectLongName": "Year 7 Art",
+      "SubjectShortName": "7 ART",
+      "SubjectType": "E"
+    }
+  },
+  {
+    "WellbeingAlert": {
+      "Date": "2017-11-01",
+      "RefId": "2FFB63B4-CFEF-4820-8501-E7D1E54555CB",
+      "SchoolInfoRefId": "CA285746-359D-7510-1A8C-36432A901A16",
+      "StudentPersonalRefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+      "WellbeingAlertCategory": "M",
+      "WellbeingAlertDescription": "This Student is allergic to peanuts",
+      "WellbeingAlertStartDate": "2017-11-01"
+    }
+  },
+  {
+    "WellbeingAppeal": {
+      "AppealNotes": "This Appeal was successful.",
+      "AppealStatusCode": "SU",
+      "Date": "2017-11-01",
+      "RefId": "2FFB63B4-CFEF-4820-8501-E7D1E54555CB",
+      "SchoolInfoRefId": "CA285746-359D-7510-1A8C-36432A901A16",
+      "StudentPersonalRefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+      "WellbeingResponseRefId": "BC385746-359D-7510-1A8C-36432A901A36"
+    }
+  },
+  {
+    "WellbeingCharacteristic": {
+      "RefId": "2FFB63B4-CFEF-4820-8501-E7D1E54555CB",
+      "SchoolInfoRefId": "CA285746-359D-7510-1A8C-36432A901A16",
+      "StudentPersonalRefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+      "WellbeingCharacteristicCategory": "S",
+      "WellbeingCharacteristicEndDate": "2017-11-10",
+      "WellbeingCharacteristicNotes": "This Student has a special need.",
+      "WellbeingCharacteristicStartDate": "2017-11-01"
+    }
+  },
+  {
+    "WellbeingEvent": {
+      "RefId": "2FFB63B4-CFEF-4820-8501-E7D1E54555CB",
+      "SchoolInfoRefId": "CA285746-359D-7510-1A8C-36432A901A16",
+      "StudentPersonalRefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+      "WellbeingEventCategoryClass": "P",
+      "WellbeingEventDate": "2017-11-01",
+      "WellbeingEventTimePeriod": "AM"
+    }
+  },
+  {
+    "WellbeingEvent": {
+      "EventId": "Yard-10",
+      "RefId": "2FFB63B4-CFEF-4820-8501-E7D1E54555CB",
+      "ReportingStaffRefId": "3FFB63B4-CFEF-4820-8501-E7D1E54555CB",
+      "SchoolInfoRefId": "CA285746-359D-7510-1A8C-36432A901A16",
+      "StudentPersonalRefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+      "WellbeingEventCategoryClass": "D",
+      "WellbeingEventCategoryList": {
+        "WellbeingEventCategory": [
+          {
+            "EventCategory": "M5",
+            "WellbeingEventSubCategoryList": {
+              "WellbeingEventSubCategory": [
+                "M5-a"
+              ]
+            }
+          }
+        ]
+      },
+      "WellbeingEventDate": "2017-11-01",
+      "WellbeingEventNotes": "Incident relates to School Yard accident.",
+      "WellbeingEventTimePeriod": "AM"
+    }
+  },
+  {
+    "WellbeingResponse": {
+      "Date": "2017-11-01",
+      "RefId": "2FFB63B4-CFEF-4820-8501-E7D1E54555CB",
+      "SchoolInfoRefId": "CA285746-359D-7510-1A8C-36432A901A16",
+      "StudentPersonalRefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+      "WellbeingResponseCategory": "S",
+      "WellbeingResponseEndDate": "2017-11-10",
+      "WellbeingResponseNotes": "This Student is to be withdrawn.",
+      "WellbeingResponseStartDate": "2017-11-01"
+    }
+  },
+  {
+    "AGStatusReport": {
+      "AGCollection": "FQ",
+      "AGReportingObjectResponseList": {
+        "AGReportingObjectResponse": [
+          {
+            "AGSubmissionStatusCode": "2",
+            "CommonwealthId": "012345",
+            "EntityName": "XXX Secondary College",
+            "HTTPStatusCode": "202",
+            "SIFRefId": "73048175-5738-4386-A260-40CE6230FC1B",
+            "SubmittedRefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652"
+          },
+          {
+            "AGRuleList": {
+              "AGRule": [
+                {
+                  "AGRuleCode": "WR-076",
+                  "AGRuleComment": "Cannot be ignored because Components do not add up to Total - Fix",
+                  "AGRuleResponse": "",
+                  "AGRuleStatus": "Fail"
+                }
+              ]
+            },
+            "AGSubmissionStatusCode": "1",
+            "CommonwealthId": "12387",
+            "EntityName": "ABCXYZ Secondary College",
+            "ErrorText": "Item components do not add up. Malformed characters.",
+            "HTTPStatusCode": "400",
+            "SubmittedRefId": "E9C5106F-7E87-4773-ACCD-390F8E8B9314"
+          },
+          {
+            "AGSubmissionStatusCode": "3",
+            "CommonwealthId": "12388",
+            "EntityName": "Ballarat Diocese",
+            "HTTPStatusCode": "201",
+            "SIFRefId": "4C194A64-362F-4163-BAE9-1A7852913E3C",
+            "SubmittedRefId": "CFB3EB6B-F873-4108-BAA7-ED11711A9E86"
+          }
+        ]
+      },
+      "CollectionYear": "2018",
+      "RefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+      "ReportingAuthority": "Ballarat Diocese",
+      "ReportingAuthorityCommonwealthId": "012345",
+      "ReportingAuthoritySystem": "Vic Catholic",
+      "SubmissionTimestamp": "2018-05-30T09:00:00",
+      "SubmittedBy": "XXXXXXXX"
+    }
+  },
+  {
+    "ChargedLocationInfo": {
+      "LocalId": "2343LHS",
+      "LocationType": "School",
+      "Name": "Lincoln High School",
+      "RefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+      "SiteCategory": "Other"
+    }
+  },
+  {
+    "Debtor": {
+      "AddressList": {
+        "Address": [
+          {
+            "City": "Chicago",
+            "Country": "8104",
+            "PostalCode": "60611",
+            "Role": "2382",
+            "StateProvince": "IL",
+            "Street": {
+              "Line1": "23 E. 43rd St."
+            },
+            "Type": "0123"
+          }
+        ]
+      },
+      "BilledEntity": {
+        "SIF_RefObject": "StudentContactPersonal",
+        "value": "8B231144-301C-4D3B-95D4-8BB74C866AE1"
+      },
+      "BillingName": "Flintstone Family Trust",
+      "BillingNote": "Do not invoice under parent's real name.",
+      "Discount": "10.0",
+      "RefId": "B5739375-800A-C4CC-6385-0BB2754114AA"
+    }
+  },
+  {
+    "FinancialAccount": {
+      "AccountNumber": "9990001",
+      "ClassType": "Asset",
+      "CreationDate": "2003-01-01",
+      "CreationTime": "04:32:23-08:00",
+      "Description": "Purchased Foods",
+      "Name": "Purchased Foods",
+      "RefId": "EEC8FC12-8D2C-4EE3-94A8-6C5395024EDE"
+    }
+  },
+  {
+    "FinancialQuestionnaireSubmission": {
+      "FQReportComments": "This comment is for the FQ Submission.",
+      "FQReportingList": {
+        "FQReporting": [
+          {
+            "ACARAId": "1234",
+            "AGRuleList": {
+              "AGRule": [
+                {
+                  "AGRuleCode": "WR-076",
+                  "AGRuleComment": "I ignored this rule because"
+                }
+              ]
+            },
+            "CommonwealthId": "012345",
+            "EntityContact": {
+              "Email": {
+                "Type": "01",
+                "value": "jmiller@lsc.vic.edu.au"
+              },
+              "Name": {
+                "FamilyName": "Miller",
+                "GivenName": "James",
+                "Type": "LGL"
+              },
+              "PhoneNumber": {
+                "Number": "03 9637-2000",
+                "Type": "0096"
+              },
+              "PositionTitle": "Auditor"
+            },
+            "EntityLevel": "School",
+            "EntityName": "XXX Secondary College",
+            "FQContextualQuestionList": {
+              "FQContextualQuestion": [
+                {
+                  "FQAnswer": "Cash",
+                  "FQContext": "GI.010"
+                },
+                {
+                  "FQAnswer": "No",
+                  "FQContext": "GI.015"
+                }
+              ]
+            },
+            "FQItemList": {
+              "FQItem": [
+                {
+                  "BoardingAmount": 119827,
+                  "DioceseAmount": 76543,
+                  "FQItemCode": "RI.010",
+                  "SystemAmount": 12345,
+                  "TuitionAmount": 119827
+                },
+                {
+                  "BoardingAmount": 119827,
+                  "DioceseAmount": 76543,
+                  "FQItemCode": "RI.020",
+                  "SystemAmount": 12345,
+                  "TuitionAmount": 119827
+                },
+                {
+                  "BoardingAmount": 119827,
+                  "DioceseAmount": 76543,
+                  "FQItemCode": "RI.030",
+                  "SystemAmount": 12345,
+                  "TuitionAmount": 119827
+                }
+              ]
+            },
+            "FQRefId": "D3E34B35-9D75-101A-8C3D-00AA001A1655",
+            "LocalId": "01011234",
+            "SchoolInfoRefId": "C4D54B35-9D75-101A-8C3D-00AA001A1689",
+            "StateProvinceId": "01011234"
+          },
+          {
+            "ACARAId": "99007",
+            "AGRuleList": {
+              "AGRule": [
+                {
+                  "AGRuleCode": "WR-076",
+                  "AGRuleComment": "I ignored this rule because"
+                }
+              ]
+            },
+            "CommonwealthId": "12387",
+            "EntityContact": {
+              "Email": {
+                "Type": "01",
+                "value": "jmiller@lsc.vic.edu.au"
+              },
+              "Name": {
+                "FamilyName": "Miller",
+                "GivenName": "James",
+                "Type": "LGL"
+              },
+              "PhoneNumber": {
+                "Number": "03 9637-2000",
+                "Type": "0096"
+              },
+              "PositionTitle": "Auditor"
+            },
+            "EntityLevel": "School",
+            "EntityName": "ABCXYZ Secondary College",
+            "FQContextualQuestionList": {
+              "FQContextualQuestion": [
+                {
+                  "FQAnswer": "Cash",
+                  "FQContext": "GI.010"
+                },
+                {
+                  "FQAnswer": "No",
+                  "FQContext": "GI.015"
+                }
+              ]
+            },
+            "FQItemList": {
+              "FQItem": [
+                {
+                  "BoardingAmount": 119827,
+                  "DioceseAmount": 76543,
+                  "FQItemCode": "RI.010",
+                  "SystemAmount": 12345,
+                  "TuitionAmount": 119827
+                },
+                {
+                  "BoardingAmount": 119827,
+                  "DioceseAmount": 76543,
+                  "FQItemCode": "RI.020",
+                  "SystemAmount": 12345,
+                  "TuitionAmount": 119827
+                },
+                {
+                  "BoardingAmount": 119827,
+                  "DioceseAmount": 76543,
+                  "FQItemCode": "RI.030",
+                  "SystemAmount": 12345,
+                  "TuitionAmount": 119827
+                }
+              ]
+            },
+            "FQRefId": "DCE34B35-9D75-101A-8C3D-00AA001A1655",
+            "LocalId": "01011234",
+            "SchoolInfoRefId": "C4D54B35-9D75-101A-8C3D-00AA001A1688",
+            "StateProvinceId": "45645567"
+          },
+          {
+            "AGRuleList": {
+              "AGRule": [
+                {
+                  "AGRuleCode": "WR-076",
+                  "AGRuleComment": "I ignored this rule because"
+                }
+              ]
+            },
+            "CommonwealthId": "12388",
+            "EntityContact": {
+              "Email": {
+                "Type": "01",
+                "value": "jmiller@lsc.vic.edu.au"
+              },
+              "Name": {
+                "FamilyName": "Miller",
+                "GivenName": "James",
+                "Type": "LGL"
+              },
+              "PhoneNumber": {
+                "Number": "03 9637-2000",
+                "Type": "0096"
+              },
+              "PositionTitle": "Auditor"
+            },
+            "EntityLevel": "Diocese",
+            "EntityName": "Ballarat Diocese",
+            "FQContextualQuestionList": {
+              "FQContextualQuestion": [
+                {
+                  "FQAnswer": "Cash",
+                  "FQContext": "GI.010"
+                },
+                {
+                  "FQAnswer": "No",
+                  "FQContext": "GI.015"
+                }
+              ]
+            },
+            "FQItemList": {
+              "FQItem": [
+                {
+                  "BoardingAmount": 119827,
+                  "DioceseAmount": 76543,
+                  "FQItemCode": "RI.010",
+                  "SystemAmount": 12345,
+                  "TuitionAmount": 119827
+                },
+                {
+                  "BoardingAmount": 119827,
+                  "DioceseAmount": 76543,
+                  "FQItemCode": "RI.020",
+                  "SystemAmount": 12345,
+                  "TuitionAmount": 119827
+                },
+                {
+                  "BoardingAmount": 119827,
+                  "DioceseAmount": 76543,
+                  "FQItemCode": "RI.030",
+                  "SystemAmount": 12345,
+                  "TuitionAmount": 119827
+                }
+              ]
+            },
+            "FQRefId": "E3E34B35-9D75-101A-8C3D-00AA001A1655",
+            "LocalId": "01011235",
+            "StateProvinceId": "45645568"
+          }
+        ]
+      },
+      "FQYear": "2018",
+      "RefId": "D3E34B35-9D75-101A-8C3D-00AA001A1652",
+      "ReportingAuthority": "Ballarat Diocese",
+      "ReportingAuthorityCommonwealthId": "012345",
+      "ReportingAuthoritySystem": "Vic Catholic",
+      "SoftwareVendorInfo": {
+        "SoftwareProduct": "MYOB",
+        "SoftwareVersion": "11.0"
+      },
+      "SubmissionContact": "",
+      "SystemSubmission": "N"
+    }
+  },
+  {
+    "Invoice": {
+      "AccountingPeriod": "200004",
+      "ApprovedBy": "Fred Flintstone",
+      "BilledAmount": {
+        "Currency": "AUD",
+        "Type": "Debit",
+        "value": 50
+      },
+      "BillingDate": "1999-10-12",
+      "CreatedBy": "Peter Rabbit",
+      "FinancialAccountRefIdList": {
+        "FinancialAccountRefId": [
+          "AE109F1A-C2DE-41E4-9DF5-C418F3DF18A8"
+        ]
+      },
+      "InvoicedEntity": {
+        "SIF_RefObject": "Debtor",
+        "value": "BA497254-965F-DA48-965A-BCE4589EA421"
+      },
+      "ItemDetail": "5 Widgets",
+      "Ledger": "Family",
+      "RefId": "CA123458-47DE-A974-63FE-B238759FD123",
+      "TaxAmount": {
+        "Currency": "AUD",
+        "value": 5
+      },
+      "TaxRate": 10,
+      "TransactionDescription": "Activity Fees"
+    }
+  },
+  {
+    "Journal": {
+      "Amount": {
+        "Currency": "AUD",
+        "value": 7
+      },
+      "CreatedBy": "Fred Flintstone",
+      "CreatedDate": "2015-02-01",
+      "CreditFinancialAccountRefId": "B7A34E56-1C97-345C-0A4E-11BB112B2753",
+      "DebitFinancialAccountRefId": "8B231144-301C-4D3B-95D4-8BB74C866AE1",
+      "RefId": "B5739375-800A-C4CC-6385-0BB2754114AA"
+    }
+  },
+  {
+    "NAPCodeFrame": {
+      "NAPTestRefId": "CE9FFC50-33B4-4F19-8DD5-62579B681A63",
+      "RefId": "09381381-641E-4034-A54B-9A84D7B54426",
+      "TestContent": {
+        "Domain": "Reading",
+        "DomainBands": {
+          "Band10Lower": 681,
+          "Band10Upper": 999,
+          "Band1Lower": 0,
+          "Band1Upper": 258,
+          "Band2Lower": 258,
+          "Band2Upper": 318,
+          "Band3Lower": 318,
+          "Band3Upper": 368,
+          "Band4Lower": 368,
+          "Band4Upper": 417,
+          "Band5Lower": 417,
+          "Band5Upper": 466,
+          "Band6Lower": 466,
+          "Band6Upper": 526,
+          "Band7Lower": 526,
+          "Band7Upper": 574,
+          "Band8Lower": 574,
+          "Band8Upper": 633,
+          "Band9Lower": 633,
+          "Band9Upper": 681
+        },
+        "DomainProficiency": {
+          "Level1Lower": 10,
+          "Level1Upper": 20,
+          "Level2Lower": 30,
+          "Level2Upper": 40,
+          "Level3Lower": 50,
+          "Level3Upper": 60,
+          "Level4Lower": 70,
+          "Level4Upper": 80
+        },
+        "NAPTestLocalId": "NAPLAN-2017-0001-Reading",
+        "StagesCount": 3,
+        "TestLevel": {
+          "Code": "3"
+        },
+        "TestName": "NAPLAN Reading Yr 3, 2017",
+        "TestType": "Normal",
+        "TestYear": "2017"
+      },
+      "TestletList": {
+        "Testlet": [
+          {
+            "NAPTestletRefId": "74391492-B229-4B32-A9ED-E1B03C929604",
+            "TestItemList": {
+              "TestItem": [
+                {
+                  "SequenceNumber": 0,
+                  "TestItemContent": {
+                    "ContentDescriptionList": {
+                      "ContentDescription": [
+                        "MNA32",
+                        "MNA37"
+                      ]
+                    },
+                    "CorrectAnswer": "7",
+                    "ExemplarURL": "http://example.com/n3.xml",
+                    "ItemDescriptor": "Descriptor #1",
+                    "ItemDifficulty": 3,
+                    "ItemDifficultyLogit5": 0.8,
+                    "ItemDifficultyLogit5SE": 0.8,
+                    "ItemDifficultyLogit62": 0.9,
+                    "ItemDifficultyLogit62SE": 0.9,
+                    "ItemProficiencyBand": 3,
+                    "ItemProficiencyLevel": "C",
+                    "ItemType": "MC",
+                    "MarkingType": "AS",
+                    "MaximumScore": 1,
+                    "MultipleChoiceOptionCount": 4,
+                    "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-00",
+                    "ReleasedStatus": true,
+                    "StimulusList": {
+                      "Stimulus": [
+                        {
+                          "Content": "http://example.com/Reading.xml",
+                          "StimulusLocalId": "kzgms666",
+                          "TextDescriptor": "A nice rollicking anecdote",
+                          "TextGenre": "Narrative",
+                          "TextType": "Simple",
+                          "WordCount": 300
+                        }
+                      ]
+                    },
+                    "Subdomain": "Letters"
+                  },
+                  "TestItemRefId": "87734F2A-673B-4F2D-A805-532869CE3F57"
+                },
+                {
+                  "SequenceNumber": 1,
+                  "TestItemContent": {
+                    "ContentDescriptionList": {
+                      "ContentDescription": [
+                        "MNA32",
+                        "MNA37"
+                      ]
+                    },
+                    "CorrectAnswer": "7",
+                    "ExemplarURL": "http://example.com/n3.xml",
+                    "ItemDescriptor": "Descriptor #1",
+                    "ItemDifficulty": 3,
+                    "ItemDifficultyLogit5": 0.8,
+                    "ItemDifficultyLogit5SE": 0.8,
+                    "ItemDifficultyLogit62": 0.9,
+                    "ItemDifficultyLogit62SE": 0.9,
+                    "ItemProficiencyBand": 3,
+                    "ItemProficiencyLevel": "C",
+                    "ItemType": "MC",
+                    "MarkingType": "AS",
+                    "MaximumScore": 1,
+                    "MultipleChoiceOptionCount": 4,
+                    "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-01",
+                    "ReleasedStatus": true,
+                    "StimulusList": {
+                      "Stimulus": [
+                        {
+                          "Content": "http://example.com/Reading.xml",
+                          "StimulusLocalId": "vzahj691",
+                          "TextDescriptor": "A nice rollicking anecdote",
+                          "TextGenre": "Narrative",
+                          "TextType": "Simple",
+                          "WordCount": 300
+                        }
+                      ]
+                    },
+                    "Subdomain": "Letters"
+                  },
+                  "TestItemRefId": "70032978-57F3-4941-ADE7-BDC79ED34B5B"
+                },
+                {
+                  "SequenceNumber": 2,
+                  "TestItemContent": {
+                    "ContentDescriptionList": {
+                      "ContentDescription": [
+                        "MNA32",
+                        "MNA37"
+                      ]
+                    },
+                    "CorrectAnswer": "7",
+                    "ExemplarURL": "http://example.com/n3.xml",
+                    "ItemDescriptor": "Descriptor #1",
+                    "ItemDifficulty": 3,
+                    "ItemDifficultyLogit5": 0.8,
+                    "ItemDifficultyLogit5SE": 0.8,
+                    "ItemDifficultyLogit62": 0.9,
+                    "ItemDifficultyLogit62SE": 0.9,
+                    "ItemProficiencyBand": 3,
+                    "ItemProficiencyLevel": "C",
+                    "ItemType": "SP",
+                    "MarkingType": "AS",
+                    "MaximumScore": 1,
+                    "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-02",
+                    "ReleasedStatus": true,
+                    "StimulusList": {
+                      "Stimulus": [
+                        {
+                          "Content": "http://example.com/Reading.xml",
+                          "StimulusLocalId": "gmynn860",
+                          "TextDescriptor": "A nice rollicking anecdote",
+                          "TextGenre": "Narrative",
+                          "TextType": "Simple",
+                          "WordCount": 300
+                        }
+                      ]
+                    },
+                    "Subdomain": "Letters"
+                  },
+                  "TestItemRefId": "4CC4CB22-105E-485F-926C-BB1C8F0F4079"
+                },
+                {
+                  "SequenceNumber": 3,
+                  "TestItemContent": {
+                    "ContentDescriptionList": {
+                      "ContentDescription": [
+                        "MNA32",
+                        "MNA37"
+                      ]
+                    },
+                    "CorrectAnswer": "7",
+                    "ExemplarURL": "http://example.com/n3.xml",
+                    "ItemDescriptor": "Descriptor #1",
+                    "ItemDifficulty": 3,
+                    "ItemDifficultyLogit5": 0.8,
+                    "ItemDifficultyLogit5SE": 0.8,
+                    "ItemDifficultyLogit62": 0.9,
+                    "ItemDifficultyLogit62SE": 0.9,
+                    "ItemProficiencyBand": 3,
+                    "ItemProficiencyLevel": "C",
+                    "ItemType": "MC",
+                    "MarkingType": "AS",
+                    "MaximumScore": 1,
+                    "MultipleChoiceOptionCount": 4,
+                    "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-03",
+                    "ReleasedStatus": true,
+                    "StimulusList": {
+                      "Stimulus": [
+                        {
+                          "Content": "http://example.com/Reading.xml",
+                          "StimulusLocalId": "zapvk881",
+                          "TextDescriptor": "A nice rollicking anecdote",
+                          "TextGenre": "Narrative",
+                          "TextType": "Simple",
+                          "WordCount": 300
+                        }
+                      ]
+                    },
+                    "Subdomain": "Letters"
+                  },
+                  "TestItemRefId": "DD84E41B-59A9-41FF-B097-5D420DB661F1"
+                },
+                {
+                  "SequenceNumber": 4,
+                  "TestItemContent": {
+                    "ContentDescriptionList": {
+                      "ContentDescription": [
+                        "MNA32",
+                        "MNA37"
+                      ]
+                    },
+                    "CorrectAnswer": "7",
+                    "ExemplarURL": "http://example.com/n3.xml",
+                    "ItemDescriptor": "Descriptor #1",
+                    "ItemDifficulty": 3,
+                    "ItemDifficultyLogit5": 0.8,
+                    "ItemDifficultyLogit5SE": 0.8,
+                    "ItemDifficultyLogit62": 0.9,
+                    "ItemDifficultyLogit62SE": 0.9,
+                    "ItemProficiencyBand": 3,
+                    "ItemProficiencyLevel": "C",
+                    "ItemType": "IO",
+                    "MarkingType": "AS",
+                    "MaximumScore": 1,
+                    "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-04",
+                    "ReleasedStatus": true,
+                    "StimulusList": {
+                      "Stimulus": [
+                        {
+                          "Content": "http://example.com/Reading.xml",
+                          "StimulusLocalId": "kbrgs236",
+                          "TextDescriptor": "A nice rollicking anecdote",
+                          "TextGenre": "Narrative",
+                          "TextType": "Simple",
+                          "WordCount": 300
+                        }
+                      ]
+                    },
+                    "Subdomain": "Letters"
+                  },
+                  "TestItemRefId": "E5D5FFFF-6168-4FC9-BC8E-A35E49799F19"
+                },
+                {
+                  "SequenceNumber": 5,
+                  "TestItemContent": {
+                    "ContentDescriptionList": {
+                      "ContentDescription": [
+                        "MNA32",
+                        "MNA37"
+                      ]
+                    },
+                    "CorrectAnswer": "7",
+                    "ExemplarURL": "http://example.com/n3.xml",
+                    "ItemDescriptor": "Descriptor #1",
+                    "ItemDifficulty": 3,
+                    "ItemDifficultyLogit5": 0.8,
+                    "ItemDifficultyLogit5SE": 0.8,
+                    "ItemDifficultyLogit62": 0.9,
+                    "ItemDifficultyLogit62SE": 0.9,
+                    "ItemProficiencyBand": 3,
+                    "ItemProficiencyLevel": "C",
+                    "ItemType": "MC",
+                    "MarkingType": "AS",
+                    "MaximumScore": 1,
+                    "MultipleChoiceOptionCount": 4,
+                    "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-05",
+                    "ReleasedStatus": true,
+                    "StimulusList": {
+                      "Stimulus": [
+                        {
+                          "Content": "http://example.com/Reading.xml",
+                          "StimulusLocalId": "rokoh652",
+                          "TextDescriptor": "A nice rollicking anecdote",
+                          "TextGenre": "Narrative",
+                          "TextType": "Simple",
+                          "WordCount": 300
+                        }
+                      ]
+                    },
+                    "Subdomain": "Letters"
+                  },
+                  "TestItemRefId": "29B1B7C8-6D9D-4D84-BC2D-C88B6ED172DD"
+                },
+                {
+                  "SequenceNumber": 6,
+                  "TestItemContent": {
+                    "ContentDescriptionList": {
+                      "ContentDescription": [
+                        "MNA32",
+                        "MNA37"
+                      ]
+                    },
+                    "CorrectAnswer": "7",
+                    "ExemplarURL": "http://example.com/n3.xml",
+                    "ItemDescriptor": "Descriptor #1",
+                    "ItemDifficulty": 3,
+                    "ItemDifficultyLogit5": 0.8,
+                    "ItemDifficultyLogit5SE": 0.8,
+                    "ItemDifficultyLogit62": 0.9,
+                    "ItemDifficultyLogit62SE": 0.9,
+                    "ItemProficiencyBand": 3,
+                    "ItemProficiencyLevel": "C",
+                    "ItemType": "MC",
+                    "MarkingType": "AS",
+                    "MaximumScore": 1,
+                    "MultipleChoiceOptionCount": 4,
+                    "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-06",
+                    "ReleasedStatus": true,
+                    "StimulusList": {
+                      "Stimulus": [
+                        {
+                          "Content": "http://example.com/Reading.xml",
+                          "StimulusLocalId": "qrlet247",
+                          "TextDescriptor": "A nice rollicking anecdote",
+                          "TextGenre": "Narrative",
+                          "TextType": "Simple",
+                          "WordCount": 300
+                        }
+                      ]
+                    },
+                    "Subdomain": "Letters"
+                  },
+                  "TestItemRefId": "D9EDC321-D0F0-490A-8BE6-55A3C6548B60"
+                },
+                {
+                  "SequenceNumber": 7,
+                  "TestItemContent": {
+                    "ContentDescriptionList": {
+                      "ContentDescription": [
+                        "MNA32",
+                        "MNA37"
+                      ]
+                    },
+                    "CorrectAnswer": "7",
+                    "ExemplarURL": "http://example.com/n3.xml",
+                    "ItemDescriptor": "Descriptor #1",
+                    "ItemDifficulty": 3,
+                    "ItemDifficultyLogit5": 0.8,
+                    "ItemDifficultyLogit5SE": 0.8,
+                    "ItemDifficultyLogit62": 0.9,
+                    "ItemDifficultyLogit62SE": 0.9,
+                    "ItemProficiencyBand": 3,
+                    "ItemProficiencyLevel": "C",
+                    "ItemType": "IGM",
+                    "MarkingType": "AS",
+                    "MaximumScore": 1,
+                    "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-07",
+                    "ReleasedStatus": true,
+                    "StimulusList": {
+                      "Stimulus": [
+                        {
+                          "Content": "http://example.com/Reading.xml",
+                          "StimulusLocalId": "zhplu511",
+                          "TextDescriptor": "A nice rollicking anecdote",
+                          "TextGenre": "Narrative",
+                          "TextType": "Simple",
+                          "WordCount": 300
+                        }
+                      ]
+                    },
+                    "Subdomain": "Letters"
+                  },
+                  "TestItemRefId": "F962D535-13F3-4837-9BFD-DCED4AEBEE19"
+                },
+                {
+                  "SequenceNumber": 8,
+                  "TestItemContent": {
+                    "ContentDescriptionList": {
+                      "ContentDescription": [
+                        "MNA32",
+                        "MNA37"
+                      ]
+                    },
+                    "CorrectAnswer": "7",
+                    "ExemplarURL": "http://example.com/n3.xml",
+                    "ItemDescriptor": "Descriptor #1",
+                    "ItemDifficulty": 3,
+                    "ItemDifficultyLogit5": 0.8,
+                    "ItemDifficultyLogit5SE": 0.8,
+                    "ItemDifficultyLogit62": 0.9,
+                    "ItemDifficultyLogit62SE": 0.9,
+                    "ItemProficiencyBand": 3,
+                    "ItemProficiencyLevel": "C",
+                    "ItemType": "MC",
+                    "MarkingType": "AS",
+                    "MaximumScore": 1,
+                    "MultipleChoiceOptionCount": 4,
+                    "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-08",
+                    "ReleasedStatus": true,
+                    "StimulusList": {
+                      "Stimulus": [
+                        {
+                          "Content": "http://example.com/Reading.xml",
+                          "StimulusLocalId": "biyci381",
+                          "TextDescriptor": "A nice rollicking anecdote",
+                          "TextGenre": "Narrative",
+                          "TextType": "Simple",
+                          "WordCount": 300
+                        }
+                      ]
+                    },
+                    "Subdomain": "Letters"
+                  },
+                  "TestItemRefId": "22B8B073-F6C6-40F3-8BF6-108FFA841E56"
+                },
+                {
+                  "SequenceNumber": 9,
+                  "TestItemContent": {
+                    "ContentDescriptionList": {
+                      "ContentDescription": [
+                        "MNA32",
+                        "MNA37"
+                      ]
+                    },
+                    "CorrectAnswer": "7",
+                    "ExemplarURL": "http://example.com/n3.xml",
+                    "ItemDescriptor": "Descriptor #1",
+                    "ItemDifficulty": 3,
+                    "ItemDifficultyLogit5": 0.8,
+                    "ItemDifficultyLogit5SE": 0.8,
+                    "ItemDifficultyLogit62": 0.9,
+                    "ItemDifficultyLogit62SE": 0.9,
+                    "ItemProficiencyBand": 3,
+                    "ItemProficiencyLevel": "C",
+                    "ItemType": "TE",
+                    "MarkingType": "AES",
+                    "MaximumScore": 1,
+                    "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-09",
+                    "ReleasedStatus": true,
+                    "StimulusList": {
+                      "Stimulus": [
+                        {
+                          "Content": "http://example.com/Reading.xml",
+                          "StimulusLocalId": "cbptn921",
+                          "TextDescriptor": "A nice rollicking anecdote",
+                          "TextGenre": "Narrative",
+                          "TextType": "Simple",
+                          "WordCount": 300
+                        }
+                      ]
+                    },
+                    "Subdomain": "Letters"
+                  },
+                  "TestItemRefId": "AA59E605-D6C1-4332-8F47-60C40BC3BAC5"
+                },
+                {
+                  "SequenceNumber": 10,
+                  "TestItemContent": {
+                    "ContentDescriptionList": {
+                      "ContentDescription": [
+                        "MNA32",
+                        "MNA37"
+                      ]
+                    },
+                    "CorrectAnswer": "7",
+                    "ExemplarURL": "http://example.com/n3.xml",
+                    "ItemDescriptor": "Descriptor #1",
+                    "ItemDifficulty": 3,
+                    "ItemDifficultyLogit5": 0.8,
+                    "ItemDifficultyLogit5SE": 0.8,
+                    "ItemDifficultyLogit62": 0.9,
+                    "ItemDifficultyLogit62SE": 0.9,
+                    "ItemProficiencyBand": 3,
+                    "ItemProficiencyLevel": "C",
+                    "ItemType": "PO",
+                    "MarkingType": "AS",
+                    "MaximumScore": 1,
+                    "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-10",
+                    "ReleasedStatus": true,
+                    "StimulusList": {
+                      "Stimulus": [
+                        {
+                          "Content": "http://example.com/Reading.xml",
+                          "StimulusLocalId": "ioysv413",
+                          "TextDescriptor": "A nice rollicking anecdote",
+                          "TextGenre": "Narrative",
+                          "TextType": "Simple",
+                          "WordCount": 300
+                        }
+                      ]
+                    },
+                    "Subdomain": "Letters"
+                  },
+                  "TestItemRefId": "952B4AFC-36FE-4309-83C8-8EE398BA7F97"
+                },
+                {
+                  "SequenceNumber": 11,
+                  "TestItemContent": {
+                    "ContentDescriptionList": {
+                      "ContentDescription": [
+                        "MNA32",
+                        "MNA37"
+                      ]
+                    },
+                    "CorrectAnswer": "7",
+                    "ExemplarURL": "http://example.com/n3.xml",
+                    "ItemDescriptor": "Descriptor #1",
+                    "ItemDifficulty": 3,
+                    "ItemDifficultyLogit5": 0.8,
+                    "ItemDifficultyLogit5SE": 0.8,
+                    "ItemDifficultyLogit62": 0.9,
+                    "ItemDifficultyLogit62SE": 0.9,
+                    "ItemProficiencyBand": 3,
+                    "ItemProficiencyLevel": "C",
+                    "ItemType": "MC",
+                    "MarkingType": "AS",
+                    "MaximumScore": 1,
+                    "MultipleChoiceOptionCount": 4,
+                    "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-11",
+                    "ReleasedStatus": true,
+                    "StimulusList": {
+                      "Stimulus": [
+                        {
+                          "Content": "http://example.com/Reading.xml",
+                          "StimulusLocalId": "odzlq067",
+                          "TextDescriptor": "A nice rollicking anecdote",
+                          "TextGenre": "Narrative",
+                          "TextType": "Simple",
+                          "WordCount": 300
+                        }
+                      ]
+                    },
+                    "Subdomain": "Letters"
+                  },
+                  "TestItemRefId": "E138C292-FB89-4736-946D-16C78C8B3893"
+                }
+              ]
+            },
+            "TestletContent": {
+              "LocationInStage": 1,
+              "NAPTestletLocalId": "NAPLAN-2017-0001-Reading-A-00",
+              "Node": "A",
+              "TestletMaximumScore": 12,
+              "TestletName": "Testlet A-1 for Reading Yr 3"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "NAPEventStudentLink": {
+      "DOBRange": false,
+      "Date": "2017-06-01",
+      "Device": "iPad",
+      "LapsedTimeTest": "PT2H57M32S",
+      "NAPJurisdiction": "1",
+      "NAPTestLocalId": "NAPLAN-2017-0004-Language Conventions: Grammar and Punctuation",
+      "NAPTestRefId": "5195A2E9-37CE-4F51-AEF2-9095D9CF97FA",
+      "PSIOtherIdMatch": false,
+      "ParticipationCode": "P",
+      "ParticipationText": "Present",
+      "PersonalDetailsChanged": false,
+      "PlatformStudentIdentifier": "R100000004R",
+      "PossibleDuplicate": false,
+      "RefId": "2014F046-0C95-4613-8ACD-8A6CA8227C7A",
+      "ReportingSchoolName": "Podunk High School",
+      "SchoolACARAId": "21212",
+      "SchoolGeolocation": "11",
+      "SchoolInfoRefId": "19F9C467-D299-4A35-9825-2148BF39DB64",
+      "SchoolSector": "NG",
+      "StartTime": "09:00:00",
+      "StudentPersonalRefId": "2F71D7C1-29B2-4FAD-9DB7-9FD80DC8804A",
+      "System": "0001"
+    }
+  },
+  {
+    "NAPStudentResponseSet": {
+      "CalibrationSampleFlag": "false",
+      "DomainScore": {
+        "PlausibleScaledValueList": {
+          "PlausibleScaledValue": [
+            14,
+            15,
+            16,
+            17,
+            18
+          ]
+        },
+        "RawScore": 30,
+        "ScaledScoreLogitStandardError": 20.6,
+        "ScaledScoreLogitValue": 20.94,
+        "ScaledScoreStandardError": 22.17,
+        "ScaledScoreValue": 440,
+        "StudentDomainBand": 6,
+        "StudentProficiency": "Proficient"
+      },
+      "EquatingSampleFlag": "false",
+      "NAPTestLocalId": "NAPLAN-2017-0001-Reading",
+      "NAPTestRefId": "615DD32A-A5A2-40A2-A417-187AE8F932EE",
+      "ParallelTest": "A0-D1-F0",
+      "PathTakenForDomain": "A-D-F",
+      "PlatformStudentIdentifier": "R100000004R",
+      "RefId": "D90E7E40-33B2-44FA-9BA0-FAACA9D95487",
+      "ReportExclusionFlag": false,
+      "StudentPersonalRefId": "2F71D7C1-29B2-4FAD-9DB7-9FD80DC8804A",
+      "TestletList": {
+        "Testlet": [
+          {
+            "ItemResponseList": {
+              "ItemResponse": [
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-00",
+                  "NAPTestItemRefId": "D9660081-EC37-4E20-B8FD-0F20896BA338",
+                  "Response": "A",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 1
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-01",
+                  "NAPTestItemRefId": "04F23B44-17E0-4D34-B321-C2ED8C477D43",
+                  "Response": "C",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 2
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-02",
+                  "NAPTestItemRefId": "F51E2743-62B0-491A-BE34-B3DC722E4A1F",
+                  "Response": "gKqvdfwIYE",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 3
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-03",
+                  "NAPTestItemRefId": "859CDE35-4236-47C2-B593-813084D3E67B",
+                  "Response": "A",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 4
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-04",
+                  "NAPTestItemRefId": "5A45B1B5-05B5-429A-9DA2-9757CCD18B99",
+                  "Response": "isRnrsoOzv",
+                  "ResponseCorrectness": "Incorrect",
+                  "Score": 0,
+                  "SequenceNumber": 5
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-05",
+                  "NAPTestItemRefId": "FC1281E6-0CF0-4E01-B160-C9D83EDB1F97",
+                  "Response": "A",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 6
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-06",
+                  "NAPTestItemRefId": "A7F24BCE-4663-40CB-8587-24135B90345A",
+                  "Response": "C",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 7
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-07",
+                  "NAPTestItemRefId": "7ABC7320-56C2-401E-B287-EFD7D1E90E12",
+                  "Response": "D",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 8
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-08",
+                  "NAPTestItemRefId": "B2BC0B19-E52A-46C9-BD40-CD4576756746",
+                  "Response": "B",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 9
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-09",
+                  "NAPTestItemRefId": "ECF360FB-F7D6-4DB7-B76B-AA598E4C4981",
+                  "Response": "B",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 10
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-10",
+                  "NAPTestItemRefId": "EDCC84CA-78D7-41CC-9C82-7E5DEA8F35AA",
+                  "Response": "aFdOmmNEcv",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 11
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-A-00-11",
+                  "NAPTestItemRefId": "7786117B-2C8E-40D4-A38E-EE3858FCE1B7",
+                  "Response": "iIauaAgmYC",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 12
+                }
+              ]
+            },
+            "NAPTestletLocalId": "NAPLAN-2017-0001-Reading-A-00",
+            "NAPTestletRefId": "1FD3A68E-530D-491F-920D-77F77074D159",
+            "TestletSubScore": 11
+          },
+          {
+            "ItemResponseList": {
+              "ItemResponse": [
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-D-01-00",
+                  "NAPTestItemRefId": "8B89C8B9-6C05-42BA-A9D1-321B79A34241",
+                  "Response": "ZENYKCkmWr",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 1
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-D-01-01",
+                  "NAPTestItemRefId": "854F56CE-C30F-49D3-AD15-9774D5113519",
+                  "Response": "C",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 2
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-D-01-02",
+                  "NAPTestItemRefId": "7258B5BD-38E8-41A2-B27E-A89624DBCEC1",
+                  "Response": "A",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 3
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-D-01-03",
+                  "NAPTestItemRefId": "BB94CCDD-21BD-43B6-B252-B5F628C32F80",
+                  "Response": "A",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 4
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-D-01-04",
+                  "NAPTestItemRefId": "BD1F3E74-9362-4094-8902-FD865F76CB70",
+                  "Response": "D",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 5
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-D-01-05",
+                  "NAPTestItemRefId": "D3D22E43-C431-48F5-BAD6-723C923C864C",
+                  "Response": "A",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 6
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-D-01-06",
+                  "NAPTestItemRefId": "A5663CC8-27E3-4830-926C-3349465DAEE3",
+                  "Response": "C",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 7
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-D-01-07",
+                  "NAPTestItemRefId": "DCA323A6-3B29-4942-A979-C594E363277D",
+                  "Response": "NtTIYMmIMC",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 8
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-D-01-08",
+                  "NAPTestItemRefId": "35B98745-B527-4662-8891-CA12BED0E480",
+                  "Response": "fFnySwRyen",
+                  "ResponseCorrectness": "Incorrect",
+                  "Score": 0,
+                  "SequenceNumber": 9
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-D-01-09",
+                  "NAPTestItemRefId": "34A77184-276A-4C8B-BDA7-8E9D5446C74A",
+                  "Response": "D",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 10
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-D-01-10",
+                  "NAPTestItemRefId": "B1E5EE81-6E58-4F71-9583-F1DDDE235892",
+                  "Response": "OlHtaQNHoM",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 11
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-D-01-11",
+                  "NAPTestItemRefId": "ED1E5B13-782C-4BF7-8E83-3F0893C2F856",
+                  "Response": "C",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 12
+                }
+              ]
+            },
+            "NAPTestletLocalId": "NAPLAN-2017-0001-Reading-D-01",
+            "NAPTestletRefId": "953CDBD8-B5F2-4703-A4AB-3B394A33C228",
+            "TestletSubScore": 11
+          },
+          {
+            "ItemResponseList": {
+              "ItemResponse": [
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-F-00-00",
+                  "NAPTestItemRefId": "D9AC94C9-461B-4E6D-9005-FCE134C5BF3E",
+                  "Response": "B",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 1
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-F-00-01",
+                  "NAPTestItemRefId": "B4603868-3026-4043-A1E9-83C1D663392D",
+                  "Response": "cFGrURFLQJ",
+                  "ResponseCorrectness": "Incorrect",
+                  "Score": 0,
+                  "SequenceNumber": 2
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-F-00-02",
+                  "NAPTestItemRefId": "FB38C594-F4E4-4469-BBE5-4AF302171075",
+                  "Response": "wXMrYIUEef",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 3
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-F-00-03",
+                  "NAPTestItemRefId": "35732438-2182-45B1-9059-04FCB3567637",
+                  "Response": "hZtAellWwR",
+                  "ResponseCorrectness": "Incorrect",
+                  "Score": 0,
+                  "SequenceNumber": 4
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-F-00-04",
+                  "NAPTestItemRefId": "602ECE01-57B0-48ED-90A5-070DAC7ED6CC",
+                  "Response": "ufSagjiuzw",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 5
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-F-00-05",
+                  "NAPTestItemRefId": "8B7CCBE1-E9CB-4AAC-97F1-514DCEF41CDA",
+                  "Response": "eAnZrOBhEV",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 6
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-F-00-06",
+                  "NAPTestItemRefId": "FD382A1F-D98D-4202-8DEE-99D11B230E78",
+                  "Response": "GlMlPTIYIO",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 7
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-F-00-07",
+                  "NAPTestItemRefId": "316EDF8E-9E96-4979-8B3A-EE3B3B0A5258",
+                  "Response": "WHwIVewqtV",
+                  "ResponseCorrectness": "Incorrect",
+                  "Score": 0,
+                  "SequenceNumber": 8
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-F-00-08",
+                  "NAPTestItemRefId": "354069AF-929D-431B-A297-D3B78E356476",
+                  "Response": "cAIJHatCZI",
+                  "ResponseCorrectness": "NotInPath",
+                  "Score": 0,
+                  "SequenceNumber": 9
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-F-00-09",
+                  "NAPTestItemRefId": "31CF0277-5AED-4D0D-BFC5-2235F7B4F674",
+                  "Response": "ZcCCskdAXf",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 10
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-F-00-10",
+                  "NAPTestItemRefId": "D91F3243-134C-4BA4-9F4B-E02D65671401",
+                  "Response": "nKImzEMCpy",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 11
+                },
+                {
+                  "ItemWeight": 1,
+                  "LapsedTimeItem": "PT50S",
+                  "NAPTestItemLocalId": "NAPLAN-2017-0001-Reading-F-00-11",
+                  "NAPTestItemRefId": "EB7B780E-2C64-430E-9F44-B52DCD273E04",
+                  "Response": "B",
+                  "ResponseCorrectness": "Correct",
+                  "Score": 1,
+                  "SequenceNumber": 12
+                }
+              ]
+            },
+            "NAPTestletLocalId": "NAPLAN-2017-0001-Reading-F-00",
+            "NAPTestletRefId": "CC94B00C-5AAE-4B24-A58E-A4C4B04D0FD4",
+            "TestletSubScore": 8
+          }
+        ]
+      }
+    }
+  },
+  {
+    "NAPTest": {
+      "RefId": "27BD7B5B-19F2-48A9-B645-FD6569E7654E",
+      "TestContent": {
+        "Domain": "Reading",
+        "DomainBands": {
+          "Band10Lower": 681,
+          "Band10Upper": 999,
+          "Band1Lower": 0,
+          "Band1Upper": 258,
+          "Band2Lower": 258,
+          "Band2Upper": 318,
+          "Band3Lower": 318,
+          "Band3Upper": 368,
+          "Band4Lower": 368,
+          "Band4Upper": 417,
+          "Band5Lower": 417,
+          "Band5Upper": 466,
+          "Band6Lower": 466,
+          "Band6Upper": 526,
+          "Band7Lower": 526,
+          "Band7Upper": 574,
+          "Band8Lower": 574,
+          "Band8Upper": 633,
+          "Band9Lower": 633,
+          "Band9Upper": 681
+        },
+        "DomainProficiency": {
+          "Level1Lower": 10,
+          "Level1Upper": 20,
+          "Level2Lower": 30,
+          "Level2Upper": 40,
+          "Level3Lower": 50,
+          "Level3Upper": 60,
+          "Level4Lower": 70,
+          "Level4Upper": 80
+        },
+        "NAPTestLocalId": "NAPLAN-2017-0001-Reading",
+        "StagesCount": 3,
+        "TestLevel": {
+          "Code": "3"
+        },
+        "TestName": "NAPLAN Reading Yr 3, 2017",
+        "TestType": "Normal",
+        "TestYear": "2017"
+      }
+    }
+  },
+  {
+    "NAPTestItem": {
+      "RefId": "31CA1A02-4E53-4A29-AE1E-807489C30827",
+      "TestItemContent": {
+        "ContentDescriptionList": {
+          "ContentDescription": [
+            "MNA32",
+            "MNA37"
+          ]
+        },
+        "CorrectAnswer": "7",
+        "ExemplarURL": "http://example.com/n3.xml",
+        "ItemDescriptor": "Descriptor #1",
+        "ItemDifficulty": 3,
+        "ItemDifficultyLogit5": 0.8,
+        "ItemDifficultyLogit5SE": 0.8,
+        "ItemDifficultyLogit62": 0.9,
+        "ItemDifficultyLogit62SE": 0.9,
+        "ItemProficiencyBand": 3,
+        "ItemProficiencyLevel": "C",
+        "ItemType": "MC",
+        "MarkingType": "AS",
+        "MaximumScore": 1,
+        "MultipleChoiceOptionCount": 4,
+        "NAPTestItemLocalId": "NAPLAN-2017-0005-Language Conventions: Spelling-S2-01-01",
+        "ReleasedStatus": false,
+        "Subdomain": "Spelling"
+      }
+    }
+  },
+  {
+    "NAPTestScoreSummary": {
+      "DomainBottomNational60Percent": 376,
+      "DomainJurisdictionAverage": 402,
+      "DomainNationalAverage": 399,
+      "DomainSchoolAverage": 404,
+      "DomainTopNational60Percent": 416,
+      "NAPTestLocalId": "NAPLAN-2017-0004-Language Conventions: Grammar and Punctuation",
+      "NAPTestRefId": "FBB8A444-1891-4701-B306-F3CED219369C",
+      "RefId": "E2721E52-7661-4A51-BF16-B4CAF12DC2F8",
+      "SchoolACARAId": "21212",
+      "SchoolInfoRefId": "A35CE161-BFDB-4460-952B-7F87789A739C"
+    }
+  },
+  {
+    "NAPTestlet": {
+      "NAPTestLocalId": "NAPLAN-2017-0004-Language Conventions: Grammar and Punctuation",
+      "NAPTestRefId": "FBB8A444-1891-4701-B306-F3CED219369C",
+      "RefId": "42DE5F3F-DA32-4DA6-8966-4C8FA176E4B4",
+      "TestItemList": {
+        "TestItem": [
+          {
+            "SequenceNumber": 1,
+            "TestItemLocalId": "NAPLAN-2017-0004-Language Conventions: Grammar and Punctuation-C-00-00",
+            "TestItemRefId": "C77240DF-6E21-4774-AD1D-9454D5F60758"
+          },
+          {
+            "SequenceNumber": 2,
+            "TestItemLocalId": "NAPLAN-2017-0004-Language Conventions: Grammar and Punctuation-C-00-01",
+            "TestItemRefId": "1C4016D1-AAAA-4034-BE8A-0CDE847B2EC7"
+          },
+          {
+            "SequenceNumber": 3,
+            "TestItemLocalId": "NAPLAN-2017-0004-Language Conventions: Grammar and Punctuation-C-00-02",
+            "TestItemRefId": "3CCD15F4-BAF5-4192-A361-3C4184AB4FC8"
+          },
+          {
+            "SequenceNumber": 4,
+            "TestItemLocalId": "NAPLAN-2017-0004-Language Conventions: Grammar and Punctuation-C-00-03",
+            "TestItemRefId": "66602398-5EC9-46E4-BCE6-E8917F49EE56"
+          },
+          {
+            "SequenceNumber": 5,
+            "TestItemLocalId": "NAPLAN-2017-0004-Language Conventions: Grammar and Punctuation-C-00-04",
+            "TestItemRefId": "D1A5A9F2-43FB-40BB-A88F-71A879C5450D"
+          },
+          {
+            "SequenceNumber": 6,
+            "TestItemLocalId": "NAPLAN-2017-0004-Language Conventions: Grammar and Punctuation-C-00-05",
+            "TestItemRefId": "3D253985-4021-418B-BD20-992EEA886535"
+          },
+          {
+            "SequenceNumber": 7,
+            "TestItemLocalId": "NAPLAN-2017-0004-Language Conventions: Grammar and Punctuation-C-00-06",
+            "TestItemRefId": "D5B39AE5-B134-4909-A581-F69205F2682A"
+          },
+          {
+            "SequenceNumber": 8,
+            "TestItemLocalId": "NAPLAN-2017-0004-Language Conventions: Grammar and Punctuation-C-00-07",
+            "TestItemRefId": "E5537981-2898-46DE-BC1C-3CEC4AFF9468"
+          },
+          {
+            "SequenceNumber": 9,
+            "TestItemLocalId": "NAPLAN-2017-0004-Language Conventions: Grammar and Punctuation-C-00-08",
+            "TestItemRefId": "900CC548-23FE-49B5-ADCD-25854FBFA995"
+          },
+          {
+            "SequenceNumber": 10,
+            "TestItemLocalId": "NAPLAN-2017-0004-Language Conventions: Grammar and Punctuation-C-00-09",
+            "TestItemRefId": "476FE04D-81CA-4C08-A555-60463F0DC918"
+          },
+          {
+            "SequenceNumber": 11,
+            "TestItemLocalId": "NAPLAN-2017-0004-Language Conventions: Grammar and Punctuation-C-00-10",
+            "TestItemRefId": "217B9585-2D66-4270-ABD4-2AD57E7453B5"
+          },
+          {
+            "SequenceNumber": 12,
+            "TestItemLocalId": "NAPLAN-2017-0004-Language Conventions: Grammar and Punctuation-C-00-11",
+            "TestItemRefId": "982D24CB-A976-4AD1-B9D5-5CD4C09F8C00"
+          }
+        ]
+      },
+      "TestletContent": {
+        "LocationInStage": 1,
+        "NAPTestletLocalId": "NAPLAN-2017-0004-Language Conventions: Grammar and Punctuation-C-00",
+        "Node": "C",
+        "TestletMaximumScore": 12,
+        "TestletName": "Testlet C-1 for Language Conventions: Grammar and Punctuation Yr 3"
+      }
+    }
+  },
+  {
+    "PaymentReceipt": {
+      "FinancialAccountRefIdList": {
+        "FinancialAccountRefId": [
+          "ED12345F-DA84-9727-5BC2-8AA349DD3721"
+        ]
+      },
+      "InvoiceRefId": "CA123458-47DE-A974-63FE-B238759FD123",
+      "ReceivedTransactionId": "XYZZY",
+      "RefId": "EDF4985A-BC34-58FE-DA75-493AB3812345",
+      "TransactionAmount": {
+        "Currency": "AUD",
+        "Type": "Debit",
+        "value": 50
+      },
+      "TransactionDate": "1999-10-20",
+      "TransactionType": "GL payment"
+    }
+  },
+  {
+    "PurchaseOrder": {
+      "ChargedLocationInfoRefId": "ED12345F-DA84-9727-5BC2-8AA349DD3722",
+      "EmployeePersonalRefId": "AD12345F-DA84-9727-5BC2-8AA349DD3721",
+      "FormNumber": "00342",
+      "PurchasingItems": {
+        "PurchasingItem": [
+          {
+            "ExpenseAccounts": {
+              "ExpenseAccount": [
+                {
+                  "AccountCode": "10-1100-610",
+                  "Amount": {
+                    "Currency": "AUD",
+                    "value": 70
+                  }
+                }
+              ]
+            },
+            "ItemDescription": "Floor Wax",
+            "ItemNumber": "154486",
+            "Quantity": "10",
+            "UnitCost": {
+              "Currency": "AUD",
+              "value": 7
+            }
+          }
+        ]
+      },
+      "RefId": "ED12345F-DA84-9727-5BC2-8AA349DD3721",
+      "VendorInfoRefId": "BD12345F-DA84-9727-5BC2-8AA349DD3723"
+    }
+  },
+  {
+    "VendorInfo": {
+      "ABN": "56402325367",
+      "ContactInfo": {
+        "Address": {
+          "City": "Chicago",
+          "Country": "8104",
+          "PostalCode": "60611",
+          "Role": "2382",
+          "StateProvince": "IL",
+          "Street": {
+            "Line1": "23 E. 43rd St."
+          },
+          "Type": "0123"
+        },
+        "EmailList": {
+          "Email": [
+            {
+              "Type": "01",
+              "value": "jdr@ABC.com"
+            }
+          ]
+        },
+        "Name": {
+          "FamilyName": "Brown",
+          "GivenName": "James",
+          "Type": "LGL"
+        },
+        "PhoneNumberList": {
+          "PhoneNumber": [
+            {
+              "Number": "(312) 555-1234",
+              "Type": "0096"
+            }
+          ]
+        }
+      },
+      "CustomerId": "0023556",
+      "Name": "ABC School Supply",
+      "RefId": "AB3647C5-6865-4CF4-5678-DD34EF564E22",
+      "RegisteredForGST": "Y"
+    }
+  }
+]
