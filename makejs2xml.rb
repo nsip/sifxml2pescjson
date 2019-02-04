@@ -40,24 +40,24 @@ complexattr.each do |a|
   jsonattr[obj] << %{"#{a.gsub(%r{/@?}, ".")}"} # add JSON Path to complex content attribute
 end
 
-print <<~"END"
+print <<"EOF"
 let X2JS = require('x2js');
 const fs = require("fs");
 const js = fs.readFileSync("/dev/stdin", "utf-8");
 var dot = require('dot-object');
 
 var attrpaths = new Object;
-END
+EOF
 
 # enumerate JSON Paths to complex content attribute by object, for quicker lookup
 jsonattr.each do |k, v|
-  print <<~"END"
+  print <<"EOF"
   attrpaths["#{k}"] = [#{v.join(',')}];
-  END
+EOF
 end
 
 
-print <<~"END"
+print <<"EOF"
 
 /* this is inefficent */
 function attributes(newobj) {
@@ -112,4 +112,4 @@ for(var i=0; i<json.length; i++) {
     var xml = x.js2xml(newobj);
     console.log(xml);
 }
-END
+EOF

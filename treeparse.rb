@@ -1,6 +1,7 @@
 require "byebug"
 require "pp"
 
+
 # Read in files objectgraph.txt and typegraph.txt, which contain structural information about the SIF spec as a graph,
 # and generate a single flat file containing all structural information about the spec
 

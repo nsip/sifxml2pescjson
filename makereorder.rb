@@ -16,7 +16,7 @@ while line = gets do
   end
 end
 
-print <<~"END"
+print <<"EOF"
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
   <xsl:output encoding="UTF-8" indent="yes" method="xml" />
@@ -32,33 +32,33 @@ print <<~"END"
    <xsl:apply-templates select="node()|@*" mode="copy"/>
   </xsl:copy>
   </xsl:template>
-END
+EOF
 
 graph.each do |container, elements|
   mode = elements[0][:object] == "OBJECT" ? "object" : container.gsub('/', '__')
   match = elements[0][:object] == "OBJECT" ? container : "node()|@*"
   # passthrough = type which is an alias of another type: we drop the "xsl:copy" command and use match="."
   passthrough = elements.length == 1 && elements[0][:path] == "node()" && !elements[0][:lookup].empty? && graph[elements[0][:type]]
-  print <<~"END"
+  print <<"EOF"
 <xsl:template match="#{match}" mode="#{mode}">
-  END
-  passthrough or print <<~"END"
+EOF
+  passthrough or print <<"EOF"
         <xsl:copy>
             <xsl:apply-templates select="@*" mode="copy" />
-  END
+EOF
   elements.each do |item|
-    print <<~"END"
+    print <<"EOF"
     <xsl:apply-templates select="#{passthrough ? '.' : item[:path]}" mode="#{ !item[:lookup].empty? ? item[:type].gsub('/', '__') : 'copy' }" />
-    END
+EOF
   end
-  passthrough or print <<~"END"
+  passthrough or print <<"EOF"
         </xsl:copy>
-  END
-  print <<~"END"
+EOF
+  print <<"EOF"
     </xsl:template>
-  END
+EOF
 end
 
-print <<~"END"
+print <<"EOF"
 </xsl:stylesheet>
-END
+EOF
