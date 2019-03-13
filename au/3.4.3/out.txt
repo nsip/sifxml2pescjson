@@ -41,6 +41,7 @@ OBJECT: StudentParticipation
 OBJECT: StudentPeriodAttendance
 OBJECT: StudentPersonal
 OBJECT: StudentSchoolEnrollment
+OBJECT: StudentScoreJudgementAgainstStandard
 OBJECT: StudentSectionEnrollment
 OBJECT: SystemRole
 OBJECT: TeachingGroup
@@ -56,8 +57,8 @@ OBJECT: WellbeingResponse
 OBJECT: AGStatusReport
 OBJECT: ChargedLocationInfo
 OBJECT: Debtor
-OBJECT: FQReporting
 OBJECT: FinancialAccount
+OBJECT: FinancialQuestionnaireSubmission
 OBJECT: Invoice
 OBJECT: Journal
 OBJECT: NAPCodeFrame
@@ -192,6 +193,7 @@ COMPLEX ATTRIBUTE: StudentPersonal/PersonInfo/HouseholdContactInfoList/Household
 COMPLEX ATTRIBUTE: StudentPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/AddressList/Address/MapReference/@Type	MapReference
 COMPLEX ATTRIBUTE: StudentPersonal/PersonInfo/HouseholdContactInfoList/HouseholdContactInfo/PhoneNumberList/PhoneNumber/@Type	PhoneNumber
 COMPLEX ATTRIBUTE: StudentSchoolEnrollment/@RefId	RefId
+COMPLEX ATTRIBUTE: StudentScoreJudgementAgainstStandard/@RefId	RefId
 COMPLEX ATTRIBUTE: StudentSectionEnrollment/@RefId	RefId
 COMPLEX ATTRIBUTE: SystemRole/@RefId	RefId
 COMPLEX ATTRIBUTE: SystemRole/SystemContextList/SystemContext/@SystemId	EMPTY
@@ -218,13 +220,18 @@ COMPLEX ATTRIBUTE: Debtor/@RefId	RefId
 COMPLEX ATTRIBUTE: Debtor/AddressList/Address/@Type	Address
 COMPLEX ATTRIBUTE: Debtor/AddressList/Address/@Role	Address
 COMPLEX ATTRIBUTE: Debtor/AddressList/Address/MapReference/@Type	MapReference
-COMPLEX ATTRIBUTE: FQReporting/@RefId	RefId
-COMPLEX ATTRIBUTE: FQReporting/EntityContact/Name/@Type	BaseNameType
-COMPLEX ATTRIBUTE: FQReporting/EntityContact/Address/@Type	Address
-COMPLEX ATTRIBUTE: FQReporting/EntityContact/Address/@Role	Address
-COMPLEX ATTRIBUTE: FQReporting/EntityContact/Address/MapReference/@Type	MapReference
-COMPLEX ATTRIBUTE: FQReporting/EntityContact/PhoneNumber/@Type	PhoneNumber
 COMPLEX ATTRIBUTE: FinancialAccount/@RefId	RefId
+COMPLEX ATTRIBUTE: FinancialQuestionnaireSubmission/@RefId	RefId
+COMPLEX ATTRIBUTE: FinancialQuestionnaireSubmission/SubmissionContact/Name/@Type	BaseNameType
+COMPLEX ATTRIBUTE: FinancialQuestionnaireSubmission/SubmissionContact/Address/@Type	Address
+COMPLEX ATTRIBUTE: FinancialQuestionnaireSubmission/SubmissionContact/Address/@Role	Address
+COMPLEX ATTRIBUTE: FinancialQuestionnaireSubmission/SubmissionContact/Address/MapReference/@Type	MapReference
+COMPLEX ATTRIBUTE: FinancialQuestionnaireSubmission/SubmissionContact/PhoneNumber/@Type	PhoneNumber
+COMPLEX ATTRIBUTE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Name/@Type	BaseNameType
+COMPLEX ATTRIBUTE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/@Type	Address
+COMPLEX ATTRIBUTE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/@Role	Address
+COMPLEX ATTRIBUTE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/MapReference/@Type	MapReference
+COMPLEX ATTRIBUTE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/PhoneNumber/@Type	PhoneNumber
 COMPLEX ATTRIBUTE: Invoice/@RefId	RefId
 COMPLEX ATTRIBUTE: Journal/@RefId	RefId
 COMPLEX ATTRIBUTE: NAPCodeFrame/@RefId	RefId
@@ -392,6 +399,7 @@ SIMPLE ATTRIBUTE: StudentSchoolEnrollment/ExitType/OtherCodeList/OtherCode	strin
 SIMPLE ATTRIBUTE: StudentSchoolEnrollment/CatchmentStatus/OtherCodeList/OtherCode	string
 SIMPLE ATTRIBUTE: StudentSchoolEnrollment/StudentSubjectChoiceList/StudentSubjectChoice/StudyDescription/OtherCodeList/OtherCode	string
 SIMPLE ATTRIBUTE: StudentSchoolEnrollment/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: StudentScoreJudgementAgainstStandard/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
 SIMPLE ATTRIBUTE: StudentSectionEnrollment/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
 SIMPLE ATTRIBUTE: SystemRole/SIF_RefId	string
 SIMPLE ATTRIBUTE: SystemRole/SystemContextList/SystemContext/RoleList/Role/RoleScopeList/RoleScope/RoleScopeRefId	string
@@ -415,10 +423,12 @@ SIMPLE ATTRIBUTE: ChargedLocationInfo/SIF_ExtendedElements/SIF_ExtendedElement	E
 SIMPLE ATTRIBUTE: Debtor/BilledEntity	string
 SIMPLE ATTRIBUTE: Debtor/AddressList/Address/StatisticalAreas/StatisticalArea	string
 SIMPLE ATTRIBUTE: Debtor/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
-SIMPLE ATTRIBUTE: FQReporting/EntityContact/Address/StatisticalAreas/StatisticalArea	string
-SIMPLE ATTRIBUTE: FQReporting/EntityContact/Email	string
-SIMPLE ATTRIBUTE: FQReporting/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
 SIMPLE ATTRIBUTE: FinancialAccount/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
+SIMPLE ATTRIBUTE: FinancialQuestionnaireSubmission/SubmissionContact/Address/StatisticalAreas/StatisticalArea	string
+SIMPLE ATTRIBUTE: FinancialQuestionnaireSubmission/SubmissionContact/Email	string
+SIMPLE ATTRIBUTE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/StatisticalAreas/StatisticalArea	string
+SIMPLE ATTRIBUTE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Email	string
+SIMPLE ATTRIBUTE: FinancialQuestionnaireSubmission/SIF_ExtendedElements/SIF_ExtendedElement	ExtendedContentType
 SIMPLE ATTRIBUTE: Invoice/InvoicedEntity	string
 SIMPLE ATTRIBUTE: Invoice/BilledAmount	MonetaryAmountType
 SIMPLE ATTRIBUTE: Invoice/BilledAmount	number
@@ -526,7 +536,6 @@ LIST: GradingAssignment/RubricScoringGuide/ScoreList/Score
 LIST: GradingAssignment/RubricScoringGuide/ScoreList/Score/ScoreDescriptionList/ScoreDescription
 LIST: GradingAssignment/PrerequisiteList/Prerequisite
 LIST: GradingAssignment/LearningStandardList/LearningStandard
-LIST: GradingAssignment/LearningStandardList/LearningStandard/LearningStandardItemRefId
 LIST: GradingAssignment/SIF_Metadata/TimeElements/TimeElement
 LIST: GradingAssignment/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap
 LIST: GradingAssignment/SIF_Metadata/LifeCycle/Created/Creators/Creator
@@ -632,6 +641,7 @@ LIST: MarkValueInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement
 LIST: MarkValueInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap
 LIST: MarkValueInfo/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
 LIST: MarkValueInfo/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: PersonPicture/PublishingPermissionList/PublishingPermission
 LIST: PersonPicture/SIF_Metadata/TimeElements/TimeElement
 LIST: PersonPicture/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap
 LIST: PersonPicture/SIF_Metadata/LifeCycle/Created/Creators/Creator
@@ -640,8 +650,6 @@ LIST: PersonPicture/SIF_Metadata/LifeCycle/TimeElements/TimeElement
 LIST: PersonPicture/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap
 LIST: PersonPicture/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
 LIST: PersonPicture/SIF_ExtendedElements/SIF_ExtendedElement
-LIST: PersonPrivacyObligation/DataDomainObligationList/DataDomainObligation
-LIST: PersonPrivacyObligation/DataDomainObligationList/DataDomainObligation/ShareWithList/ShareWith
 LIST: PersonPrivacyObligation/SIF_Metadata/TimeElements/TimeElement
 LIST: PersonPrivacyObligation/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap
 LIST: PersonPrivacyObligation/SIF_Metadata/LifeCycle/Created/Creators/Creator
@@ -909,7 +917,6 @@ LIST: StudentDailyAttendance/SIF_ExtendedElements/SIF_ExtendedElement
 LIST: StudentGrade/Markers/Marker
 LIST: StudentGrade/LearningArea/SubjectArea/OtherCodeList/OtherCode
 LIST: StudentGrade/LearningStandardList/LearningStandard
-LIST: StudentGrade/LearningStandardList/LearningStandard/LearningStandardItemRefId
 LIST: StudentGrade/GradingScoreList/GradingAssignmentScore
 LIST: StudentGrade/SIF_Metadata/TimeElements/TimeElement
 LIST: StudentGrade/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap
@@ -978,6 +985,8 @@ LIST: StudentSchoolEnrollment/ExitType/OtherCodeList/OtherCode
 LIST: StudentSchoolEnrollment/CatchmentStatus/OtherCodeList/OtherCode
 LIST: StudentSchoolEnrollment/StudentSubjectChoiceList/StudentSubjectChoice
 LIST: StudentSchoolEnrollment/StudentSubjectChoiceList/StudentSubjectChoice/StudyDescription/OtherCodeList/OtherCode
+LIST: StudentSchoolEnrollment/StudentGroupList/StudentGroup
+LIST: StudentSchoolEnrollment/PublishingPermissionList/PublishingPermission
 LIST: StudentSchoolEnrollment/SIF_Metadata/TimeElements/TimeElement
 LIST: StudentSchoolEnrollment/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap
 LIST: StudentSchoolEnrollment/SIF_Metadata/LifeCycle/Created/Creators/Creator
@@ -986,6 +995,15 @@ LIST: StudentSchoolEnrollment/SIF_Metadata/LifeCycle/TimeElements/TimeElement
 LIST: StudentSchoolEnrollment/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap
 LIST: StudentSchoolEnrollment/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
 LIST: StudentSchoolEnrollment/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: StudentScoreJudgementAgainstStandard/LearningStandardList/LearningStandard
+LIST: StudentScoreJudgementAgainstStandard/SIF_Metadata/TimeElements/TimeElement
+LIST: StudentScoreJudgementAgainstStandard/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap
+LIST: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap
+LIST: StudentScoreJudgementAgainstStandard/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: StudentScoreJudgementAgainstStandard/SIF_ExtendedElements/SIF_ExtendedElement
 LIST: StudentSectionEnrollment/SIF_Metadata/TimeElements/TimeElement
 LIST: StudentSectionEnrollment/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap
 LIST: StudentSectionEnrollment/SIF_Metadata/LifeCycle/Created/Creators/Creator
@@ -1136,18 +1154,6 @@ LIST: Debtor/SIF_Metadata/LifeCycle/TimeElements/TimeElement
 LIST: Debtor/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap
 LIST: Debtor/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
 LIST: Debtor/SIF_ExtendedElements/SIF_ExtendedElement
-LIST: FQReporting/EntityContact/Address/StatisticalAreas/StatisticalArea
-LIST: FQReporting/FQContextualQuestionList/FQContextualQuestion
-LIST: FQReporting/FQItemList/FQItem
-LIST: FQReporting/AGRuleList/AGRule
-LIST: FQReporting/SIF_Metadata/TimeElements/TimeElement
-LIST: FQReporting/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap
-LIST: FQReporting/SIF_Metadata/LifeCycle/Created/Creators/Creator
-LIST: FQReporting/SIF_Metadata/LifeCycle/ModificationHistory/Modified
-LIST: FQReporting/SIF_Metadata/LifeCycle/TimeElements/TimeElement
-LIST: FQReporting/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap
-LIST: FQReporting/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
-LIST: FQReporting/SIF_ExtendedElements/SIF_ExtendedElement
 LIST: FinancialAccount/SIF_Metadata/TimeElements/TimeElement
 LIST: FinancialAccount/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap
 LIST: FinancialAccount/SIF_Metadata/LifeCycle/Created/Creators/Creator
@@ -1156,6 +1162,20 @@ LIST: FinancialAccount/SIF_Metadata/LifeCycle/TimeElements/TimeElement
 LIST: FinancialAccount/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap
 LIST: FinancialAccount/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
 LIST: FinancialAccount/SIF_ExtendedElements/SIF_ExtendedElement
+LIST: FinancialQuestionnaireSubmission/SubmissionContact/Address/StatisticalAreas/StatisticalArea
+LIST: FinancialQuestionnaireSubmission/FQReportingList/FQReporting
+LIST: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/StatisticalAreas/StatisticalArea
+LIST: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/FQContextualQuestionList/FQContextualQuestion
+LIST: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/FQItemList/FQItem
+LIST: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/AGRuleList/AGRule
+LIST: FinancialQuestionnaireSubmission/SIF_Metadata/TimeElements/TimeElement
+LIST: FinancialQuestionnaireSubmission/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap
+LIST: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/Created/Creators/Creator
+LIST: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+LIST: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+LIST: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap
+LIST: FinancialQuestionnaireSubmission/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+LIST: FinancialQuestionnaireSubmission/SIF_ExtendedElements/SIF_ExtendedElement
 LIST: Invoice/FinancialAccountRefIdList/FinancialAccountRefId
 LIST: Invoice/PurchasingItems/PurchasingItem
 LIST: Invoice/PurchasingItems/PurchasingItem/ExpenseAccounts/ExpenseAccount
@@ -1405,13 +1425,16 @@ NUMERIC: ChargedLocationInfo/AddressList/Address/GridLocation/Longitude
 NUMERIC: ChargedLocationInfo/PhoneNumberList/PhoneNumber/Preference
 NUMERIC: Debtor/AddressList/Address/GridLocation/Latitude
 NUMERIC: Debtor/AddressList/Address/GridLocation/Longitude
-NUMERIC: FQReporting/EntityContact/Address/GridLocation/Latitude
-NUMERIC: FQReporting/EntityContact/Address/GridLocation/Longitude
-NUMERIC: FQReporting/EntityContact/PhoneNumber/Preference
-NUMERIC: FQReporting/FQItemList/FQItem/TuitionAmount
-NUMERIC: FQReporting/FQItemList/FQItem/BoardingAmount
-NUMERIC: FQReporting/FQItemList/FQItem/SystemAmount
-NUMERIC: FQReporting/FQItemList/FQItem/DioceseAmount
+NUMERIC: FinancialQuestionnaireSubmission/SubmissionContact/Address/GridLocation/Latitude
+NUMERIC: FinancialQuestionnaireSubmission/SubmissionContact/Address/GridLocation/Longitude
+NUMERIC: FinancialQuestionnaireSubmission/SubmissionContact/PhoneNumber/Preference
+NUMERIC: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/GridLocation/Latitude
+NUMERIC: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/GridLocation/Longitude
+NUMERIC: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/PhoneNumber/Preference
+NUMERIC: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/FQItemList/FQItem/TuitionAmount
+NUMERIC: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/FQItemList/FQItem/BoardingAmount
+NUMERIC: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/FQItemList/FQItem/SystemAmount
+NUMERIC: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/FQItemList/FQItem/DioceseAmount
 NUMERIC: Invoice/BilledAmount
 NUMERIC: Invoice/NetAmount
 NUMERIC: Invoice/TaxRate
@@ -1625,6 +1648,8 @@ BOOLEAN: StudentPersonal/SIF_Metadata/TimeElements/TimeElement/IsCurrent
 BOOLEAN: StudentPersonal/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
 BOOLEAN: StudentSchoolEnrollment/SIF_Metadata/TimeElements/TimeElement/IsCurrent
 BOOLEAN: StudentSchoolEnrollment/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentScoreJudgementAgainstStandard/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
 BOOLEAN: StudentSectionEnrollment/SIF_Metadata/TimeElements/TimeElement/IsCurrent
 BOOLEAN: StudentSectionEnrollment/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
 BOOLEAN: SystemRole/SIF_Metadata/TimeElements/TimeElement/IsCurrent
@@ -1655,10 +1680,10 @@ BOOLEAN: ChargedLocationInfo/SIF_Metadata/TimeElements/TimeElement/IsCurrent
 BOOLEAN: ChargedLocationInfo/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
 BOOLEAN: Debtor/SIF_Metadata/TimeElements/TimeElement/IsCurrent
 BOOLEAN: Debtor/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
-BOOLEAN: FQReporting/SIF_Metadata/TimeElements/TimeElement/IsCurrent
-BOOLEAN: FQReporting/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
 BOOLEAN: FinancialAccount/SIF_Metadata/TimeElements/TimeElement/IsCurrent
 BOOLEAN: FinancialAccount/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+BOOLEAN: FinancialQuestionnaireSubmission/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+BOOLEAN: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
 BOOLEAN: Invoice/SIF_Metadata/TimeElements/TimeElement/IsCurrent
 BOOLEAN: Invoice/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
 BOOLEAN: Journal/SIF_Metadata/TimeElements/TimeElement/IsCurrent
@@ -1904,6 +1929,7 @@ XPATHTYPE	ParentObjectRefId	string		OBJECT	PersonPicture
 XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	PersonPicture
 XPATHTYPE	PictureSource	URIOrBinaryType	LOOKUP	OBJECT	PersonPicture
 XPATHTYPE	OKToPublish	string		OBJECT	PersonPicture
+XPATHTYPE	PublishingPermissionList	PublishingPermissionListType	LOOKUP	OBJECT	PersonPicture
 XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	PersonPicture
 XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	PersonPicture
 XPATHTYPE	ParentObjectRefId	string		OBJECT	PersonPrivacyObligation
@@ -1911,7 +1937,7 @@ XPATHTYPE	ParentObjectType	string		OBJECT	PersonPrivacyObligation
 XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	PersonPrivacyObligation
 XPATHTYPE	ContactForRequestsRefId	string		OBJECT	PersonPrivacyObligation
 XPATHTYPE	ContactForRequestsObjectType	string		OBJECT	PersonPrivacyObligation
-XPATHTYPE	DataDomainObligationList	DataDomainObligationListType	LOOKUP	OBJECT	PersonPrivacyObligation
+XPATHTYPE	DataDomainObligationList	DataDomainObligationListType		OBJECT	PersonPrivacyObligation
 XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	PersonPrivacyObligation
 XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	PersonPrivacyObligation
 XPATHTYPE	StudentPersonalRefId	string		OBJECT	PersonalisedPlan
@@ -2115,6 +2141,7 @@ XPATHTYPE	CasualReliefTeacher	string		OBJECT	StaffAssignment
 XPATHTYPE	Homegroup	string		OBJECT	StaffAssignment
 XPATHTYPE	House	string		OBJECT	StaffAssignment
 XPATHTYPE	CalendarSummaryList	CalendarSummaryListType	LOOKUP	OBJECT	StaffAssignment
+XPATHTYPE	PreviousSchoolName	string		OBJECT	StaffAssignment
 XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	StaffAssignment
 XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	StaffAssignment
 XPATHTYPE	LocalId	LocalIdType	LOOKUP	OBJECT	StaffPersonal
@@ -2285,6 +2312,7 @@ XPATHTYPE	EducationSupport	string		OBJECT	StudentPersonal
 XPATHTYPE	HomeSchooledStudent	string		OBJECT	StudentPersonal
 XPATHTYPE	Sensitive	string		OBJECT	StudentPersonal
 XPATHTYPE	OfflineDelivery	string		OBJECT	StudentPersonal
+XPATHTYPE	ESLSupport	string		OBJECT	StudentPersonal
 XPATHTYPE	PrePrimaryEducation	string		OBJECT	StudentPersonal
 XPATHTYPE	FirstAUSchoolEnrollment	string		OBJECT	StudentPersonal
 XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	StudentPersonal
@@ -2318,11 +2346,37 @@ XPATHTYPE	CatchmentStatus	CatchmentStatusContainerType	LOOKUP	OBJECT	StudentScho
 XPATHTYPE	RecordClosureReason	string		OBJECT	StudentSchoolEnrollment
 XPATHTYPE	PromotionInfo	PromotionInfoType	LOOKUP	OBJECT	StudentSchoolEnrollment
 XPATHTYPE	PreviousSchool	LocalIdType	LOOKUP	OBJECT	StudentSchoolEnrollment
+XPATHTYPE	PreviousSchoolName	string		OBJECT	StudentSchoolEnrollment
 XPATHTYPE	DestinationSchool	LocalIdType	LOOKUP	OBJECT	StudentSchoolEnrollment
+XPATHTYPE	DestinationSchoolName	string		OBJECT	StudentSchoolEnrollment
 XPATHTYPE	StudentSubjectChoiceList	StudentSubjectChoiceListType	LOOKUP	OBJECT	StudentSchoolEnrollment
 XPATHTYPE	StartedAtSchoolDate	string		OBJECT	StudentSchoolEnrollment
+XPATHTYPE	StudentGroupList	StudentGroupListType	LOOKUP	OBJECT	StudentSchoolEnrollment
+XPATHTYPE	PublishingPermissionList	PublishingPermissionListType	LOOKUP	OBJECT	StudentSchoolEnrollment
 XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	StudentSchoolEnrollment
 XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	StudentSchoolEnrollment
+XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	StudentScoreJudgementAgainstStandard
+XPATHTYPE	TermInfoRefId	string		OBJECT	StudentScoreJudgementAgainstStandard
+XPATHTYPE	LocalTermCode	LocalIdType	LOOKUP	OBJECT	StudentScoreJudgementAgainstStandard
+XPATHTYPE	StudentPersonalRefId	string		OBJECT	StudentScoreJudgementAgainstStandard
+XPATHTYPE	StudentStateProvinceId	StateProvinceIdType	LOOKUP	OBJECT	StudentScoreJudgementAgainstStandard
+XPATHTYPE	StudentLocalId	LocalIdType	LOOKUP	OBJECT	StudentScoreJudgementAgainstStandard
+XPATHTYPE	YearLevel	YearLevelType	LOOKUP	OBJECT	StudentScoreJudgementAgainstStandard
+XPATHTYPE	TeachingGroupRefId	string		OBJECT	StudentScoreJudgementAgainstStandard
+XPATHTYPE	ClassLocalId	string		OBJECT	StudentScoreJudgementAgainstStandard
+XPATHTYPE	StaffPersonalRefId	string		OBJECT	StudentScoreJudgementAgainstStandard
+XPATHTYPE	StaffLocalId	LocalIdType	LOOKUP	OBJECT	StudentScoreJudgementAgainstStandard
+XPATHTYPE	LearningStandardList	LearningStandardListType	LOOKUP	OBJECT	StudentScoreJudgementAgainstStandard
+XPATHTYPE	CurriculumCode	LocalIdType	LOOKUP	OBJECT	StudentScoreJudgementAgainstStandard
+XPATHTYPE	CurriculumNodeCode	LocalIdType	LOOKUP	OBJECT	StudentScoreJudgementAgainstStandard
+XPATHTYPE	Score	string		OBJECT	StudentScoreJudgementAgainstStandard
+XPATHTYPE	SpecialCircumstanceLocalCode	LocalIdType	LOOKUP	OBJECT	StudentScoreJudgementAgainstStandard
+XPATHTYPE	ManagedPathwayLocalCode	LocalIdType	LOOKUP	OBJECT	StudentScoreJudgementAgainstStandard
+XPATHTYPE	SchoolInfoRefId	string		OBJECT	StudentScoreJudgementAgainstStandard
+XPATHTYPE	SchoolLocalId	LocalIdType	LOOKUP	OBJECT	StudentScoreJudgementAgainstStandard
+XPATHTYPE	SchoolCommonwealthId	string		OBJECT	StudentScoreJudgementAgainstStandard
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	StudentScoreJudgementAgainstStandard
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	StudentScoreJudgementAgainstStandard
 XPATHTYPE	StudentPersonalRefId	string		OBJECT	StudentSectionEnrollment
 XPATHTYPE	SectionInfoRefId	string		OBJECT	StudentSectionEnrollment
 XPATHTYPE	SchoolYear	SchoolYearType	LOOKUP	OBJECT	StudentSectionEnrollment
@@ -2515,7 +2569,6 @@ XPATHTYPE	ReportingAuthoritySystem	string		OBJECT	AGStatusReport
 XPATHTYPE	ReportingAuthorityCommonwealthId	string		OBJECT	AGStatusReport
 XPATHTYPE	SubmittedBy	string		OBJECT	AGStatusReport
 XPATHTYPE	SubmissionTimestamp	string		OBJECT	AGStatusReport
-XPATHTYPE	SubmissionStatusCode	string		OBJECT	AGStatusReport
 XPATHTYPE	AGCollection	string		OBJECT	AGStatusReport
 XPATHTYPE	CollectionYear	SchoolYearType	LOOKUP	OBJECT	AGStatusReport
 XPATHTYPE	AGReportingObjectResponseList	AGReportingObjectResponseListType	LOOKUP	OBJECT	AGStatusReport
@@ -2540,25 +2593,6 @@ XPATHTYPE	BillingNote	string		OBJECT	Debtor
 XPATHTYPE	Discount	string		OBJECT	Debtor
 XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	Debtor
 XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	Debtor
-XPATHTYPE	FQYear	SchoolYearType	LOOKUP	OBJECT	FQReporting
-XPATHTYPE	ReportingAuthority	string		OBJECT	FQReporting
-XPATHTYPE	ReportingAuthoritySystem	string		OBJECT	FQReporting
-XPATHTYPE	ReportingAuthorityCommonwealthId	string		OBJECT	FQReporting
-XPATHTYPE	SystemSubmission	AUCodeSetsYesOrNoCategoryType		OBJECT	FQReporting
-XPATHTYPE	SoftwareVendorInfo	SoftwareVendorInfoContainerType	LOOKUP	OBJECT	FQReporting
-XPATHTYPE	EntityLevel	string		OBJECT	FQReporting
-XPATHTYPE	SchoolInfoRefId	string		OBJECT	FQReporting
-XPATHTYPE	LocalId	LocalIdType	LOOKUP	OBJECT	FQReporting
-XPATHTYPE	StateProvinceId	StateProvinceIdType	LOOKUP	OBJECT	FQReporting
-XPATHTYPE	CommonwealthId	string		OBJECT	FQReporting
-XPATHTYPE	ACARAId	string		OBJECT	FQReporting
-XPATHTYPE	EntityName	string		OBJECT	FQReporting
-XPATHTYPE	EntityContact	EntityContactInfoType	LOOKUP	OBJECT	FQReporting
-XPATHTYPE	FQContextualQuestionList	FQContextualQuestionListType	LOOKUP	OBJECT	FQReporting
-XPATHTYPE	FQItemList	FQItemListType	LOOKUP	OBJECT	FQReporting
-XPATHTYPE	AGRuleList	AGRuleListType	LOOKUP	OBJECT	FQReporting
-XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	FQReporting
-XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	FQReporting
 XPATHTYPE	ParentAccountRefId	string		OBJECT	FinancialAccount
 XPATHTYPE	ChargedLocationInfoRefId	string		OBJECT	FinancialAccount
 XPATHTYPE	AccountNumber	string		OBJECT	FinancialAccount
@@ -2569,6 +2603,17 @@ XPATHTYPE	CreationDate	string		OBJECT	FinancialAccount
 XPATHTYPE	CreationTime	string		OBJECT	FinancialAccount
 XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	FinancialAccount
 XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	FinancialAccount
+XPATHTYPE	FQYear	SchoolYearType	LOOKUP	OBJECT	FinancialQuestionnaireSubmission
+XPATHTYPE	ReportingAuthority	string		OBJECT	FinancialQuestionnaireSubmission
+XPATHTYPE	ReportingAuthoritySystem	string		OBJECT	FinancialQuestionnaireSubmission
+XPATHTYPE	ReportingAuthorityCommonwealthId	string		OBJECT	FinancialQuestionnaireSubmission
+XPATHTYPE	SystemSubmission	AUCodeSetsYesOrNoCategoryType		OBJECT	FinancialQuestionnaireSubmission
+XPATHTYPE	SoftwareVendorInfo	SoftwareVendorInfoContainerType	LOOKUP	OBJECT	FinancialQuestionnaireSubmission
+XPATHTYPE	SubmissionContact	EntityContactInfoType	LOOKUP	OBJECT	FinancialQuestionnaireSubmission
+XPATHTYPE	FQReportComments	string		OBJECT	FinancialQuestionnaireSubmission
+XPATHTYPE	FQReportingList	FQReportingListType	LOOKUP	OBJECT	FinancialQuestionnaireSubmission
+XPATHTYPE	SIF_Metadata	SIF_MetadataType	LOOKUP	OBJECT	FinancialQuestionnaireSubmission
+XPATHTYPE	SIF_ExtendedElements	SIF_ExtendedElementsType	LOOKUP	OBJECT	FinancialQuestionnaireSubmission
 XPATHTYPE	InvoicedEntity	string		OBJECT	Invoice
 XPATHTYPE	FormNumber	LocalIdType	LOOKUP	OBJECT	Invoice
 XPATHTYPE	BillingDate	string		OBJECT	Invoice
@@ -2741,16 +2786,13 @@ XPATHTYPE	node()	string		TYPE	VersionWithWildcardsType
 XPATHTYPE	node()	string		TYPE	DefinedProtocolsType
 XPATHTYPE	node()	string		TYPE	ExtendedContentType
 XPATHTYPE	node()	string		TYPE	SelectedContentType
-XPATHTYPE	DataDomainObligation	DataDomainObligationType	LOOKUP	TYPE	DataDomainObligationListType
-XPATHTYPE	DataDomain	string		TYPE	DataDomainObligationType
-XPATHTYPE	DomainComments	string		TYPE	DataDomainObligationType
-XPATHTYPE	ShareWithList	ShareWithListType	LOOKUP	TYPE	DataDomainObligationType
-XPATHTYPE	ShareWith	ShareWithType	LOOKUP	TYPE	ShareWithListType
-XPATHTYPE	ShareWithParty	string		TYPE	ShareWithType
-XPATHTYPE	Purpose	string		TYPE	ShareWithType
-XPATHTYPE	ShareWithComments	string		TYPE	ShareWithType
-XPATHTYPE	PermissionToOnShare	AUCodeSetsYesOrNoCategoryType		TYPE	ShareWithType
-XPATHTYPE	ShareWithURL	string		TYPE	ShareWithType
+XPATHTYPE	StudentGroup	StudentGroupType	LOOKUP	TYPE	StudentGroupListType
+XPATHTYPE	GroupCategory	string		TYPE	StudentGroupType
+XPATHTYPE	GroupLocalId	LocalIdType	LOOKUP	TYPE	StudentGroupType
+XPATHTYPE	GroupDescription	string		TYPE	StudentGroupType
+XPATHTYPE	PublishingPermission	PublishingPermissionType	LOOKUP	TYPE	PublishingPermissionListType
+XPATHTYPE	PermissionCategory	string		TYPE	PublishingPermissionType
+XPATHTYPE	PermissionValue	string		TYPE	PublishingPermissionType
 XPATHTYPE	AGReportingObjectResponse	AGReportingObjectResponseType	LOOKUP	TYPE	AGReportingObjectResponseListType
 XPATHTYPE	SubmittedRefId	string		TYPE	AGReportingObjectResponseType
 XPATHTYPE	SIFRefId	string		TYPE	AGReportingObjectResponseType
@@ -2760,6 +2802,19 @@ XPATHTYPE	CommonwealthId	string		TYPE	AGReportingObjectResponseType
 XPATHTYPE	EntityName	string		TYPE	AGReportingObjectResponseType
 XPATHTYPE	AGSubmissionStatusCode	string		TYPE	AGReportingObjectResponseType
 XPATHTYPE	AGRuleList	AGRuleListType	LOOKUP	TYPE	AGReportingObjectResponseType
+XPATHTYPE	FQReporting	FQReportingType	LOOKUP	TYPE	FQReportingListType
+XPATHTYPE	FQRefId	string		TYPE	FQReportingType
+XPATHTYPE	EntityLevel	string		TYPE	FQReportingType
+XPATHTYPE	SchoolInfoRefId	string		TYPE	FQReportingType
+XPATHTYPE	LocalId	LocalIdType	LOOKUP	TYPE	FQReportingType
+XPATHTYPE	StateProvinceId	StateProvinceIdType	LOOKUP	TYPE	FQReportingType
+XPATHTYPE	CommonwealthId	string		TYPE	FQReportingType
+XPATHTYPE	ACARAId	string		TYPE	FQReportingType
+XPATHTYPE	EntityName	string		TYPE	FQReportingType
+XPATHTYPE	EntityContact	EntityContactInfoType	LOOKUP	TYPE	FQReportingType
+XPATHTYPE	FQContextualQuestionList	FQContextualQuestionListType	LOOKUP	TYPE	FQReportingType
+XPATHTYPE	FQItemList	FQItemListType	LOOKUP	TYPE	FQReportingType
+XPATHTYPE	AGRuleList	AGRuleListType	LOOKUP	TYPE	FQReportingType
 XPATHTYPE	FQContextualQuestion	FQContextualQuestionType	LOOKUP	TYPE	FQContextualQuestionListType
 XPATHTYPE	FQContext	string		TYPE	FQContextualQuestionType
 XPATHTYPE	FQAnswer	string		TYPE	FQContextualQuestionType
@@ -3425,6 +3480,7 @@ XPATHTYPE	VisaStatisticalCode	string		TYPE	DemographicsType
 XPATHTYPE	VisaExpiryDate	string		TYPE	DemographicsType
 XPATHTYPE	VisaSubClassList	VisaSubClassListType	LOOKUP	TYPE	DemographicsType
 XPATHTYPE	LBOTE	string		TYPE	DemographicsType
+XPATHTYPE	InterpreterRequired	string		TYPE	DemographicsType
 XPATHTYPE	ImmunisationCertificateStatus	string		TYPE	DemographicsType
 XPATHTYPE	CulturalBackground	string		TYPE	DemographicsType
 XPATHTYPE	MaritalStatus	string		TYPE	DemographicsType
@@ -5052,6 +5108,12 @@ TRAVERSE: PersonPicture/SchoolYear/
 TRAVERSE: PersonPicture/PictureSource
 TRAVERSE: PersonPicture/PictureSource/
 TRAVERSE: PersonPicture/OKToPublish
+TRAVERSE: PersonPicture/PublishingPermissionList
+TRAVERSE: PersonPicture/PublishingPermissionList/
+TRAVERSE: PersonPicture/PublishingPermissionList/PublishingPermission
+TRAVERSE: PersonPicture/PublishingPermissionList/PublishingPermission/
+TRAVERSE: PersonPicture/PublishingPermissionList/PublishingPermission/PermissionCategory
+TRAVERSE: PersonPicture/PublishingPermissionList/PublishingPermission/PermissionValue
 TRAVERSE: PersonPicture/SIF_Metadata
 TRAVERSE: PersonPicture/SIF_Metadata/
 TRAVERSE: PersonPicture/SIF_Metadata/TimeElements
@@ -5120,20 +5182,6 @@ TRAVERSE: PersonPrivacyObligation/SchoolYear/
 TRAVERSE: PersonPrivacyObligation/ContactForRequestsRefId
 TRAVERSE: PersonPrivacyObligation/ContactForRequestsObjectType
 TRAVERSE: PersonPrivacyObligation/DataDomainObligationList
-TRAVERSE: PersonPrivacyObligation/DataDomainObligationList/
-TRAVERSE: PersonPrivacyObligation/DataDomainObligationList/DataDomainObligation
-TRAVERSE: PersonPrivacyObligation/DataDomainObligationList/DataDomainObligation/
-TRAVERSE: PersonPrivacyObligation/DataDomainObligationList/DataDomainObligation/DataDomain
-TRAVERSE: PersonPrivacyObligation/DataDomainObligationList/DataDomainObligation/DomainComments
-TRAVERSE: PersonPrivacyObligation/DataDomainObligationList/DataDomainObligation/ShareWithList
-TRAVERSE: PersonPrivacyObligation/DataDomainObligationList/DataDomainObligation/ShareWithList/
-TRAVERSE: PersonPrivacyObligation/DataDomainObligationList/DataDomainObligation/ShareWithList/ShareWith
-TRAVERSE: PersonPrivacyObligation/DataDomainObligationList/DataDomainObligation/ShareWithList/ShareWith/
-TRAVERSE: PersonPrivacyObligation/DataDomainObligationList/DataDomainObligation/ShareWithList/ShareWith/ShareWithParty
-TRAVERSE: PersonPrivacyObligation/DataDomainObligationList/DataDomainObligation/ShareWithList/ShareWith/Purpose
-TRAVERSE: PersonPrivacyObligation/DataDomainObligationList/DataDomainObligation/ShareWithList/ShareWith/ShareWithComments
-TRAVERSE: PersonPrivacyObligation/DataDomainObligationList/DataDomainObligation/ShareWithList/ShareWith/PermissionToOnShare
-TRAVERSE: PersonPrivacyObligation/DataDomainObligationList/DataDomainObligation/ShareWithList/ShareWith/ShareWithURL
 TRAVERSE: PersonPrivacyObligation/SIF_Metadata
 TRAVERSE: PersonPrivacyObligation/SIF_Metadata/
 TRAVERSE: PersonPrivacyObligation/SIF_Metadata/TimeElements
@@ -6526,6 +6574,7 @@ TRAVERSE: StaffAssignment/House
 TRAVERSE: StaffAssignment/CalendarSummaryList
 TRAVERSE: StaffAssignment/CalendarSummaryList/
 TRAVERSE: StaffAssignment/CalendarSummaryList/CalendarSummaryRefId
+TRAVERSE: StaffAssignment/PreviousSchoolName
 TRAVERSE: StaffAssignment/SIF_Metadata
 TRAVERSE: StaffAssignment/SIF_Metadata/
 TRAVERSE: StaffAssignment/SIF_Metadata/TimeElements
@@ -6703,6 +6752,7 @@ TRAVERSE: StaffPersonal/PersonInfo/Demographics/VisaSubClassList/VisaSubClass/AT
 TRAVERSE: StaffPersonal/PersonInfo/Demographics/VisaSubClassList/VisaSubClass/ATEStartDate
 TRAVERSE: StaffPersonal/PersonInfo/Demographics/VisaSubClassList/VisaSubClass/VisaStatisticalCode
 TRAVERSE: StaffPersonal/PersonInfo/Demographics/LBOTE
+TRAVERSE: StaffPersonal/PersonInfo/Demographics/InterpreterRequired
 TRAVERSE: StaffPersonal/PersonInfo/Demographics/ImmunisationCertificateStatus
 TRAVERSE: StaffPersonal/PersonInfo/Demographics/CulturalBackground
 TRAVERSE: StaffPersonal/PersonInfo/Demographics/MaritalStatus
@@ -7368,6 +7418,7 @@ TRAVERSE: StudentContactPersonal/PersonInfo/Demographics/VisaSubClassList/VisaSu
 TRAVERSE: StudentContactPersonal/PersonInfo/Demographics/VisaSubClassList/VisaSubClass/ATEStartDate
 TRAVERSE: StudentContactPersonal/PersonInfo/Demographics/VisaSubClassList/VisaSubClass/VisaStatisticalCode
 TRAVERSE: StudentContactPersonal/PersonInfo/Demographics/LBOTE
+TRAVERSE: StudentContactPersonal/PersonInfo/Demographics/InterpreterRequired
 TRAVERSE: StudentContactPersonal/PersonInfo/Demographics/ImmunisationCertificateStatus
 TRAVERSE: StudentContactPersonal/PersonInfo/Demographics/CulturalBackground
 TRAVERSE: StudentContactPersonal/PersonInfo/Demographics/MaritalStatus
@@ -8162,6 +8213,7 @@ TRAVERSE: StudentPersonal/PersonInfo/Demographics/VisaSubClassList/VisaSubClass/
 TRAVERSE: StudentPersonal/PersonInfo/Demographics/VisaSubClassList/VisaSubClass/ATEStartDate
 TRAVERSE: StudentPersonal/PersonInfo/Demographics/VisaSubClassList/VisaSubClass/VisaStatisticalCode
 TRAVERSE: StudentPersonal/PersonInfo/Demographics/LBOTE
+TRAVERSE: StudentPersonal/PersonInfo/Demographics/InterpreterRequired
 TRAVERSE: StudentPersonal/PersonInfo/Demographics/ImmunisationCertificateStatus
 TRAVERSE: StudentPersonal/PersonInfo/Demographics/CulturalBackground
 TRAVERSE: StudentPersonal/PersonInfo/Demographics/MaritalStatus
@@ -8340,6 +8392,7 @@ TRAVERSE: StudentPersonal/EducationSupport
 TRAVERSE: StudentPersonal/HomeSchooledStudent
 TRAVERSE: StudentPersonal/Sensitive
 TRAVERSE: StudentPersonal/OfflineDelivery
+TRAVERSE: StudentPersonal/ESLSupport
 TRAVERSE: StudentPersonal/PrePrimaryEducation
 TRAVERSE: StudentPersonal/FirstAUSchoolEnrollment
 TRAVERSE: StudentPersonal/SIF_Metadata
@@ -8461,8 +8514,10 @@ TRAVERSE: StudentSchoolEnrollment/PromotionInfo/
 TRAVERSE: StudentSchoolEnrollment/PromotionInfo/PromotionStatus
 TRAVERSE: StudentSchoolEnrollment/PreviousSchool
 TRAVERSE: StudentSchoolEnrollment/PreviousSchool/
+TRAVERSE: StudentSchoolEnrollment/PreviousSchoolName
 TRAVERSE: StudentSchoolEnrollment/DestinationSchool
 TRAVERSE: StudentSchoolEnrollment/DestinationSchool/
+TRAVERSE: StudentSchoolEnrollment/DestinationSchoolName
 TRAVERSE: StudentSchoolEnrollment/StudentSubjectChoiceList
 TRAVERSE: StudentSchoolEnrollment/StudentSubjectChoiceList/
 TRAVERSE: StudentSchoolEnrollment/StudentSubjectChoiceList/StudentSubjectChoice
@@ -8479,6 +8534,20 @@ TRAVERSE: StudentSchoolEnrollment/StudentSubjectChoiceList/StudentSubjectChoice/
 TRAVERSE: StudentSchoolEnrollment/StudentSubjectChoiceList/StudentSubjectChoice/OtherSchoolLocalId
 TRAVERSE: StudentSchoolEnrollment/StudentSubjectChoiceList/StudentSubjectChoice/OtherSchoolLocalId/
 TRAVERSE: StudentSchoolEnrollment/StartedAtSchoolDate
+TRAVERSE: StudentSchoolEnrollment/StudentGroupList
+TRAVERSE: StudentSchoolEnrollment/StudentGroupList/
+TRAVERSE: StudentSchoolEnrollment/StudentGroupList/StudentGroup
+TRAVERSE: StudentSchoolEnrollment/StudentGroupList/StudentGroup/
+TRAVERSE: StudentSchoolEnrollment/StudentGroupList/StudentGroup/GroupCategory
+TRAVERSE: StudentSchoolEnrollment/StudentGroupList/StudentGroup/GroupLocalId
+TRAVERSE: StudentSchoolEnrollment/StudentGroupList/StudentGroup/GroupLocalId/
+TRAVERSE: StudentSchoolEnrollment/StudentGroupList/StudentGroup/GroupDescription
+TRAVERSE: StudentSchoolEnrollment/PublishingPermissionList
+TRAVERSE: StudentSchoolEnrollment/PublishingPermissionList/
+TRAVERSE: StudentSchoolEnrollment/PublishingPermissionList/PublishingPermission
+TRAVERSE: StudentSchoolEnrollment/PublishingPermissionList/PublishingPermission/
+TRAVERSE: StudentSchoolEnrollment/PublishingPermissionList/PublishingPermission/PermissionCategory
+TRAVERSE: StudentSchoolEnrollment/PublishingPermissionList/PublishingPermission/PermissionValue
 TRAVERSE: StudentSchoolEnrollment/SIF_Metadata
 TRAVERSE: StudentSchoolEnrollment/SIF_Metadata/
 TRAVERSE: StudentSchoolEnrollment/SIF_Metadata/TimeElements
@@ -8539,6 +8608,106 @@ TRAVERSE: StudentSchoolEnrollment/SIF_ExtendedElements
 TRAVERSE: StudentSchoolEnrollment/SIF_ExtendedElements/
 TRAVERSE: StudentSchoolEnrollment/SIF_ExtendedElements/SIF_ExtendedElement
 TRAVERSE: StudentSchoolEnrollment/SIF_ExtendedElements/SIF_ExtendedElement/
+TRAVERSE: StudentScoreJudgementAgainstStandard/
+TRAVERSE: StudentScoreJudgementAgainstStandard/SchoolYear
+TRAVERSE: StudentScoreJudgementAgainstStandard/SchoolYear/
+TRAVERSE: StudentScoreJudgementAgainstStandard/TermInfoRefId
+TRAVERSE: StudentScoreJudgementAgainstStandard/LocalTermCode
+TRAVERSE: StudentScoreJudgementAgainstStandard/LocalTermCode/
+TRAVERSE: StudentScoreJudgementAgainstStandard/StudentPersonalRefId
+TRAVERSE: StudentScoreJudgementAgainstStandard/StudentStateProvinceId
+TRAVERSE: StudentScoreJudgementAgainstStandard/StudentStateProvinceId/
+TRAVERSE: StudentScoreJudgementAgainstStandard/StudentLocalId
+TRAVERSE: StudentScoreJudgementAgainstStandard/StudentLocalId/
+TRAVERSE: StudentScoreJudgementAgainstStandard/YearLevel
+TRAVERSE: StudentScoreJudgementAgainstStandard/YearLevel/
+TRAVERSE: StudentScoreJudgementAgainstStandard/YearLevel/Code
+TRAVERSE: StudentScoreJudgementAgainstStandard/TeachingGroupRefId
+TRAVERSE: StudentScoreJudgementAgainstStandard/ClassLocalId
+TRAVERSE: StudentScoreJudgementAgainstStandard/StaffPersonalRefId
+TRAVERSE: StudentScoreJudgementAgainstStandard/StaffLocalId
+TRAVERSE: StudentScoreJudgementAgainstStandard/StaffLocalId/
+TRAVERSE: StudentScoreJudgementAgainstStandard/LearningStandardList
+TRAVERSE: StudentScoreJudgementAgainstStandard/LearningStandardList/
+TRAVERSE: StudentScoreJudgementAgainstStandard/LearningStandardList/LearningStandard
+TRAVERSE: StudentScoreJudgementAgainstStandard/LearningStandardList/LearningStandard/
+TRAVERSE: StudentScoreJudgementAgainstStandard/LearningStandardList/LearningStandard/LearningStandardItemRefId
+TRAVERSE: StudentScoreJudgementAgainstStandard/LearningStandardList/LearningStandard/LearningStandardURL
+TRAVERSE: StudentScoreJudgementAgainstStandard/LearningStandardList/LearningStandard/LearningStandardLocalId
+TRAVERSE: StudentScoreJudgementAgainstStandard/LearningStandardList/LearningStandard/LearningStandardLocalId/
+TRAVERSE: StudentScoreJudgementAgainstStandard/CurriculumCode
+TRAVERSE: StudentScoreJudgementAgainstStandard/CurriculumCode/
+TRAVERSE: StudentScoreJudgementAgainstStandard/CurriculumNodeCode
+TRAVERSE: StudentScoreJudgementAgainstStandard/CurriculumNodeCode/
+TRAVERSE: StudentScoreJudgementAgainstStandard/Score
+TRAVERSE: StudentScoreJudgementAgainstStandard/SpecialCircumstanceLocalCode
+TRAVERSE: StudentScoreJudgementAgainstStandard/SpecialCircumstanceLocalCode/
+TRAVERSE: StudentScoreJudgementAgainstStandard/ManagedPathwayLocalCode
+TRAVERSE: StudentScoreJudgementAgainstStandard/ManagedPathwayLocalCode/
+TRAVERSE: StudentScoreJudgementAgainstStandard/SchoolInfoRefId
+TRAVERSE: StudentScoreJudgementAgainstStandard/SchoolLocalId
+TRAVERSE: StudentScoreJudgementAgainstStandard/SchoolLocalId/
+TRAVERSE: StudentScoreJudgementAgainstStandard/SchoolCommonwealthId
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/TimeElements
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/TimeElements/TimeElement
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/TimeElements/TimeElement/
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/TimeElements/TimeElement/Type
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/TimeElements/TimeElement/Code
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/TimeElements/TimeElement/Name
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/TimeElements/TimeElement/Value
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/TimeElements/TimeElement/StartDateTime
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/TimeElements/TimeElement/EndDateTime
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/TimeElements/TimeElement/SpanGaps
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap/Type
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap/Code
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap/Name
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap/Value
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap/StartDateTime
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap/EndDateTime
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/Created
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/Created/DateTime
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/Created/Creators
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/Created/Creators/Creator
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/Created/Creators/Creator/Name
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/Created/Creators/Creator/ID
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/ModificationHistory
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/ModificationHistory/Modified/By
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/ModificationHistory/Modified/DateTime
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/ModificationHistory/Modified/Description
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/TimeElements
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/TimeElements/TimeElement/
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/TimeElements/TimeElement/Type
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/TimeElements/TimeElement/Code
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/TimeElements/TimeElement/Name
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/TimeElements/TimeElement/Value
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/TimeElements/TimeElement/StartDateTime
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/TimeElements/TimeElement/EndDateTime
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap/Type
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap/Code
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap/Name
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap/Value
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap/StartDateTime
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap/EndDateTime
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/EducationFilter
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/EducationFilter/
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/EducationFilter/LearningStandardItems
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/EducationFilter/LearningStandardItems/
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_ExtendedElements
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_ExtendedElements/
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_ExtendedElements/SIF_ExtendedElement
+TRAVERSE: StudentScoreJudgementAgainstStandard/SIF_ExtendedElements/SIF_ExtendedElement/
 TRAVERSE: StudentSectionEnrollment/
 TRAVERSE: StudentSectionEnrollment/StudentPersonalRefId
 TRAVERSE: StudentSectionEnrollment/SectionInfoRefId
@@ -9686,7 +9855,6 @@ TRAVERSE: AGStatusReport/ReportingAuthoritySystem
 TRAVERSE: AGStatusReport/ReportingAuthorityCommonwealthId
 TRAVERSE: AGStatusReport/SubmittedBy
 TRAVERSE: AGStatusReport/SubmissionTimestamp
-TRAVERSE: AGStatusReport/SubmissionStatusCode
 TRAVERSE: AGStatusReport/AGCollection
 TRAVERSE: AGStatusReport/CollectionYear
 TRAVERSE: AGStatusReport/CollectionYear/
@@ -10003,180 +10171,6 @@ TRAVERSE: Debtor/SIF_ExtendedElements
 TRAVERSE: Debtor/SIF_ExtendedElements/
 TRAVERSE: Debtor/SIF_ExtendedElements/SIF_ExtendedElement
 TRAVERSE: Debtor/SIF_ExtendedElements/SIF_ExtendedElement/
-TRAVERSE: FQReporting/
-TRAVERSE: FQReporting/FQYear
-TRAVERSE: FQReporting/FQYear/
-TRAVERSE: FQReporting/ReportingAuthority
-TRAVERSE: FQReporting/ReportingAuthoritySystem
-TRAVERSE: FQReporting/ReportingAuthorityCommonwealthId
-TRAVERSE: FQReporting/SystemSubmission
-TRAVERSE: FQReporting/SoftwareVendorInfo
-TRAVERSE: FQReporting/SoftwareVendorInfo/
-TRAVERSE: FQReporting/SoftwareVendorInfo/SoftwareProduct
-TRAVERSE: FQReporting/SoftwareVendorInfo/SoftwareVersion
-TRAVERSE: FQReporting/EntityLevel
-TRAVERSE: FQReporting/SchoolInfoRefId
-TRAVERSE: FQReporting/LocalId
-TRAVERSE: FQReporting/LocalId/
-TRAVERSE: FQReporting/StateProvinceId
-TRAVERSE: FQReporting/StateProvinceId/
-TRAVERSE: FQReporting/CommonwealthId
-TRAVERSE: FQReporting/ACARAId
-TRAVERSE: FQReporting/EntityName
-TRAVERSE: FQReporting/EntityContact
-TRAVERSE: FQReporting/EntityContact/
-TRAVERSE: FQReporting/EntityContact/Name
-TRAVERSE: FQReporting/EntityContact/Name/
-TRAVERSE: FQReporting/EntityContact/Name//
-TRAVERSE: FQReporting/EntityContact/Name//Title
-TRAVERSE: FQReporting/EntityContact/Name//FamilyName
-TRAVERSE: FQReporting/EntityContact/Name//GivenName
-TRAVERSE: FQReporting/EntityContact/Name//MiddleName
-TRAVERSE: FQReporting/EntityContact/Name//FamilyNameFirst
-TRAVERSE: FQReporting/EntityContact/Name//PreferredFamilyName
-TRAVERSE: FQReporting/EntityContact/Name//PreferredFamilyNameFirst
-TRAVERSE: FQReporting/EntityContact/Name//PreferredGivenName
-TRAVERSE: FQReporting/EntityContact/Name//Suffix
-TRAVERSE: FQReporting/EntityContact/Name//FullName
-TRAVERSE: FQReporting/EntityContact/PositionTitle
-TRAVERSE: FQReporting/EntityContact/Role
-TRAVERSE: FQReporting/EntityContact/RegistrationDetails
-TRAVERSE: FQReporting/EntityContact/Qualifications
-TRAVERSE: FQReporting/EntityContact/Address
-TRAVERSE: FQReporting/EntityContact/Address/
-TRAVERSE: FQReporting/EntityContact/Address/EffectiveFromDate
-TRAVERSE: FQReporting/EntityContact/Address/EffectiveToDate
-TRAVERSE: FQReporting/EntityContact/Address/Street
-TRAVERSE: FQReporting/EntityContact/Address/Street/
-TRAVERSE: FQReporting/EntityContact/Address/Street/Line1
-TRAVERSE: FQReporting/EntityContact/Address/Street/Line2
-TRAVERSE: FQReporting/EntityContact/Address/Street/Line3
-TRAVERSE: FQReporting/EntityContact/Address/Street/Complex
-TRAVERSE: FQReporting/EntityContact/Address/Street/StreetNumber
-TRAVERSE: FQReporting/EntityContact/Address/Street/StreetPrefix
-TRAVERSE: FQReporting/EntityContact/Address/Street/StreetName
-TRAVERSE: FQReporting/EntityContact/Address/Street/StreetType
-TRAVERSE: FQReporting/EntityContact/Address/Street/StreetSuffix
-TRAVERSE: FQReporting/EntityContact/Address/Street/ApartmentType
-TRAVERSE: FQReporting/EntityContact/Address/Street/ApartmentNumberPrefix
-TRAVERSE: FQReporting/EntityContact/Address/Street/ApartmentNumber
-TRAVERSE: FQReporting/EntityContact/Address/Street/ApartmentNumberSuffix
-TRAVERSE: FQReporting/EntityContact/Address/City
-TRAVERSE: FQReporting/EntityContact/Address/StateProvince
-TRAVERSE: FQReporting/EntityContact/Address/StateProvince/
-TRAVERSE: FQReporting/EntityContact/Address/Country
-TRAVERSE: FQReporting/EntityContact/Address/Country/
-TRAVERSE: FQReporting/EntityContact/Address/PostalCode
-TRAVERSE: FQReporting/EntityContact/Address/GridLocation
-TRAVERSE: FQReporting/EntityContact/Address/GridLocation/
-TRAVERSE: FQReporting/EntityContact/Address/GridLocation/Latitude
-TRAVERSE: FQReporting/EntityContact/Address/GridLocation/Longitude
-TRAVERSE: FQReporting/EntityContact/Address/MapReference
-TRAVERSE: FQReporting/EntityContact/Address/MapReference/
-TRAVERSE: FQReporting/EntityContact/Address/MapReference/XCoordinate
-TRAVERSE: FQReporting/EntityContact/Address/MapReference/YCoordinate
-TRAVERSE: FQReporting/EntityContact/Address/RadioContact
-TRAVERSE: FQReporting/EntityContact/Address/Community
-TRAVERSE: FQReporting/EntityContact/Address/LocalId
-TRAVERSE: FQReporting/EntityContact/Address/LocalId/
-TRAVERSE: FQReporting/EntityContact/Address/AddressGlobalUID
-TRAVERSE: FQReporting/EntityContact/Address/AddressGlobalUID/
-TRAVERSE: FQReporting/EntityContact/Address/StatisticalAreas
-TRAVERSE: FQReporting/EntityContact/Address/StatisticalAreas/
-TRAVERSE: FQReporting/EntityContact/Address/StatisticalAreas/StatisticalArea
-TRAVERSE: FQReporting/EntityContact/Address/StatisticalAreas/StatisticalArea/
-TRAVERSE: FQReporting/EntityContact/Email
-TRAVERSE: FQReporting/EntityContact/Email/
-TRAVERSE: FQReporting/EntityContact/PhoneNumber
-TRAVERSE: FQReporting/EntityContact/PhoneNumber/
-TRAVERSE: FQReporting/EntityContact/PhoneNumber/Number
-TRAVERSE: FQReporting/EntityContact/PhoneNumber/Extension
-TRAVERSE: FQReporting/EntityContact/PhoneNumber/ListedStatus
-TRAVERSE: FQReporting/EntityContact/PhoneNumber/Preference
-TRAVERSE: FQReporting/FQContextualQuestionList
-TRAVERSE: FQReporting/FQContextualQuestionList/
-TRAVERSE: FQReporting/FQContextualQuestionList/FQContextualQuestion
-TRAVERSE: FQReporting/FQContextualQuestionList/FQContextualQuestion/
-TRAVERSE: FQReporting/FQContextualQuestionList/FQContextualQuestion/FQContext
-TRAVERSE: FQReporting/FQContextualQuestionList/FQContextualQuestion/FQAnswer
-TRAVERSE: FQReporting/FQItemList
-TRAVERSE: FQReporting/FQItemList/
-TRAVERSE: FQReporting/FQItemList/FQItem
-TRAVERSE: FQReporting/FQItemList/FQItem/
-TRAVERSE: FQReporting/FQItemList/FQItem/FQItemCode
-TRAVERSE: FQReporting/FQItemList/FQItem/TuitionAmount
-TRAVERSE: FQReporting/FQItemList/FQItem/BoardingAmount
-TRAVERSE: FQReporting/FQItemList/FQItem/SystemAmount
-TRAVERSE: FQReporting/FQItemList/FQItem/DioceseAmount
-TRAVERSE: FQReporting/FQItemList/FQItem/FQComments
-TRAVERSE: FQReporting/AGRuleList
-TRAVERSE: FQReporting/AGRuleList/
-TRAVERSE: FQReporting/AGRuleList/AGRule
-TRAVERSE: FQReporting/AGRuleList/AGRule/
-TRAVERSE: FQReporting/AGRuleList/AGRule/AGRuleCode
-TRAVERSE: FQReporting/AGRuleList/AGRule/AGRuleComment
-TRAVERSE: FQReporting/AGRuleList/AGRule/AGRuleResponse
-TRAVERSE: FQReporting/AGRuleList/AGRule/AGRuleStatus
-TRAVERSE: FQReporting/SIF_Metadata
-TRAVERSE: FQReporting/SIF_Metadata/
-TRAVERSE: FQReporting/SIF_Metadata/TimeElements
-TRAVERSE: FQReporting/SIF_Metadata/TimeElements/TimeElement
-TRAVERSE: FQReporting/SIF_Metadata/TimeElements/TimeElement/
-TRAVERSE: FQReporting/SIF_Metadata/TimeElements/TimeElement/Type
-TRAVERSE: FQReporting/SIF_Metadata/TimeElements/TimeElement/Code
-TRAVERSE: FQReporting/SIF_Metadata/TimeElements/TimeElement/Name
-TRAVERSE: FQReporting/SIF_Metadata/TimeElements/TimeElement/Value
-TRAVERSE: FQReporting/SIF_Metadata/TimeElements/TimeElement/StartDateTime
-TRAVERSE: FQReporting/SIF_Metadata/TimeElements/TimeElement/EndDateTime
-TRAVERSE: FQReporting/SIF_Metadata/TimeElements/TimeElement/SpanGaps
-TRAVERSE: FQReporting/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap
-TRAVERSE: FQReporting/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap/Type
-TRAVERSE: FQReporting/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap/Code
-TRAVERSE: FQReporting/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap/Name
-TRAVERSE: FQReporting/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap/Value
-TRAVERSE: FQReporting/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap/StartDateTime
-TRAVERSE: FQReporting/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap/EndDateTime
-TRAVERSE: FQReporting/SIF_Metadata/TimeElements/TimeElement/IsCurrent
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/Created
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/Created/DateTime
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/Created/Creators
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/Created/Creators/Creator
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/Created/Creators/Creator/Name
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/Created/Creators/Creator/ID
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/ModificationHistory
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/ModificationHistory/Modified
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/ModificationHistory/Modified/By
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/ModificationHistory/Modified/DateTime
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/ModificationHistory/Modified/Description
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/TimeElements
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/TimeElements/TimeElement
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/TimeElements/TimeElement/
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/TimeElements/TimeElement/Type
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/TimeElements/TimeElement/Code
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/TimeElements/TimeElement/Name
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/TimeElements/TimeElement/Value
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/TimeElements/TimeElement/StartDateTime
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/TimeElements/TimeElement/EndDateTime
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap/Type
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap/Code
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap/Name
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap/Value
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap/StartDateTime
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap/EndDateTime
-TRAVERSE: FQReporting/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
-TRAVERSE: FQReporting/SIF_Metadata/EducationFilter
-TRAVERSE: FQReporting/SIF_Metadata/EducationFilter/
-TRAVERSE: FQReporting/SIF_Metadata/EducationFilter/LearningStandardItems
-TRAVERSE: FQReporting/SIF_Metadata/EducationFilter/LearningStandardItems/
-TRAVERSE: FQReporting/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
-TRAVERSE: FQReporting/SIF_ExtendedElements
-TRAVERSE: FQReporting/SIF_ExtendedElements/
-TRAVERSE: FQReporting/SIF_ExtendedElements/SIF_ExtendedElement
-TRAVERSE: FQReporting/SIF_ExtendedElements/SIF_ExtendedElement/
 TRAVERSE: FinancialAccount/
 TRAVERSE: FinancialAccount/ParentAccountRefId
 TRAVERSE: FinancialAccount/ChargedLocationInfoRefId
@@ -10246,6 +10240,256 @@ TRAVERSE: FinancialAccount/SIF_ExtendedElements
 TRAVERSE: FinancialAccount/SIF_ExtendedElements/
 TRAVERSE: FinancialAccount/SIF_ExtendedElements/SIF_ExtendedElement
 TRAVERSE: FinancialAccount/SIF_ExtendedElements/SIF_ExtendedElement/
+TRAVERSE: FinancialQuestionnaireSubmission/
+TRAVERSE: FinancialQuestionnaireSubmission/FQYear
+TRAVERSE: FinancialQuestionnaireSubmission/FQYear/
+TRAVERSE: FinancialQuestionnaireSubmission/ReportingAuthority
+TRAVERSE: FinancialQuestionnaireSubmission/ReportingAuthoritySystem
+TRAVERSE: FinancialQuestionnaireSubmission/ReportingAuthorityCommonwealthId
+TRAVERSE: FinancialQuestionnaireSubmission/SystemSubmission
+TRAVERSE: FinancialQuestionnaireSubmission/SoftwareVendorInfo
+TRAVERSE: FinancialQuestionnaireSubmission/SoftwareVendorInfo/
+TRAVERSE: FinancialQuestionnaireSubmission/SoftwareVendorInfo/SoftwareProduct
+TRAVERSE: FinancialQuestionnaireSubmission/SoftwareVendorInfo/SoftwareVersion
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Name
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Name/
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Name//
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Name//Title
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Name//FamilyName
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Name//GivenName
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Name//MiddleName
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Name//FamilyNameFirst
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Name//PreferredFamilyName
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Name//PreferredFamilyNameFirst
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Name//PreferredGivenName
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Name//Suffix
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Name//FullName
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/PositionTitle
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Role
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/RegistrationDetails
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Qualifications
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/EffectiveFromDate
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/EffectiveToDate
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/Street
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/Street/
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/Street/Line1
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/Street/Line2
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/Street/Line3
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/Street/Complex
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/Street/StreetNumber
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/Street/StreetPrefix
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/Street/StreetName
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/Street/StreetType
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/Street/StreetSuffix
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/Street/ApartmentType
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/Street/ApartmentNumberPrefix
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/Street/ApartmentNumber
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/Street/ApartmentNumberSuffix
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/City
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/StateProvince
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/StateProvince/
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/Country
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/Country/
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/PostalCode
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/GridLocation
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/GridLocation/
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/GridLocation/Latitude
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/GridLocation/Longitude
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/MapReference
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/MapReference/
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/MapReference/XCoordinate
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/MapReference/YCoordinate
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/RadioContact
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/Community
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/LocalId
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/LocalId/
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/AddressGlobalUID
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/AddressGlobalUID/
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/StatisticalAreas
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/StatisticalAreas/
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/StatisticalAreas/StatisticalArea
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Address/StatisticalAreas/StatisticalArea/
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Email
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/Email/
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/PhoneNumber
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/PhoneNumber/
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/PhoneNumber/Number
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/PhoneNumber/Extension
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/PhoneNumber/ListedStatus
+TRAVERSE: FinancialQuestionnaireSubmission/SubmissionContact/PhoneNumber/Preference
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportComments
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/FQRefId
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityLevel
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/SchoolInfoRefId
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/LocalId
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/LocalId/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/StateProvinceId
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/StateProvinceId/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/CommonwealthId
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/ACARAId
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityName
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Name
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Name/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Name//
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Name//Title
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Name//FamilyName
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Name//GivenName
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Name//MiddleName
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Name//FamilyNameFirst
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Name//PreferredFamilyName
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Name//PreferredFamilyNameFirst
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Name//PreferredGivenName
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Name//Suffix
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Name//FullName
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/PositionTitle
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Role
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/RegistrationDetails
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Qualifications
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/EffectiveFromDate
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/EffectiveToDate
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/Street
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/Street/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/Street/Line1
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/Street/Line2
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/Street/Line3
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/Street/Complex
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/Street/StreetNumber
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/Street/StreetPrefix
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/Street/StreetName
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/Street/StreetType
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/Street/StreetSuffix
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/Street/ApartmentType
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/Street/ApartmentNumberPrefix
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/Street/ApartmentNumber
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/Street/ApartmentNumberSuffix
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/City
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/StateProvince
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/StateProvince/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/Country
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/Country/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/PostalCode
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/GridLocation
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/GridLocation/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/GridLocation/Latitude
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/GridLocation/Longitude
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/MapReference
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/MapReference/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/MapReference/XCoordinate
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/MapReference/YCoordinate
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/RadioContact
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/Community
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/LocalId
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/LocalId/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/AddressGlobalUID
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/AddressGlobalUID/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/StatisticalAreas
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/StatisticalAreas/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/StatisticalAreas/StatisticalArea
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Address/StatisticalAreas/StatisticalArea/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Email
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/Email/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/PhoneNumber
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/PhoneNumber/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/PhoneNumber/Number
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/PhoneNumber/Extension
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/PhoneNumber/ListedStatus
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/EntityContact/PhoneNumber/Preference
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/FQContextualQuestionList
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/FQContextualQuestionList/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/FQContextualQuestionList/FQContextualQuestion
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/FQContextualQuestionList/FQContextualQuestion/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/FQContextualQuestionList/FQContextualQuestion/FQContext
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/FQContextualQuestionList/FQContextualQuestion/FQAnswer
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/FQItemList
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/FQItemList/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/FQItemList/FQItem
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/FQItemList/FQItem/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/FQItemList/FQItem/FQItemCode
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/FQItemList/FQItem/TuitionAmount
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/FQItemList/FQItem/BoardingAmount
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/FQItemList/FQItem/SystemAmount
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/FQItemList/FQItem/DioceseAmount
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/FQItemList/FQItem/FQComments
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/AGRuleList
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/AGRuleList/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/AGRuleList/AGRule
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/AGRuleList/AGRule/
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/AGRuleList/AGRule/AGRuleCode
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/AGRuleList/AGRule/AGRuleComment
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/AGRuleList/AGRule/AGRuleResponse
+TRAVERSE: FinancialQuestionnaireSubmission/FQReportingList/FQReporting/AGRuleList/AGRule/AGRuleStatus
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/TimeElements
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/TimeElements/TimeElement
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/TimeElements/TimeElement/
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/TimeElements/TimeElement/Type
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/TimeElements/TimeElement/Code
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/TimeElements/TimeElement/Name
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/TimeElements/TimeElement/Value
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/TimeElements/TimeElement/StartDateTime
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/TimeElements/TimeElement/EndDateTime
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/TimeElements/TimeElement/SpanGaps
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap/Type
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap/Code
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap/Name
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap/Value
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap/StartDateTime
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/TimeElements/TimeElement/SpanGaps/SpanGap/EndDateTime
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/TimeElements/TimeElement/IsCurrent
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/Created
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/Created/DateTime
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/Created/Creators
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/Created/Creators/Creator
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/Created/Creators/Creator/Name
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/Created/Creators/Creator/ID
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/ModificationHistory
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/ModificationHistory/Modified
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/ModificationHistory/Modified/By
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/ModificationHistory/Modified/DateTime
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/ModificationHistory/Modified/Description
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/TimeElements
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/TimeElements/TimeElement
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/TimeElements/TimeElement/
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/TimeElements/TimeElement/Type
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/TimeElements/TimeElement/Code
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/TimeElements/TimeElement/Name
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/TimeElements/TimeElement/Value
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/TimeElements/TimeElement/StartDateTime
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/TimeElements/TimeElement/EndDateTime
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap/Type
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap/Code
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap/Name
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap/Value
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap/StartDateTime
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/TimeElements/TimeElement/SpanGaps/SpanGap/EndDateTime
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/LifeCycle/TimeElements/TimeElement/IsCurrent
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/EducationFilter
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/EducationFilter/
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/EducationFilter/LearningStandardItems
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/EducationFilter/LearningStandardItems/
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_Metadata/EducationFilter/LearningStandardItems/LearningStandardItemRefId
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_ExtendedElements
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_ExtendedElements/
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_ExtendedElements/SIF_ExtendedElement
+TRAVERSE: FinancialQuestionnaireSubmission/SIF_ExtendedElements/SIF_ExtendedElement/
 TRAVERSE: Invoice/
 TRAVERSE: Invoice/InvoicedEntity
 TRAVERSE: Invoice/FormNumber

@@ -3,7 +3,8 @@ Code to convert between SIF XML and PESC JSON
 
 == Transform Scripts
 
-The transform scripts are contained in `scripts/`, and include XSLT 1.0 transforms to process XML, and Javascript scripts to process JSON.
+The transform scripts are contained in a different folder for each locale, and a different subfolder for each SIF release;
+for example, `au/3.4.3` contains scripts specific to SIF-AU 3.4.3. They include XSLT 1.0 transforms to process XML, and Javascript scripts to process JSON.
 These tools have been preferred over programming-language?~@~Sspecific tools, in order to make the scripts as widely usable as possible. This
 repository includes scripts specific to the current SIF-AU specification, and will be updated as the SIF-AU specification is updated:
 
@@ -22,10 +23,6 @@ Other developers can use this representation to generate their own transformatio
 * `scripts/sif2jsonspecgen.xslt`: a variant of `scripts/sif2json.xslt`, which preserves only the parent in any XPaths. Used in
 internal specgen processing, as it can parse SIF object fragments as well as full objects (at the cost of not anticipating potential
 ambiguities in paths). It should only be used if you will need to convert partial SIF XML objects, and are prepared to check for ambiguous XPaths.
-
-The code in this repository, as described below, generates these transform scripts. The code would normally be run only by specification maintainers,
-but it can be customised by developers to generate their own language-specific tools, which may be more efficient. Developers will need access
-to either the `specgen` input source, or the intermediate `scripts/out.txt` flat file representation of the schema (see below).
 
 == Purpose
 https://www.a4l.org[Access for Learning (A4L)] is collaborating with the http://www.pesc.org[Postsecondary Electronic Standards Council (PESC)],
@@ -69,31 +66,12 @@ from `out.txt`, or the associated numeric templated (not inserting quotations ar
 
 == Approach
 
-=== Specgen to Structs
+The source code to generate these transform scripts is available at https://github.com/nsip/sifxml2pescjson_source[].
+It accesses specification sourcecode that is normally only accessible by authorised specification maintainers.
 
-The source of truth for the SIF data model is the set of XML files used by the `specgen` processor to generate all files associated with the specification,
-including both the online HTML documentation and the XSD schemas for that data model instance. The specgen input files for 
-the https://github.com/nsip/specgen_input_au[SIF-AU] and https://github.com/nsip/specgen_input_nz[SIF-NZ] data models are both available
-online, and this set of transformations has been developed against the SIF-AU instance. 
+=== Flat file input
 
-The information in the specgen input XML files is processed via an XSLT transform, `sifobject.xslt`, and converted to a struct-like
-representation of all objects and types in the specification. Two separate files are generated: `objectgraph.txt`, for the objects in the 
-specification (including any http://www.xfront.com/GlobalVersusLocal.html#FirstDesign[Russian-Doll] definitions embedded within objects), 
-and `typegraph.txt`, for the common types in the specification
-(used in ihttp://www.xfront.com/GlobalVersusLocal.html#ThirdDesign[Venetian-Blind] style.) The file contents for these is documented in `sifobject.xslt`.
-
-`sifobject.xslt` is the only code in this repository that depends on specgen input: all other code works off the output files of `sifobject.xslt`. 
-The `sifobject.xslt` transform could be rewritten to process XSD schemas instead; this has not proven necessary for SIF.
-
-NOTE: The `run.sh` script as distributed downloads the Australian specgen instance from GitHub, and iterates through it, using the `au_extract.sh` script.
-You can change this script to customise it for your locale, or you can preprocess the specgen input into the single input.xml file as normal,
-and use the `input_extract.sh` script in `run.sh` instead. (This is necessary for the New Zealand, as the conditional preprocessing XML directives
-will not be understood by `sifobject.xslt`.
-
-=== Structs to Flat File
-
-The script `treeparse.rb` iterates through `objectgraph.txt` and `typegraph.txt`, and generates `out.txt`, as a flattened file containing all needed 
-structural information to generate the transform scripts:
+All transform scripts are generated from a flat file input, `out.txt`, which contains all needed structural information to generate the transform scripts:
 
 * `OBJECT`: a list of all objects in the specification
 * `COMPLEX ATTRIBUTE`: the XPath (from object root) of all instances of XML attributes on complex content. The XPath is followed by a description of the complex content, as a diagnostic; that description is not used downstream.
@@ -118,106 +96,7 @@ The transform scripts are contained in `scripts/`, and are all generated from `o
 * `scripts/json2sif.js` by `makejs2xml.rb`, using OBJECT, COMPLEX ATTRIBUTE
 * `scripts/sifreorder.xslt` by `makereorder.rb`, using XPATHTYPE
 
-As noted, developers can also use `out.txt` to generate their own transforms.
-
-== How to install and run this tool
-
-NOTE: Most users do not need to install and run this tool. Only the scripts contained in `scripts/`, which are generated by this tool, are needed in order to convert between SIF AU XNL and SIF AU JSON. NSIP undertakes to update these scripts each time the SIF AU specification is updated.
-
-This tool is a series of shell scripts that invoke various other tools.
-
-You will therefore need the following tools available on your machine:
-
-* perl
-* libxml - full package which includes; libxml, xmllint, libxslt, libexslt etc.
-* ruby & gems support
-* node & npm
-
-Note, on Mac the available versions of ruby are restricted based on the version of the OS. Some syntax features are not supported in older versions. There is a separate branch in this repository that includes scripts which will run on ruby 2.2, use that branch if you encounter errors trying to run these scripts.
-
-You will need to install some ruby gems required by these scripts:
-
-[source,console]
-----
-gem install byebug
-gem install pp
-gem install OptionParser
-----
-
-all other actions need to take place in the repository folder, so
-
-[source,console]
-----
-cd (PATH TO YOUR GITHUB FOLDER)/nsip/sifxml2pescjson
-----
-
-then use git to pull the latest version of the sif specgen input files
-
-[source,console]
-----
-rm -fr specgen_input #remove any previous version
-git clone https://github.com/nsip/specgen_input.git
-----
-
-NOTE: access to the specgen input repository is restricted, if you do not have access please contact NSIP team.
-
-The git clone should produce a subfolder in the working directory that contains all of the specgen input files, these will be used as the base resources for building the pesc-json output.
-
-While in the same folder, you will also need to install some node modules required by the scripts:
-
-[source,console]
-----
-# initialise a local npm cache
-npm init --y
-# then install required packages
-npm install x2js
-npm install fs
-npm install dot-object
-----
-
-Lastly you need to make the shell scripts executable:
-
-[source,console]
-----
-chmod +x run.sh
-chmod +x au_extract.sh
-chmod +x input_extract.sh
-----
-
-With all of the above done you are now good to go!
-
-In the current directory simply invoke run.sh
-
-[source,console]
-----
-> ./run.sh
-----
-
-The script compares round-tripped XML-JSON-XML conversion, using the tools generated, based on all the SIF XML examples in specgen, in order to verify that the XML-JSON and JSON-XML transformations are lossless (see below). There will be some output generated by a diff process, which will highlight coersion of floating point values (.8 becomes 0.8 etc.) but this is expected and not an error.
-
-What you will find is a series of files in the /test folder that are the result of the tool running:
-
-* _pretty files are exapnded prettified versions of json/xml
-* straight json/xml are just raw notation
-* _sorted files have SIF/JSON objects listed in conceptual-area alphabetic oreder.
-
-
-
-== Testing
-
-The script `run.sh` includes testing of the generated scripts, against all the XML object examples included in the source specgen input. (Those examples are
-extracted in step #4, and are wrapped in an arbitrary `<sif>` wrapper.) There are two tests.
-
-. Test roundtrip XML > JSON (preserving order of keys) > XML
-** Pretty print the list of XML object examples (`test/siftest.pretty.xml`)
-** Convert the list of XML object examples into an array of JSON objects. Pretty-print the array, preserving the ordering of all JSON object keys (`test/siftest.pretty.json`)
-** Convert the pretty-printed JSON objects back to SIF XML, and pretty-print it (`test/siftest2.pretty.xml`)
-** Compare the source and target pretty-printed XML files. As of this writing, the two files for SIF-AU differ in 73 locations, all of which involve the JSON normalisation of trailing and leading zeroes in numeric values (see above).
-
-. Test roundtrip XML > JSON (not preserving order of keys) > XML
-** Convert the list of XML object examples into an array of JSON objects. Pretty-print it, sorting all JSON object keys alphabetically (`test/siftest.sorted.json`)
-** Convert the pretty-printed JSON objects back to SIF XML, and pretty-print it (`test/siftest.sorted.pretty.xml`)
-** Compare the target pretty-printed XML files from the previous test and the current test. As of this writing, the two files for SIF-AU differ in two locations: the XML processing instruction at the start, requring UTF-8, and the relative order of two XML attributes on the same element.
+Developers can also use `out.txt` to generate their own transforms.
 
 == Dependencies
 
@@ -225,9 +104,3 @@ The transform scripts are in XSLT 1.0 and Javascript. They are tested in `run.sh
 for regression testing using `xmllint`, and JSON files are cleaned up for regression testing using `jq`. The test files for regression testing
 are extracted using the Perl script `sifexamples.pl`.
 
-The code used to generate these transfrom scripts is in XSLT 1.0 and Ruby.
-
-== Acknowledgements
-
-* XML to JSON: https://gist.github.com/inancgumus/3ce56ddde6d5c93f3550b3b4cdc6bcb8[transform XSLT] by İnanç Gümüş (or, as he Asciifies himself, Inanc Gumus), and Bram Stein's https://github.com/bramstein/xsltjson[XSLTJSON Lite JSONML transformer]
-* JSON to XML:  https://github.com/x2js/x2js[x2js] and https://github.com/rhalff/dot-object[dot-object]

@@ -312,6 +312,7 @@
 <xsl:apply-templates select="SchoolYear" mode="SchoolYearType" />
 <xsl:apply-templates select="PictureSource" mode="URIOrBinaryType" />
 <xsl:apply-templates select="OKToPublish" mode="copy" />
+<xsl:apply-templates select="PublishingPermissionList" mode="PublishingPermissionListType" />
 <xsl:apply-templates select="SIF_Metadata" mode="SIF_MetadataType" />
 <xsl:apply-templates select="SIF_ExtendedElements" mode="SIF_ExtendedElementsType" />
 </xsl:copy>
@@ -324,7 +325,7 @@
 <xsl:apply-templates select="SchoolYear" mode="SchoolYearType" />
 <xsl:apply-templates select="ContactForRequestsRefId" mode="copy" />
 <xsl:apply-templates select="ContactForRequestsObjectType" mode="copy" />
-<xsl:apply-templates select="DataDomainObligationList" mode="DataDomainObligationListType" />
+<xsl:apply-templates select="DataDomainObligationList" mode="copy" />
 <xsl:apply-templates select="SIF_Metadata" mode="SIF_MetadataType" />
 <xsl:apply-templates select="SIF_ExtendedElements" mode="SIF_ExtendedElementsType" />
 </xsl:copy>
@@ -613,6 +614,7 @@
 <xsl:apply-templates select="Homegroup" mode="copy" />
 <xsl:apply-templates select="House" mode="copy" />
 <xsl:apply-templates select="CalendarSummaryList" mode="CalendarSummaryListType" />
+<xsl:apply-templates select="PreviousSchoolName" mode="copy" />
 <xsl:apply-templates select="SIF_Metadata" mode="SIF_MetadataType" />
 <xsl:apply-templates select="SIF_ExtendedElements" mode="SIF_ExtendedElementsType" />
 </xsl:copy>
@@ -843,6 +845,7 @@
 <xsl:apply-templates select="HomeSchooledStudent" mode="copy" />
 <xsl:apply-templates select="Sensitive" mode="copy" />
 <xsl:apply-templates select="OfflineDelivery" mode="copy" />
+<xsl:apply-templates select="ESLSupport" mode="copy" />
 <xsl:apply-templates select="PrePrimaryEducation" mode="copy" />
 <xsl:apply-templates select="FirstAUSchoolEnrollment" mode="copy" />
 <xsl:apply-templates select="SIF_Metadata" mode="SIF_MetadataType" />
@@ -881,9 +884,40 @@
 <xsl:apply-templates select="RecordClosureReason" mode="copy" />
 <xsl:apply-templates select="PromotionInfo" mode="PromotionInfoType" />
 <xsl:apply-templates select="PreviousSchool" mode="LocalIdType" />
+<xsl:apply-templates select="PreviousSchoolName" mode="copy" />
 <xsl:apply-templates select="DestinationSchool" mode="LocalIdType" />
+<xsl:apply-templates select="DestinationSchoolName" mode="copy" />
 <xsl:apply-templates select="StudentSubjectChoiceList" mode="StudentSubjectChoiceListType" />
 <xsl:apply-templates select="StartedAtSchoolDate" mode="copy" />
+<xsl:apply-templates select="StudentGroupList" mode="StudentGroupListType" />
+<xsl:apply-templates select="PublishingPermissionList" mode="PublishingPermissionListType" />
+<xsl:apply-templates select="SIF_Metadata" mode="SIF_MetadataType" />
+<xsl:apply-templates select="SIF_ExtendedElements" mode="SIF_ExtendedElementsType" />
+</xsl:copy>
+</xsl:template>
+<xsl:template match="StudentScoreJudgementAgainstStandard" mode="object">
+<xsl:copy>
+    <xsl:apply-templates select="@*" mode="copy" />
+<xsl:apply-templates select="SchoolYear" mode="SchoolYearType" />
+<xsl:apply-templates select="TermInfoRefId" mode="copy" />
+<xsl:apply-templates select="LocalTermCode" mode="LocalIdType" />
+<xsl:apply-templates select="StudentPersonalRefId" mode="copy" />
+<xsl:apply-templates select="StudentStateProvinceId" mode="StateProvinceIdType" />
+<xsl:apply-templates select="StudentLocalId" mode="LocalIdType" />
+<xsl:apply-templates select="YearLevel" mode="YearLevelType" />
+<xsl:apply-templates select="TeachingGroupRefId" mode="copy" />
+<xsl:apply-templates select="ClassLocalId" mode="copy" />
+<xsl:apply-templates select="StaffPersonalRefId" mode="copy" />
+<xsl:apply-templates select="StaffLocalId" mode="LocalIdType" />
+<xsl:apply-templates select="LearningStandardList" mode="LearningStandardListType" />
+<xsl:apply-templates select="CurriculumCode" mode="LocalIdType" />
+<xsl:apply-templates select="CurriculumNodeCode" mode="LocalIdType" />
+<xsl:apply-templates select="Score" mode="copy" />
+<xsl:apply-templates select="SpecialCircumstanceLocalCode" mode="LocalIdType" />
+<xsl:apply-templates select="ManagedPathwayLocalCode" mode="LocalIdType" />
+<xsl:apply-templates select="SchoolInfoRefId" mode="copy" />
+<xsl:apply-templates select="SchoolLocalId" mode="LocalIdType" />
+<xsl:apply-templates select="SchoolCommonwealthId" mode="copy" />
 <xsl:apply-templates select="SIF_Metadata" mode="SIF_MetadataType" />
 <xsl:apply-templates select="SIF_ExtendedElements" mode="SIF_ExtendedElementsType" />
 </xsl:copy>
@@ -1173,7 +1207,6 @@
 <xsl:apply-templates select="ReportingAuthorityCommonwealthId" mode="copy" />
 <xsl:apply-templates select="SubmittedBy" mode="copy" />
 <xsl:apply-templates select="SubmissionTimestamp" mode="copy" />
-<xsl:apply-templates select="SubmissionStatusCode" mode="copy" />
 <xsl:apply-templates select="AGCollection" mode="copy" />
 <xsl:apply-templates select="CollectionYear" mode="SchoolYearType" />
 <xsl:apply-templates select="AGReportingObjectResponseList" mode="AGReportingObjectResponseListType" />
@@ -1210,30 +1243,6 @@
 <xsl:apply-templates select="SIF_ExtendedElements" mode="SIF_ExtendedElementsType" />
 </xsl:copy>
 </xsl:template>
-<xsl:template match="FQReporting" mode="object">
-<xsl:copy>
-    <xsl:apply-templates select="@*" mode="copy" />
-<xsl:apply-templates select="FQYear" mode="SchoolYearType" />
-<xsl:apply-templates select="ReportingAuthority" mode="copy" />
-<xsl:apply-templates select="ReportingAuthoritySystem" mode="copy" />
-<xsl:apply-templates select="ReportingAuthorityCommonwealthId" mode="copy" />
-<xsl:apply-templates select="SystemSubmission" mode="copy" />
-<xsl:apply-templates select="SoftwareVendorInfo" mode="SoftwareVendorInfoContainerType" />
-<xsl:apply-templates select="EntityLevel" mode="copy" />
-<xsl:apply-templates select="SchoolInfoRefId" mode="copy" />
-<xsl:apply-templates select="LocalId" mode="LocalIdType" />
-<xsl:apply-templates select="StateProvinceId" mode="StateProvinceIdType" />
-<xsl:apply-templates select="CommonwealthId" mode="copy" />
-<xsl:apply-templates select="ACARAId" mode="copy" />
-<xsl:apply-templates select="EntityName" mode="copy" />
-<xsl:apply-templates select="EntityContact" mode="EntityContactInfoType" />
-<xsl:apply-templates select="FQContextualQuestionList" mode="FQContextualQuestionListType" />
-<xsl:apply-templates select="FQItemList" mode="FQItemListType" />
-<xsl:apply-templates select="AGRuleList" mode="AGRuleListType" />
-<xsl:apply-templates select="SIF_Metadata" mode="SIF_MetadataType" />
-<xsl:apply-templates select="SIF_ExtendedElements" mode="SIF_ExtendedElementsType" />
-</xsl:copy>
-</xsl:template>
 <xsl:template match="FinancialAccount" mode="object">
 <xsl:copy>
     <xsl:apply-templates select="@*" mode="copy" />
@@ -1245,6 +1254,22 @@
 <xsl:apply-templates select="ClassType" mode="copy" />
 <xsl:apply-templates select="CreationDate" mode="copy" />
 <xsl:apply-templates select="CreationTime" mode="copy" />
+<xsl:apply-templates select="SIF_Metadata" mode="SIF_MetadataType" />
+<xsl:apply-templates select="SIF_ExtendedElements" mode="SIF_ExtendedElementsType" />
+</xsl:copy>
+</xsl:template>
+<xsl:template match="FinancialQuestionnaireSubmission" mode="object">
+<xsl:copy>
+    <xsl:apply-templates select="@*" mode="copy" />
+<xsl:apply-templates select="FQYear" mode="SchoolYearType" />
+<xsl:apply-templates select="ReportingAuthority" mode="copy" />
+<xsl:apply-templates select="ReportingAuthoritySystem" mode="copy" />
+<xsl:apply-templates select="ReportingAuthorityCommonwealthId" mode="copy" />
+<xsl:apply-templates select="SystemSubmission" mode="copy" />
+<xsl:apply-templates select="SoftwareVendorInfo" mode="SoftwareVendorInfoContainerType" />
+<xsl:apply-templates select="SubmissionContact" mode="EntityContactInfoType" />
+<xsl:apply-templates select="FQReportComments" mode="copy" />
+<xsl:apply-templates select="FQReportingList" mode="FQReportingListType" />
 <xsl:apply-templates select="SIF_Metadata" mode="SIF_MetadataType" />
 <xsl:apply-templates select="SIF_ExtendedElements" mode="SIF_ExtendedElementsType" />
 </xsl:copy>
@@ -1569,34 +1594,31 @@
 <xsl:apply-templates select="node()" mode="copy" />
 </xsl:copy>
 </xsl:template>
-<xsl:template match="node()|@*" mode="DataDomainObligationListType">
+<xsl:template match="node()|@*" mode="StudentGroupListType">
 <xsl:copy>
     <xsl:apply-templates select="@*" mode="copy" />
-<xsl:apply-templates select="DataDomainObligation" mode="DataDomainObligationType" />
+<xsl:apply-templates select="StudentGroup" mode="StudentGroupType" />
 </xsl:copy>
 </xsl:template>
-<xsl:template match="node()|@*" mode="DataDomainObligationType">
+<xsl:template match="node()|@*" mode="StudentGroupType">
 <xsl:copy>
     <xsl:apply-templates select="@*" mode="copy" />
-<xsl:apply-templates select="DataDomain" mode="copy" />
-<xsl:apply-templates select="DomainComments" mode="copy" />
-<xsl:apply-templates select="ShareWithList" mode="ShareWithListType" />
+<xsl:apply-templates select="GroupCategory" mode="copy" />
+<xsl:apply-templates select="GroupLocalId" mode="LocalIdType" />
+<xsl:apply-templates select="GroupDescription" mode="copy" />
 </xsl:copy>
 </xsl:template>
-<xsl:template match="node()|@*" mode="ShareWithListType">
+<xsl:template match="node()|@*" mode="PublishingPermissionListType">
 <xsl:copy>
     <xsl:apply-templates select="@*" mode="copy" />
-<xsl:apply-templates select="ShareWith" mode="ShareWithType" />
+<xsl:apply-templates select="PublishingPermission" mode="PublishingPermissionType" />
 </xsl:copy>
 </xsl:template>
-<xsl:template match="node()|@*" mode="ShareWithType">
+<xsl:template match="node()|@*" mode="PublishingPermissionType">
 <xsl:copy>
     <xsl:apply-templates select="@*" mode="copy" />
-<xsl:apply-templates select="ShareWithParty" mode="copy" />
-<xsl:apply-templates select="Purpose" mode="copy" />
-<xsl:apply-templates select="ShareWithComments" mode="copy" />
-<xsl:apply-templates select="PermissionToOnShare" mode="copy" />
-<xsl:apply-templates select="ShareWithURL" mode="copy" />
+<xsl:apply-templates select="PermissionCategory" mode="copy" />
+<xsl:apply-templates select="PermissionValue" mode="copy" />
 </xsl:copy>
 </xsl:template>
 <xsl:template match="node()|@*" mode="AGReportingObjectResponseListType">
@@ -1615,6 +1637,29 @@
 <xsl:apply-templates select="CommonwealthId" mode="copy" />
 <xsl:apply-templates select="EntityName" mode="copy" />
 <xsl:apply-templates select="AGSubmissionStatusCode" mode="copy" />
+<xsl:apply-templates select="AGRuleList" mode="AGRuleListType" />
+</xsl:copy>
+</xsl:template>
+<xsl:template match="node()|@*" mode="FQReportingListType">
+<xsl:copy>
+    <xsl:apply-templates select="@*" mode="copy" />
+<xsl:apply-templates select="FQReporting" mode="FQReportingType" />
+</xsl:copy>
+</xsl:template>
+<xsl:template match="node()|@*" mode="FQReportingType">
+<xsl:copy>
+    <xsl:apply-templates select="@*" mode="copy" />
+<xsl:apply-templates select="FQRefId" mode="copy" />
+<xsl:apply-templates select="EntityLevel" mode="copy" />
+<xsl:apply-templates select="SchoolInfoRefId" mode="copy" />
+<xsl:apply-templates select="LocalId" mode="LocalIdType" />
+<xsl:apply-templates select="StateProvinceId" mode="StateProvinceIdType" />
+<xsl:apply-templates select="CommonwealthId" mode="copy" />
+<xsl:apply-templates select="ACARAId" mode="copy" />
+<xsl:apply-templates select="EntityName" mode="copy" />
+<xsl:apply-templates select="EntityContact" mode="EntityContactInfoType" />
+<xsl:apply-templates select="FQContextualQuestionList" mode="FQContextualQuestionListType" />
+<xsl:apply-templates select="FQItemList" mode="FQItemListType" />
 <xsl:apply-templates select="AGRuleList" mode="AGRuleListType" />
 </xsl:copy>
 </xsl:template>
@@ -3462,6 +3507,7 @@
 <xsl:apply-templates select="VisaExpiryDate" mode="copy" />
 <xsl:apply-templates select="VisaSubClassList" mode="VisaSubClassListType" />
 <xsl:apply-templates select="LBOTE" mode="copy" />
+<xsl:apply-templates select="InterpreterRequired" mode="copy" />
 <xsl:apply-templates select="ImmunisationCertificateStatus" mode="copy" />
 <xsl:apply-templates select="CulturalBackground" mode="copy" />
 <xsl:apply-templates select="MaritalStatus" mode="copy" />
