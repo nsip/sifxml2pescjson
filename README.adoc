@@ -81,7 +81,7 @@ All transform scripts are generated from a flat file input, `out.txt`, which con
 * `BOOLEAN`: the XPath (from object root) of all instances of elements and attributes with boolean value.
 * `XPATHTYPE`: a flattened representation of all elements in the specification, in order. (Attributes are ignored.) Entries are grouped by their object or type container. Each entry contains the following tab-delimited values:
 ** The element name. If no element name is applicable (the type is an alias of another type), the string `node()` is used instead.
-** The type of the element, as specified in `objectgraph.txt` and `typegraph.txt`.
+** The type of the element.
 ** Whether the type of the element is to be looked up in a different type container (i.e. is a common type defined in the specification, as opposed to a primitive type).
 ** Whether the element is contained in an object or a common type.
 ** The name of the object or common type container.
@@ -90,17 +90,11 @@ All transform scripts are generated from a flat file input, `out.txt`, which con
 
 == Flat File to Transforms
 
-The transform scripts are contained in `scripts/`, and are all generated from `out.txt`: 
+The transform scripts are all generated from `out.txt`: 
 
-* `scripts/sif2json.xslt` by `makexslt.rb`, using OBJECT, SIMPLE ATTRIBUTE, LIST, NUMERIC, BOOLEAN
-* `scripts/json2sif.js` by `makejs2xml.rb`, using OBJECT, COMPLEX ATTRIBUTE
-* `scripts/sifreorder.xslt` by `makereorder.rb`, using XPATHTYPE
+* `scripts/sif2json.xslt`, using OBJECT, SIMPLE ATTRIBUTE, LIST, NUMERIC, BOOLEAN
+* `scripts/json2sif.js`, using OBJECT, COMPLEX ATTRIBUTE
+* `scripts/sifreorder.xslt, using XPATHTYPE
 
 Developers can also use `out.txt` to generate their own transforms.
-
-== Dependencies
-
-The transform scripts are in XSLT 1.0 and Javascript. They are tested in `run.sh` using `xsltproc` and `node`. XML files are cleaned up
-for regression testing using `xmllint`, and JSON files are cleaned up for regression testing using `jq`. The test files for regression testing
-are extracted using the Perl script `sifexamples.pl`.
 
