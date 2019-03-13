@@ -5,7 +5,7 @@ Code to convert between SIF XML and PESC JSON
 
 The transform scripts are contained in a different folder for each locale, and a different subfolder for each SIF release;
 for example, `au/3.4.3` contains scripts specific to SIF-AU 3.4.3. They include XSLT 1.0 transforms to process XML, and Javascript scripts to process JSON.
-These tools have been preferred over programming-language–Sspecific tools, in order to make the scripts as widely usable as possible. This
+These tools have been preferred over programming-language specific tools, in order to make the scripts as widely usable as possible. This
 repository includes scripts specific to the current SIF-AU specification, and will be updated as the SIF-AU specification is updated:
 
 * `scripts/sif2json.xslt`: XSLT 1.0 transform to convert SIF XML to PESC JSON, as an array of objects.
