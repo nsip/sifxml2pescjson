@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:json="http://json.org/">
   <!-- from https://gist.github.com/inancgumus/3ce56ddde6d5c93f3550b3b4cdc6bcb8 -->
   <!-- https://github.com/bramstein/xsltjson/blob/master/conf/xml-to-jsonml.xsl -->
@@ -54,7 +55,9 @@
 
   <!-- numeric or boolean -->
   <xsl:template match="Activity/Points | /ActivityTime/Duration | Activity/MaxAttemptsAllowed | Activity/ActivityWeight | /LocalCode/ListIndex | AggregateStatisticFact/Value | CalendarDate/CalendarDateNumber | /StudentAttendance/AttendanceValue | /TeacherAttendance/AttendanceValue | /AdministratorAttendance/AttendanceValue | CalendarSummary/DaysInSession | CalendarSummary/InstructionalMinutes | CalendarSummary/MinutesPerDay | GradingAssignment/PointsPossible | GradingAssignment/Weight | GradingAssignment/MaxAttemptsAllowed | /Score/MaxScoreValue | /ScoreDescription/ScoreValue | GradingAssignmentScore/ScorePoints | GradingAssignmentScore/ScorePercent | /Subscore/SubscoreValue | /GridLocation/Latitude | /GridLocation/Longitude | /PhoneNumber/Preference | /StandardHierarchyLevel/Number | MarkValueInfo/PercentageMinimum | MarkValueInfo/PercentageMaximum | MarkValueInfo/PercentagePassingGrade | MarkValueInfo/NumericPrecision | MarkValueInfo/NumericScale | MarkValueInfo/NumericLow | MarkValueInfo/NumericHigh | MarkValueInfo/NumericPassingGrade | /ValidLetterMark/NumericEquivalent | MarkValueInfo/NarrativeMaximumSize | /ResourceReportLine/CurrentCost | RoomInfo/Size | RoomInfo/Capacity | /TeacherCover/Weighting | SchoolInfo/ARIA | StaffAssignment/JobFTE | /StaffSubject/PreferenceNumber | /HouseholdContactInfo/PreferenceNumber | StudentAttendanceSummary/StartDay | StudentAttendanceSummary/EndDay | StudentAttendanceSummary/FTE | StudentAttendanceSummary/DaysAttended | StudentAttendanceSummary/ExcusedAbsences | StudentAttendanceSummary/UnexcusedAbsences | StudentAttendanceSummary/DaysTardy | StudentAttendanceSummary/DaysInMembership | /AttendanceTime/DurationValue | StudentContactRelationship/ContactSequence | StudentDailyAttendance/AbsenceValue | /GradingAssignmentScore/Weight | /Grade/Percentage | /Grade/Numeric | StudentParticipation/StudentSpecialEducationFTE | /MostRecent/FTE | /MostRecent/CensusAge | StudentSchoolEnrollment/FTE | /StudentSubjectChoice/PreferenceNumber | StudentSchoolEnrollment/CensusAge | TeachingGroup/Semester | TeachingGroup/MinClassSize | TeachingGroup/MaxClassSize | TermInfo/RelativeDuration | TimeTable/DaysPerCycle | TimeTable/PeriodsPerDay | TimeTable/TeachingPeriodsPerDay | /TimeTablePeriod/InstructionalMinutes | TimeTableSubject/ProposedMaxClassSize | TimeTableSubject/ProposedMinClassSize | TimeTableSubject/Semester | /Suspension/Duration | /FQItem/TuitionAmount | /FQItem/BoardingAmount | /FQItem/SystemAmount | /FQItem/DioceseAmount | Invoice/BilledAmount | Invoice/NetAmount | Invoice/TaxRate | Invoice/TaxAmount | /PurchasingItem/UnitCost | /PurchasingItem/TotalCost | /PurchasingItem/TaxRate | /ExpenseAccount/Amount | Journal/Amount | /TestContent/StagesCount | /DomainBands/Band1Lower | /DomainBands/Band1Upper | /DomainBands/Band2Lower | /DomainBands/Band2Upper | /DomainBands/Band3Lower | /DomainBands/Band3Upper | /DomainBands/Band4Lower | /DomainBands/Band4Upper | /DomainBands/Band5Lower | /DomainBands/Band5Upper | /DomainBands/Band6Lower | /DomainBands/Band6Upper | /DomainBands/Band7Lower | /DomainBands/Band7Upper | /DomainBands/Band8Lower | /DomainBands/Band8Upper | /DomainBands/Band9Lower | /DomainBands/Band9Upper | /DomainBands/Band10Lower | /DomainBands/Band10Upper | /DomainProficiency/Level1Lower | /DomainProficiency/Level1Upper | /DomainProficiency/Level2Lower | /DomainProficiency/Level2Upper | /DomainProficiency/Level3Lower | /DomainProficiency/Level3Upper | /DomainProficiency/Level4Lower | /DomainProficiency/Level4Upper | /TestletContent/LocationInStage | /TestletContent/TestletMaximumScore | /TestItem/SequenceNumber | /TestItemContent/MultipleChoiceOptionCount | /TestItemContent/MaximumScore | /TestItemContent/ItemDifficulty | /TestItemContent/ItemDifficultyLogit5 | /TestItemContent/ItemDifficultyLogit62 | /TestItemContent/ItemDifficultyLogit5SE | /TestItemContent/ItemDifficultyLogit62SE | /TestItemContent/ItemProficiencyBand | /Stimulus/WordCount | /DomainScore/RawScore | /DomainScore/ScaledScoreValue | /DomainScore/ScaledScoreLogitValue | /DomainScore/ScaledScoreStandardError | /DomainScore/ScaledScoreLogitStandardError | /DomainScore/StudentDomainBand | /PlausibleScaledValueList/PlausibleScaledValue | /Testlet/TestletSubScore | /ItemResponse/Score | /ItemResponse/SequenceNumber | /ItemResponse/ItemWeight | NAPTestScoreSummary/DomainNationalAverage | NAPTestScoreSummary/DomainSchoolAverage | NAPTestScoreSummary/DomainJurisdictionAverage | NAPTestScoreSummary/DomainTopNational60Percent | NAPTestScoreSummary/DomainBottomNational60Percent | PaymentReceipt/TransactionAmount | PaymentReceipt/TaxRate | PaymentReceipt/TaxAmount | PurchaseOrder/TaxRate | PurchaseOrder/TaxAmount | PurchaseOrder/TotalAmount | /TimeElement/IsCurrent | GradingAssignmentScore/ExpectedScore | ResourceBooking/KeepOld | StudentParticipation/ExtendedSchoolYear | StudentParticipation/ExtendedDay | WellbeingEvent/GroupIndicator | /TestItemContent/ReleasedStatus | NAPEventStudentLink/PersonalDetailsChanged | NAPEventStudentLink/PSIOtherIdMatch | NAPEventStudentLink/PossibleDuplicate | NAPEventStudentLink/DOBRange | NAPStudentResponseSet/ReportExclusionFlag" mode="value">
-    <xsl:apply-templates select="."/>
+     <xsl:call-template name="encode-numeric-value">
+	      <xsl:with-param name="value" select="." />
+	    </xsl:call-template>
   </xsl:template>
 
   <xsl:template match="* | @*" mode="attrvalue">
@@ -63,7 +66,9 @@
 
   <!-- numeric or boolean attribute -->
   <xsl:template match="NEVERMATCH | NEVERMATCH" mode="attrvalue">
-    <xsl:apply-templates select="."/>
+     <xsl:call-template name="encode-numeric-value">
+	      <xsl:with-param name="value" select="." />
+	    </xsl:call-template>
   </xsl:template>
 
   <!-- simple content with attribute -->
@@ -203,4 +208,15 @@
     </xsl:call-template>
   </xsl:template>
 
+  <xsl:template name="encode-numeric-value">
+	                <xsl:param name="value"/>
+	                <xsl:choose>
+	                        <xsl:when test="substring(normalize-space($value), 1, 1) = '.'">
+	                                <xsl:text>0</xsl:text><xsl:value-of select="$value"/>
+	                        </xsl:when>
+	                        <xsl:otherwise>
+	                                <xsl:value-of select="$value"/>
+	                        </xsl:otherwise>
+	                </xsl:choose>
+	  </xsl:template>
 </xsl:stylesheet>
