@@ -72,8 +72,8 @@
   </xsl:template>
 
   <!-- simple content with attribute -->
-  <xsl:template match="environment/defaultZone/properties/property | environment/infrastructureServices/infrastructureService | environment/provisionedZones/provisionedZone/services/service/rights/right | job/phases/phase/rights/right | job/phases/phase/statesRights/right | provider/endPoint/properties/property | provisionRequest/provisionedZones/provisionedZone/services/service/rights/right | zone/properties/property" mode="detect">
-    <xsl:text>"</xsl:text><xsl:value-of select="name()"/>" : <xsl:apply-templates select="." mode="obj-content" priority="1"/>
+  <xsl:template match="environment/defaultZone/properties/property | environment/infrastructureServices/infrastructureService | environment/provisionedZones/provisionedZone/services/service/rights/right | job/phases/phase/rights/right | job/phases/phase/statesRights/right | provider/endPoint/properties/property | provisionRequest/provisionedZones/provisionedZone/services/service/rights/right | zone/properties/property" mode="detect" priority="1">
+    <xsl:text>"</xsl:text><xsl:value-of select="name()"/>" : <xsl:apply-templates select="." mode="obj-content"/>
     <xsl:if test="count(following-sibling::*) &gt; 0">, </xsl:if>
   </xsl:template>
 
