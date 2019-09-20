@@ -743,6 +743,12 @@
 <xsl:apply-templates select="preferredName" mode="copy" />
 </xsl:copy>
 </xsl:template>
+<xsl:template match="node()|@*" mode="gCoreContactListType">
+<xsl:copy>
+    <xsl:apply-templates select="@*" mode="copy" />
+<xsl:apply-templates select="contact" mode="gCoreContactInfoType" />
+</xsl:copy>
+</xsl:template>
 <xsl:template match="node()|@*" mode="gCoreContactInfoType">
 <xsl:copy>
     <xsl:apply-templates select="@*" mode="copy" />
@@ -991,8 +997,8 @@
     <xsl:apply-templates select="@*" mode="copy" />
 <xsl:apply-templates select="dataControllerName" mode="copy" />
 <xsl:apply-templates select="privacyPolicyURL" mode="copy" />
-<xsl:apply-templates select="privacyContact" mode="gCoreContactInfoType" />
-<xsl:apply-templates select="issuesNotificationContact" mode="gCoreContactInfoType" />
+<xsl:apply-templates select="privacyContactList" mode="gCoreContactListType" />
+<xsl:apply-templates select="issuesNotificationContactList" mode="gCoreContactListType" />
 </xsl:copy>
 </xsl:template>
 <xsl:template match="node()|@*" mode="dataSubProcessorListType">
@@ -1006,16 +1012,16 @@
     <xsl:apply-templates select="@*" mode="copy" />
 <xsl:apply-templates select="dataProcessorName" mode="copy" />
 <xsl:apply-templates select="privacyPolicyURL" mode="copy" />
-<xsl:apply-templates select="privacyContact" mode="gCoreContactInfoType" />
+<xsl:apply-templates select="privacyContactList" mode="gCoreContactListType" />
 <xsl:apply-templates select="notifyDataControllerOnAccessRequests" mode="copy" />
-<xsl:apply-templates select="dataProcessorContactForAccessRequests" mode="gCoreContactInfoType" />
+<xsl:apply-templates select="dataProcessorContactForAccessRequestsList" mode="gCoreContactListType" />
 <xsl:apply-templates select="purposeList" mode="purposeListType" />
 <xsl:apply-templates select="alternatePurposeList" mode="alternatePurposeListType" />
 <xsl:apply-templates select="deidentifiedPurposeList" mode="deidentifiedPurposeListType" />
 <xsl:apply-templates select="dataUsageMarketingAllowed" mode="copy" />
 <xsl:apply-templates select="personalInformationUpdatedFromSource" mode="copy" />
 <xsl:apply-templates select="dataBreachNotification" mode="copy" />
-<xsl:apply-templates select="dataBreachContact" mode="gCoreContactInfoType" />
+<xsl:apply-templates select="dataBreachContactList" mode="gCoreContactListType" />
 <xsl:apply-templates select="employeesMustComplyWithAgreement" mode="copy" />
 <xsl:apply-templates select="employeeConfidentialityAgreement" mode="copy" />
 <xsl:apply-templates select="employeeTrainingList" mode="employeeTrainingListType" />
@@ -1029,7 +1035,7 @@
     <xsl:apply-templates select="@*" mode="copy" />
 <xsl:apply-templates select="subProcessorName" mode="copy" />
 <xsl:apply-templates select="privacyPolicyURL" mode="copy" />
-<xsl:apply-templates select="privacyContact" mode="gCoreContactInfoType" />
+<xsl:apply-templates select="privacyContactList" mode="gCoreContactListType" />
 <xsl:apply-templates select="purposeList" mode="purposeListType" />
 </xsl:copy>
 </xsl:template>
