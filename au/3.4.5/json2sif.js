@@ -1,6 +1,6 @@
 let X2JS = require('x2js');
 const fs = require("fs");
-const js = fs.readFileSync("/dev/stdin", "utf-8");
+const js = fs.readFileSync(0, "utf-8");
 var dot = require('dot-object');
 
 var attrpaths = new Object;
