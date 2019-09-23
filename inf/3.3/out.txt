@@ -1,0 +1,1441 @@
+OBJECT: alert
+OBJECT: codeSet
+OBJECT: createResponse
+OBJECT: deleteRequest
+OBJECT: deleteResponse
+OBJECT: environment
+OBJECT: error
+OBJECT: job
+OBJECT: namespace
+OBJECT: pod
+OBJECT: provider
+OBJECT: provisionRequest
+OBJECT: queue
+OBJECT: state
+OBJECT: subscription
+OBJECT: updateResponse
+OBJECT: xquery
+OBJECT: zone
+COMPLEX ATTRIBUTE: alert/@id	[{:attr=>[{:attr=>"id", :type=>"uuidType"}]}, {:elem=>"reporter", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"cause", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"exchange", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"level", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"description", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"messageID", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"body", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"error", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"xpath", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"category", :type=>"number", :attr=>[], :elems=>[], :list=>false}, {:elem=>"code", :type=>"number", :attr=>[], :elems=>[], :list=>false}, {:elem=>"internal", :type=>"string", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: codeSet/@id	[{:attr=>[{:attr=>"id", :type=>"string"}]}, {:elem=>"zone", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"version", :type=>"versionType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"timestamp", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"source", :type=>"uriType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"codeItems", :type=>"codeItemsType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: createResponse/creates/create/@id	[{:attr=>[{:attr=>"id", :type=>"string"}, {:attr=>"advisoryId", :type=>"string"}, {:attr=>"statusCode", :type=>"string"}]}, {:elem=>"error", :type=>"errorType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: createResponse/creates/create/@advisoryId	[{:attr=>[{:attr=>"id", :type=>"string"}, {:attr=>"advisoryId", :type=>"string"}, {:attr=>"statusCode", :type=>"string"}]}, {:elem=>"error", :type=>"errorType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: createResponse/creates/create/@statusCode	[{:attr=>[{:attr=>"id", :type=>"string"}, {:attr=>"advisoryId", :type=>"string"}, {:attr=>"statusCode", :type=>"string"}]}, {:elem=>"error", :type=>"errorType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: createResponse/creates/create/error/@id	[{:attr=>[{:attr=>"id", :type=>"string"}]}, {:elem=>"code", :type=>"number", :attr=>[], :elems=>[], :list=>false}, {:elem=>"scope", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"message", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"description", :type=>"string", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: deleteRequest/deletes/delete/@id	EMPTY
+COMPLEX ATTRIBUTE: deleteResponse/deletes/delete/@id	[{:attr=>[{:attr=>"id", :type=>"string"}, {:attr=>"statusCode", :type=>"string"}]}, {:elem=>"error", :type=>"errorType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: deleteResponse/deletes/delete/@statusCode	[{:attr=>[{:attr=>"id", :type=>"string"}, {:attr=>"statusCode", :type=>"string"}]}, {:elem=>"error", :type=>"errorType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: deleteResponse/deletes/delete/error/@id	[{:attr=>[{:attr=>"id", :type=>"string"}]}, {:elem=>"code", :type=>"number", :attr=>[], :elems=>[], :list=>false}, {:elem=>"scope", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"message", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"description", :type=>"string", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: environment/@type	[{:attr=>[{:attr=>"type", :type=>"environmentTypeType"}, {:attr=>"id", :type=>"uuidType"}]}, {:elem=>"fingerprint", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"sessionToken", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"solutionId", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"defaultZone", :type=>"zoneType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"authenticationMethod", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"instanceId", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"userToken", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"consumerName", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"applicationInfo", :type=>"applicationInfoType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"infrastructureServices", :type=>"infrastructureServicesType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"provisionedZones", :type=>"provisionedZonesType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: environment/@id	[{:attr=>[{:attr=>"type", :type=>"environmentTypeType"}, {:attr=>"id", :type=>"uuidType"}]}, {:elem=>"fingerprint", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"sessionToken", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"solutionId", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"defaultZone", :type=>"zoneType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"authenticationMethod", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"instanceId", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"userToken", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"consumerName", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"applicationInfo", :type=>"applicationInfoType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"infrastructureServices", :type=>"infrastructureServicesType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"provisionedZones", :type=>"provisionedZonesType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: environment/defaultZone/@id	[{:attr=>[{:attr=>"id", :type=>"string"}]}, {:elem=>"description", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"properties", :type=>"propertiesType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: environment/provisionedZones/provisionedZone/@id	[{:attr=>[{:attr=>"id", :type=>"string"}]}, {:elem=>"services", :type=>"servicesType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: environment/provisionedZones/provisionedZone/services/service/@type	[{:attr=>[{:attr=>"type", :type=>"serviceTypeType"}, {:attr=>"name", :type=>"string"}, {:attr=>"contextId", :type=>"string"}]}, {:elem=>"rights", :type=>"rightsType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: environment/provisionedZones/provisionedZone/services/service/@name	[{:attr=>[{:attr=>"type", :type=>"serviceTypeType"}, {:attr=>"name", :type=>"string"}, {:attr=>"contextId", :type=>"string"}]}, {:elem=>"rights", :type=>"rightsType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: environment/provisionedZones/provisionedZone/services/service/@contextId	[{:attr=>[{:attr=>"type", :type=>"serviceTypeType"}, {:attr=>"name", :type=>"string"}, {:attr=>"contextId", :type=>"string"}]}, {:elem=>"rights", :type=>"rightsType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: error/@id	[{:attr=>[{:attr=>"id", :type=>"string"}]}, {:elem=>"code", :type=>"number", :attr=>[], :elems=>[], :list=>false}, {:elem=>"scope", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"message", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"description", :type=>"string", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: job/@id	[{:attr=>[{:attr=>"id", :type=>"uuidType"}]}, {:elem=>"name", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"description", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"state", :type=>"jobStateType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"stateDescription", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"created", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"lastModified", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"timeout", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"phases", :type=>"phaseCollectionType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"initialization", :type=>"initializationType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: namespace/@id	[{:attr=>[{:attr=>"id", :type=>"uuidType"}]}, {:elem=>"zone", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"uri", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"url", :type=>"string", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: pod/@id	[{:attr=>[{:attr=>"id", :type=>"uuidType"}]}, {:elem=>"podStatus", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"podToken", :type=>"gCoreLocalIdType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"podVersion", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"partyId", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"privacyList", :type=>"privacyListType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: provider/@id	[{:attr=>[{:attr=>"id", :type=>"uuidType"}]}, {:elem=>"serviceType", :type=>"serviceTypeType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"serviceName", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"contextId", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"zoneId", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"providerName", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"querySupport", :type=>"querySupportType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"mimeTypes", :type=>"mediaTypesType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"endPoint", :type=>"protocolType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: provisionRequest/@id	[{:attr=>[{:attr=>"id", :type=>"uuidType"}, {:attr=>"completionStatus", :type=>"string"}]}, {:elem=>"provisionedZones", :type=>"provisionedZonesType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: provisionRequest/@completionStatus	[{:attr=>[{:attr=>"id", :type=>"uuidType"}, {:attr=>"completionStatus", :type=>"string"}]}, {:elem=>"provisionedZones", :type=>"provisionedZonesType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: provisionRequest/provisionedZones/provisionedZone/@id	[{:attr=>[{:attr=>"id", :type=>"string"}]}, {:elem=>"services", :type=>"servicesType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: provisionRequest/provisionedZones/provisionedZone/services/service/@type	[{:attr=>[{:attr=>"type", :type=>"serviceTypeType"}, {:attr=>"name", :type=>"string"}, {:attr=>"contextId", :type=>"string"}]}, {:elem=>"rights", :type=>"rightsType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: provisionRequest/provisionedZones/provisionedZone/services/service/@name	[{:attr=>[{:attr=>"type", :type=>"serviceTypeType"}, {:attr=>"name", :type=>"string"}, {:attr=>"contextId", :type=>"string"}]}, {:elem=>"rights", :type=>"rightsType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: provisionRequest/provisionedZones/provisionedZone/services/service/@contextId	[{:attr=>[{:attr=>"type", :type=>"serviceTypeType"}, {:attr=>"name", :type=>"string"}, {:attr=>"contextId", :type=>"string"}]}, {:elem=>"rights", :type=>"rightsType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: queue/@id	[{:attr=>[{:attr=>"id", :type=>"uuidType"}]}, {:elem=>"polling", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"ownerId", :type=>"uuidType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"name", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"queueUri", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"ownerUri", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"idleTimeout", :type=>"number", :attr=>[], :elems=>[], :list=>false}, {:elem=>"minWaitTime", :type=>"number", :attr=>[], :elems=>[], :list=>false}, {:elem=>"maxConcurrentConnections", :type=>"number", :attr=>[], :elems=>[], :list=>false}, {:elem=>"created", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"lastAccessed", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"lastModified", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"messageCount", :type=>"number", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: state/@id	[{:attr=>[{:attr=>"id", :type=>"uuidType"}]}, {:elem=>"type", :type=>"phaseStateType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"created", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"lastModified", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"description", :type=>"string", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: subscription/@id	[{:attr=>[{:attr=>"id", :type=>"uuidType"}]}, {:elem=>"zoneId", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"contextId", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"serviceType", :type=>"serviceTypeType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"serviceName", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"queueId", :type=>"string", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: updateResponse/updates/update/@id	[{:attr=>[{:attr=>"id", :type=>"string"}, {:attr=>"statusCode", :type=>"string"}]}, {:elem=>"error", :type=>"errorType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: updateResponse/updates/update/@statusCode	[{:attr=>[{:attr=>"id", :type=>"string"}, {:attr=>"statusCode", :type=>"string"}]}, {:elem=>"error", :type=>"errorType", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: updateResponse/updates/update/error/@id	[{:attr=>[{:attr=>"id", :type=>"string"}]}, {:elem=>"code", :type=>"number", :attr=>[], :elems=>[], :list=>false}, {:elem=>"scope", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"message", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"description", :type=>"string", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: xquery/@id	[{:attr=>[{:attr=>"id", :type=>"string"}]}, {:elem=>"type", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"status", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"qualifier", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"description", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"script", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"parameters", :type=>"parametersType", :attr=>[], :elems=>[], :list=>false}, {:elem=>"returnType", :type=>"string", :attr=>[], :elems=>[], :list=>false}]
+COMPLEX ATTRIBUTE: zone/@id	[{:attr=>[{:attr=>"id", :type=>"string"}]}, {:elem=>"description", :type=>"string", :attr=>[], :elems=>[], :list=>false}, {:elem=>"properties", :type=>"propertiesType", :attr=>[], :elems=>[], :list=>false}]
+SIMPLE ATTRIBUTE: environment/defaultZone/properties/property	string
+SIMPLE ATTRIBUTE: environment/infrastructureServices/infrastructureService	string
+SIMPLE ATTRIBUTE: environment/provisionedZones/provisionedZone/services/service/rights/right	rightValueType
+SIMPLE ATTRIBUTE: job/phases/phase/rights/right	rightValueType
+SIMPLE ATTRIBUTE: job/phases/phase/statesRights/right	rightValueType
+SIMPLE ATTRIBUTE: provider/endPoint/properties/property	string
+SIMPLE ATTRIBUTE: provisionRequest/provisionedZones/provisionedZone/services/service/rights/right	rightValueType
+SIMPLE ATTRIBUTE: zone/properties/property	string
+LIST: codeSet/codeItems/codeItem
+LIST: codeSet/codeItems/codeItem/aliases/alias
+LIST: createResponse/creates/create
+LIST: deleteRequest/deletes/delete
+LIST: deleteResponse/deletes/delete
+LIST: environment/defaultZone/properties/property
+LIST: environment/infrastructureServices/infrastructureService
+LIST: environment/provisionedZones/provisionedZone
+LIST: environment/provisionedZones/provisionedZone/services/service
+LIST: environment/provisionedZones/provisionedZone/services/service/rights/right
+LIST: job/phases/phase
+LIST: job/phases/phase/rights/right
+LIST: job/phases/phase/statesRights/right
+LIST: pod/privacyList/privacy
+LIST: pod/privacyList/privacy/appIDList/appID
+LIST: pod/privacyList/privacy/adapterFingerprintList/adapterFingerprint
+LIST: pod/privacyList/privacy/zoneContextList/zoneContext
+LIST: pod/privacyList/privacy/endpointList/endpoint
+LIST: pod/privacyList/privacy/privacyObligationsDocument/contract/lawList/law
+LIST: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/clause
+LIST: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/clause/obligationList/obligation
+LIST: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/clause/obligationList/obligation/benchmarkList/benchmark
+LIST: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/clause
+LIST: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/clause/obligationList/obligation
+LIST: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/clause/obligationList/obligation/benchmarkList/benchmark
+LIST: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/fieldList/field
+LIST: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/conditionList/condition
+LIST: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/conditionList/condition/propertyList/property
+LIST: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/clause
+LIST: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/clause/obligationList/obligation
+LIST: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/clause/obligationList/obligation/benchmarkList/benchmark
+LIST: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/benchmarkList/benchmark
+LIST: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/fieldList/field
+LIST: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/emailList/email
+LIST: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/phoneNumberList/phoneNumber
+LIST: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology
+LIST: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/clause
+LIST: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/clause/obligationList/obligation
+LIST: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/clause/obligationList/obligation/benchmarkList/benchmark
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/emailList/email
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/phoneNumberList/phoneNumber
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/emailList/email
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/phoneNumberList/phoneNumber
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/emailList/email
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/phoneNumberList/phoneNumber
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/emailList/email
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/phoneNumberList/phoneNumber
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/purposeList/purpose
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/alternatePurposeList/alternatePurpose
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/deidentifiedPurposeList/deidentifiedPurpose
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/emailList/email
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/phoneNumberList/phoneNumber
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/employeeTrainingList/employeeTraining
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/securityTestRequiredList/securityTestRequired
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/countryImpactedList/countryImpacted
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/emailList/email
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/phoneNumberList/phoneNumber
+LIST: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/purposeList/purpose
+LIST: provider/mimeTypes/mediaType
+LIST: provider/endPoint/properties/property
+LIST: provisionRequest/provisionedZones/provisionedZone
+LIST: provisionRequest/provisionedZones/provisionedZone/services/service
+LIST: provisionRequest/provisionedZones/provisionedZone/services/service/rights/right
+LIST: updateResponse/updates/update
+LIST: xquery/parameters/parameter
+LIST: xquery/parameters/parameter/enumerations/enumeration
+LIST: zone/properties/property
+NUMERIC: alert/category
+NUMERIC: alert/code
+NUMERIC: createResponse/creates/create/error/code
+NUMERIC: deleteResponse/deletes/delete/error/code
+NUMERIC: error/code
+NUMERIC: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/respondInDays
+NUMERIC: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/dataRetention
+NUMERIC: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/phoneNumberList/phoneNumber/preference
+NUMERIC: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/respondInDays
+NUMERIC: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/phoneNumberList/phoneNumber/preference
+NUMERIC: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/phoneNumberList/phoneNumber/preference
+NUMERIC: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/phoneNumberList/phoneNumber/preference
+NUMERIC: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/phoneNumberList/phoneNumber/preference
+NUMERIC: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/personalInformationUpdatedFromSource
+NUMERIC: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/phoneNumberList/phoneNumber/preference
+NUMERIC: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/phoneNumberList/phoneNumber/preference
+NUMERIC: provider/querySupport/maxPageSize
+NUMERIC: queue/idleTimeout
+NUMERIC: queue/minWaitTime
+NUMERIC: queue/maxConcurrentConnections
+NUMERIC: queue/messageCount
+NUMERIC: updateResponse/updates/update/error/code
+NUMERIC: xquery/parameters/parameter/range/start
+NUMERIC: xquery/parameters/parameter/range/end
+NUMERIC: xquery/parameters/parameter/minLength
+NUMERIC: xquery/parameters/parameter/maxLength
+BOOLEAN: codeSet/codeItems/codeItem/aliases/alias/code/old
+BOOLEAN: codeSet/codeItems/codeItem/aliases/alias/code/official
+BOOLEAN: job/phases/phase/required
+BOOLEAN: provider/querySupport/dynamicQuery
+BOOLEAN: provider/querySupport/queryByExample
+BOOLEAN: provider/querySupport/changesSinceMarker
+BOOLEAN: provider/querySupport/paged
+BOOLEAN: provider/querySupport/totalCount
+BOOLEAN: xquery/parameters/parameter/required
+XPATHTYPE	reporter	string		OBJECT	alert
+XPATHTYPE	cause	string		OBJECT	alert
+XPATHTYPE	exchange	string		OBJECT	alert
+XPATHTYPE	level	string		OBJECT	alert
+XPATHTYPE	description	string		OBJECT	alert
+XPATHTYPE	messageID	string		OBJECT	alert
+XPATHTYPE	body	string		OBJECT	alert
+XPATHTYPE	error	string		OBJECT	alert
+XPATHTYPE	xpath	string		OBJECT	alert
+XPATHTYPE	category	number		OBJECT	alert
+XPATHTYPE	code	number		OBJECT	alert
+XPATHTYPE	internal	string		OBJECT	alert
+XPATHTYPE	zone	string		OBJECT	codeSet
+XPATHTYPE	version	versionType	LOOKUP	OBJECT	codeSet
+XPATHTYPE	timestamp	string		OBJECT	codeSet
+XPATHTYPE	source	uriType	LOOKUP	OBJECT	codeSet
+XPATHTYPE	codeItems	codeItemsType	LOOKUP	OBJECT	codeSet
+XPATHTYPE	creates	createsType	LOOKUP	OBJECT	createResponse
+XPATHTYPE	deletes	deleteIdCollectionType	LOOKUP	OBJECT	deleteRequest
+XPATHTYPE	deletes	deleteStatusCollectionType	LOOKUP	OBJECT	deleteResponse
+XPATHTYPE	fingerprint	string		OBJECT	environment
+XPATHTYPE	sessionToken	string		OBJECT	environment
+XPATHTYPE	solutionId	string		OBJECT	environment
+XPATHTYPE	defaultZone	zoneType	LOOKUP	OBJECT	environment
+XPATHTYPE	authenticationMethod	string		OBJECT	environment
+XPATHTYPE	instanceId	string		OBJECT	environment
+XPATHTYPE	userToken	string		OBJECT	environment
+XPATHTYPE	consumerName	string		OBJECT	environment
+XPATHTYPE	applicationInfo	applicationInfoType	LOOKUP	OBJECT	environment
+XPATHTYPE	infrastructureServices	infrastructureServicesType	LOOKUP	OBJECT	environment
+XPATHTYPE	provisionedZones	provisionedZonesType	LOOKUP	OBJECT	environment
+XPATHTYPE	code	number		OBJECT	error
+XPATHTYPE	scope	string		OBJECT	error
+XPATHTYPE	message	string		OBJECT	error
+XPATHTYPE	description	string		OBJECT	error
+XPATHTYPE	name	string		OBJECT	job
+XPATHTYPE	description	string		OBJECT	job
+XPATHTYPE	state	jobStateType	LOOKUP	OBJECT	job
+XPATHTYPE	stateDescription	string		OBJECT	job
+XPATHTYPE	created	string		OBJECT	job
+XPATHTYPE	lastModified	string		OBJECT	job
+XPATHTYPE	timeout	string		OBJECT	job
+XPATHTYPE	phases	phaseCollectionType	LOOKUP	OBJECT	job
+XPATHTYPE	initialization	initializationType	LOOKUP	OBJECT	job
+XPATHTYPE	zone	string		OBJECT	namespace
+XPATHTYPE	uri	string		OBJECT	namespace
+XPATHTYPE	url	string		OBJECT	namespace
+XPATHTYPE	podStatus	string		OBJECT	pod
+XPATHTYPE	podToken	gCoreLocalIdType	LOOKUP	OBJECT	pod
+XPATHTYPE	podVersion	string		OBJECT	pod
+XPATHTYPE	partyId	string		OBJECT	pod
+XPATHTYPE	privacyList	privacyListType	LOOKUP	OBJECT	pod
+XPATHTYPE	serviceType	serviceTypeType	LOOKUP	OBJECT	provider
+XPATHTYPE	serviceName	string		OBJECT	provider
+XPATHTYPE	contextId	string		OBJECT	provider
+XPATHTYPE	zoneId	string		OBJECT	provider
+XPATHTYPE	providerName	string		OBJECT	provider
+XPATHTYPE	querySupport	querySupportType	LOOKUP	OBJECT	provider
+XPATHTYPE	mimeTypes	mediaTypesType	LOOKUP	OBJECT	provider
+XPATHTYPE	endPoint	protocolType	LOOKUP	OBJECT	provider
+XPATHTYPE	provisionedZones	provisionedZonesType	LOOKUP	OBJECT	provisionRequest
+XPATHTYPE	polling	string		OBJECT	queue
+XPATHTYPE	ownerId	uuidType	LOOKUP	OBJECT	queue
+XPATHTYPE	name	string		OBJECT	queue
+XPATHTYPE	queueUri	string		OBJECT	queue
+XPATHTYPE	ownerUri	string		OBJECT	queue
+XPATHTYPE	idleTimeout	number		OBJECT	queue
+XPATHTYPE	minWaitTime	number		OBJECT	queue
+XPATHTYPE	maxConcurrentConnections	number		OBJECT	queue
+XPATHTYPE	created	string		OBJECT	queue
+XPATHTYPE	lastAccessed	string		OBJECT	queue
+XPATHTYPE	lastModified	string		OBJECT	queue
+XPATHTYPE	messageCount	number		OBJECT	queue
+XPATHTYPE	type	phaseStateType	LOOKUP	OBJECT	state
+XPATHTYPE	created	string		OBJECT	state
+XPATHTYPE	lastModified	string		OBJECT	state
+XPATHTYPE	description	string		OBJECT	state
+XPATHTYPE	zoneId	string		OBJECT	subscription
+XPATHTYPE	contextId	string		OBJECT	subscription
+XPATHTYPE	serviceType	serviceTypeType	LOOKUP	OBJECT	subscription
+XPATHTYPE	serviceName	string		OBJECT	subscription
+XPATHTYPE	queueId	string		OBJECT	subscription
+XPATHTYPE	updates	updatesType	LOOKUP	OBJECT	updateResponse
+XPATHTYPE	type	string		OBJECT	xquery
+XPATHTYPE	status	string		OBJECT	xquery
+XPATHTYPE	qualifier	string		OBJECT	xquery
+XPATHTYPE	description	string		OBJECT	xquery
+XPATHTYPE	script	string		OBJECT	xquery
+XPATHTYPE	parameters	parametersType	LOOKUP	OBJECT	xquery
+XPATHTYPE	returnType	string		OBJECT	xquery
+XPATHTYPE	description	string		OBJECT	zone
+XPATHTYPE	properties	propertiesType	LOOKUP	OBJECT	zone
+XPATHTYPE	reporter	string		TYPE	alertType
+XPATHTYPE	cause	string		TYPE	alertType
+XPATHTYPE	exchange	string		TYPE	alertType
+XPATHTYPE	level	string		TYPE	alertType
+XPATHTYPE	description	string		TYPE	alertType
+XPATHTYPE	messageID	string		TYPE	alertType
+XPATHTYPE	body	string		TYPE	alertType
+XPATHTYPE	error	string		TYPE	alertType
+XPATHTYPE	xpath	string		TYPE	alertType
+XPATHTYPE	category	number		TYPE	alertType
+XPATHTYPE	code	number		TYPE	alertType
+XPATHTYPE	internal	string		TYPE	alertType
+XPATHTYPE	zone	string		TYPE	codeSetType
+XPATHTYPE	version	versionType	LOOKUP	TYPE	codeSetType
+XPATHTYPE	timestamp	string		TYPE	codeSetType
+XPATHTYPE	source	uriType	LOOKUP	TYPE	codeSetType
+XPATHTYPE	codeItems	codeItemsType	LOOKUP	TYPE	codeSetType
+XPATHTYPE	creates	createsType	LOOKUP	TYPE	createResponseType
+XPATHTYPE	deletes	deleteIdCollectionType	LOOKUP	TYPE	deleteRequestType
+XPATHTYPE	deletes	deleteStatusCollectionType	LOOKUP	TYPE	deleteResponseType
+XPATHTYPE	fingerprint	string		TYPE	environmentType
+XPATHTYPE	sessionToken	string		TYPE	environmentType
+XPATHTYPE	solutionId	string		TYPE	environmentType
+XPATHTYPE	defaultZone	zoneType	LOOKUP	TYPE	environmentType
+XPATHTYPE	authenticationMethod	string		TYPE	environmentType
+XPATHTYPE	instanceId	string		TYPE	environmentType
+XPATHTYPE	userToken	string		TYPE	environmentType
+XPATHTYPE	consumerName	string		TYPE	environmentType
+XPATHTYPE	applicationInfo	applicationInfoType	LOOKUP	TYPE	environmentType
+XPATHTYPE	infrastructureServices	infrastructureServicesType	LOOKUP	TYPE	environmentType
+XPATHTYPE	provisionedZones	provisionedZonesType	LOOKUP	TYPE	environmentType
+XPATHTYPE	code	number		TYPE	errorType
+XPATHTYPE	scope	string		TYPE	errorType
+XPATHTYPE	message	string		TYPE	errorType
+XPATHTYPE	description	string		TYPE	errorType
+XPATHTYPE	name	string		TYPE	jobType
+XPATHTYPE	description	string		TYPE	jobType
+XPATHTYPE	state	jobStateType	LOOKUP	TYPE	jobType
+XPATHTYPE	stateDescription	string		TYPE	jobType
+XPATHTYPE	created	string		TYPE	jobType
+XPATHTYPE	lastModified	string		TYPE	jobType
+XPATHTYPE	timeout	string		TYPE	jobType
+XPATHTYPE	phases	phaseCollectionType	LOOKUP	TYPE	jobType
+XPATHTYPE	initialization	initializationType	LOOKUP	TYPE	jobType
+XPATHTYPE	zone	string		TYPE	namespaceType
+XPATHTYPE	uri	string		TYPE	namespaceType
+XPATHTYPE	url	string		TYPE	namespaceType
+XPATHTYPE	podStatus	string		TYPE	podType
+XPATHTYPE	podToken	gCoreLocalIdType	LOOKUP	TYPE	podType
+XPATHTYPE	podVersion	string		TYPE	podType
+XPATHTYPE	partyId	string		TYPE	podType
+XPATHTYPE	privacyList	privacyListType	LOOKUP	TYPE	podType
+XPATHTYPE	serviceType	serviceTypeType	LOOKUP	TYPE	providerType
+XPATHTYPE	serviceName	string		TYPE	providerType
+XPATHTYPE	contextId	string		TYPE	providerType
+XPATHTYPE	zoneId	string		TYPE	providerType
+XPATHTYPE	providerName	string		TYPE	providerType
+XPATHTYPE	querySupport	querySupportType	LOOKUP	TYPE	providerType
+XPATHTYPE	mimeTypes	mediaTypesType	LOOKUP	TYPE	providerType
+XPATHTYPE	endPoint	protocolType	LOOKUP	TYPE	providerType
+XPATHTYPE	provisionedZones	provisionedZonesType	LOOKUP	TYPE	provisionRequestType
+XPATHTYPE	polling	string		TYPE	queueType
+XPATHTYPE	ownerId	uuidType	LOOKUP	TYPE	queueType
+XPATHTYPE	name	string		TYPE	queueType
+XPATHTYPE	queueUri	string		TYPE	queueType
+XPATHTYPE	ownerUri	string		TYPE	queueType
+XPATHTYPE	idleTimeout	number		TYPE	queueType
+XPATHTYPE	minWaitTime	number		TYPE	queueType
+XPATHTYPE	maxConcurrentConnections	number		TYPE	queueType
+XPATHTYPE	created	string		TYPE	queueType
+XPATHTYPE	lastAccessed	string		TYPE	queueType
+XPATHTYPE	lastModified	string		TYPE	queueType
+XPATHTYPE	messageCount	number		TYPE	queueType
+XPATHTYPE	type	phaseStateType	LOOKUP	TYPE	stateType
+XPATHTYPE	created	string		TYPE	stateType
+XPATHTYPE	lastModified	string		TYPE	stateType
+XPATHTYPE	description	string		TYPE	stateType
+XPATHTYPE	zoneId	string		TYPE	subscriptionType
+XPATHTYPE	contextId	string		TYPE	subscriptionType
+XPATHTYPE	serviceType	serviceTypeType	LOOKUP	TYPE	subscriptionType
+XPATHTYPE	serviceName	string		TYPE	subscriptionType
+XPATHTYPE	queueId	string		TYPE	subscriptionType
+XPATHTYPE	updates	updatesType	LOOKUP	TYPE	updateResponseType
+XPATHTYPE	type	string		TYPE	xqueryType
+XPATHTYPE	status	string		TYPE	xqueryType
+XPATHTYPE	qualifier	string		TYPE	xqueryType
+XPATHTYPE	description	string		TYPE	xqueryType
+XPATHTYPE	script	string		TYPE	xqueryType
+XPATHTYPE	parameters	parametersType	LOOKUP	TYPE	xqueryType
+XPATHTYPE	returnType	string		TYPE	xqueryType
+XPATHTYPE	description	string		TYPE	zoneType
+XPATHTYPE	properties	propertiesType	LOOKUP	TYPE	zoneType
+XPATHTYPE	node()	string		TYPE	DefinedProtocolsType
+XPATHTYPE	node()	string		TYPE	ExtendedContentType
+XPATHTYPE	node()	string		TYPE	SelectedContentType
+XPATHTYPE	provisionedZone	provisionedZoneType	LOOKUP	TYPE	provisionedZonesType
+XPATHTYPE	services	servicesType	LOOKUP	TYPE	provisionedZoneType
+XPATHTYPE	create	createType	LOOKUP	TYPE	createsType
+XPATHTYPE	error	errorType	LOOKUP	TYPE	createType
+XPATHTYPE	delete	deleteIdType	LOOKUP	TYPE	deleteIdCollectionType
+XPATHTYPE	node()	string		TYPE	environmentTypeType
+XPATHTYPE	node()	string		TYPE	jobStateType
+XPATHTYPE	phase	phaseType	LOOKUP	TYPE	phaseCollectionType
+XPATHTYPE	name	string		TYPE	phaseType
+XPATHTYPE	states	stateCollectionType		TYPE	phaseType
+XPATHTYPE	required	boolean		TYPE	phaseType
+XPATHTYPE	rights	rightsType	LOOKUP	TYPE	phaseType
+XPATHTYPE	statesRights	rightsType	LOOKUP	TYPE	phaseType
+XPATHTYPE	phaseName	string		TYPE	initializationType
+XPATHTYPE	payload	string		TYPE	initializationType
+XPATHTYPE	node()	string		TYPE	phaseStateType
+XPATHTYPE	enumeration	enumerationType	LOOKUP	TYPE	enumerationsType
+XPATHTYPE	value	string		TYPE	enumerationType
+XPATHTYPE	code	string		TYPE	enumerationType
+XPATHTYPE	parameter	parameterType	LOOKUP	TYPE	parametersType
+XPATHTYPE	name	string		TYPE	parameterType
+XPATHTYPE	type	string		TYPE	parameterType
+XPATHTYPE	default	string		TYPE	parameterType
+XPATHTYPE	description	string		TYPE	parameterType
+XPATHTYPE	required	boolean		TYPE	parameterType
+XPATHTYPE	enumerations	enumerationsType	LOOKUP	TYPE	parameterType
+XPATHTYPE	range	rangeType	LOOKUP	TYPE	parameterType
+XPATHTYPE	minLength	number		TYPE	parameterType
+XPATHTYPE	maxLength	number		TYPE	parameterType
+XPATHTYPE	property	propertyType	LOOKUP	TYPE	propertiesType
+XPATHTYPE	start	number		TYPE	rangeType
+XPATHTYPE	end	number		TYPE	rangeType
+XPATHTYPE	node()	string		TYPE	propertyType
+XPATHTYPE	applicationKey	string		TYPE	applicationInfoType
+XPATHTYPE	supportedInfrastructureVersion	string		TYPE	applicationInfoType
+XPATHTYPE	dataModelNamespace	string		TYPE	applicationInfoType
+XPATHTYPE	transport	string		TYPE	applicationInfoType
+XPATHTYPE	applicationProduct	productIdentityType	LOOKUP	TYPE	applicationInfoType
+XPATHTYPE	adapterProduct	productIdentityType	LOOKUP	TYPE	applicationInfoType
+XPATHTYPE	vendorName	string		TYPE	productIdentityType
+XPATHTYPE	productName	string		TYPE	productIdentityType
+XPATHTYPE	productVersion	string		TYPE	productIdentityType
+XPATHTYPE	iconURI	string		TYPE	productIdentityType
+XPATHTYPE	service	serviceType	LOOKUP	TYPE	servicesType
+XPATHTYPE	rights	rightsType	LOOKUP	TYPE	serviceType
+XPATHTYPE	right	rightType	LOOKUP	TYPE	rightsType
+XPATHTYPE	node()	string		TYPE	rightValueType
+XPATHTYPE	node()	rightValueType	LOOKUP	TYPE	rightType
+XPATHTYPE	node()	string		TYPE	serviceTypeType
+XPATHTYPE	infrastructureService	infrastructureServiceType	LOOKUP	TYPE	infrastructureServicesType
+XPATHTYPE	node()	string		TYPE	infrastructureServiceType
+XPATHTYPE	node()	string		TYPE	infrastructureServiceNamesType
+XPATHTYPE	node()	string		TYPE	uuidType
+XPATHTYPE	node()	string		TYPE	versionType
+XPATHTYPE	node()	string		TYPE	uriType
+XPATHTYPE	alias	aliasType	LOOKUP	TYPE	aliasesType
+XPATHTYPE	dynamicQuery	boolean		TYPE	querySupportType
+XPATHTYPE	queryByExample	boolean		TYPE	querySupportType
+XPATHTYPE	changesSinceMarker	boolean		TYPE	querySupportType
+XPATHTYPE	paged	boolean		TYPE	querySupportType
+XPATHTYPE	maxPageSize	number		TYPE	querySupportType
+XPATHTYPE	totalCount	boolean		TYPE	querySupportType
+XPATHTYPE	applicationProduct	productIdentityType	LOOKUP	TYPE	querySupportType
+XPATHTYPE	adapterProduct	productIdentityType	LOOKUP	TYPE	querySupportType
+XPATHTYPE	code	codeType	LOOKUP	TYPE	aliasType
+XPATHTYPE	source	uriType	LOOKUP	TYPE	aliasType
+XPATHTYPE	namespace	uriType	LOOKUP	TYPE	aliasType
+XPATHTYPE	code	string		TYPE	codeItemType
+XPATHTYPE	source	uriType	LOOKUP	TYPE	codeItemType
+XPATHTYPE	namespace	uriType	LOOKUP	TYPE	codeItemType
+XPATHTYPE	value	string		TYPE	codeItemType
+XPATHTYPE	description	string		TYPE	codeItemType
+XPATHTYPE	definition	string		TYPE	codeItemType
+XPATHTYPE	aliases	aliasesType	LOOKUP	TYPE	codeItemType
+XPATHTYPE	action	string		TYPE	codeItemType
+XPATHTYPE	timestamp	string		TYPE	codeItemType
+XPATHTYPE	old	boolean		TYPE	codeType
+XPATHTYPE	official	boolean		TYPE	codeType
+XPATHTYPE	value	string		TYPE	codeType
+XPATHTYPE	codeItem	codeItemType	LOOKUP	TYPE	codeItemsType
+XPATHTYPE	delete	deleteStatusType	LOOKUP	TYPE	deleteStatusCollectionType
+XPATHTYPE	error	errorType	LOOKUP	TYPE	deleteStatusType
+XPATHTYPE	node()	EMPTY		TYPE	deleteIdType
+XPATHTYPE	mediaType	string		TYPE	mediaTypesType
+XPATHTYPE	location	string		TYPE	protocolType
+XPATHTYPE	properties	propertiesType	LOOKUP	TYPE	protocolType
+XPATHTYPE	update	updateType	LOOKUP	TYPE	updatesType
+XPATHTYPE	error	errorType	LOOKUP	TYPE	updateType
+XPATHTYPE	email	gCoreEmailType	LOOKUP	TYPE	gCoreEmailListType
+XPATHTYPE	node()	string		TYPE	gCoreEmailType
+XPATHTYPE	phoneNumber	gCorePhoneNumberType	LOOKUP	TYPE	gCorePhoneNumberListType
+XPATHTYPE	number	string		TYPE	gCorePhoneNumberType
+XPATHTYPE	extension	string		TYPE	gCorePhoneNumberType
+XPATHTYPE	listedStatus	string		TYPE	gCorePhoneNumberType
+XPATHTYPE	preference	number		TYPE	gCorePhoneNumberType
+XPATHTYPE	title	string		TYPE	gCoreNameType
+XPATHTYPE	familyName	string		TYPE	gCoreNameType
+XPATHTYPE	givenName	string		TYPE	gCoreNameType
+XPATHTYPE	otherGivenNames	string		TYPE	gCoreNameType
+XPATHTYPE	familyNameFirst	string		TYPE	gCoreNameType
+XPATHTYPE	preferredName	string		TYPE	gCoreNameType
+XPATHTYPE	contact	gCoreContactInfoType	LOOKUP	TYPE	gCoreContactListType
+XPATHTYPE	name	gCoreNameType	LOOKUP	TYPE	gCoreContactInfoType
+XPATHTYPE	positionTitle	string		TYPE	gCoreContactInfoType
+XPATHTYPE	role	string		TYPE	gCoreContactInfoType
+XPATHTYPE	registrationDetails	string		TYPE	gCoreContactInfoType
+XPATHTYPE	qualifications	string		TYPE	gCoreContactInfoType
+XPATHTYPE	address	gCoreAddressType	LOOKUP	TYPE	gCoreContactInfoType
+XPATHTYPE	emailList	gCoreEmailListType	LOOKUP	TYPE	gCoreContactInfoType
+XPATHTYPE	phoneNumberList	gCorePhoneNumberListType	LOOKUP	TYPE	gCoreContactInfoType
+XPATHTYPE	effectiveFromDate	string		TYPE	gCoreAddressType
+XPATHTYPE	effectiveToDate	string		TYPE	gCoreAddressType
+XPATHTYPE	line1	string		TYPE	gCoreAddressType
+XPATHTYPE	line2	string		TYPE	gCoreAddressType
+XPATHTYPE	line3	string		TYPE	gCoreAddressType
+XPATHTYPE	city	string		TYPE	gCoreAddressType
+XPATHTYPE	stateProvince	gCoreStateProvinceType	LOOKUP	TYPE	gCoreAddressType
+XPATHTYPE	country	gCoreCountryType	LOOKUP	TYPE	gCoreAddressType
+XPATHTYPE	postalCode	string		TYPE	gCoreAddressType
+XPATHTYPE	address	gCoreAddressType	LOOKUP	TYPE	gCoreAddressListType
+XPATHTYPE	node()	string		TYPE	gCoreCountryType
+XPATHTYPE	node()	string		TYPE	gCoreLocalIdType
+XPATHTYPE	node()	string		TYPE	gCoreStateProvinceIdType
+XPATHTYPE	node()	string		TYPE	gCoreStateProvinceType
+XPATHTYPE	node()	string		TYPE	gCoreGenderType
+XPATHTYPE	privacy	privacyType	LOOKUP	TYPE	privacyListType
+XPATHTYPE	default	string		TYPE	privacyType
+XPATHTYPE	appIDList	appIDListType	LOOKUP	TYPE	privacyType
+XPATHTYPE	adapterFingerprintList	adapterFingerprintListType	LOOKUP	TYPE	privacyType
+XPATHTYPE	zoneContextList	zoneContextListType	LOOKUP	TYPE	privacyType
+XPATHTYPE	endpointList	endpointListType	LOOKUP	TYPE	privacyType
+XPATHTYPE	dataModelNamespace	string		TYPE	privacyType
+XPATHTYPE	dataModelVersionMin	string		TYPE	privacyType
+XPATHTYPE	dataModelVersionMax	string		TYPE	privacyType
+XPATHTYPE	privacyObligationsDocument	privacyObligationsDocumentType	LOOKUP	TYPE	privacyType
+XPATHTYPE	contract	contractType	LOOKUP	TYPE	privacyObligationsDocumentType
+XPATHTYPE	legalRequirements	legalRequirementsType	LOOKUP	TYPE	privacyObligationsDocumentType
+XPATHTYPE	technicalRequirements	technicalRequirementsType	LOOKUP	TYPE	privacyObligationsDocumentType
+XPATHTYPE	dataController	dataControllerType	LOOKUP	TYPE	privacyObligationsDocumentType
+XPATHTYPE	dataProcessor	dataProcessorType	LOOKUP	TYPE	privacyObligationsDocumentType
+XPATHTYPE	dataSubProcessorList	dataSubProcessorListType	LOOKUP	TYPE	privacyObligationsDocumentType
+XPATHTYPE	contractURI	string		TYPE	contractType
+XPATHTYPE	contractName	string		TYPE	contractType
+XPATHTYPE	dateValidFrom	string		TYPE	contractType
+XPATHTYPE	dateValidTo	string		TYPE	contractType
+XPATHTYPE	contractVersion	string		TYPE	contractType
+XPATHTYPE	lawList	lawListType	LOOKUP	TYPE	contractType
+XPATHTYPE	studentDataIPRights	string		TYPE	contractType
+XPATHTYPE	law	lawType	LOOKUP	TYPE	lawListType
+XPATHTYPE	lawName	string		TYPE	lawType
+XPATHTYPE	lawDescription	string		TYPE	lawType
+XPATHTYPE	clauseList	clauseListType	LOOKUP	TYPE	legalRequirementsType
+XPATHTYPE	clause	clauseType	LOOKUP	TYPE	clauseListType
+XPATHTYPE	clauseLabel	string		TYPE	clauseType
+XPATHTYPE	clauseReference	string		TYPE	clauseType
+XPATHTYPE	clauseContent	string		TYPE	clauseType
+XPATHTYPE	obligationList	obligationListType	LOOKUP	TYPE	clauseType
+XPATHTYPE	benchmark	benchmarkType	LOOKUP	TYPE	benchmarkListType
+XPATHTYPE	benchmarkName	string		TYPE	benchmarkType
+XPATHTYPE	benchmarkId	gCoreLocalIdType	LOOKUP	TYPE	benchmarkType
+XPATHTYPE	benchmarkDescription	string		TYPE	benchmarkType
+XPATHTYPE	benchmarkURL	string		TYPE	benchmarkType
+XPATHTYPE	obligation	obligationType	LOOKUP	TYPE	obligationListType
+XPATHTYPE	obligationDescription	string		TYPE	obligationType
+XPATHTYPE	obligationURL	string		TYPE	obligationType
+XPATHTYPE	benchmarkList	benchmarkListType	LOOKUP	TYPE	obligationType
+XPATHTYPE	dataAccess	dataAccessType	LOOKUP	TYPE	technicalRequirementsType
+XPATHTYPE	conditionList	conditionListType	LOOKUP	TYPE	technicalRequirementsType
+XPATHTYPE	dataSubject	dataSubjectType	LOOKUP	TYPE	technicalRequirementsType
+XPATHTYPE	dataDeletion	dataDeletionType	LOOKUP	TYPE	technicalRequirementsType
+XPATHTYPE	securityTechnologyList	securityTechnologyListType	LOOKUP	TYPE	technicalRequirementsType
+XPATHTYPE	clauseList	clauseListType	LOOKUP	TYPE	dataAccessType
+XPATHTYPE	fieldList	fieldListType	LOOKUP	TYPE	dataAccessType
+XPATHTYPE	clauseList	clauseListType	LOOKUP	TYPE	dataSubjectType
+XPATHTYPE	benchmarkList	benchmarkListType	LOOKUP	TYPE	dataSubjectType
+XPATHTYPE	fieldList	fieldListType	LOOKUP	TYPE	dataSubjectType
+XPATHTYPE	respondInDays	number		TYPE	dataSubjectType
+XPATHTYPE	requirePortability	string		TYPE	dataSubjectType
+XPATHTYPE	deleteData	string		TYPE	dataDeletionType
+XPATHTYPE	dataRetention	number		TYPE	dataDeletionType
+XPATHTYPE	deleteBy	string		TYPE	dataDeletionType
+XPATHTYPE	partyToDeleteData	partyToDeleteDataType	LOOKUP	TYPE	dataDeletionType
+XPATHTYPE	respondInDays	number		TYPE	dataDeletionType
+XPATHTYPE	requirePortability	string		TYPE	dataDeletionType
+XPATHTYPE	organisation	gCoreLocalIdType	LOOKUP	TYPE	partyToDeleteDataType
+XPATHTYPE	deletecontactInfo	gCoreContactInfoType	LOOKUP	TYPE	partyToDeleteDataType
+XPATHTYPE	securityTechnology	securityTechnologyType	LOOKUP	TYPE	securityTechnologyListType
+XPATHTYPE	clauseList	clauseListType	LOOKUP	TYPE	securityTechnologyType
+XPATHTYPE	technologyName	string		TYPE	securityTechnologyType
+XPATHTYPE	technologyDescription	string		TYPE	securityTechnologyType
+XPATHTYPE	referenceURL	string		TYPE	securityTechnologyType
+XPATHTYPE	versionMin	string		TYPE	securityTechnologyType
+XPATHTYPE	field	fieldType	LOOKUP	TYPE	fieldListType
+XPATHTYPE	fieldName	string		TYPE	fieldType
+XPATHTYPE	controlrights	string		TYPE	fieldType
+XPATHTYPE	dataControllerName	string		TYPE	dataControllerType
+XPATHTYPE	privacyPolicyURL	string		TYPE	dataControllerType
+XPATHTYPE	privacyContactList	gCoreContactListType	LOOKUP	TYPE	dataControllerType
+XPATHTYPE	issuesNotificationContactList	gCoreContactListType	LOOKUP	TYPE	dataControllerType
+XPATHTYPE	dataSubProcessor	dataSubProcessorType	LOOKUP	TYPE	dataSubProcessorListType
+XPATHTYPE	dataProcessorName	string		TYPE	dataProcessorType
+XPATHTYPE	privacyPolicyURL	string		TYPE	dataProcessorType
+XPATHTYPE	privacyContactList	gCoreContactListType	LOOKUP	TYPE	dataProcessorType
+XPATHTYPE	notifyDataControllerOnAccessRequests	string		TYPE	dataProcessorType
+XPATHTYPE	dataProcessorContactForAccessRequestsList	gCoreContactListType	LOOKUP	TYPE	dataProcessorType
+XPATHTYPE	purposeList	purposeListType	LOOKUP	TYPE	dataProcessorType
+XPATHTYPE	alternatePurposeList	alternatePurposeListType	LOOKUP	TYPE	dataProcessorType
+XPATHTYPE	deidentifiedPurposeList	deidentifiedPurposeListType	LOOKUP	TYPE	dataProcessorType
+XPATHTYPE	dataUsageMarketingAllowed	string		TYPE	dataProcessorType
+XPATHTYPE	personalInformationUpdatedFromSource	number		TYPE	dataProcessorType
+XPATHTYPE	dataBreachNotification	string		TYPE	dataProcessorType
+XPATHTYPE	dataBreachContactList	gCoreContactListType	LOOKUP	TYPE	dataProcessorType
+XPATHTYPE	employeesMustComplyWithAgreement	string		TYPE	dataProcessorType
+XPATHTYPE	employeeConfidentialityAgreement	string		TYPE	dataProcessorType
+XPATHTYPE	employeeTrainingList	employeeTrainingListType	LOOKUP	TYPE	dataProcessorType
+XPATHTYPE	passwordEmployeeAccessStandard	passwordEmployeeAccessStandardType	LOOKUP	TYPE	dataProcessorType
+XPATHTYPE	securityTestRequiredList	securityTestRequiredListType	LOOKUP	TYPE	dataProcessorType
+XPATHTYPE	countryImpactedList	countryImpactedListType	LOOKUP	TYPE	dataProcessorType
+XPATHTYPE	subProcessorName	string		TYPE	dataSubProcessorType
+XPATHTYPE	privacyPolicyURL	string		TYPE	dataSubProcessorType
+XPATHTYPE	privacyContactList	gCoreContactListType	LOOKUP	TYPE	dataSubProcessorType
+XPATHTYPE	purposeList	purposeListType	LOOKUP	TYPE	dataSubProcessorType
+XPATHTYPE	appID	string		TYPE	appIDListType
+XPATHTYPE	adapterFingerprint	string		TYPE	adapterFingerprintListType
+XPATHTYPE	deidentifiedPurpose	string		TYPE	deidentifiedPurposeListType
+XPATHTYPE	purpose	string		TYPE	purposeListType
+XPATHTYPE	alternatePurpose	string		TYPE	alternatePurposeListType
+XPATHTYPE	condition	conditionType	LOOKUP	TYPE	conditionListType
+XPATHTYPE	typeOfCondition	string		TYPE	conditionType
+XPATHTYPE	conditionName	string		TYPE	conditionType
+XPATHTYPE	conditionDescription	string		TYPE	conditionType
+XPATHTYPE	propertyList	propertyNVListType	LOOKUP	TYPE	conditionType
+XPATHTYPE	zoneContext	zoneContextType	LOOKUP	TYPE	zoneContextListType
+XPATHTYPE	zoneId	gCoreLocalIdType	LOOKUP	TYPE	zoneContextType
+XPATHTYPE	contextId	gCoreLocalIdType	LOOKUP	TYPE	zoneContextType
+XPATHTYPE	endpoint	endpointType	LOOKUP	TYPE	endpointListType
+XPATHTYPE	endpointURL	string		TYPE	endpointType
+XPATHTYPE	endpointProviderName	string		TYPE	endpointType
+XPATHTYPE	employeeTraining	employeeTrainingType	LOOKUP	TYPE	employeeTrainingListType
+XPATHTYPE	trainingName	string		TYPE	employeeTrainingType
+XPATHTYPE	trainingURL	string		TYPE	employeeTrainingType
+XPATHTYPE	standardName	string		TYPE	passwordEmployeeAccessStandardType
+XPATHTYPE	standardURL	string		TYPE	passwordEmployeeAccessStandardType
+XPATHTYPE	countryImpacted	countryImpactedType	LOOKUP	TYPE	countryImpactedListType
+XPATHTYPE	country	gCoreCountryType	LOOKUP	TYPE	countryImpactedType
+XPATHTYPE	usage	string		TYPE	countryImpactedType
+XPATHTYPE	securityTestRequired	securityTestRequiredType	LOOKUP	TYPE	securityTestRequiredListType
+XPATHTYPE	testType	string		TYPE	securityTestRequiredType
+XPATHTYPE	testFrequency	string		TYPE	securityTestRequiredType
+XPATHTYPE	remediationRequiredIn	string		TYPE	securityTestRequiredType
+XPATHTYPE	shareResults	string		TYPE	securityTestRequiredType
+XPATHTYPE	property	propertyNVType	LOOKUP	TYPE	propertyNVListType
+XPATHTYPE	propertyName	string		TYPE	propertyNVType
+XPATHTYPE	propertyValue	string		TYPE	propertyNVType
+TRAVERSE: alert/
+TRAVERSE: alert/reporter
+TRAVERSE: alert/cause
+TRAVERSE: alert/exchange
+TRAVERSE: alert/level
+TRAVERSE: alert/description
+TRAVERSE: alert/messageID
+TRAVERSE: alert/body
+TRAVERSE: alert/error
+TRAVERSE: alert/xpath
+TRAVERSE: alert/category
+TRAVERSE: alert/code
+TRAVERSE: alert/internal
+TRAVERSE: codeSet/
+TRAVERSE: codeSet/zone
+TRAVERSE: codeSet/version
+TRAVERSE: codeSet/version/
+TRAVERSE: codeSet/timestamp
+TRAVERSE: codeSet/source
+TRAVERSE: codeSet/source/
+TRAVERSE: codeSet/codeItems
+TRAVERSE: codeSet/codeItems/
+TRAVERSE: codeSet/codeItems/codeItem
+TRAVERSE: codeSet/codeItems/codeItem/
+TRAVERSE: codeSet/codeItems/codeItem/code
+TRAVERSE: codeSet/codeItems/codeItem/source
+TRAVERSE: codeSet/codeItems/codeItem/source/
+TRAVERSE: codeSet/codeItems/codeItem/namespace
+TRAVERSE: codeSet/codeItems/codeItem/namespace/
+TRAVERSE: codeSet/codeItems/codeItem/value
+TRAVERSE: codeSet/codeItems/codeItem/description
+TRAVERSE: codeSet/codeItems/codeItem/definition
+TRAVERSE: codeSet/codeItems/codeItem/aliases
+TRAVERSE: codeSet/codeItems/codeItem/aliases/
+TRAVERSE: codeSet/codeItems/codeItem/aliases/alias
+TRAVERSE: codeSet/codeItems/codeItem/aliases/alias/
+TRAVERSE: codeSet/codeItems/codeItem/aliases/alias/code
+TRAVERSE: codeSet/codeItems/codeItem/aliases/alias/code/
+TRAVERSE: codeSet/codeItems/codeItem/aliases/alias/code/old
+TRAVERSE: codeSet/codeItems/codeItem/aliases/alias/code/official
+TRAVERSE: codeSet/codeItems/codeItem/aliases/alias/code/value
+TRAVERSE: codeSet/codeItems/codeItem/aliases/alias/source
+TRAVERSE: codeSet/codeItems/codeItem/aliases/alias/source/
+TRAVERSE: codeSet/codeItems/codeItem/aliases/alias/namespace
+TRAVERSE: codeSet/codeItems/codeItem/aliases/alias/namespace/
+TRAVERSE: codeSet/codeItems/codeItem/action
+TRAVERSE: codeSet/codeItems/codeItem/timestamp
+TRAVERSE: createResponse/
+TRAVERSE: createResponse/creates
+TRAVERSE: createResponse/creates/
+TRAVERSE: createResponse/creates/create
+TRAVERSE: createResponse/creates/create/
+TRAVERSE: createResponse/creates/create/error
+TRAVERSE: createResponse/creates/create/error/
+TRAVERSE: createResponse/creates/create/error/code
+TRAVERSE: createResponse/creates/create/error/scope
+TRAVERSE: createResponse/creates/create/error/message
+TRAVERSE: createResponse/creates/create/error/description
+TRAVERSE: deleteRequest/
+TRAVERSE: deleteRequest/deletes
+TRAVERSE: deleteRequest/deletes/
+TRAVERSE: deleteRequest/deletes/delete
+TRAVERSE: deleteRequest/deletes/delete/
+TRAVERSE: deleteResponse/
+TRAVERSE: deleteResponse/deletes
+TRAVERSE: deleteResponse/deletes/
+TRAVERSE: deleteResponse/deletes/delete
+TRAVERSE: deleteResponse/deletes/delete/
+TRAVERSE: deleteResponse/deletes/delete/error
+TRAVERSE: deleteResponse/deletes/delete/error/
+TRAVERSE: deleteResponse/deletes/delete/error/code
+TRAVERSE: deleteResponse/deletes/delete/error/scope
+TRAVERSE: deleteResponse/deletes/delete/error/message
+TRAVERSE: deleteResponse/deletes/delete/error/description
+TRAVERSE: environment/
+TRAVERSE: environment/fingerprint
+TRAVERSE: environment/sessionToken
+TRAVERSE: environment/solutionId
+TRAVERSE: environment/defaultZone
+TRAVERSE: environment/defaultZone/
+TRAVERSE: environment/defaultZone/description
+TRAVERSE: environment/defaultZone/properties
+TRAVERSE: environment/defaultZone/properties/
+TRAVERSE: environment/defaultZone/properties/property
+TRAVERSE: environment/defaultZone/properties/property/
+TRAVERSE: environment/authenticationMethod
+TRAVERSE: environment/instanceId
+TRAVERSE: environment/userToken
+TRAVERSE: environment/consumerName
+TRAVERSE: environment/applicationInfo
+TRAVERSE: environment/applicationInfo/
+TRAVERSE: environment/applicationInfo/applicationKey
+TRAVERSE: environment/applicationInfo/supportedInfrastructureVersion
+TRAVERSE: environment/applicationInfo/dataModelNamespace
+TRAVERSE: environment/applicationInfo/transport
+TRAVERSE: environment/applicationInfo/applicationProduct
+TRAVERSE: environment/applicationInfo/applicationProduct/
+TRAVERSE: environment/applicationInfo/applicationProduct/vendorName
+TRAVERSE: environment/applicationInfo/applicationProduct/productName
+TRAVERSE: environment/applicationInfo/applicationProduct/productVersion
+TRAVERSE: environment/applicationInfo/applicationProduct/iconURI
+TRAVERSE: environment/applicationInfo/adapterProduct
+TRAVERSE: environment/applicationInfo/adapterProduct/
+TRAVERSE: environment/applicationInfo/adapterProduct/vendorName
+TRAVERSE: environment/applicationInfo/adapterProduct/productName
+TRAVERSE: environment/applicationInfo/adapterProduct/productVersion
+TRAVERSE: environment/applicationInfo/adapterProduct/iconURI
+TRAVERSE: environment/infrastructureServices
+TRAVERSE: environment/infrastructureServices/
+TRAVERSE: environment/infrastructureServices/infrastructureService
+TRAVERSE: environment/infrastructureServices/infrastructureService/
+TRAVERSE: environment/provisionedZones
+TRAVERSE: environment/provisionedZones/
+TRAVERSE: environment/provisionedZones/provisionedZone
+TRAVERSE: environment/provisionedZones/provisionedZone/
+TRAVERSE: environment/provisionedZones/provisionedZone/services
+TRAVERSE: environment/provisionedZones/provisionedZone/services/
+TRAVERSE: environment/provisionedZones/provisionedZone/services/service
+TRAVERSE: environment/provisionedZones/provisionedZone/services/service/
+TRAVERSE: environment/provisionedZones/provisionedZone/services/service/rights
+TRAVERSE: environment/provisionedZones/provisionedZone/services/service/rights/
+TRAVERSE: environment/provisionedZones/provisionedZone/services/service/rights/right
+TRAVERSE: environment/provisionedZones/provisionedZone/services/service/rights/right/
+TRAVERSE: environment/provisionedZones/provisionedZone/services/service/rights/right//
+TRAVERSE: error/
+TRAVERSE: error/code
+TRAVERSE: error/scope
+TRAVERSE: error/message
+TRAVERSE: error/description
+TRAVERSE: job/
+TRAVERSE: job/name
+TRAVERSE: job/description
+TRAVERSE: job/state
+TRAVERSE: job/state/
+TRAVERSE: job/stateDescription
+TRAVERSE: job/created
+TRAVERSE: job/lastModified
+TRAVERSE: job/timeout
+TRAVERSE: job/phases
+TRAVERSE: job/phases/
+TRAVERSE: job/phases/phase
+TRAVERSE: job/phases/phase/
+TRAVERSE: job/phases/phase/name
+TRAVERSE: job/phases/phase/states
+TRAVERSE: job/phases/phase/required
+TRAVERSE: job/phases/phase/rights
+TRAVERSE: job/phases/phase/rights/
+TRAVERSE: job/phases/phase/rights/right
+TRAVERSE: job/phases/phase/rights/right/
+TRAVERSE: job/phases/phase/rights/right//
+TRAVERSE: job/phases/phase/statesRights
+TRAVERSE: job/phases/phase/statesRights/
+TRAVERSE: job/phases/phase/statesRights/right
+TRAVERSE: job/phases/phase/statesRights/right/
+TRAVERSE: job/phases/phase/statesRights/right//
+TRAVERSE: job/initialization
+TRAVERSE: job/initialization/
+TRAVERSE: job/initialization/phaseName
+TRAVERSE: job/initialization/payload
+TRAVERSE: namespace/
+TRAVERSE: namespace/zone
+TRAVERSE: namespace/uri
+TRAVERSE: namespace/url
+TRAVERSE: pod/
+TRAVERSE: pod/podStatus
+TRAVERSE: pod/podToken
+TRAVERSE: pod/podToken/
+TRAVERSE: pod/podVersion
+TRAVERSE: pod/partyId
+TRAVERSE: pod/privacyList
+TRAVERSE: pod/privacyList/
+TRAVERSE: pod/privacyList/privacy
+TRAVERSE: pod/privacyList/privacy/
+TRAVERSE: pod/privacyList/privacy/default
+TRAVERSE: pod/privacyList/privacy/appIDList
+TRAVERSE: pod/privacyList/privacy/appIDList/
+TRAVERSE: pod/privacyList/privacy/appIDList/appID
+TRAVERSE: pod/privacyList/privacy/adapterFingerprintList
+TRAVERSE: pod/privacyList/privacy/adapterFingerprintList/
+TRAVERSE: pod/privacyList/privacy/adapterFingerprintList/adapterFingerprint
+TRAVERSE: pod/privacyList/privacy/zoneContextList
+TRAVERSE: pod/privacyList/privacy/zoneContextList/
+TRAVERSE: pod/privacyList/privacy/zoneContextList/zoneContext
+TRAVERSE: pod/privacyList/privacy/zoneContextList/zoneContext/
+TRAVERSE: pod/privacyList/privacy/zoneContextList/zoneContext/zoneId
+TRAVERSE: pod/privacyList/privacy/zoneContextList/zoneContext/zoneId/
+TRAVERSE: pod/privacyList/privacy/zoneContextList/zoneContext/contextId
+TRAVERSE: pod/privacyList/privacy/zoneContextList/zoneContext/contextId/
+TRAVERSE: pod/privacyList/privacy/endpointList
+TRAVERSE: pod/privacyList/privacy/endpointList/
+TRAVERSE: pod/privacyList/privacy/endpointList/endpoint
+TRAVERSE: pod/privacyList/privacy/endpointList/endpoint/
+TRAVERSE: pod/privacyList/privacy/endpointList/endpoint/endpointURL
+TRAVERSE: pod/privacyList/privacy/endpointList/endpoint/endpointProviderName
+TRAVERSE: pod/privacyList/privacy/dataModelNamespace
+TRAVERSE: pod/privacyList/privacy/dataModelVersionMin
+TRAVERSE: pod/privacyList/privacy/dataModelVersionMax
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/contract
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/contract/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/contract/contractURI
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/contract/contractName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/contract/dateValidFrom
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/contract/dateValidTo
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/contract/contractVersion
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/contract/lawList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/contract/lawList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/contract/lawList/law
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/contract/lawList/law/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/contract/lawList/law/lawName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/contract/lawList/law/lawDescription
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/contract/studentDataIPRights
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/clause
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/clause/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/clause/clauseLabel
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/clause/clauseReference
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/clause/clauseContent
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/clause/obligationList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/clause/obligationList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/clause/obligationList/obligation
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/clause/obligationList/obligation/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/clause/obligationList/obligation/obligationDescription
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/clause/obligationList/obligation/obligationURL
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/clause/obligationList/obligation/benchmarkList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/clause/obligationList/obligation/benchmarkList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/clause/obligationList/obligation/benchmarkList/benchmark
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/benchmarkName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/benchmarkId
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/benchmarkId/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/benchmarkDescription
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/legalRequirements/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/benchmarkURL
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/clause
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/clause/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/clause/clauseLabel
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/clause/clauseReference
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/clause/clauseContent
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/clause/obligationList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/clause/obligationList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/clause/obligationList/obligation
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/clause/obligationList/obligation/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/clause/obligationList/obligation/obligationDescription
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/clause/obligationList/obligation/obligationURL
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/clause/obligationList/obligation/benchmarkList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/clause/obligationList/obligation/benchmarkList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/clause/obligationList/obligation/benchmarkList/benchmark
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/benchmarkName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/benchmarkId
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/benchmarkId/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/benchmarkDescription
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/benchmarkURL
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/fieldList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/fieldList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/fieldList/field
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/fieldList/field/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/fieldList/field/fieldName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataAccess/fieldList/field/controlrights
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/conditionList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/conditionList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/conditionList/condition
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/conditionList/condition/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/conditionList/condition/typeOfCondition
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/conditionList/condition/conditionName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/conditionList/condition/conditionDescription
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/conditionList/condition/propertyList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/conditionList/condition/propertyList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/conditionList/condition/propertyList/property
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/conditionList/condition/propertyList/property/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/conditionList/condition/propertyList/property/propertyName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/conditionList/condition/propertyList/property/propertyValue
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/clause
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/clause/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/clause/clauseLabel
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/clause/clauseReference
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/clause/clauseContent
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/clause/obligationList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/clause/obligationList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/clause/obligationList/obligation
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/clause/obligationList/obligation/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/clause/obligationList/obligation/obligationDescription
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/clause/obligationList/obligation/obligationURL
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/clause/obligationList/obligation/benchmarkList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/clause/obligationList/obligation/benchmarkList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/clause/obligationList/obligation/benchmarkList/benchmark
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/benchmarkName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/benchmarkId
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/benchmarkId/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/benchmarkDescription
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/benchmarkURL
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/benchmarkList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/benchmarkList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/benchmarkList/benchmark
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/benchmarkList/benchmark/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/benchmarkList/benchmark/benchmarkName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/benchmarkList/benchmark/benchmarkId
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/benchmarkList/benchmark/benchmarkId/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/benchmarkList/benchmark/benchmarkDescription
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/benchmarkList/benchmark/benchmarkURL
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/fieldList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/fieldList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/fieldList/field
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/fieldList/field/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/fieldList/field/fieldName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/fieldList/field/controlrights
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/respondInDays
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataSubject/requirePortability
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/deleteData
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/dataRetention
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/deleteBy
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/organisation
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/organisation/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/name
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/name/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/name/title
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/name/familyName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/name/givenName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/name/otherGivenNames
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/name/familyNameFirst
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/name/preferredName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/positionTitle
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/role
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/registrationDetails
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/qualifications
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/address
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/address/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/address/effectiveFromDate
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/address/effectiveToDate
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/address/line1
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/address/line2
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/address/line3
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/address/city
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/address/stateProvince
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/address/stateProvince/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/address/country
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/address/country/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/address/postalCode
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/emailList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/emailList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/emailList/email
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/emailList/email/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/phoneNumberList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/phoneNumberList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/phoneNumberList/phoneNumber
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/phoneNumberList/phoneNumber/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/phoneNumberList/phoneNumber/number
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/phoneNumberList/phoneNumber/extension
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/phoneNumberList/phoneNumber/listedStatus
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/partyToDeleteData/deletecontactInfo/phoneNumberList/phoneNumber/preference
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/respondInDays
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/dataDeletion/requirePortability
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/clause
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/clause/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/clause/clauseLabel
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/clause/clauseReference
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/clause/clauseContent
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/clause/obligationList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/clause/obligationList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/clause/obligationList/obligation
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/clause/obligationList/obligation/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/clause/obligationList/obligation/obligationDescription
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/clause/obligationList/obligation/obligationURL
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/clause/obligationList/obligation/benchmarkList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/clause/obligationList/obligation/benchmarkList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/clause/obligationList/obligation/benchmarkList/benchmark
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/benchmarkName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/benchmarkId
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/benchmarkId/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/benchmarkDescription
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/clauseList/clause/obligationList/obligation/benchmarkList/benchmark/benchmarkURL
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/technologyName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/technologyDescription
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/referenceURL
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/technicalRequirements/securityTechnologyList/securityTechnology/versionMin
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/dataControllerName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyPolicyURL
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/name
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/name/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/name/title
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/name/familyName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/name/givenName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/name/otherGivenNames
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/name/familyNameFirst
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/name/preferredName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/positionTitle
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/role
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/registrationDetails
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/qualifications
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/address
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/address/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/address/effectiveFromDate
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/address/effectiveToDate
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/address/line1
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/address/line2
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/address/line3
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/address/city
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/address/stateProvince
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/address/stateProvince/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/address/country
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/address/country/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/address/postalCode
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/emailList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/emailList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/emailList/email
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/emailList/email/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/phoneNumberList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/phoneNumberList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/phoneNumberList/phoneNumber
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/phoneNumberList/phoneNumber/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/phoneNumberList/phoneNumber/number
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/phoneNumberList/phoneNumber/extension
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/phoneNumberList/phoneNumber/listedStatus
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/privacyContactList/contact/phoneNumberList/phoneNumber/preference
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/name
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/name/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/name/title
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/name/familyName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/name/givenName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/name/otherGivenNames
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/name/familyNameFirst
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/name/preferredName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/positionTitle
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/role
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/registrationDetails
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/qualifications
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/address
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/address/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/address/effectiveFromDate
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/address/effectiveToDate
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/address/line1
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/address/line2
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/address/line3
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/address/city
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/address/stateProvince
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/address/stateProvince/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/address/country
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/address/country/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/address/postalCode
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/emailList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/emailList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/emailList/email
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/emailList/email/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/phoneNumberList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/phoneNumberList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/phoneNumberList/phoneNumber
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/phoneNumberList/phoneNumber/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/phoneNumberList/phoneNumber/number
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/phoneNumberList/phoneNumber/extension
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/phoneNumberList/phoneNumber/listedStatus
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataController/issuesNotificationContactList/contact/phoneNumberList/phoneNumber/preference
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyPolicyURL
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/name
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/name/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/name/title
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/name/familyName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/name/givenName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/name/otherGivenNames
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/name/familyNameFirst
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/name/preferredName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/positionTitle
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/role
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/registrationDetails
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/qualifications
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/address
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/address/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/address/effectiveFromDate
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/address/effectiveToDate
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/address/line1
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/address/line2
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/address/line3
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/address/city
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/address/stateProvince
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/address/stateProvince/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/address/country
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/address/country/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/address/postalCode
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/emailList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/emailList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/emailList/email
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/emailList/email/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/phoneNumberList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/phoneNumberList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/phoneNumberList/phoneNumber
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/phoneNumberList/phoneNumber/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/phoneNumberList/phoneNumber/number
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/phoneNumberList/phoneNumber/extension
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/phoneNumberList/phoneNumber/listedStatus
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/privacyContactList/contact/phoneNumberList/phoneNumber/preference
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/notifyDataControllerOnAccessRequests
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/name
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/name/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/name/title
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/name/familyName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/name/givenName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/name/otherGivenNames
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/name/familyNameFirst
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/name/preferredName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/positionTitle
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/role
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/registrationDetails
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/qualifications
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/address
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/address/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/address/effectiveFromDate
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/address/effectiveToDate
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/address/line1
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/address/line2
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/address/line3
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/address/city
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/address/stateProvince
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/address/stateProvince/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/address/country
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/address/country/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/address/postalCode
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/emailList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/emailList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/emailList/email
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/emailList/email/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/phoneNumberList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/phoneNumberList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/phoneNumberList/phoneNumber
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/phoneNumberList/phoneNumber/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/phoneNumberList/phoneNumber/number
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/phoneNumberList/phoneNumber/extension
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/phoneNumberList/phoneNumber/listedStatus
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataProcessorContactForAccessRequestsList/contact/phoneNumberList/phoneNumber/preference
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/purposeList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/purposeList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/purposeList/purpose
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/alternatePurposeList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/alternatePurposeList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/alternatePurposeList/alternatePurpose
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/deidentifiedPurposeList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/deidentifiedPurposeList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/deidentifiedPurposeList/deidentifiedPurpose
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataUsageMarketingAllowed
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/personalInformationUpdatedFromSource
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachNotification
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/name
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/name/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/name/title
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/name/familyName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/name/givenName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/name/otherGivenNames
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/name/familyNameFirst
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/name/preferredName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/positionTitle
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/role
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/registrationDetails
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/qualifications
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/address
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/address/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/address/effectiveFromDate
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/address/effectiveToDate
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/address/line1
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/address/line2
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/address/line3
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/address/city
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/address/stateProvince
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/address/stateProvince/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/address/country
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/address/country/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/address/postalCode
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/emailList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/emailList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/emailList/email
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/emailList/email/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/phoneNumberList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/phoneNumberList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/phoneNumberList/phoneNumber
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/phoneNumberList/phoneNumber/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/phoneNumberList/phoneNumber/number
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/phoneNumberList/phoneNumber/extension
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/phoneNumberList/phoneNumber/listedStatus
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/dataBreachContactList/contact/phoneNumberList/phoneNumber/preference
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/employeesMustComplyWithAgreement
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/employeeConfidentialityAgreement
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/employeeTrainingList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/employeeTrainingList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/employeeTrainingList/employeeTraining
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/employeeTrainingList/employeeTraining/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/employeeTrainingList/employeeTraining/trainingName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/employeeTrainingList/employeeTraining/trainingURL
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/passwordEmployeeAccessStandard
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/passwordEmployeeAccessStandard/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/passwordEmployeeAccessStandard/standardName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/passwordEmployeeAccessStandard/standardURL
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/securityTestRequiredList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/securityTestRequiredList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/securityTestRequiredList/securityTestRequired
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/securityTestRequiredList/securityTestRequired/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/securityTestRequiredList/securityTestRequired/testType
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/securityTestRequiredList/securityTestRequired/testFrequency
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/securityTestRequiredList/securityTestRequired/remediationRequiredIn
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/securityTestRequiredList/securityTestRequired/shareResults
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/countryImpactedList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/countryImpactedList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/countryImpactedList/countryImpacted
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/countryImpactedList/countryImpacted/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/countryImpactedList/countryImpacted/country
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/countryImpactedList/countryImpacted/country/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataProcessor/countryImpactedList/countryImpacted/usage
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/subProcessorName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyPolicyURL
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/name
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/name/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/name/title
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/name/familyName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/name/givenName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/name/otherGivenNames
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/name/familyNameFirst
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/name/preferredName
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/positionTitle
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/role
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/registrationDetails
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/qualifications
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/address
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/address/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/address/effectiveFromDate
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/address/effectiveToDate
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/address/line1
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/address/line2
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/address/line3
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/address/city
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/address/stateProvince
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/address/stateProvince/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/address/country
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/address/country/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/address/postalCode
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/emailList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/emailList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/emailList/email
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/emailList/email/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/phoneNumberList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/phoneNumberList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/phoneNumberList/phoneNumber
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/phoneNumberList/phoneNumber/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/phoneNumberList/phoneNumber/number
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/phoneNumberList/phoneNumber/extension
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/phoneNumberList/phoneNumber/listedStatus
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/privacyContactList/contact/phoneNumberList/phoneNumber/preference
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/purposeList
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/purposeList/
+TRAVERSE: pod/privacyList/privacy/privacyObligationsDocument/dataSubProcessorList/dataSubProcessor/purposeList/purpose
+TRAVERSE: provider/
+TRAVERSE: provider/serviceType
+TRAVERSE: provider/serviceType/
+TRAVERSE: provider/serviceName
+TRAVERSE: provider/contextId
+TRAVERSE: provider/zoneId
+TRAVERSE: provider/providerName
+TRAVERSE: provider/querySupport
+TRAVERSE: provider/querySupport/
+TRAVERSE: provider/querySupport/dynamicQuery
+TRAVERSE: provider/querySupport/queryByExample
+TRAVERSE: provider/querySupport/changesSinceMarker
+TRAVERSE: provider/querySupport/paged
+TRAVERSE: provider/querySupport/maxPageSize
+TRAVERSE: provider/querySupport/totalCount
+TRAVERSE: provider/querySupport/applicationProduct
+TRAVERSE: provider/querySupport/applicationProduct/
+TRAVERSE: provider/querySupport/applicationProduct/vendorName
+TRAVERSE: provider/querySupport/applicationProduct/productName
+TRAVERSE: provider/querySupport/applicationProduct/productVersion
+TRAVERSE: provider/querySupport/applicationProduct/iconURI
+TRAVERSE: provider/querySupport/adapterProduct
+TRAVERSE: provider/querySupport/adapterProduct/
+TRAVERSE: provider/querySupport/adapterProduct/vendorName
+TRAVERSE: provider/querySupport/adapterProduct/productName
+TRAVERSE: provider/querySupport/adapterProduct/productVersion
+TRAVERSE: provider/querySupport/adapterProduct/iconURI
+TRAVERSE: provider/mimeTypes
+TRAVERSE: provider/mimeTypes/
+TRAVERSE: provider/mimeTypes/mediaType
+TRAVERSE: provider/endPoint
+TRAVERSE: provider/endPoint/
+TRAVERSE: provider/endPoint/location
+TRAVERSE: provider/endPoint/properties
+TRAVERSE: provider/endPoint/properties/
+TRAVERSE: provider/endPoint/properties/property
+TRAVERSE: provider/endPoint/properties/property/
+TRAVERSE: provisionRequest/
+TRAVERSE: provisionRequest/provisionedZones
+TRAVERSE: provisionRequest/provisionedZones/
+TRAVERSE: provisionRequest/provisionedZones/provisionedZone
+TRAVERSE: provisionRequest/provisionedZones/provisionedZone/
+TRAVERSE: provisionRequest/provisionedZones/provisionedZone/services
+TRAVERSE: provisionRequest/provisionedZones/provisionedZone/services/
+TRAVERSE: provisionRequest/provisionedZones/provisionedZone/services/service
+TRAVERSE: provisionRequest/provisionedZones/provisionedZone/services/service/
+TRAVERSE: provisionRequest/provisionedZones/provisionedZone/services/service/rights
+TRAVERSE: provisionRequest/provisionedZones/provisionedZone/services/service/rights/
+TRAVERSE: provisionRequest/provisionedZones/provisionedZone/services/service/rights/right
+TRAVERSE: provisionRequest/provisionedZones/provisionedZone/services/service/rights/right/
+TRAVERSE: provisionRequest/provisionedZones/provisionedZone/services/service/rights/right//
+TRAVERSE: queue/
+TRAVERSE: queue/polling
+TRAVERSE: queue/ownerId
+TRAVERSE: queue/ownerId/
+TRAVERSE: queue/name
+TRAVERSE: queue/queueUri
+TRAVERSE: queue/ownerUri
+TRAVERSE: queue/idleTimeout
+TRAVERSE: queue/minWaitTime
+TRAVERSE: queue/maxConcurrentConnections
+TRAVERSE: queue/created
+TRAVERSE: queue/lastAccessed
+TRAVERSE: queue/lastModified
+TRAVERSE: queue/messageCount
+TRAVERSE: state/
+TRAVERSE: state/type
+TRAVERSE: state/type/
+TRAVERSE: state/created
+TRAVERSE: state/lastModified
+TRAVERSE: state/description
+TRAVERSE: subscription/
+TRAVERSE: subscription/zoneId
+TRAVERSE: subscription/contextId
+TRAVERSE: subscription/serviceType
+TRAVERSE: subscription/serviceType/
+TRAVERSE: subscription/serviceName
+TRAVERSE: subscription/queueId
+TRAVERSE: updateResponse/
+TRAVERSE: updateResponse/updates
+TRAVERSE: updateResponse/updates/
+TRAVERSE: updateResponse/updates/update
+TRAVERSE: updateResponse/updates/update/
+TRAVERSE: updateResponse/updates/update/error
+TRAVERSE: updateResponse/updates/update/error/
+TRAVERSE: updateResponse/updates/update/error/code
+TRAVERSE: updateResponse/updates/update/error/scope
+TRAVERSE: updateResponse/updates/update/error/message
+TRAVERSE: updateResponse/updates/update/error/description
+TRAVERSE: xquery/
+TRAVERSE: xquery/type
+TRAVERSE: xquery/status
+TRAVERSE: xquery/qualifier
+TRAVERSE: xquery/description
+TRAVERSE: xquery/script
+TRAVERSE: xquery/parameters
+TRAVERSE: xquery/parameters/
+TRAVERSE: xquery/parameters/parameter
+TRAVERSE: xquery/parameters/parameter/
+TRAVERSE: xquery/parameters/parameter/name
+TRAVERSE: xquery/parameters/parameter/type
+TRAVERSE: xquery/parameters/parameter/default
+TRAVERSE: xquery/parameters/parameter/description
+TRAVERSE: xquery/parameters/parameter/required
+TRAVERSE: xquery/parameters/parameter/enumerations
+TRAVERSE: xquery/parameters/parameter/enumerations/
+TRAVERSE: xquery/parameters/parameter/enumerations/enumeration
+TRAVERSE: xquery/parameters/parameter/enumerations/enumeration/
+TRAVERSE: xquery/parameters/parameter/enumerations/enumeration/value
+TRAVERSE: xquery/parameters/parameter/enumerations/enumeration/code
+TRAVERSE: xquery/parameters/parameter/range
+TRAVERSE: xquery/parameters/parameter/range/
+TRAVERSE: xquery/parameters/parameter/range/start
+TRAVERSE: xquery/parameters/parameter/range/end
+TRAVERSE: xquery/parameters/parameter/minLength
+TRAVERSE: xquery/parameters/parameter/maxLength
+TRAVERSE: xquery/returnType
+TRAVERSE: zone/
+TRAVERSE: zone/description
+TRAVERSE: zone/properties
+TRAVERSE: zone/properties/
+TRAVERSE: zone/properties/property
+TRAVERSE: zone/properties/property/
