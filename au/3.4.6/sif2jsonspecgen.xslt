@@ -99,13 +99,16 @@
   <xsl:template match="*" mode="obj-content">
     <xsl:text>{</xsl:text>
     <xsl:apply-templates select="@*" mode="attr" />
-    <xsl:if test="count(@*) &gt; 0 and (count(child::*) &gt; 0 or text())">, </xsl:if>
+    <xsl:if test="count(@*) &gt; 0">, </xsl:if>
     <xsl:apply-templates select="./*" mode="detect" />
     <xsl:if test="count(child::*) = 0 and text() and not(@*)">
       <xsl:text>"</xsl:text><xsl:value-of select="name()"/>" : <xsl:apply-templates select="." mode="value"/>
     </xsl:if>
     <xsl:if test="count(child::*) = 0 and text() and @*">
       <xsl:text>"value" : </xsl:text><xsl:apply-templates select="." mode="value"/>
+    </xsl:if>
+    <xsl:if test="count(child::*) = 0 and not(text()) and @*">
+      <xsl:text>"value" : ""</xsl:text>
     </xsl:if>
     <xsl:text>}</xsl:text>
     <xsl:if test="position() &lt; last()">, </xsl:if>
@@ -115,10 +118,13 @@
   <xsl:template match="OtherCodeList/OtherCode | SourceObjects/SourceObject | ActivityTime/Duration | SIF_ExtendedElements/SIF_ExtendedElement | AggregateStatisticInfo/CalculationRule | ExclusionRules/ExclusionRule | Location/LocationRefId | EquipmentInfo/SIF_RefId | Identity/SIF_RefId | IdentityAssertions/IdentityAssertion | PasswordList/Password | StatisticalAreas/StatisticalArea | EmailList/Email | Contact/Email | LearningResource/Location | AssociatedObjects/AssociatedObject | LearningResourcePackage/XMLData | LearningResourcePackage/TextData | LearningResourcePackage/BinaryData | RichDescription/XMLData | RichDescription/TextData | RichDescription/BinaryData | Resources/LearningResourceRefId | RelatedLearningStandardItems/LearningStandardItemRefId | PersonPicture/ParentObjectRefId | PersonPicture/PictureSource | ResourceBooking/ResourceRefId | ResourceReportLine/SIF_RefId | ResourceReportLine/CurrentCost | ScheduledActivity/Override | OtherIdList/OtherId | SchoolInfo/OtherLEA | SchoolEmailList/Email | ElectronicIdList/ElectronicId | StudentParticipation/ManagingSchool | AlertMessages/AlertMessage | MedicalAlertMessages/MedicalAlertMessage | StudentSchoolEnrollment/Homeroom | StudentSchoolEnrollment/Advisor | StudentSchoolEnrollment/Counselor | StudentSchoolEnrollment/Calendar | SystemRole/SIF_RefId | RoleScope/RoleScopeRefId | PersonInvolvement/PersonRefId | WellbeingPersonLink/PersonRefId | EntityContact/Email | Debtor/BilledEntity | Invoice/InvoicedEntity | Invoice/BilledAmount | Invoice/NetAmount | Invoice/TaxAmount | PurchasingItem/UnitCost | PurchasingItem/TotalCost | ExpenseAccount/Amount | Journal/OriginatingTransactionRefId | Journal/Amount | JournalAdjustment/LineAdjustmentAmount | PaymentReceiptLine/TransactionAmount | PaymentReceiptLine/TaxAmount | PaymentReceipt/TransactionAmount | PaymentReceipt/TaxAmount | PurchaseOrder/TaxAmount | PurchaseOrder/TotalAmount" mode="obj-content">
     <xsl:text>{</xsl:text>
     <xsl:apply-templates select="@*" mode="attr" />
-    <xsl:if test="count(@*) &gt; 0 and (count(child::*) &gt; 0 or text())">, </xsl:if>
+    <xsl:if test="count(@*) &gt; 0">, </xsl:if>
     <xsl:apply-templates select="./*" mode="detect" />
     <xsl:if test="count(child::*) = 0 and text()">
       <xsl:text>"value" : </xsl:text><xsl:apply-templates select="." mode="value"/>
+    </xsl:if>
+    <xsl:if test="count(child::*) = 0 and not(text())">
+      <xsl:text>"value" : ""</xsl:text>
     </xsl:if>
     <xsl:text>}</xsl:text>
     <xsl:if test="position() &lt; last()">, </xsl:if>

@@ -1,6 +1,6 @@
 let X2JS = require('x2js');
 const fs = require("fs");
-const js = fs.readFileSync("/dev/stdin", "utf-8");
+const js = fs.readFileSync(0, "utf-8");
 var dot = require('dot-object');
 
 var attrpaths = new Object;
@@ -21,7 +21,6 @@ attrpaths["LearningStandardDocument"] = ["LearningStandardDocument.RefId","Learn
 attrpaths["LearningStandardItem"] = ["LearningStandardItem.RefId"];
 attrpaths["PersonPicture"] = ["PersonPicture.RefId"];
 attrpaths["PersonalisedPlan"] = ["PersonalisedPlan.RefId"];
-attrpaths["ReportAuthorityInfo"] = ["ReportAuthorityInfo.RefId","ReportAuthorityInfo.ContactInfo.Name.Type","ReportAuthorityInfo.ContactInfo.Address.Type","ReportAuthorityInfo.ContactInfo.Address.Role","ReportAuthorityInfo.ContactInfo.Address.MapReference.Type","ReportAuthorityInfo.ContactInfo.PhoneNumberList.PhoneNumber.Type","ReportAuthorityInfo.Address.Type","ReportAuthorityInfo.Address.Role","ReportAuthorityInfo.Address.MapReference.Type","ReportAuthorityInfo.PhoneNumber.Type"];
 attrpaths["ResourceBooking"] = ["ResourceBooking.RefId"];
 attrpaths["ResourceUsage"] = ["ResourceUsage.RefId"];
 attrpaths["RoomInfo"] = ["RoomInfo.RefId","RoomInfo.PhoneNumber.Type"];
@@ -57,7 +56,7 @@ attrpaths["WellbeingCharacteristic"] = ["WellbeingCharacteristic.RefId"];
 attrpaths["WellbeingEvent"] = ["WellbeingEvent.RefId"];
 attrpaths["WellbeingResponse"] = ["WellbeingResponse.RefId"];
 attrpaths["ChargedLocationInfo"] = ["ChargedLocationInfo.RefId","ChargedLocationInfo.AddressList.Address.Type","ChargedLocationInfo.AddressList.Address.Role","ChargedLocationInfo.AddressList.Address.MapReference.Type","ChargedLocationInfo.PhoneNumberList.PhoneNumber.Type"];
-attrpaths["Debtor"] = ["Debtor.RefId"];
+attrpaths["Debtor"] = ["Debtor.RefId","Debtor.AddressList.Address.Type","Debtor.AddressList.Address.Role","Debtor.AddressList.Address.MapReference.Type"];
 attrpaths["FinancialAccount"] = ["FinancialAccount.RefId"];
 attrpaths["Invoice"] = ["Invoice.RefId"];
 attrpaths["Journal"] = ["Journal.RefId"];

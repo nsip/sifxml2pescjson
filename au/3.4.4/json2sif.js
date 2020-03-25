@@ -1,6 +1,6 @@
 let X2JS = require('x2js');
 const fs = require("fs");
-const js = fs.readFileSync("/dev/stdin", "utf-8");
+const js = fs.readFileSync(0, "utf-8");
 var dot = require('dot-object');
 
 var attrpaths = new Object;
@@ -22,7 +22,6 @@ attrpaths["LearningStandardItem"] = ["LearningStandardItem.RefId"];
 attrpaths["MarkValueInfo"] = ["MarkValueInfo.RefId"];
 attrpaths["PersonPicture"] = ["PersonPicture.RefId"];
 attrpaths["PersonalisedPlan"] = ["PersonalisedPlan.RefId"];
-attrpaths["ReportAuthorityInfo"] = ["ReportAuthorityInfo.RefId","ReportAuthorityInfo.ContactInfo.Name.Type","ReportAuthorityInfo.ContactInfo.Address.Type","ReportAuthorityInfo.ContactInfo.Address.Role","ReportAuthorityInfo.ContactInfo.Address.MapReference.Type","ReportAuthorityInfo.ContactInfo.PhoneNumberList.PhoneNumber.Type","ReportAuthorityInfo.Address.Type","ReportAuthorityInfo.Address.Role","ReportAuthorityInfo.Address.MapReference.Type","ReportAuthorityInfo.PhoneNumber.Type"];
 attrpaths["ResourceBooking"] = ["ResourceBooking.RefId"];
 attrpaths["ResourceUsage"] = ["ResourceUsage.RefId"];
 attrpaths["RoomInfo"] = ["RoomInfo.RefId","RoomInfo.PhoneNumber.Type"];

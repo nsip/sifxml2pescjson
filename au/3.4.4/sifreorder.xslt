@@ -333,20 +333,6 @@
 <xsl:apply-templates select="SIF_ExtendedElements" mode="SIF_ExtendedElementsType" />
 </xsl:copy>
 </xsl:template>
-<xsl:template match="ReportAuthorityInfo" mode="object">
-<xsl:copy>
-    <xsl:apply-templates select="@*" mode="copy" />
-<xsl:apply-templates select="AuthorityName" mode="copy" />
-<xsl:apply-templates select="AuthorityId" mode="copy" />
-<xsl:apply-templates select="AuthorityDepartment" mode="copy" />
-<xsl:apply-templates select="AuthorityLevel" mode="copy" />
-<xsl:apply-templates select="ContactInfo" mode="ContactInfoType" />
-<xsl:apply-templates select="Address" mode="AddressType" />
-<xsl:apply-templates select="PhoneNumber" mode="PhoneNumberType" />
-<xsl:apply-templates select="SIF_Metadata" mode="SIF_MetadataType" />
-<xsl:apply-templates select="SIF_ExtendedElements" mode="SIF_ExtendedElementsType" />
-</xsl:copy>
-</xsl:template>
 <xsl:template match="ResourceBooking" mode="object">
 <xsl:copy>
     <xsl:apply-templates select="@*" mode="copy" />

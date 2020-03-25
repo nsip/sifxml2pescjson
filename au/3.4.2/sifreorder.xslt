@@ -344,20 +344,6 @@
 <xsl:apply-templates select="SIF_ExtendedElements" mode="SIF_ExtendedElementsType" />
 </xsl:copy>
 </xsl:template>
-<xsl:template match="ReportAuthorityInfo" mode="object">
-<xsl:copy>
-    <xsl:apply-templates select="@*" mode="copy" />
-<xsl:apply-templates select="AuthorityName" mode="copy" />
-<xsl:apply-templates select="AuthorityId" mode="copy" />
-<xsl:apply-templates select="AuthorityDepartment" mode="copy" />
-<xsl:apply-templates select="AuthorityLevel" mode="copy" />
-<xsl:apply-templates select="ContactInfo" mode="ContactInfoType" />
-<xsl:apply-templates select="Address" mode="AddressType" />
-<xsl:apply-templates select="PhoneNumber" mode="PhoneNumberType" />
-<xsl:apply-templates select="SIF_Metadata" mode="SIF_MetadataType" />
-<xsl:apply-templates select="SIF_ExtendedElements" mode="SIF_ExtendedElementsType" />
-</xsl:copy>
-</xsl:template>
 <xsl:template match="ResourceBooking" mode="object">
 <xsl:copy>
     <xsl:apply-templates select="@*" mode="copy" />
@@ -1164,7 +1150,7 @@
 <xsl:copy>
     <xsl:apply-templates select="@*" mode="copy" />
 <xsl:apply-templates select="BilledEntity" mode="copy" />
-<xsl:apply-templates select="AddressList" mode="copy" />
+<xsl:apply-templates select="AddressList" mode="AddressListType" />
 <xsl:apply-templates select="BillingName" mode="copy" />
 <xsl:apply-templates select="BillingNote" mode="copy" />
 <xsl:apply-templates select="Discount" mode="copy" />
@@ -2444,10 +2430,10 @@
 <xsl:template match="node()|@*" mode="PurchasingItemsType">
 <xsl:copy>
     <xsl:apply-templates select="@*" mode="copy" />
-<xsl:apply-templates select="PurchasingItem" mode="copy" />
+<xsl:apply-templates select="PurchasingItem" mode="PurchasingItemType" />
 </xsl:copy>
 </xsl:template>
-<xsl:template match="node()|@*" mode="PurchasingItem">
+<xsl:template match="node()|@*" mode="PurchasingItemType">
 <xsl:copy>
     <xsl:apply-templates select="@*" mode="copy" />
 <xsl:apply-templates select="ItemNumber" mode="copy" />
