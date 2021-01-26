@@ -94,7 +94,7 @@ The transform scripts are all generated from `out.txt`:
 
 * `scripts/sif2json.xslt`, using OBJECT, SIMPLE ATTRIBUTE, LIST, NUMERIC, BOOLEAN
 * `scripts/json2sif.js`, using OBJECT, COMPLEX ATTRIBUTE
-* `scripts/sifreorder.xslt, using XPATHTYPE
+* `scripts/sifreorder.xslt`, using XPATHTYPE
 
 Developers can also use `out.txt` to generate their own transforms.
 
