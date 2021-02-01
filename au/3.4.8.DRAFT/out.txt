@@ -19303,3 +19303,4 @@ TRAVERSE COMMON TYPES, DEPTH ALL	SIF_MetadataType/LifeCycle/TimeElements/TimeEle
 TRAVERSE COMMON TYPES, DEPTH ALL	SIF_MetadataType/EducationFilter	SIF_MetadataType	EducationFilter	EducationFilterType	4368
 TRAVERSE COMMON TYPES, DEPTH ALL	SIF_MetadataType/EducationFilter/LearningStandardItems	SIF_MetadataType	LearningStandardItems	LearningStandardsType	4369
 TRAVERSE COMMON TYPES, DEPTH ALL	SIF_MetadataType/EducationFilter/LearningStandardItems/LearningStandardItemRefId	SIF_MetadataType	LearningStandardItemRefId	string	4370
+END
