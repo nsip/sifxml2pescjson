@@ -577,7 +577,7 @@
 <xsl:apply-templates select="PrimaryAssignment" mode="copy" />
 <xsl:apply-templates select="JobStartDate" mode="copy" />
 <xsl:apply-templates select="JobEndDate" mode="copy" />
-<xsl:apply-templates select="JobFTE" mode="copy" />
+<xsl:apply-templates select="JobFTE" mode="FTEType" />
 <xsl:apply-templates select="JobFunction" mode="copy" />
 <xsl:apply-templates select="EmploymentStatus" mode="copy" />
 <xsl:apply-templates select="StaffSubjectList" mode="StaffSubjectListType" />
@@ -651,7 +651,7 @@
 <xsl:apply-templates select="EndDate" mode="copy" />
 <xsl:apply-templates select="StartDay" mode="copy" />
 <xsl:apply-templates select="EndDay" mode="copy" />
-<xsl:apply-templates select="FTE" mode="copy" />
+<xsl:apply-templates select="FTE" mode="FTEType" />
 <xsl:apply-templates select="DaysAttended" mode="copy" />
 <xsl:apply-templates select="ExcusedAbsences" mode="copy" />
 <xsl:apply-templates select="UnexcusedAbsences" mode="copy" />
@@ -784,7 +784,7 @@
 <xsl:apply-templates select="ExtendedDay" mode="copy" />
 <xsl:apply-templates select="ProgramAvailability" mode="ProgramAvailabilityType" />
 <xsl:apply-templates select="EntryPerson" mode="copy" />
-<xsl:apply-templates select="StudentSpecialEducationFTE" mode="copy" />
+<xsl:apply-templates select="StudentSpecialEducationFTE" mode="FTEType" />
 <xsl:apply-templates select="ParticipationContact" mode="copy" />
 <xsl:apply-templates select="LocalCodeList" mode="LocalCodeListType" />
 <xsl:apply-templates select="SIF_Metadata" mode="SIF_MetadataType" />
@@ -877,7 +877,7 @@
 <xsl:apply-templates select="ExitDate" mode="copy" />
 <xsl:apply-templates select="ExitStatus" mode="StudentExitStatusContainerType" />
 <xsl:apply-templates select="ExitType" mode="StudentExitContainerType" />
-<xsl:apply-templates select="FTE" mode="copy" />
+<xsl:apply-templates select="FTE" mode="FTEType" />
 <xsl:apply-templates select="FTPTStatus" mode="copy" />
 <xsl:apply-templates select="FFPOS" mode="copy" />
 <xsl:apply-templates select="CatchmentStatus" mode="CatchmentStatusContainerType" />
@@ -1248,6 +1248,41 @@
 <xsl:apply-templates select="SchoolInfoRefId" mode="copy" />
 <xsl:apply-templates select="AddressList" mode="AddressListType" />
 <xsl:apply-templates select="PhoneNumberList" mode="PhoneNumberListType" />
+<xsl:apply-templates select="LocalCodeList" mode="LocalCodeListType" />
+<xsl:apply-templates select="SIF_Metadata" mode="SIF_MetadataType" />
+<xsl:apply-templates select="SIF_ExtendedElements" mode="SIF_ExtendedElementsType" />
+</xsl:copy>
+</xsl:template>
+<xsl:template match="CollectionAcquittal" mode="object">
+<xsl:copy>
+    <xsl:apply-templates select="@*" mode="copy" />
+<xsl:apply-templates select="ReportingAuthorityList" mode="ReportingAuthorityListType" />
+<xsl:apply-templates select="SubmittingAuthority" mode="ReportingAuthorityType" />
+<xsl:apply-templates select="SubmittedBy" mode="SignatoryType" />
+<xsl:apply-templates select="AuditedBy" mode="SignatoryType" />
+<xsl:apply-templates select="AuditorASICNumber" mode="copy" />
+<xsl:apply-templates select="Recipient" mode="copy" />
+<xsl:apply-templates select="Collection" mode="copy" />
+<xsl:apply-templates select="CollectionYear" mode="SchoolYearType" />
+<xsl:apply-templates select="RoundCode" mode="copy" />
+<xsl:apply-templates select="Declaration" mode="copy" />
+<xsl:apply-templates select="AuditorStatement" mode="copy" />
+<xsl:apply-templates select="LocalCodeList" mode="LocalCodeListType" />
+<xsl:apply-templates select="SIF_Metadata" mode="SIF_MetadataType" />
+<xsl:apply-templates select="SIF_ExtendedElements" mode="SIF_ExtendedElementsType" />
+</xsl:copy>
+</xsl:template>
+<xsl:template match="CollectionDeclaration" mode="object">
+<xsl:copy>
+    <xsl:apply-templates select="@*" mode="copy" />
+<xsl:apply-templates select="ReportingAuthorityList" mode="ReportingAuthorityListType" />
+<xsl:apply-templates select="SubmittingAuthority" mode="ReportingAuthorityType" />
+<xsl:apply-templates select="SubmittedBy" mode="SignatoryType" />
+<xsl:apply-templates select="Recipient" mode="copy" />
+<xsl:apply-templates select="Collection" mode="copy" />
+<xsl:apply-templates select="CollectionYear" mode="SchoolYearType" />
+<xsl:apply-templates select="RoundCode" mode="copy" />
+<xsl:apply-templates select="Declaration" mode="copy" />
 <xsl:apply-templates select="LocalCodeList" mode="LocalCodeListType" />
 <xsl:apply-templates select="SIF_Metadata" mode="SIF_MetadataType" />
 <xsl:apply-templates select="SIF_ExtendedElements" mode="SIF_ExtendedElementsType" />
@@ -2001,8 +2036,8 @@
 <xsl:template match="node()|@*" mode="StaffAssignmentMostRecentContainerType">
 <xsl:copy>
     <xsl:apply-templates select="@*" mode="copy" />
-<xsl:apply-templates select="PrimaryFTE" mode="copy" />
-<xsl:apply-templates select="SecondaryFTE" mode="copy" />
+<xsl:apply-templates select="PrimaryFTE" mode="FTEType" />
+<xsl:apply-templates select="SecondaryFTE" mode="FTEType" />
 </xsl:copy>
 </xsl:template>
 <xsl:template match="node()|@*" mode="CensusStudentListType">
@@ -2024,7 +2059,7 @@
 <xsl:apply-templates select="OverseasStudent" mode="copy" />
 <xsl:apply-templates select="DisabilityLevelOfAdjustment" mode="copy" />
 <xsl:apply-templates select="DisabilityCategory" mode="copy" />
-<xsl:apply-templates select="FTE" mode="copy" />
+<xsl:apply-templates select="FTE" mode="FTEType" />
 <xsl:apply-templates select="Headcount" mode="copy" />
 </xsl:copy>
 </xsl:template>
@@ -3255,7 +3290,7 @@
 <xsl:apply-templates select="SchoolLocalId" mode="LocalIdType" />
 <xsl:apply-templates select="HomeroomLocalId" mode="LocalIdType" />
 <xsl:apply-templates select="YearLevel" mode="YearLevelType" />
-<xsl:apply-templates select="FTE" mode="copy" />
+<xsl:apply-templates select="FTE" mode="FTEType" />
 <xsl:apply-templates select="Parent1Language" mode="copy" />
 <xsl:apply-templates select="Parent2Language" mode="copy" />
 <xsl:apply-templates select="Parent1EmploymentType" mode="copy" />
@@ -4562,7 +4597,14 @@
     <xsl:apply-templates select="@*" mode="copy" />
 <xsl:apply-templates select="LevelOfAdjustment" mode="copy" />
 <xsl:apply-templates select="CategoryOfDisability" mode="copy" />
+<xsl:apply-templates select="DisabilityCategoryConsideredList" mode="DisabilityCategoryListType" />
 <xsl:apply-templates select="DateOfAssessment" mode="copy" />
+</xsl:copy>
+</xsl:template>
+<xsl:template match="node()|@*" mode="DisabilityCategoryListType">
+<xsl:copy>
+    <xsl:apply-templates select="@*" mode="copy" />
+<xsl:apply-templates select="DisabilityCategoryConsidered" mode="copy" />
 </xsl:copy>
 </xsl:template>
 <xsl:template match="node()|@*" mode="EducationalAssessmentListType">
